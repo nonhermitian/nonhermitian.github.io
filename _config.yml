@@ -40,7 +40,7 @@ social-network-links:
   email: "nonhermitian@gmail.com"
   github: nonhermitian
   twitter: nonhermitian
-  rss: true
+  rss: false
 #  reddit: yourname
 #  linkedin: daattali
 #  xing: yourname
