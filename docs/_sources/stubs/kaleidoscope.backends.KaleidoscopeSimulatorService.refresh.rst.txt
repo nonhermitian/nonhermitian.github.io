@@ -1,0 +1,8 @@
+
+
+KaleidoscopeSimulatorService.refresh
+==========================================================
+
+.. currentmodule:: kaleidoscope.backends
+
+.. automethod:: KaleidoscopeSimulatorService.refresh
