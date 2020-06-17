@@ -1,8 +1,0 @@
-
-
-KaleidoscopeSimulatorService.__call__
-===========================================================
-
-.. currentmodule:: kaleidoscope.backends
-
-.. automethod:: KaleidoscopeSimulatorService.__call__

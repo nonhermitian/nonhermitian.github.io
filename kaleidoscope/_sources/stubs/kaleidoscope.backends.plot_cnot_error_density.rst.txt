@@ -1,8 +1,0 @@
-
-
-plot_cnot_error_density
-=============================================
-
-.. currentmodule:: kaleidoscope.backends
-
-.. autofunction:: plot_cnot_error_density

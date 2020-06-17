@@ -1,0 +1,8 @@
+
+
+cnot_error_density
+===============================================
+
+.. currentmodule:: kaleidoscope.qiskit.backends
+
+.. autofunction:: cnot_error_density

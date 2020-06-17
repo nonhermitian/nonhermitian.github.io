@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; Kaleidoscope 0.0.4.dev4+56dd5d4 0.0.4.dev4+56dd5d4 documentation</title>
+  <title>Index &mdash; Kaleidoscope 0.0.4.dev4+e9fd9cb 0.0.4.dev4+e9fd9cb documentation</title>
   
 
   
@@ -39,6 +39,7 @@
   <link rel="stylesheet" href="_static/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/style.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" /> 
@@ -68,7 +69,7 @@
             
             
               <div class="version">
-                0.0.4.dev4+56dd5d4
+                0.0.4.dev4+e9fd9cb
               </div>
             
           
@@ -95,10 +96,14 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/interactive/index.html">Interactive figures</a></li>
+</ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/backends.html">Backend Routines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/interactive.html">Interactive Plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/interactive.html">Interactive figures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/backends.html">Qiskit functionality</a></li>
 </ul>
 
             
@@ -113,7 +118,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Kaleidoscope 0.0.4.dev4+56dd5d4</a>
+          <a href="index.html">Kaleidoscope 0.0.4.dev4+e9fd9cb</a>
         
       </nav>
 
@@ -165,23 +170,12 @@
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#_"><strong>_</strong></a>
- | <a href="#B"><strong>B</strong></a>
+ <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#K"><strong>K</strong></a>
  | <a href="#M"><strong>M</strong></a>
- | <a href="#P"><strong>P</strong></a>
- | <a href="#R"><strong>R</strong></a>
  
 </div>
-<h2 id="_">_</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="stubs/kaleidoscope.backends.KaleidoscopeSimulatorService.__call__.html#kaleidoscope.backends.KaleidoscopeSimulatorService.__call__">__call__() (KaleidoscopeSimulatorService method)</a>
-</li>
-  </ul></td>
-</tr></table>
-
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -191,13 +185,19 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="stubs/kaleidoscope.interactive.bloch_multi_disc.html#kaleidoscope.interactive.bloch_multi_disc">bloch_multi_disc() (in module kaleidoscope.interactive)</a>
 </li>
+      <li><a href="stubs/kaleidoscope.interactive.bloch_sphere.html#kaleidoscope.interactive.bloch_sphere">bloch_sphere() (in module kaleidoscope.interactive)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="stubs/kaleidoscope.interactive.counts_histogram.html#kaleidoscope.interactive.counts_histogram">counts_histogram() (in module kaleidoscope.interactive)</a>
+      <li><a href="stubs/kaleidoscope.qiskit.backends.cnot_error_density.html#kaleidoscope.qiskit.backends.cnot_error_density">cnot_error_density() (in module kaleidoscope.qiskit.backends)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="stubs/kaleidoscope.interactive.counts_distribution.html#kaleidoscope.interactive.counts_distribution">counts_distribution() (in module kaleidoscope.interactive)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -206,23 +206,21 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li>
-    kaleidoscope.backends
-
-      <ul>
-        <li><a href="apidocs/backends.html#module-kaleidoscope.backends">module</a>
-</li>
-      </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
     kaleidoscope.interactive
 
       <ul>
         <li><a href="apidocs/interactive.html#module-kaleidoscope.interactive">module</a>
 </li>
       </ul></li>
-      <li><a href="stubs/kaleidoscope.backends.KaleidoscopeSimulatorService.html#kaleidoscope.backends.KaleidoscopeSimulatorService">KaleidoscopeSimulatorService (class in kaleidoscope.backends)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    kaleidoscope.qiskit.backends
+
+      <ul>
+        <li><a href="apidocs/backends.html#module-kaleidoscope.qiskit.backends">module</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -233,31 +231,11 @@
     module
 
       <ul>
-        <li><a href="apidocs/backends.html#module-kaleidoscope.backends">kaleidoscope.backends</a>
-</li>
         <li><a href="apidocs/interactive.html#module-kaleidoscope.interactive">kaleidoscope.interactive</a>
 </li>
+        <li><a href="apidocs/backends.html#module-kaleidoscope.qiskit.backends">kaleidoscope.qiskit.backends</a>
+</li>
       </ul></li>
-  </ul></td>
-</tr></table>
-
-<h2 id="P">P</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="stubs/kaleidoscope.backends.plot_cnot_error_density.html#kaleidoscope.backends.plot_cnot_error_density">plot_cnot_error_density() (in module kaleidoscope.backends)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="R">R</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="stubs/kaleidoscope.backends.KaleidoscopeSimulatorService.refresh.html#kaleidoscope.backends.KaleidoscopeSimulatorService.refresh">refresh() (KaleidoscopeSimulatorService method)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="stubs/kaleidoscope.backends.KaleidoscopeSimulatorService.html#kaleidoscope.backends.KaleidoscopeSimulatorService.refreshing">refreshing (KaleidoscopeSimulatorService attribute)</a>
-</li>
   </ul></td>
 </tr></table>
 
@@ -275,7 +253,7 @@
     <p>
         &copy; Copyright 2020, Kaleidoscope Team
       <span class="lastupdated">
-        Last updated on 2020/06/05.
+        Last updated on 2020/06/17.
       </span>
 
     </p>

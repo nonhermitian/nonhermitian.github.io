@@ -1,8 +1,0 @@
-
-
-counts_histogram
-=========================================
-
-.. currentmodule:: kaleidoscope.interactive
-
-.. autofunction:: counts_histogram

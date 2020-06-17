@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Interactive Plots (kaleidoscope.interactive) &mdash; Kaleidoscope 0.0.4.dev4+56dd5d4 0.0.4.dev4+56dd5d4 documentation</title>
+  <title>Interactive Plots (kaleidoscope.interactive) &mdash; Kaleidoscope 0.0.4.dev4+e9fd9cb 0.0.4.dev4+e9fd9cb documentation</title>
   
 
   
@@ -38,11 +38,12 @@
   <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="counts_histogram" href="../stubs/kaleidoscope.interactive.counts_histogram.html" />
-    <link rel="prev" title="KaleidoscopeSimulatorService.refresh" href="../stubs/kaleidoscope.backends.KaleidoscopeSimulatorService.refresh.html" /> 
+    <link rel="next" title="counts_distribution" href="../stubs/kaleidoscope.interactive.counts_distribution.html" />
+    <link rel="prev" title="Bloch sphere" href="../tutorials/interactive/bloch_sphere.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -69,7 +70,7 @@
             
             
               <div class="version">
-                0.0.4.dev4+56dd5d4
+                0.0.4.dev4+e9fd9cb
               </div>
             
           
@@ -96,15 +97,20 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/interactive/index.html">Interactive figures</a></li>
+</ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="backends.html">Backend Routines</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Interactive Plots</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../stubs/kaleidoscope.interactive.counts_histogram.html">counts_histogram</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Interactive figures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../stubs/kaleidoscope.interactive.counts_distribution.html">counts_distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stubs/kaleidoscope.interactive.bloch_sphere.html">bloch_sphere</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../stubs/kaleidoscope.interactive.bloch_disc.html">bloch_disc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../stubs/kaleidoscope.interactive.bloch_multi_disc.html">bloch_multi_disc</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="backends.html">Qiskit functionality</a></li>
 </ul>
 
             
@@ -119,7 +125,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Kaleidoscope 0.0.4.dev4+56dd5d4</a>
+          <a href="../index.html">Kaleidoscope 0.0.4.dev4+e9fd9cb</a>
         
       </nav>
 
@@ -177,13 +183,16 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/kaleidoscope.interactive.counts_histogram.html#kaleidoscope.interactive.counts_histogram" title="kaleidoscope.interactive.counts_histogram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">counts_histogram</span></code></a>(data[, figsize, color, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/kaleidoscope.interactive.counts_distribution.html#kaleidoscope.interactive.counts_distribution" title="kaleidoscope.interactive.counts_distribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">counts_distribution</span></code></a>(data[, figsize, colors, …])</p></td>
 <td><p>Interactive histogram plot of counts data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../stubs/kaleidoscope.interactive.bloch_disc.html#kaleidoscope.interactive.bloch_disc" title="kaleidoscope.interactive.bloch_disc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bloch_disc</span></code></a>(rho[, figsize, title, as_widget])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../stubs/kaleidoscope.interactive.bloch_sphere.html#kaleidoscope.interactive.bloch_sphere" title="kaleidoscope.interactive.bloch_sphere"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bloch_sphere</span></code></a>([vectors, vectors_color, …])</p></td>
+<td><p>Generates a Bloch sphere from a given collection of vector and/or points data expressed in cartesian coordinates, [x, y, z].</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/kaleidoscope.interactive.bloch_disc.html#kaleidoscope.interactive.bloch_disc" title="kaleidoscope.interactive.bloch_disc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bloch_disc</span></code></a>(rho[, figsize, title, as_widget])</p></td>
 <td><p>Plot a Bloch disc for a single qubit.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/kaleidoscope.interactive.bloch_multi_disc.html#kaleidoscope.interactive.bloch_multi_disc" title="kaleidoscope.interactive.bloch_multi_disc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bloch_multi_disc</span></code></a>(rho[, figsize, titles, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../stubs/kaleidoscope.interactive.bloch_multi_disc.html#kaleidoscope.interactive.bloch_multi_disc" title="kaleidoscope.interactive.bloch_multi_disc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bloch_multi_disc</span></code></a>(rho[, figsize, titles, …])</p></td>
 <td><p>Plot Bloch discs for a multi-qubit state.</p></td>
 </tr>
 </tbody>
@@ -198,10 +207,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../stubs/kaleidoscope.interactive.counts_histogram.html" class="btn btn-neutral float-right" title="counts_histogram" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../stubs/kaleidoscope.interactive.counts_distribution.html" class="btn btn-neutral float-right" title="counts_distribution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../stubs/kaleidoscope.backends.KaleidoscopeSimulatorService.refresh.html" class="btn btn-neutral float-left" title="KaleidoscopeSimulatorService.refresh" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../tutorials/interactive/bloch_sphere.html" class="btn btn-neutral float-left" title="Bloch sphere" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -212,7 +221,7 @@
     <p>
         &copy; Copyright 2020, Kaleidoscope Team
       <span class="lastupdated">
-        Last updated on 2020/06/05.
+        Last updated on 2020/06/17.
       </span>
 
     </p>

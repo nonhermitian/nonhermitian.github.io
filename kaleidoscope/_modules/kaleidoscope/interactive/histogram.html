@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>kaleidoscope.interactive.histogram &mdash; Kaleidoscope 0.0.4.dev4+56dd5d4 0.0.4.dev4+56dd5d4 documentation</title>
+  <title>kaleidoscope.interactive.histogram &mdash; Kaleidoscope 0.0.4.dev4+e9fd9cb 0.0.4.dev4+e9fd9cb documentation</title>
   
 
   
@@ -38,6 +38,7 @@
   <link rel="stylesheet" href="../../../_static/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/jupyter-sphinx.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -67,7 +68,7 @@
             
             
               <div class="version">
-                0.0.4.dev4+56dd5d4
+                0.0.4.dev4+e9fd9cb
               </div>
             
           
@@ -94,10 +95,14 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/interactive/index.html">Interactive figures</a></li>
+</ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidocs/backends.html">Backend Routines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidocs/interactive.html">Interactive Plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidocs/interactive.html">Interactive figures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidocs/backends.html">Qiskit functionality</a></li>
 </ul>
 
             
@@ -112,7 +117,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Kaleidoscope 0.0.4.dev4+56dd5d4</a>
+          <a href="../../../index.html">Kaleidoscope 0.0.4.dev4+e9fd9cb</a>
         
       </nav>
 
@@ -175,29 +180,64 @@
 <span class="c1"># copyright notice, and modified files need to carry a notice indicating</span>
 <span class="c1"># that they have been altered from the originals.</span>
 
+<span class="c1"># This code is part of Qiskit.</span>
+<span class="c1">#</span>
+<span class="c1"># (C) Copyright IBM 2017, 2018.</span>
+<span class="c1">#</span>
+<span class="c1"># This code is licensed under the Apache License, Version 2.0. You may</span>
+<span class="c1"># obtain a copy of this license in the LICENSE.txt file in the root directory</span>
+<span class="c1"># of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.</span>
+<span class="c1">#</span>
+<span class="c1"># Any modifications or derivative works of this code must retain this</span>
+<span class="c1"># copyright notice, and modified files need to carry a notice indicating</span>
+<span class="c1"># that they have been altered from the originals.</span>
+
+<span class="c1"># The Hamming distance and internal plot histogram data are part of</span>
+<span class="c1"># Qiskit.  The latter will be modified at some point.</span>
+
 <span class="sd">&quot;&quot;&quot;Interactive histogram from experiment counts&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span><span class="p">,</span> <span class="n">OrderedDict</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">qiskit.visualization.counts_visualization</span> <span class="kn">import</span> <span class="p">(</span><span class="n">_plot_histogram_data</span><span class="p">,</span>
-                                                       <span class="n">VALID_SORTS</span><span class="p">,</span> <span class="n">DIST_MEAS</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">from</span> <span class="nn">kaleidoscope.colors</span> <span class="kn">import</span> <span class="n">DARK2</span>
 <span class="kn">from</span> <span class="nn">.plotly_wrapper</span> <span class="kn">import</span> <span class="n">PlotlyWidget</span><span class="p">,</span> <span class="n">PlotlyFigure</span>
 
 
-<div class="viewcode-block" id="counts_histogram"><a class="viewcode-back" href="../../../stubs/kaleidoscope.interactive.counts_histogram.html#kaleidoscope.interactive.counts_histogram">[docs]</a><span class="k">def</span> <span class="nf">counts_histogram</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                     <span class="n">number_to_keep</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                     <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;asc&#39;</span><span class="p">,</span> <span class="n">target_string</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                     <span class="n">legend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bar_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                     <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
-                     <span class="n">as_widget</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">hamming_distance</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculate the Hamming distance between two bit strings</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        str1 (str): First string.</span>
+<span class="sd">        str2 (str): Second string.</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        int: Distance between strings.</span>
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: Strings not same length</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">str2</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Strings not same length.&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">s1</span> <span class="o">!=</span> <span class="n">s2</span> <span class="k">for</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">))</span>
+
+
+<span class="n">VALID_SORTS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;asc&#39;</span><span class="p">,</span> <span class="s1">&#39;desc&#39;</span><span class="p">,</span> <span class="s1">&#39;hamming&#39;</span><span class="p">]</span>
+<span class="n">DIST_MEAS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;hamming&#39;</span><span class="p">:</span> <span class="n">hamming_distance</span><span class="p">}</span>
+
+
+<div class="viewcode-block" id="counts_distribution"><a class="viewcode-back" href="../../../stubs/kaleidoscope.interactive.counts_distribution.html#kaleidoscope.interactive.counts_distribution">[docs]</a><span class="k">def</span> <span class="nf">counts_distribution</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">number_to_keep</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;asc&#39;</span><span class="p">,</span> <span class="n">target_string</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">legend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bar_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+                        <span class="n">as_widget</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Interactive histogram plot of counts data.</span>
 
 <span class="sd">    Parameters:</span>
 <span class="sd">        data (list or dict): This is either a list of dictionaries or a single</span>
 <span class="sd">            dict containing the values to represent (ex {&#39;001&#39;: 130})</span>
 <span class="sd">        figsize (tuple): Figure size in pixels.</span>
-<span class="sd">        color (list or str): String or list of strings for histogram bar colors.</span>
+<span class="sd">        colors (list or str): String or list of strings for histogram bar colors.</span>
 <span class="sd">        number_to_keep (int): The number of terms to plot and rest</span>
 <span class="sd">            is made into a single bar called &#39;rest&#39;.</span>
 <span class="sd">        sort (string): Could be &#39;asc&#39;, &#39;desc&#39;, or &#39;hamming&#39;.</span>
@@ -219,6 +259,24 @@
 <span class="sd">        ValueError: When legend is provided and the length doesn&#39;t</span>
 <span class="sd">                    match the input data.</span>
 <span class="sd">        ImportError: When failed to load plotly.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        .. jupyter-execute::</span>
+
+<span class="sd">            from kaleidoscope.qiskit.overload import QuantumCircuit</span>
+<span class="sd">            from kaleidoscope.qiskit.providers import simulators</span>
+<span class="sd">            from kaleidoscope.interactive import counts_distribution</span>
+
+<span class="sd">            sim = simulators.aer_vigo_simulator</span>
+
+<span class="sd">            qc = QuantumCircuit(3, 3) &gt;&gt; sim</span>
+<span class="sd">            qc.h(1)</span>
+<span class="sd">            qc.cx(1,0)</span>
+<span class="sd">            qc.cx(1,2)</span>
+<span class="sd">            qc.measure(range(3), range(3))</span>
+
+<span class="sd">            counts = qc.transpile().sample().result_when_done()</span>
+<span class="sd">            counts_distribution(counts, as_widget=True)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">sort</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">VALID_SORTS</span><span class="p">:</span>
@@ -258,10 +316,10 @@
                                                <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">pair</span><span class="p">:</span> <span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">]))][</span><span class="mi">1</span><span class="p">]</span>
 
     <span class="c1"># Set bar colors</span>
-    <span class="k">if</span> <span class="n">color</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#003f5c&quot;</span><span class="p">,</span> <span class="s2">&quot;#ffa600&quot;</span><span class="p">,</span> <span class="s2">&quot;#bc5090&quot;</span><span class="p">,</span> <span class="s2">&quot;#58508d&quot;</span><span class="p">,</span> <span class="s2">&quot;#ff6361&quot;</span><span class="p">]</span>
-    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="n">color</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">colors</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="n">DARK2</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">colors</span><span class="p">]</span>
 
     <span class="n">width</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># the width of the bars</span>
 
@@ -287,7 +345,7 @@
                              <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
                              <span class="n">hoverinfo</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
                              <span class="n">hovertext</span><span class="o">=</span><span class="n">hover_text</span><span class="p">,</span>
-                             <span class="n">marker_color</span><span class="o">=</span><span class="n">color</span><span class="p">[</span><span class="n">item</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">color</span><span class="p">)],</span>
+                             <span class="n">marker_color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">item</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)],</span>
                              <span class="n">name</span><span class="o">=</span><span class="n">legend</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="k">if</span> <span class="n">legend</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
                              <span class="n">text</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">yvals</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="k">if</span> <span class="n">bar_labels</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
                              <span class="n">textposition</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span>
@@ -321,6 +379,55 @@
         <span class="k">return</span> <span class="n">PlotlyWidget</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">PlotlyFigure</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_plot_histogram_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">number_to_keep</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Generate the data needed for plotting counts.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        data (list or dict): This is either a list of dictionaries or a single</span>
+<span class="sd">            dict containing the values to represent (ex {&#39;001&#39;: 130})</span>
+<span class="sd">        labels (list): The list of bitstring labels for the plot.</span>
+<span class="sd">        number_to_keep (int): The number of terms to plot and rest</span>
+<span class="sd">            is made into a single bar called &#39;rest&#39;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: tuple containing:</span>
+<span class="sd">            (dict): The labels actually used in the plotting.</span>
+<span class="sd">            (list): List of ndarrays for the bars in each experiment.</span>
+<span class="sd">            (list): Indices for the locations of the bars for each</span>
+<span class="sd">                    experiment.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">labels_dict</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+    <span class="n">all_pvalues</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">all_inds</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">execution</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">number_to_keep</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">data_temp</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">execution</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">number_to_keep</span><span class="p">))</span>
+            <span class="n">data_temp</span><span class="p">[</span><span class="s2">&quot;rest&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">execution</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">data_temp</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+            <span class="n">execution</span> <span class="o">=</span> <span class="n">data_temp</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">execution</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">number_to_keep</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">labels_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">labels_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">execution</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">where_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">values</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">pvalues</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="n">where_idx</span><span class="p">]</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">where_idx</span><span class="p">])</span>
+
+        <span class="n">all_pvalues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pvalues</span><span class="p">)</span>
+        <span class="n">numelem</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">where_idx</span><span class="p">])</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">numelem</span><span class="p">)</span>  <span class="c1"># the x locations for the groups</span>
+        <span class="n">all_inds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">labels_dict</span><span class="p">,</span> <span class="n">all_pvalues</span><span class="p">,</span> <span class="n">all_inds</span>
 </pre></div>
 
            </div>
@@ -335,7 +442,7 @@
     <p>
         &copy; Copyright 2020, Kaleidoscope Team
       <span class="lastupdated">
-        Last updated on 2020/06/05.
+        Last updated on 2020/06/17.
       </span>
 
     </p>
