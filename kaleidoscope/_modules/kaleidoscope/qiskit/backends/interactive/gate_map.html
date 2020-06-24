@@ -1,0 +1,472 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>kaleidoscope.qiskit.backends.interactive.gate_map &mdash; Kaleidoscope 0.0.5 0.0.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e5e4" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> Kaleidoscope 0.0.5
+          
+
+          
+            
+            <img src="../../../../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install.html">Installation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorials/interactive/index.html">Interactive figures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorials/backends/index.html">Backend figures</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidocs/interactive.html">Interactive figures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidocs/backends.html">Qiskit functionality</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Kaleidoscope 0.0.5</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>kaleidoscope.qiskit.backends.interactive.gate_map</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for kaleidoscope.qiskit.backends.interactive.gate_map</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="c1"># This file is part of Kaleidoscope.</span>
+<span class="c1">#</span>
+<span class="c1"># (C) Copyright IBM 2020.</span>
+<span class="c1">#</span>
+<span class="c1"># This code is licensed under the Apache License, Version 2.0. You may</span>
+<span class="c1"># obtain a copy of this license in the LICENSE.txt file in the root directory</span>
+<span class="c1"># of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.</span>
+<span class="c1">#</span>
+<span class="c1"># Any modifications or derivative works of this code must retain this</span>
+<span class="c1"># copyright notice, and modified files need to carry a notice indicating</span>
+<span class="c1"># that they have been altered from the originals.</span>
+
+<span class="c1"># This code is part of Qiskit.</span>
+<span class="c1">#</span>
+<span class="c1"># (C) Copyright IBM 2017, 2019.</span>
+<span class="c1">#</span>
+<span class="c1"># This code is licensed under the Apache License, Version 2.0. You may</span>
+<span class="c1"># obtain a copy of this license in the LICENSE.txt file in the root directory</span>
+<span class="c1"># of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.</span>
+<span class="c1">#</span>
+<span class="c1"># Any modifications or derivative works of this code must retain this</span>
+<span class="c1"># copyright notice, and modified files need to carry a notice indicating</span>
+<span class="c1"># that they have been altered from the originals.</span>
+
+<span class="sd">&quot;&quot;&quot;Interactive gate map for IBM Quantum Experience devices.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">from</span> <span class="nn">qiskit.providers.ibmq.ibmqbackend</span> <span class="kn">import</span> <span class="n">IBMQBackend</span>
+<span class="kn">from</span> <span class="nn">qiskit.test.mock.fake_backend</span> <span class="kn">import</span> <span class="n">FakeBackend</span>
+<span class="kn">from</span> <span class="nn">qiskit.providers.models.backendproperties</span> <span class="kn">import</span> <span class="n">BackendProperties</span>
+<span class="kn">from</span> <span class="nn">kaleidoscope.errors</span> <span class="kn">import</span> <span class="n">KaleidoscopeError</span>
+<span class="kn">from</span> <span class="nn">kaleidoscope.qiskit.providers.simulators</span> <span class="kn">import</span> <span class="n">DeviceSimulator</span>
+<span class="kn">from</span> <span class="nn">kaleidoscope.qiskit.backends.pseudobackend</span> <span class="kn">import</span> <span class="n">properties_to_pseudobackend</span>
+<span class="kn">from</span> <span class="nn">kaleidoscope.interactive.plotly_wrapper</span> <span class="kn">import</span> <span class="n">PlotlyWidget</span><span class="p">,</span> <span class="n">PlotlyFigure</span>
+<span class="kn">from</span> <span class="nn">kaleidoscope.qiskit.backends.device_layouts</span> <span class="kn">import</span> <span class="n">DEVICE_LAYOUTS</span>
+
+
+<div class="viewcode-block" id="system_gate_map"><a class="viewcode-back" href="../../../../../stubs/kaleidoscope.qiskit.backends.system_gate_map.html#kaleidoscope.qiskit.backends.system_gate_map">[docs]</a><span class="k">def</span> <span class="nf">system_gate_map</span><span class="p">(</span>
+        <span class="n">backend</span><span class="p">,</span>
+        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+        <span class="n">label_qubits</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">qubit_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">line_width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">font_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">qubit_colors</span><span class="o">=</span><span class="s2">&quot;#2f4b7c&quot;</span><span class="p">,</span>
+        <span class="n">qubit_labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">line_colors</span><span class="o">=</span><span class="s2">&quot;#2f4b7c&quot;</span><span class="p">,</span>
+        <span class="n">font_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+        <span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+        <span class="n">as_widget</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Plots an interactive gate map of a device.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        backend (IBMQBackend or FakeBackend or DeviceSimulator or Properties): Plot the error map</span>
+<span class="sd">                                                                               for a backend.</span>
+<span class="sd">        figsize (tuple): Output figure size (wxh) in pixels.</span>
+<span class="sd">        label_qubits (bool): Labels for the qubits.</span>
+<span class="sd">        qubit_size (float): Size of qubit marker.</span>
+<span class="sd">        line_width (float): Width of lines.</span>
+<span class="sd">        font_size (float): Font size of qubit labels.</span>
+<span class="sd">        qubit_colors (str or list): A list of colors for the qubits. If a single color is given,</span>
+<span class="sd">                                    it&#39;s used for all qubits.</span>
+<span class="sd">        qubit_labels (list): A list of qubit labels</span>
+<span class="sd">        line_colors (str or list): A list of colors for each line from the coupling map. If a</span>
+<span class="sd">                                   single color is given, it&#39;s used for all lines.</span>
+<span class="sd">        font_color (str): The font color for the qubit labels.</span>
+<span class="sd">        background_color (str): The background color, either &#39;white&#39; or &#39;black&#39;.</span>
+<span class="sd">        as_widget (bool): Return the figure as a widget.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        PlotlyFigure or PlotlyWidget: Returned figure instance.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        KaleidoscopeError: Invalid input object.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        .. jupyter-execute::</span>
+
+<span class="sd">           from qiskit import *</span>
+<span class="sd">           from kaleidoscope.qiskit.backends import system_gate_map</span>
+
+<span class="sd">           pro = IBMQ.load_account()</span>
+<span class="sd">           backend = pro.backends.ibmq_vigo</span>
+<span class="sd">           system_gate_map(backend, as_widget=True)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="p">(</span><span class="n">IBMQBackend</span><span class="p">,</span> <span class="n">DeviceSimulator</span><span class="p">,</span>
+                                <span class="n">FakeBackend</span><span class="p">,</span> <span class="n">BackendProperties</span><span class="p">)):</span>
+        <span class="k">raise</span> <span class="n">KaleidoscopeError</span><span class="p">(</span><span class="s1">&#39;Input is not a valid backend or properties object.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="n">BackendProperties</span><span class="p">):</span>
+        <span class="n">backend</span> <span class="o">=</span> <span class="n">properties_to_pseudobackend</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
+
+    <span class="n">config</span> <span class="o">=</span> <span class="n">backend</span><span class="o">.</span><span class="n">configuration</span><span class="p">()</span>
+    <span class="n">n_qubits</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">n_qubits</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">coupling_map</span>
+
+    <span class="c1"># set coloring</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">qubit_colors</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">qubit_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">qubit_colors</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_qubits</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">line_colors</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">line_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">line_colors</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">cmap</span><span class="p">)</span> <span class="k">if</span> <span class="n">cmap</span> <span class="k">else</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="n">n_qubits</span> <span class="ow">in</span> <span class="n">DEVICE_LAYOUTS</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">grid_data</span> <span class="o">=</span> <span class="n">DEVICE_LAYOUTS</span><span class="p">[</span><span class="n">n_qubits</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                          <span class="n">plot_bgcolor</span><span class="o">=</span><span class="n">background_color</span><span class="p">,</span>
+                          <span class="n">paper_bgcolor</span><span class="o">=</span><span class="n">background_color</span><span class="p">,</span>
+                          <span class="n">width</span><span class="o">=</span><span class="n">figsize</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="n">figsize</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                          <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">as_widget</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">PlotlyWidget</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">PlotlyFigure</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+
+    <span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">cmap</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n_qubits</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">]:</span>
+            <span class="n">offset</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">qubit_size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">qubit_size</span> <span class="o">=</span> <span class="mi">24</span>
+            <span class="k">if</span> <span class="n">font_size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">font_size</span> <span class="o">=</span> <span class="mi">10</span>
+            <span class="k">if</span> <span class="n">line_width</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">line_width</span> <span class="o">=</span> <span class="mi">4</span>
+            <span class="k">if</span> <span class="n">figsize</span> <span class="o">==</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+                <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">n_qubits</span> <span class="o">==</span> <span class="mi">27</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">qubit_size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">qubit_size</span> <span class="o">=</span> <span class="mi">24</span>
+            <span class="k">if</span> <span class="n">font_size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">font_size</span> <span class="o">=</span> <span class="mi">10</span>
+            <span class="k">if</span> <span class="n">line_width</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">line_width</span> <span class="o">=</span> <span class="mi">4</span>
+            <span class="k">if</span> <span class="n">figsize</span> <span class="o">==</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+                <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">qubit_size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">qubit_size</span> <span class="o">=</span> <span class="mi">32</span>
+            <span class="k">if</span> <span class="n">font_size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">font_size</span> <span class="o">=</span> <span class="mi">14</span>
+            <span class="k">if</span> <span class="n">line_width</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">line_width</span> <span class="o">=</span> <span class="mi">6</span>
+            <span class="k">if</span> <span class="n">figsize</span> <span class="o">==</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+                <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">figsize</span> <span class="o">==</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">qubit_size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">qubit_size</span> <span class="o">=</span> <span class="mi">30</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+    <span class="c1"># Add lines for couplings</span>
+    <span class="k">if</span> <span class="n">cmap</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">edge</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cmap</span><span class="p">):</span>
+            <span class="n">is_symmetric</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">if</span> <span class="n">edge</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">cmap</span><span class="p">:</span>
+                <span class="n">is_symmetric</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">y_start</span> <span class="o">=</span> <span class="n">grid_data</span><span class="p">[</span><span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">offset</span>
+            <span class="n">x_start</span> <span class="o">=</span> <span class="n">grid_data</span><span class="p">[</span><span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">y_end</span> <span class="o">=</span> <span class="n">grid_data</span><span class="p">[</span><span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">offset</span>
+            <span class="n">x_end</span> <span class="o">=</span> <span class="n">grid_data</span><span class="p">[</span><span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">is_symmetric</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">y_start</span> <span class="o">==</span> <span class="n">y_end</span><span class="p">:</span>
+                    <span class="n">x_end</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_end</span> <span class="o">-</span> <span class="n">x_start</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">x_start</span>
+                    <span class="n">x_mid</span> <span class="o">=</span> <span class="n">x_end</span>
+                    <span class="n">y_mid</span> <span class="o">=</span> <span class="n">y_start</span>
+
+                <span class="k">elif</span> <span class="n">x_start</span> <span class="o">==</span> <span class="n">x_end</span><span class="p">:</span>
+                    <span class="n">y_end</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_end</span> <span class="o">-</span> <span class="n">y_start</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">y_start</span>
+                    <span class="n">x_mid</span> <span class="o">=</span> <span class="n">x_start</span>
+                    <span class="n">y_mid</span> <span class="o">=</span> <span class="n">y_end</span>
+
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">x_end</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_end</span> <span class="o">-</span> <span class="n">x_start</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">x_start</span>
+                    <span class="n">y_end</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_end</span> <span class="o">-</span> <span class="n">y_start</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">y_start</span>
+                    <span class="n">x_mid</span> <span class="o">=</span> <span class="n">x_end</span>
+                    <span class="n">y_mid</span> <span class="o">=</span> <span class="n">y_end</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">y_start</span> <span class="o">==</span> <span class="n">y_end</span><span class="p">:</span>
+                    <span class="n">x_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_end</span> <span class="o">-</span> <span class="n">x_start</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">x_start</span>
+                    <span class="n">y_mid</span> <span class="o">=</span> <span class="n">y_end</span>
+
+                <span class="k">elif</span> <span class="n">x_start</span> <span class="o">==</span> <span class="n">x_end</span><span class="p">:</span>
+                    <span class="n">x_mid</span> <span class="o">=</span> <span class="n">x_end</span>
+                    <span class="n">y_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_end</span> <span class="o">-</span> <span class="n">y_start</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">y_start</span>
+
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">x_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_end</span> <span class="o">-</span> <span class="n">x_start</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">x_start</span>
+                    <span class="n">y_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_end</span> <span class="o">-</span> <span class="n">y_start</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">y_start</span>
+
+            <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span>
+                <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="n">x_start</span><span class="p">,</span> <span class="n">x_mid</span><span class="p">,</span> <span class="n">x_end</span><span class="p">],</span>
+                           <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="n">y_start</span><span class="p">,</span> <span class="o">-</span><span class="n">y_mid</span><span class="p">,</span> <span class="o">-</span><span class="n">y_end</span><span class="p">],</span>
+                           <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;lines&quot;</span><span class="p">,</span>
+                           <span class="n">hoverinfo</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+                           <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">line_width</span><span class="p">,</span>
+                                     <span class="n">color</span><span class="o">=</span><span class="n">line_colors</span><span class="p">[</span><span class="n">ind</span><span class="p">])))</span>
+
+    <span class="c1"># Add the qubits themselves</span>
+    <span class="n">qubit_text</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">qubit_str</span> <span class="o">=</span> <span class="s2">&quot;&lt;b&gt;Qubit </span><span class="si">{}</span><span class="s2">&quot;</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_qubits</span><span class="p">):</span>
+        <span class="n">qubit_text</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">qubit_str</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">qubit_labels</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="k">if</span> <span class="n">qubit_labels</span> <span class="k">else</span> <span class="n">num</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">qubit_labels</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">qubit_labels</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_qubits</span><span class="p">)]</span>
+
+    <span class="k">if</span> <span class="n">n_qubits</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">qubit_size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">qubit_size</span> <span class="o">=</span> <span class="mi">20</span>
+        <span class="k">if</span> <span class="n">font_size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">font_size</span> <span class="o">=</span> <span class="mi">9</span>
+
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">grid_data</span><span class="p">],</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">offset</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">grid_data</span><span class="p">],</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers+text&quot;</span><span class="p">,</span>
+        <span class="n">marker</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">scatter</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">qubit_size</span><span class="p">,</span>
+                                 <span class="n">color</span><span class="o">=</span><span class="n">qubit_colors</span><span class="p">,</span>
+                                 <span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">qubit_labels</span> <span class="k">if</span> <span class="n">label_qubits</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="n">textposition</span><span class="o">=</span><span class="s2">&quot;middle center&quot;</span><span class="p">,</span>
+        <span class="n">textfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">font_size</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">font_color</span><span class="p">),</span>
+        <span class="n">hoverinfo</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="k">if</span> <span class="n">label_qubits</span> <span class="k">else</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span>
+        <span class="n">hovertext</span><span class="o">=</span><span class="n">qubit_text</span><span class="p">))</span>
+
+    <span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_range</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">offset</span><span class="p">:</span>
+        <span class="n">_range</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">_range</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                      <span class="n">plot_bgcolor</span><span class="o">=</span><span class="n">background_color</span><span class="p">,</span>
+                      <span class="n">paper_bgcolor</span><span class="o">=</span><span class="n">background_color</span><span class="p">,</span>
+                      <span class="n">width</span><span class="o">=</span><span class="n">figsize</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="n">figsize</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                      <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">as_widget</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">PlotlyWidget</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">PlotlyFigure</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Kaleidoscope Team
+      <span class="lastupdated">
+        Last updated on 2020/06/24.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; Kaleidoscope 0.0.4.dev4+11e36a7 0.0.4.dev4+11e36a7 documentation</title>
+  <title>Installation &mdash; Kaleidoscope 0.0.5 0.0.5 documentation</title>
   
 
   
@@ -43,7 +43,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Interactive figures" href="tutorials/interactive/index.html" />
-    <link rel="prev" title="Kaleidoscope (0.0.4)" href="index.html" /> 
+    <link rel="prev" title="Kaleidoscope (0.0.5)" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -57,7 +57,7 @@
           
 
           
-            <a href="index.html">
+            <a href="index.html" class="icon icon-home"> Kaleidoscope 0.0.5
           
 
           
@@ -70,7 +70,7 @@
             
             
               <div class="version">
-                0.0.4.dev4+11e36a7
+                0.0.5
               </div>
             
           
@@ -98,12 +98,14 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-dependencies">Optional dependencies</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/interactive/index.html">Interactive figures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/backends/index.html">Backend figures</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul>
@@ -123,7 +125,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Kaleidoscope 0.0.4.dev4+11e36a7</a>
+          <a href="index.html">Kaleidoscope 0.0.5</a>
         
       </nav>
 
@@ -177,9 +179,9 @@
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
-<p>Kaleidoscope requires Python 3.6 or later.  Much of the functionality also
-requires having a <a class="reference external" href="https://quantum-computing.ibm.com/">IBM Quantum Experience</a>
-account in order to access the
+<p>Kaleidoscope requires Python 3.6 or later and a Jupyter notebook environment.  Much of the
+functionality also requires having Qiskit a
+<a class="reference external" href="https://quantum-computing.ibm.com/">IBM Quantum Experience</a> account in order to access the
 <a class="reference external" href="https://quantum-computing.ibm.com/docs/cloud/backends/systems/">IBM quantum systems</a>.</p>
 </div>
 <div class="section" id="install">
@@ -189,6 +191,16 @@ account in order to access the
 </pre></div>
 </div>
 <p>Or if your adventurous you can install from <a class="reference external" href="https://github.com/nonhermitian/kaleidoscope">source code on Github</a>.</p>
+</div>
+<div class="section" id="optional-dependencies">
+<h2>Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Although not necessary for many of the interactive visualizations, functionality that makes use
+of Qiskit and the IBM Quantum devices requires the following installations:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install qiskit-terra&gt;<span class="o">=</span><span class="m">0</span>.14
+pip install qiskit-ibmq-provider&gt;<span class="o">=</span><span class="m">0</span>.7
+pip install qiskit-aer&gt;<span class="o">=</span><span class="m">0</span>.5
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -203,7 +215,7 @@ account in order to access the
         <a href="tutorials/interactive/index.html" class="btn btn-neutral float-right" title="Interactive figures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Kaleidoscope (0.0.4)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Kaleidoscope (0.0.5)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -214,7 +226,7 @@ account in order to access the
     <p>
         &copy; Copyright 2020, Kaleidoscope Team
       <span class="lastupdated">
-        Last updated on 2020/06/18.
+        Last updated on 2020/06/24.
       </span>
 
     </p>

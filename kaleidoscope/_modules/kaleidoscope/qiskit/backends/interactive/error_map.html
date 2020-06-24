@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>kaleidoscope.qiskit.backends.interactive.error_map &mdash; Kaleidoscope 0.0.4.dev4+11e36a7 0.0.4.dev4+11e36a7 documentation</title>
+  <title>kaleidoscope.qiskit.backends.interactive.error_map &mdash; Kaleidoscope 0.0.5 0.0.5 documentation</title>
   
 
   
@@ -55,7 +55,7 @@
           
 
           
-            <a href="../../../../../index.html">
+            <a href="../../../../../index.html" class="icon icon-home"> Kaleidoscope 0.0.5
           
 
           
@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.0.4.dev4+11e36a7
+                0.0.5
               </div>
             
           
@@ -98,6 +98,7 @@
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../tutorials/interactive/index.html">Interactive figures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorials/backends/index.html">Backend figures</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul>
@@ -117,7 +118,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../../../index.html">Kaleidoscope 0.0.4.dev4+11e36a7</a>
+          <a href="../../../../../index.html">Kaleidoscope 0.0.5</a>
         
       </nav>
 
@@ -168,6 +169,18 @@
   <h1>Source code for kaleidoscope.qiskit.backends.interactive.error_map</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 
+<span class="c1"># This file is part of Kaleidoscope.</span>
+<span class="c1">#</span>
+<span class="c1"># (C) Copyright IBM 2020.</span>
+<span class="c1">#</span>
+<span class="c1"># This code is licensed under the Apache License, Version 2.0. You may</span>
+<span class="c1"># obtain a copy of this license in the LICENSE.txt file in the root directory</span>
+<span class="c1"># of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.</span>
+<span class="c1">#</span>
+<span class="c1"># Any modifications or derivative works of this code must retain this</span>
+<span class="c1"># copyright notice, and modified files need to carry a notice indicating</span>
+<span class="c1"># that they have been altered from the originals.</span>
+
 <span class="c1"># This code is part of Qiskit.</span>
 <span class="c1">#</span>
 <span class="c1"># (C) Copyright IBM 2017, 2019.</span>
@@ -180,6 +193,9 @@
 <span class="c1"># copyright notice, and modified files need to carry a notice indicating</span>
 <span class="c1"># that they have been altered from the originals.</span>
 <span class="c1"># pylint: disable=invalid-name</span>
+
+<span class="c1"># Modified to also take backend parameters object, as well as the</span>
+<span class="c1"># simulators objects from the Kaleidoscope providers.</span>
 
 <span class="sd">&quot;&quot;&quot;Interactive error map for IBM Quantum Experience devices.&quot;&quot;&quot;</span>
 
@@ -196,6 +212,7 @@
 <span class="kn">from</span> <span class="nn">kaleidoscope.qiskit.providers.simulators</span> <span class="kn">import</span> <span class="n">DeviceSimulator</span>
 <span class="kn">from</span> <span class="nn">kaleidoscope.interactive.plotly_wrapper</span> <span class="kn">import</span> <span class="n">PlotlyWidget</span><span class="p">,</span> <span class="n">PlotlyFigure</span>
 <span class="kn">from</span> <span class="nn">kaleidoscope.qiskit.backends.device_layouts</span> <span class="kn">import</span> <span class="n">DEVICE_LAYOUTS</span>
+<span class="kn">from</span> <span class="nn">kaleidoscope.qiskit.backends.pseudobackend</span> <span class="kn">import</span> <span class="n">properties_to_pseudobackend</span>
 <span class="kn">from</span> <span class="nn">kaleidoscope.colors</span> <span class="kn">import</span> <span class="n">BMY_PLOTLY</span>
 
 <span class="n">CMAP</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">bmy</span>
@@ -239,6 +256,9 @@
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="p">(</span><span class="n">IBMQBackend</span><span class="p">,</span> <span class="n">DeviceSimulator</span><span class="p">,</span>
                                 <span class="n">FakeBackend</span><span class="p">,</span> <span class="n">BackendProperties</span><span class="p">)):</span>
         <span class="k">raise</span> <span class="n">KaleidoscopeError</span><span class="p">(</span><span class="s1">&#39;Input is not a valid backend or properties object.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="n">BackendProperties</span><span class="p">):</span>
+        <span class="n">backend</span> <span class="o">=</span> <span class="n">properties_to_pseudobackend</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
 
     <span class="n">meas_text_color</span> <span class="o">=</span> <span class="s1">&#39;#000000&#39;</span>
     <span class="k">if</span> <span class="n">background_color</span> <span class="o">==</span> <span class="s1">&#39;white&#39;</span><span class="p">:</span>
@@ -544,7 +564,7 @@
     <span class="k">for</span> <span class="n">kk</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_left</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">fig</span><span class="o">.</span><span class="n">append_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="n">read_err</span><span class="p">[</span><span class="n">kk</span><span class="p">]],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">kk</span><span class="p">],</span>
                                 <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span>
-                                <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#B0B0AD&#39;</span><span class="p">),</span>
+                                <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#c7c7c5&#39;</span><span class="p">),</span>
                                 <span class="n">hoverinfo</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
                                 <span class="n">hoverlabel</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">meas_text_color</span><span class="p">)),</span>
                                 <span class="n">hovertext</span><span class="o">=</span><span class="p">[</span><span class="n">hover_text</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">kk</span><span class="p">,</span>
@@ -581,7 +601,7 @@
             <span class="n">fig</span><span class="o">.</span><span class="n">append_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="n">read_err</span><span class="p">[</span><span class="n">kk</span><span class="p">]],</span>
                                     <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">kk</span><span class="p">],</span>
                                     <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span>
-                                    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#B0B0AD&#39;</span><span class="p">),</span>
+                                    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#c7c7c5&#39;</span><span class="p">),</span>
                                     <span class="n">hoverinfo</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
                                     <span class="n">hoverlabel</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">meas_text_color</span><span class="p">)),</span>
                                     <span class="n">hovertext</span><span class="o">=</span><span class="p">[</span><span class="n">hover_text</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">kk</span><span class="p">,</span>
@@ -647,7 +667,7 @@
     <p>
         &copy; Copyright 2020, Kaleidoscope Team
       <span class="lastupdated">
-        Last updated on 2020/06/18.
+        Last updated on 2020/06/24.
       </span>
 
     </p>

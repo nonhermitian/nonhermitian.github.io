@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>kaleidoscope.qiskit.backends.mpl.cnot_err &mdash; Kaleidoscope 0.0.4.dev4+11e36a7 0.0.4.dev4+11e36a7 documentation</title>
+  <title>kaleidoscope.qiskit.backends.mpl.cnot_err &mdash; Kaleidoscope 0.0.5 0.0.5 documentation</title>
   
 
   
@@ -55,7 +55,7 @@
           
 
           
-            <a href="../../../../../index.html">
+            <a href="../../../../../index.html" class="icon icon-home"> Kaleidoscope 0.0.5
           
 
           
@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.0.4.dev4+11e36a7
+                0.0.5
               </div>
             
           
@@ -98,6 +98,7 @@
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../tutorials/interactive/index.html">Interactive figures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorials/backends/index.html">Backend figures</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul>
@@ -117,7 +118,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../../../index.html">Kaleidoscope 0.0.4.dev4+11e36a7</a>
+          <a href="../../../../../index.html">Kaleidoscope 0.0.5</a>
         
       </nav>
 
@@ -179,6 +180,7 @@
 <span class="c1"># Any modifications or derivative works of this code must retain this</span>
 <span class="c1"># copyright notice, and modified files need to carry a notice indicating</span>
 <span class="c1"># that they have been altered from the originals.</span>
+<span class="c1"># pylint: disable=invalid-unary-operand-type</span>
 
 <span class="sd">&quot;&quot;&quot;CNOT error density plot&quot;&quot;&quot;</span>
 
@@ -186,19 +188,27 @@
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">gaussian_kde</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">qiskit.providers.models.backendproperties</span> <span class="kn">import</span> <span class="n">BackendProperties</span>
 <span class="kn">from</span> <span class="nn">kaleidoscope.colors</span> <span class="kn">import</span> <span class="n">DARK2</span>
 <span class="kn">from</span> <span class="nn">kaleidoscope.errors</span> <span class="kn">import</span> <span class="n">KaleidoscopeError</span>
+<span class="kn">from</span> <span class="nn">kaleidoscope.qiskit.backends.pseudobackend</span> <span class="kn">import</span> <span class="n">properties_to_pseudobackend</span>
 
 
-<div class="viewcode-block" id="cnot_error_density"><a class="viewcode-back" href="../../../../../stubs/kaleidoscope.qiskit.backends.cnot_error_density.html#kaleidoscope.qiskit.backends.cnot_error_density">[docs]</a><span class="k">def</span> <span class="nf">cnot_error_density</span><span class="p">(</span><span class="n">backends</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                       <span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                       <span class="n">text_xval</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xticks</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="cnot_error_density"><a class="viewcode-back" href="../../../../../stubs/kaleidoscope.qiskit.backends.cnot_error_density.html#kaleidoscope.qiskit.backends.cnot_error_density">[docs]</a><span class="k">def</span> <span class="nf">cnot_error_density</span><span class="p">(</span><span class="n">backends</span><span class="p">,</span>
+                       <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                       <span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                       <span class="n">offset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                       <span class="n">xlim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                       <span class="n">text_xval</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                       <span class="n">xticks</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Plot CNOT error distribution for one or more IBMQ backends.</span>
 
 <span class="sd">    Parameters:</span>
-<span class="sd">        backends (list or IBMQBackend): A single or list of IBMQBackend.</span>
+<span class="sd">        backends (list or IBMQBackend or BackendProperties): A single or ist of IBMQBackend</span>
+<span class="sd">                                                             instances or properties.</span>
 <span class="sd">        figsize (tuple): Optional figure size in inches.</span>
 <span class="sd">        colors (list): A list of Matplotlib compatible colors to plot with.</span>
+<span class="sd">        offset (float): Positive offset for spacing out the backends.</span>
 <span class="sd">        xlim (list or tuple): Optional lower and upper limits of cnot error values.</span>
 <span class="sd">        text_xval (float): Optional xaxis value at which to start the backend text.</span>
 <span class="sd">        xticks (list): Optional list of xaxis ticks to plot.</span>
@@ -226,6 +236,10 @@
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">backends</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
         <span class="n">backends</span> <span class="o">=</span> <span class="p">[</span><span class="n">backends</span><span class="p">]</span>
 
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">back</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">backends</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">back</span><span class="p">,</span> <span class="n">BackendProperties</span><span class="p">):</span>
+            <span class="n">backends</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">properties_to_pseudobackend</span><span class="p">(</span><span class="n">back</span><span class="p">)</span>
+
     <span class="k">for</span> <span class="n">back</span> <span class="ow">in</span> <span class="n">backends</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">back</span><span class="o">.</span><span class="n">configuration</span><span class="p">()</span><span class="o">.</span><span class="n">n_qubits</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">KaleidoscopeError</span><span class="p">(</span><span class="s1">&#39;Number of backend qubits must be &gt; 1&#39;</span><span class="p">)</span>
@@ -240,7 +254,9 @@
         <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
 
     <span class="n">text_color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span>
-    <span class="n">offset</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
+    <span class="k">if</span> <span class="n">offset</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="mi">100</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">backends</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="k">else</span> <span class="mi">200</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="o">-</span><span class="n">offset</span>
     <span class="k">if</span> <span class="n">colors</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">DARK2</span><span class="p">[</span><span class="n">kk</span> <span class="o">%</span> <span class="mi">8</span><span class="p">]</span> <span class="k">for</span> <span class="n">kk</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">backends</span><span class="p">))]</span>
     <span class="k">else</span><span class="p">:</span>
@@ -290,7 +306,7 @@
             <span class="n">qv</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
         <span class="n">bname</span> <span class="o">=</span> <span class="n">back</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot; </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">qv</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">text_xval</span><span class="p">,</span> <span class="n">offset</span><span class="o">*</span><span class="n">idx</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span> <span class="n">bname</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">text_xval</span><span class="p">,</span> <span class="n">offset</span><span class="o">*</span><span class="n">idx</span><span class="o">+</span><span class="mf">0.1</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">offset</span><span class="p">),</span> <span class="n">bname</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
 
     <span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_yaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 
@@ -326,7 +342,7 @@
     <p>
         &copy; Copyright 2020, Kaleidoscope Team
       <span class="lastupdated">
-        Last updated on 2020/06/18.
+        Last updated on 2020/06/24.
       </span>
 
     </p>
