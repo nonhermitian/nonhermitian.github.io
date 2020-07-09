@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CNOT error density &mdash; Kaleidoscope 0.0.6 0.0.6 documentation</title>
+  <title>CNOT error density &mdash; Kaleidoscope 0.0.7 0.0.7 documentation</title>
   
 
   
@@ -57,7 +57,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Kaleidoscope 0.0.6
+            <a href="../../index.html" class="icon icon-home"> Kaleidoscope 0.0.7
           
 
           
@@ -70,7 +70,7 @@
             
             
               <div class="version">
-                0.0.6
+                0.0.7
               </div>
             
           
@@ -105,7 +105,12 @@
 <li class="toctree-l2"><a class="reference internal" href="gate_map.html">Gate map</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">CNOT density</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#simple-multi-system-comparison">Simple multi-system comparison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linear-error-scaling">Linear error scaling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#historical-data-with-custom-colors">Historical data with custom colors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shift-position-of-backend-labels">Shift position of backend labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#change-offset-between-distributions">Change offset between distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#change-gaussian-widths">Change gaussian widths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-x-limits">Custom x-limits</a></li>
 </ul>
 </li>
 </ul>
@@ -129,7 +134,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Kaleidoscope 0.0.6</a>
+          <a href="../../index.html">Kaleidoscope 0.0.7</a>
         
       </nav>
 
@@ -213,6 +218,19 @@
 </div>
 </div>
 </div>
+<div class="section" id="linear-error-scaling">
+<h2>Linear error scaling<a class="headerlink" href="#linear-error-scaling" title="Permalink to this headline">¶</a></h2>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cnot_error_density</span><span class="p">(</span><span class="n">backends</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cnot_density_2_0.png" src="../../_images/cnot_density_2_0.png" />
+</div>
+</div>
+</div>
 <div class="section" id="historical-data-with-custom-colors">
 <h2>Historical data with custom colors<a class="headerlink" href="#historical-data-with-custom-colors" title="Permalink to this headline">¶</a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
@@ -225,7 +243,62 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/cnot_density_2_0.png" src="../../_images/cnot_density_2_0.png" />
+<img alt="../../_images/cnot_density_3_0.png" src="../../_images/cnot_density_3_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="shift-position-of-backend-labels">
+<h2>Shift position of backend labels<a class="headerlink" href="#shift-position-of-backend-labels" title="Permalink to this headline">¶</a></h2>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">backends</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="p">(</span><span class="n">simulator</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                             <span class="n">filters</span><span class="o">=</span><span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">b</span><span class="o">.</span><span class="n">configuration</span><span class="p">()</span><span class="o">.</span><span class="n">n_qubits</span><span class="o">==</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">cnot_error_density</span><span class="p">(</span><span class="n">backends</span><span class="p">,</span> <span class="n">text_xval</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cnot_density_4_0.png" src="../../_images/cnot_density_4_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="change-offset-between-distributions">
+<h2>Change offset between distributions<a class="headerlink" href="#change-offset-between-distributions" title="Permalink to this headline">¶</a></h2>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cnot_error_density</span><span class="p">(</span><span class="n">backends</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cnot_density_5_0.png" src="../../_images/cnot_density_5_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="change-gaussian-widths">
+<h2>Change gaussian widths<a class="headerlink" href="#change-gaussian-widths" title="Permalink to this headline">¶</a></h2>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cnot_error_density</span><span class="p">(</span><span class="n">backends</span><span class="p">,</span> <span class="n">covariance_factor</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cnot_density_6_0.png" src="../../_images/cnot_density_6_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="custom-x-limits">
+<h2>Custom x-limits<a class="headerlink" href="#custom-x-limits" title="Permalink to this headline">¶</a></h2>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cnot_error_density</span><span class="p">(</span><span class="n">backends</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cnot_density_7_0.png" src="../../_images/cnot_density_7_0.png" />
 </div>
 </div>
 </div>
@@ -253,7 +326,7 @@
     <p>
         &copy; Copyright 2020, Kaleidoscope Team
       <span class="lastupdated">
-        Last updated on 2020/07/01.
+        Last updated on 2020/07/09.
       </span>
 
     </p>

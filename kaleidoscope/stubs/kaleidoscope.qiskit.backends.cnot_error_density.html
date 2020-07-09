@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cnot_error_density &mdash; Kaleidoscope 0.0.6 0.0.6 documentation</title>
+  <title>cnot_error_density &mdash; Kaleidoscope 0.0.7 0.0.7 documentation</title>
   
 
   
@@ -56,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Kaleidoscope 0.0.6
+            <a href="../index.html" class="icon icon-home"> Kaleidoscope 0.0.7
           
 
           
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                0.0.6
+                0.0.7
               </div>
             
           
@@ -127,7 +127,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Kaleidoscope 0.0.6</a>
+          <a href="../index.html">Kaleidoscope 0.0.7</a>
         
       </nav>
 
@@ -183,7 +183,7 @@
 <h1>cnot_error_density<a class="headerlink" href="#cnot-error-density" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="kaleidoscope.qiskit.backends.cnot_error_density">
-<code class="sig-name descname">cnot_error_density</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">backends</span></em>, <em class="sig-param"><span class="n">figsize</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">colors</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xlim</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">text_xval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xticks</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaleidoscope/qiskit/backends/mpl/cnot_err.html#cnot_error_density"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kaleidoscope.qiskit.backends.cnot_error_density" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">cnot_error_density</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">backends</span></em>, <em class="sig-param"><span class="n">figsize</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">colors</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">'log'</span></em>, <em class="sig-param"><span class="n">covariance_factor</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">xlim</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">text_xval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xticks</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaleidoscope/qiskit/backends/mpl/cnot_err.html#cnot_error_density"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kaleidoscope.qiskit.backends.cnot_error_density" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot CNOT error distribution for one or more IBMQ backends.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -193,6 +193,8 @@ instances or properties.</p></li>
 <li><p><strong>figsize</strong> (<em>tuple</em>) – Optional figure size in inches.</p></li>
 <li><p><strong>colors</strong> (<em>list</em>) – A list of Matplotlib compatible colors to plot with.</p></li>
 <li><p><strong>offset</strong> (<em>float</em>) – Positive offset for spacing out the backends.</p></li>
+<li><p><strong>scale</strong> (<em>str</em>) – ‘linear’ or ‘log’ scaling of x-axis.</p></li>
+<li><p><strong>covariance_factor</strong> (<em>float</em>) – Sets the width of the gaussian for each point.</p></li>
 <li><p><strong>xlim</strong> (<em>list</em><em> or </em><em>tuple</em>) – Optional lower and upper limits of cnot error values.</p></li>
 <li><p><strong>text_xval</strong> (<em>float</em>) – Optional xaxis value at which to start the backend text.</p></li>
 <li><p><strong>xticks</strong> (<em>list</em>) – Optional list of xaxis ticks to plot.</p></li>
@@ -253,7 +255,7 @@ instances or properties.</p></li>
     <p>
         &copy; Copyright 2020, Kaleidoscope Team
       <span class="lastupdated">
-        Last updated on 2020/07/01.
+        Last updated on 2020/07/09.
       </span>
 
     </p>
