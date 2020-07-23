@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cnot_error_density &mdash; Kaleidoscope 0.0.7 0.0.7 documentation</title>
+  <title>cnot_error_density &mdash; Kaleidoscope 0.0.8 0.0.8 documentation</title>
   
 
   
@@ -56,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Kaleidoscope 0.0.7
+            <a href="../index.html" class="icon icon-home"> Kaleidoscope 0.0.8
           
 
           
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                0.0.7
+                0.0.8
               </div>
             
           
@@ -96,12 +96,16 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../using_figures.html">Using interactive figures</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/interactive/index.html">Interactive figures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/backends/index.html">Backend figures</a></li>
 </ul>
-<p class="caption"><span class="caption-text">API</span></p>
+<p class="caption"><span class="caption-text">API and Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../apidocs/interactive.html">Interactive figures</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../apidocs/backends.html">Qiskit functionality</a><ul class="current">
@@ -127,7 +131,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Kaleidoscope 0.0.7</a>
+          <a href="../index.html">Kaleidoscope 0.0.8</a>
         
       </nav>
 
@@ -220,8 +224,12 @@ instances or properties.</p></li>
 <span class="kn">from</span> <span class="nn">kaleidoscope.qiskit.backends</span> <span class="kn">import</span> <span class="n">cnot_error_density</span>
 <span class="n">provider</span> <span class="o">=</span> <span class="n">IBMQ</span><span class="o">.</span><span class="n">load_account</span><span class="p">()</span>
 
-<span class="n">backends</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="p">(</span><span class="n">simulator</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                             <span class="n">filters</span><span class="o">=</span><span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">b</span><span class="o">.</span><span class="n">configuration</span><span class="p">()</span><span class="o">.</span><span class="n">n_qubits</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">backends</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_vigo</span><span class="p">)</span>
+<span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_ourense</span><span class="p">)</span>
+<span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_london</span><span class="p">)</span>
+<span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_burlington</span><span class="p">)</span>
+<span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_essex</span><span class="p">)</span>
 
 <span class="n">cnot_error_density</span><span class="p">(</span><span class="n">backends</span><span class="p">)</span>
 </pre></div>
@@ -255,7 +263,7 @@ instances or properties.</p></li>
     <p>
         &copy; Copyright 2020, Kaleidoscope Team
       <span class="lastupdated">
-        Last updated on 2020/07/09.
+        Last updated on 2020/07/23.
       </span>
 
     </p>

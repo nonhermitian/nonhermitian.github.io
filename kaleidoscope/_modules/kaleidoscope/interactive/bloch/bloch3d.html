@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>kaleidoscope.interactive.bloch.bloch3d &mdash; Kaleidoscope 0.0.7 0.0.7 documentation</title>
+  <title>kaleidoscope.interactive.bloch.bloch3d &mdash; Kaleidoscope 0.0.8 0.0.8 documentation</title>
   
 
   
@@ -55,7 +55,7 @@
           
 
           
-            <a href="../../../../index.html" class="icon icon-home"> Kaleidoscope 0.0.7
+            <a href="../../../../index.html" class="icon icon-home"> Kaleidoscope 0.0.8
           
 
           
@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.0.7
+                0.0.8
               </div>
             
           
@@ -95,12 +95,16 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../install.html">Installation</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../using_figures.html">Using interactive figures</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../tutorials/interactive/index.html">Interactive figures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../tutorials/backends/index.html">Backend figures</a></li>
 </ul>
-<p class="caption"><span class="caption-text">API</span></p>
+<p class="caption"><span class="caption-text">API and Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../apidocs/interactive.html">Interactive figures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../apidocs/backends.html">Qiskit functionality</a></li>
@@ -118,7 +122,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../../index.html">Kaleidoscope 0.0.7</a>
+          <a href="../../../../index.html">Kaleidoscope 0.0.8</a>
         
       </nav>
 
@@ -190,6 +194,8 @@
 <span class="kn">from</span> <span class="nn">kaleidoscope.interactive.plotly_wrapper</span> <span class="kn">import</span> <span class="n">PlotlyFigure</span><span class="p">,</span> <span class="n">PlotlyWidget</span>
 <span class="kn">from</span> <span class="nn">kaleidoscope.interactive.bloch.primitives</span> <span class="kn">import</span> <span class="p">(</span><span class="n">BSPHERE</span><span class="p">,</span> <span class="n">LATS</span><span class="p">,</span> <span class="n">LONGS</span><span class="p">,</span> <span class="n">ZAXIS</span><span class="p">,</span> <span class="n">YAXIS</span><span class="p">,</span> <span class="n">XAXIS</span><span class="p">,</span>
                                                        <span class="n">Z0LABEL</span><span class="p">,</span> <span class="n">Z1LABEL</span><span class="p">,</span> <span class="n">YLABEL</span><span class="p">,</span> <span class="n">XLABEL</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">kaleidoscope.interactive.bloch.utils</span> <span class="kn">import</span> <span class="n">bloch_components</span>
+<span class="kn">from</span> <span class="nn">kaleidoscope.errors</span> <span class="kn">import</span> <span class="n">KaleidoscopeError</span>
 
 
 <div class="viewcode-block" id="bloch_sphere"><a class="viewcode-back" href="../../../../stubs/kaleidoscope.interactive.bloch_sphere.html#kaleidoscope.interactive.bloch_sphere">[docs]</a><span class="k">def</span> <span class="nf">bloch_sphere</span><span class="p">(</span><span class="n">vectors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -225,6 +231,7 @@
 
 <span class="sd">    Raises:</span>
 <span class="sd">        ValueError: Input lengths do not match.</span>
+<span class="sd">        KaleidoscopeError: Invalid vector input.</span>
 
 <span class="sd">    Example:</span>
 <span class="sd">        .. jupyter-execute::</span>
@@ -330,29 +337,48 @@
 
     <span class="k">if</span> <span class="n">vectors</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
+        <span class="k">if</span> <span class="n">vectors</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Statevector&#39;</span><span class="p">]</span> \
+                <span class="ow">and</span> <span class="s1">&#39;qiskit&#39;</span> <span class="ow">in</span> <span class="n">vectors</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__module__</span><span class="p">:</span>
+            <span class="n">vectors</span> <span class="o">=</span> <span class="n">bloch_components</span><span class="p">(</span><span class="n">vectors</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">vectors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">vectors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Statevector&#39;</span><span class="p">]:</span>
+                <span class="n">vectors</span> <span class="o">=</span> <span class="p">[[</span><span class="n">vectors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">vectors</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">vectors</span><span class="p">[</span><span class="mi">2</span><span class="p">]]]</span>
+
+        <span class="n">new_vecs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">vec</span> <span class="ow">in</span> <span class="n">vectors</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">vec</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Statevector&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="s1">&#39;qiskit&#39;</span> <span class="ow">in</span> <span class="n">vec</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__module__</span><span class="p">:</span>
+                <span class="c1"># pylint: disable=no-member</span>
+                <span class="n">new_vecs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bloch_components</span><span class="p">(</span><span class="n">vec</span><span class="o">.</span><span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">nst_lvl</span> <span class="o">=</span> <span class="n">nest_level</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">nst_lvl</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">new_vecs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">nst_lvl</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                    <span class="n">new_vecs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">KaleidoscopeError</span><span class="p">(</span><span class="s2">&quot;Invalid vector input.&quot;</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="n">vectors_color</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">vectors_color</span> <span class="o">=</span> <span class="p">[</span><span class="n">DARK2</span><span class="p">[</span><span class="n">kk</span><span class="o">+</span><span class="n">idx</span> <span class="o">%</span> <span class="mi">8</span><span class="p">]</span> <span class="k">for</span> <span class="n">kk</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vectors</span><span class="p">))]</span>
+            <span class="n">vectors_color</span> <span class="o">=</span> <span class="p">[</span><span class="n">DARK2</span><span class="p">[</span><span class="n">kk</span><span class="o">+</span><span class="n">idx</span> <span class="o">%</span> <span class="mi">8</span><span class="p">]</span> <span class="k">for</span> <span class="n">kk</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">new_vecs</span><span class="p">))]</span>
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">vectors_color</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="n">vectors_color</span> <span class="o">=</span> <span class="p">[</span><span class="n">vectors_color</span><span class="p">]</span>
 
         <span class="k">if</span> <span class="n">vectors_alpha</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">vectors_alpha</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">vectors</span><span class="p">)</span>
+            <span class="n">vectors_alpha</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">new_vecs</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">vectors_alpha</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
             <span class="n">vectors_alpha</span> <span class="o">=</span> <span class="p">[</span><span class="n">vectors_alpha</span><span class="p">]</span>
 
         <span class="k">if</span> <span class="n">vectors_annotation</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">vectors_annotation</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">vectors</span><span class="p">)</span>
+            <span class="n">vectors_annotation</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">new_vecs</span><span class="p">)</span>
         <span class="k">elif</span> <span class="ow">not</span> <span class="n">vectors_annotation</span><span class="p">:</span>
-            <span class="n">vectors_annotation</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">vectors</span><span class="p">)</span>
+            <span class="n">vectors_annotation</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">new_vecs</span><span class="p">)</span>
 
         <span class="n">eps</span> <span class="o">=</span> <span class="mf">1e-12</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">vectors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
-            <span class="n">vectors</span> <span class="o">=</span> <span class="p">[[</span><span class="n">vectors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">vectors</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">vectors</span><span class="p">[</span><span class="mi">2</span><span class="p">]]]</span>
-
-        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">vec</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">vectors</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">vec</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">new_vecs</span><span class="p">):</span>
             <span class="n">vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">eps</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Vector norm must be &lt;= 1.&#39;</span><span class="p">)</span>
@@ -490,7 +516,7 @@
     <p>
         &copy; Copyright 2020, Kaleidoscope Team
       <span class="lastupdated">
-        Last updated on 2020/07/09.
+        Last updated on 2020/07/23.
       </span>
 
     </p>
