@@ -1,0 +1,6 @@
+kaleidoscope.qiskit.overload.unitary
+====================================
+
+.. currentmodule:: kaleidoscope.qiskit.overload
+
+.. autofunction:: unitary

@@ -1,0 +1,6 @@
+kaleidoscope.qiskit.overload.statevector
+========================================
+
+.. currentmodule:: kaleidoscope.qiskit.overload
+
+.. autofunction:: statevector

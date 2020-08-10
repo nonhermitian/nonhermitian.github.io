@@ -1,0 +1,24 @@
+kaleidoscope.interactive.PlotlyFigure
+=====================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. autoclass:: PlotlyFigure
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PlotlyFigure.__init__
+      ~PlotlyFigure.savefig
+      ~PlotlyFigure.show
+   
+   
+
+   
+   
+   

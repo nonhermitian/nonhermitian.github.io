@@ -1,192 +1,178 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>IBM Quantum Backend Routines (kaleidoscope.qiskit.backends) &mdash; Kaleidoscope 0.0.8 0.0.8 documentation</title>
-  
 
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/style.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBM Quantum Backend Routines (kaleidoscope.qiskit.backends) &#8212; Kaleidoscope 0.0.9.dev9+a5caee9 0.0.9.dev9+a5caee9 documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="system_error_map" href="../stubs/kaleidoscope.qiskit.backends.system_error_map.html" />
-    <link rel="prev" title="bloch_multi_disc" href="../stubs/kaleidoscope.interactive.bloch_multi_disc.html" /> 
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
+    <link rel="next" title="kaleidoscope.qiskit.backends.system_error_map" href="../stubs/kaleidoscope.qiskit.backends.system_error_map.html" />
+    <link rel="prev" title="kaleidoscope.interactive.PlotlyWidget" href="../stubs/kaleidoscope.interactive.PlotlyWidget.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: #e3e5e4" >
-          
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
 
-          
-            <a href="../index.html" class="icon icon-home"> Kaleidoscope 0.0.8
-          
+    
+    <a class="navbar-brand" href="../index.html">
+      <img src="../_static/kal_logo.png" class="logo" alt="logo">
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-          
-            
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
-          
-          </a>
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../install.html">Installation</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../guide/index.html">Guide</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../tutorials/index.html">Tutorials</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="../api.html">API reference</a>
+        </li>
+        
+        
+      </ul>
 
-          
-            
-            
-              <div class="version">
-                0.0.8
-              </div>
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Getting started</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../using_figures.html">Using interactive figures</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/interactive/index.html">Interactive figures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/backends/index.html">Backend figures</a></li>
-</ul>
-<p class="caption"><span class="caption-text">API and Guide</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="interactive.html">Interactive figures</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Qiskit functionality</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#system-visualizations">System visualizations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../stubs/kaleidoscope.qiskit.backends.system_error_map.html">system_error_map</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../stubs/kaleidoscope.qiskit.backends.system_gate_map.html">system_gate_map</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../stubs/kaleidoscope.qiskit.backends.cnot_error_density.html">cnot_error_density</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" aria-label="top navigation">
+
+      <ul class="navbar-nav">
         
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Kaleidoscope 0.0.8</a>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/nonhermitian/kaleidoscope" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
         
-      </nav>
-
-
-      <div class="wy-nav-content">
         
-        <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-      <li>IBM Quantum Backend Routines (<code class="xref py py-mod docutils literal notranslate"><span class="pre">kaleidoscope.qiskit.backends</span></code>)</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../_sources/apidocs/backends.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
+      </ul>
+    </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar">
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+      
+      
+      
+      
+        
+          
+              <li class="">
+                  <a href="interactive.html">Interactive figures</a>
+              </li>
+          
+        
+          
+              <li class="active">
+                  <a href="">IBM Quantum system visualizations</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="overload.html">Qiskit addons</a>
+              </li>
+          
+        
+      
+      
+    </ul>
+
+</nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#system-visualizations" class="nav-link">System visualizations</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/nonhermitian/kaleidoscope/edit/master/docs/apidocs/backends.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
   <span class="target" id="module-kaleidoscope.qiskit.backends"><span id="kaleidoscope-qiskit-backends"></span></span><div class="section" id="ibm-quantum-backend-routines-kaleidoscope-qiskit-backends">
 <h1>IBM Quantum Backend Routines (<a class="reference internal" href="#module-kaleidoscope.qiskit.backends" title="kaleidoscope.qiskit.backends"><code class="xref py py-mod docutils literal notranslate"><span class="pre">kaleidoscope.qiskit.backends</span></code></a>)<a class="headerlink" href="#ibm-quantum-backend-routines-kaleidoscope-qiskit-backends" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="system-visualizations">
 <h2>System visualizations<a class="headerlink" href="#system-visualizations" title="Permalink to this headline">¶</a></h2>
-<table class="longtable docutils align-default">
+<table class="longtable table">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -207,66 +193,31 @@
 </div>
 
 
-           </div>
-           
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../stubs/kaleidoscope.qiskit.backends.system_error_map.html" class="btn btn-neutral float-right" title="system_error_map" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../stubs/kaleidoscope.interactive.bloch_multi_disc.html" class="btn btn-neutral float-left" title="bloch_multi_disc" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="../stubs/kaleidoscope.interactive.PlotlyWidget.html" title="previous page">kaleidoscope.interactive.PlotlyWidget</a>
+    <a class='right-next' id="next-link" href="../stubs/kaleidoscope.qiskit.backends.system_error_map.html" title="next page">kaleidoscope.qiskit.backends.system_error_map</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
     </div>
-  
 
-  <hr/>
-
-  <div role="contentinfo">
+    <script src="../_static/js/index.js"></script>
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
     <p>
-        &copy; Copyright 2020, Kaleidoscope Team
-      <span class="lastupdated">
-        Last updated on 2020/07/23.
-      </span>
-
+          &copy; Copyright 2020, Kaleidoscope Team.<br/>
+        Last updated on 2020/08/10.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.1.2.<br/>
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
 </footer>
-
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-  
-
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
-
-  
-  
-    
-  
- <script type="text/javascript">
-    $(document).ready(function() {
-        $(".toggle > *").hide();
-        $(".toggle .header").show();
-        $(".toggle .header").click(function() {
-            $(this).parent().children().not(".header").toggle(400);
-            $(this).parent().children(".header").toggleClass("open");
-        })
-    });
-</script>
-
-
-</body>
+  </body>
 </html>

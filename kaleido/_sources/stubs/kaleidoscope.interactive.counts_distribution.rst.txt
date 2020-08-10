@@ -1,8 +1,0 @@
-
-
-counts_distribution
-============================================
-
-.. currentmodule:: kaleidoscope.interactive
-
-.. autofunction:: counts_distribution

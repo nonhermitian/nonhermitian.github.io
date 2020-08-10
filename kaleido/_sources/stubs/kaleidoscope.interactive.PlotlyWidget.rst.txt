@@ -1,0 +1,182 @@
+kaleidoscope.interactive.PlotlyWidget
+=====================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. autoclass:: PlotlyWidget
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PlotlyWidget.__init__
+      ~PlotlyWidget.add_annotation
+      ~PlotlyWidget.add_area
+      ~PlotlyWidget.add_bar
+      ~PlotlyWidget.add_barpolar
+      ~PlotlyWidget.add_box
+      ~PlotlyWidget.add_candlestick
+      ~PlotlyWidget.add_carpet
+      ~PlotlyWidget.add_choropleth
+      ~PlotlyWidget.add_choroplethmapbox
+      ~PlotlyWidget.add_class
+      ~PlotlyWidget.add_cone
+      ~PlotlyWidget.add_contour
+      ~PlotlyWidget.add_contourcarpet
+      ~PlotlyWidget.add_densitymapbox
+      ~PlotlyWidget.add_funnel
+      ~PlotlyWidget.add_funnelarea
+      ~PlotlyWidget.add_heatmap
+      ~PlotlyWidget.add_heatmapgl
+      ~PlotlyWidget.add_histogram
+      ~PlotlyWidget.add_histogram2d
+      ~PlotlyWidget.add_histogram2dcontour
+      ~PlotlyWidget.add_image
+      ~PlotlyWidget.add_indicator
+      ~PlotlyWidget.add_isosurface
+      ~PlotlyWidget.add_layout_image
+      ~PlotlyWidget.add_mesh3d
+      ~PlotlyWidget.add_ohlc
+      ~PlotlyWidget.add_parcats
+      ~PlotlyWidget.add_parcoords
+      ~PlotlyWidget.add_pie
+      ~PlotlyWidget.add_pointcloud
+      ~PlotlyWidget.add_sankey
+      ~PlotlyWidget.add_scatter
+      ~PlotlyWidget.add_scatter3d
+      ~PlotlyWidget.add_scattercarpet
+      ~PlotlyWidget.add_scattergeo
+      ~PlotlyWidget.add_scattergl
+      ~PlotlyWidget.add_scattermapbox
+      ~PlotlyWidget.add_scatterpolar
+      ~PlotlyWidget.add_scatterpolargl
+      ~PlotlyWidget.add_scatterternary
+      ~PlotlyWidget.add_shape
+      ~PlotlyWidget.add_splom
+      ~PlotlyWidget.add_streamtube
+      ~PlotlyWidget.add_sunburst
+      ~PlotlyWidget.add_surface
+      ~PlotlyWidget.add_table
+      ~PlotlyWidget.add_trace
+      ~PlotlyWidget.add_traces
+      ~PlotlyWidget.add_traits
+      ~PlotlyWidget.add_treemap
+      ~PlotlyWidget.add_violin
+      ~PlotlyWidget.add_volume
+      ~PlotlyWidget.add_waterfall
+      ~PlotlyWidget.append_trace
+      ~PlotlyWidget.batch_animate
+      ~PlotlyWidget.batch_update
+      ~PlotlyWidget.class_own_trait_events
+      ~PlotlyWidget.class_own_traits
+      ~PlotlyWidget.class_trait_names
+      ~PlotlyWidget.class_traits
+      ~PlotlyWidget.close
+      ~PlotlyWidget.close_all
+      ~PlotlyWidget.for_each_annotation
+      ~PlotlyWidget.for_each_coloraxis
+      ~PlotlyWidget.for_each_geo
+      ~PlotlyWidget.for_each_layout_image
+      ~PlotlyWidget.for_each_mapbox
+      ~PlotlyWidget.for_each_polar
+      ~PlotlyWidget.for_each_scene
+      ~PlotlyWidget.for_each_shape
+      ~PlotlyWidget.for_each_ternary
+      ~PlotlyWidget.for_each_trace
+      ~PlotlyWidget.for_each_xaxis
+      ~PlotlyWidget.for_each_yaxis
+      ~PlotlyWidget.get_manager_state
+      ~PlotlyWidget.get_state
+      ~PlotlyWidget.get_subplot
+      ~PlotlyWidget.get_view_spec
+      ~PlotlyWidget.handle_comm_opened
+      ~PlotlyWidget.has_trait
+      ~PlotlyWidget.hold_sync
+      ~PlotlyWidget.hold_trait_notifications
+      ~PlotlyWidget.notify_change
+      ~PlotlyWidget.observe
+      ~PlotlyWidget.on_displayed
+      ~PlotlyWidget.on_edits_completed
+      ~PlotlyWidget.on_msg
+      ~PlotlyWidget.on_trait_change
+      ~PlotlyWidget.on_widget_constructed
+      ~PlotlyWidget.open
+      ~PlotlyWidget.plotly_relayout
+      ~PlotlyWidget.plotly_restyle
+      ~PlotlyWidget.plotly_update
+      ~PlotlyWidget.pop
+      ~PlotlyWidget.print_grid
+      ~PlotlyWidget.remove_class
+      ~PlotlyWidget.savefig
+      ~PlotlyWidget.select_annotations
+      ~PlotlyWidget.select_coloraxes
+      ~PlotlyWidget.select_geos
+      ~PlotlyWidget.select_layout_images
+      ~PlotlyWidget.select_mapboxes
+      ~PlotlyWidget.select_polars
+      ~PlotlyWidget.select_scenes
+      ~PlotlyWidget.select_shapes
+      ~PlotlyWidget.select_ternaries
+      ~PlotlyWidget.select_traces
+      ~PlotlyWidget.select_xaxes
+      ~PlotlyWidget.select_yaxes
+      ~PlotlyWidget.send
+      ~PlotlyWidget.send_state
+      ~PlotlyWidget.set_state
+      ~PlotlyWidget.set_trait
+      ~PlotlyWidget.setup_instance
+      ~PlotlyWidget.show
+      ~PlotlyWidget.to_dict
+      ~PlotlyWidget.to_html
+      ~PlotlyWidget.to_image
+      ~PlotlyWidget.to_json
+      ~PlotlyWidget.to_ordered_dict
+      ~PlotlyWidget.to_plotly_json
+      ~PlotlyWidget.trait_events
+      ~PlotlyWidget.trait_metadata
+      ~PlotlyWidget.trait_names
+      ~PlotlyWidget.traits
+      ~PlotlyWidget.unobserve
+      ~PlotlyWidget.unobserve_all
+      ~PlotlyWidget.update
+      ~PlotlyWidget.update_annotations
+      ~PlotlyWidget.update_coloraxes
+      ~PlotlyWidget.update_geos
+      ~PlotlyWidget.update_layout
+      ~PlotlyWidget.update_layout_images
+      ~PlotlyWidget.update_mapboxes
+      ~PlotlyWidget.update_polars
+      ~PlotlyWidget.update_scenes
+      ~PlotlyWidget.update_shapes
+      ~PlotlyWidget.update_ternaries
+      ~PlotlyWidget.update_traces
+      ~PlotlyWidget.update_xaxes
+      ~PlotlyWidget.update_yaxes
+      ~PlotlyWidget.write_html
+      ~PlotlyWidget.write_image
+      ~PlotlyWidget.write_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PlotlyWidget.comm
+      ~PlotlyWidget.cross_validation_lock
+      ~PlotlyWidget.data
+      ~PlotlyWidget.frames
+      ~PlotlyWidget.keys
+      ~PlotlyWidget.layout
+      ~PlotlyWidget.log
+      ~PlotlyWidget.model_id
+      ~PlotlyWidget.widget_types
+      ~PlotlyWidget.widgets
+   
+   

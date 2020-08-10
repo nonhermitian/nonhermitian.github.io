@@ -1,0 +1,6 @@
+kaleidoscope.qiskit.overload.bloch\_components
+==============================================
+
+.. currentmodule:: kaleidoscope.qiskit.overload
+
+.. autofunction:: bloch_components

@@ -1,0 +1,6 @@
+kaleidoscope.interactive.probability\_distribution
+==================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. autofunction:: probability_distribution

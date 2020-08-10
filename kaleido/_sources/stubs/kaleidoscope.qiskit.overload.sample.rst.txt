@@ -1,0 +1,6 @@
+kaleidoscope.qiskit.overload.sample
+===================================
+
+.. currentmodule:: kaleidoscope.qiskit.overload
+
+.. autofunction:: sample

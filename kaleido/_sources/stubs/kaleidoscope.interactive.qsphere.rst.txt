@@ -1,0 +1,6 @@
+kaleidoscope.interactive.qsphere
+================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. autofunction:: qsphere

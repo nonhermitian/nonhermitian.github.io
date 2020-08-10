@@ -1,0 +1,1151 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>plotly.basewidget &#8212; Kaleidoscope 0.0.9.dev9+a5caee9 0.0.9.dev9+a5caee9 documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    
+    <a class="navbar-brand" href="../../index.html">
+      <img src="../../_static/kal_logo.png" class="logo" alt="logo">
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../install.html">Installation</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../guide/index.html">Guide</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../tutorials/index.html">Tutorials</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../api.html">API reference</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/nonhermitian/kaleidoscope" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar">
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+
+</nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for plotly.basewidget</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">uuid</span>
+<span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">import_module</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numbers</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">parse</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">urlparse</span> <span class="kn">import</span> <span class="n">urlparse</span> <span class="k">as</span> <span class="n">parse</span>
+
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">traitlets</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Unicode</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">observe</span><span class="p">,</span> <span class="n">Integer</span>
+<span class="kn">from</span> <span class="nn">.basedatatypes</span> <span class="kn">import</span> <span class="n">BaseFigure</span><span class="p">,</span> <span class="n">BasePlotlyType</span>
+<span class="kn">from</span> <span class="nn">.callbacks</span> <span class="kn">import</span> <span class="n">BoxSelector</span><span class="p">,</span> <span class="n">LassoSelector</span><span class="p">,</span> <span class="n">InputDeviceState</span><span class="p">,</span> <span class="n">Points</span>
+<span class="kn">from</span> <span class="nn">.serializers</span> <span class="kn">import</span> <span class="n">custom_serializers</span>
+<span class="kn">from</span> <span class="nn">.version</span> <span class="kn">import</span> <span class="n">__frontend_version__</span>
+
+
+<span class="nd">@widgets</span><span class="o">.</span><span class="n">register</span>
+<span class="k">class</span> <span class="nc">BaseFigureWidget</span><span class="p">(</span><span class="n">BaseFigure</span><span class="p">,</span> <span class="n">widgets</span><span class="o">.</span><span class="n">DOMWidget</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Base class for FigureWidget. The FigureWidget class is code-generated as a</span>
+<span class="sd">    subclass</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Widget Traits</span>
+    <span class="c1"># -------------</span>
+    <span class="c1"># Widget traitlets are automatically synchronized with the FigureModel</span>
+    <span class="c1"># JavaScript object</span>
+    <span class="n">_view_name</span> <span class="o">=</span> <span class="n">Unicode</span><span class="p">(</span><span class="s2">&quot;FigureView&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">_view_module</span> <span class="o">=</span> <span class="n">Unicode</span><span class="p">(</span><span class="s2">&quot;plotlywidget&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">_view_module_version</span> <span class="o">=</span> <span class="n">Unicode</span><span class="p">(</span><span class="n">__frontend_version__</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">_model_name</span> <span class="o">=</span> <span class="n">Unicode</span><span class="p">(</span><span class="s2">&quot;FigureModel&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">_model_module</span> <span class="o">=</span> <span class="n">Unicode</span><span class="p">(</span><span class="s2">&quot;plotlywidget&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">_model_module_version</span> <span class="o">=</span> <span class="n">Unicode</span><span class="p">(</span><span class="n">__frontend_version__</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># ### _data and _layout ###</span>
+    <span class="c1"># These properties store the current state of the traces and</span>
+    <span class="c1"># layout as JSON-style dicts. These dicts do not store any subclasses of</span>
+    <span class="c1"># `BasePlotlyType`</span>
+    <span class="c1">#</span>
+    <span class="c1"># Note: These are only automatically synced with the frontend on full</span>
+    <span class="c1"># assignment, not on mutation. We use this fact to only directly sync</span>
+    <span class="c1"># them to the front-end on FigureWidget construction. All other updates</span>
+    <span class="c1"># are made using mutation, and they are manually synced to the frontend</span>
+    <span class="c1"># using the relayout/restyle/update/etc. messages.</span>
+    <span class="n">_layout</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">()</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+    <span class="n">_data</span> <span class="o">=</span> <span class="n">List</span><span class="p">()</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+    <span class="n">_config</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">()</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+
+    <span class="c1"># ### Python -&gt; JS message properties ###</span>
+    <span class="c1"># These properties are used to send messages from Python to the</span>
+    <span class="c1"># frontend. Messages are sent by assigning the message contents to the</span>
+    <span class="c1"># appropriate _py2js_* property and then immediatly assigning None to the</span>
+    <span class="c1"># property.</span>
+    <span class="c1">#</span>
+    <span class="c1"># See JSDoc comments in the FigureModel class in js/src/Figure.js for</span>
+    <span class="c1"># detailed descriptions of the messages.</span>
+    <span class="n">_py2js_addTraces</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+    <span class="n">_py2js_restyle</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+    <span class="n">_py2js_relayout</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+    <span class="n">_py2js_update</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+    <span class="n">_py2js_animate</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+
+    <span class="n">_py2js_deleteTraces</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+    <span class="n">_py2js_moveTraces</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+
+    <span class="n">_py2js_removeLayoutProps</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span>
+        <span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span>
+    <span class="p">)</span>
+    <span class="n">_py2js_removeTraceProps</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+
+    <span class="c1"># ### JS -&gt; Python message properties ###</span>
+    <span class="c1"># These properties are used to receive messages from the frontend.</span>
+    <span class="c1"># Messages are received by defining methods that observe changes to these</span>
+    <span class="c1"># properties. Receive methods are named `_handler_js2py_*` where &#39;*&#39; is</span>
+    <span class="c1"># the name of the corresponding message property.  Receive methods are</span>
+    <span class="c1"># responsible for setting the message property to None after retreiving</span>
+    <span class="c1"># the message data.</span>
+    <span class="c1">#</span>
+    <span class="c1"># See JSDoc comments in the FigureModel class in js/src/Figure.js for</span>
+    <span class="c1"># detailed descriptions of the messages.</span>
+    <span class="n">_js2py_traceDeltas</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+    <span class="n">_js2py_layoutDelta</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+    <span class="n">_js2py_restyle</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+    <span class="n">_js2py_relayout</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+    <span class="n">_js2py_update</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+    <span class="n">_js2py_pointsCallback</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">(</span><span class="n">allow_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">custom_serializers</span><span class="p">)</span>
+
+    <span class="c1"># ### Message tracking properties ###</span>
+    <span class="c1"># The _last_layout_edit_id and _last_trace_edit_id properties are used</span>
+    <span class="c1"># to keep track of the edit id of the message that most recently</span>
+    <span class="c1"># requested an update to the Figures layout or traces respectively.</span>
+    <span class="c1">#</span>
+    <span class="c1"># We track this information because we don&#39;t want to update the Figure&#39;s</span>
+    <span class="c1"># default layout/trace properties (_layout_defaults, _data_defaults)</span>
+    <span class="c1"># while edits are in process. This can lead to inconsistent property</span>
+    <span class="c1"># states.</span>
+    <span class="n">_last_layout_edit_id</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">_last_trace_edit_id</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">_set_trace_uid</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">_allow_disable_validation</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># Constructor</span>
+    <span class="c1"># -----------</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skip_invalid</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+
+        <span class="c1"># Call superclass constructors</span>
+        <span class="c1"># ----------------------------</span>
+        <span class="c1"># Note: We rename layout to layout_plotly because to deconflict it</span>
+        <span class="c1"># with the `layout` constructor parameter of the `widgets.DOMWidget`</span>
+        <span class="c1"># ipywidgets class</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">BaseFigureWidget</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">layout_plotly</span><span class="o">=</span><span class="n">layout</span><span class="p">,</span>
+            <span class="n">frames</span><span class="o">=</span><span class="n">frames</span><span class="p">,</span>
+            <span class="n">skip_invalid</span><span class="o">=</span><span class="n">skip_invalid</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Validate Frames</span>
+        <span class="c1"># ---------------</span>
+        <span class="c1"># Frames are not supported by figure widget</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_frame_objs</span><span class="p">:</span>
+            <span class="n">BaseFigureWidget</span><span class="o">.</span><span class="n">_display_frames_error</span><span class="p">()</span>
+
+        <span class="c1"># Message States</span>
+        <span class="c1"># --------------</span>
+        <span class="c1"># ### Layout ###</span>
+
+        <span class="c1"># _last_layout_edit_id is described above</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_layout_edit_id</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># _layout_edit_in_process is set to True if there are layout edit</span>
+        <span class="c1"># operations that have been sent to the frontend that haven&#39;t</span>
+        <span class="c1"># completed yet.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_layout_edit_in_process</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># _waiting_edit_callbacks is a list of callback functions that</span>
+        <span class="c1"># should be executed as soon as all pending edit operations are</span>
+        <span class="c1"># completed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_waiting_edit_callbacks</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># ### Trace ###</span>
+        <span class="c1"># _last_trace_edit_id: described above</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_trace_edit_id</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># _trace_edit_in_process is set to True if there are trace edit</span>
+        <span class="c1"># operations that have been sent to the frontend that haven&#39;t</span>
+        <span class="c1"># completed yet.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trace_edit_in_process</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># View count</span>
+        <span class="c1"># ----------</span>
+        <span class="c1"># ipywidget property that stores the number of active frontend</span>
+        <span class="c1"># views of this widget</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_view_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># Python -&gt; JavaScript Messages</span>
+    <span class="c1"># -----------------------------</span>
+    <span class="k">def</span> <span class="nf">_send_relayout_msg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layout_data</span><span class="p">,</span> <span class="n">source_view_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Send Plotly.relayout message to the frontend</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        layout_data : dict</span>
+<span class="sd">            Plotly.relayout layout data</span>
+<span class="sd">        source_view_id : str</span>
+<span class="sd">            UID of view that triggered this relayout operation</span>
+<span class="sd">            (e.g. By the user clicking &#39;zoom&#39; in the toolbar). None if the</span>
+<span class="sd">            operation was not triggered by a frontend view</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Increment layout edit messages IDs</span>
+        <span class="c1"># ----------------------------------</span>
+        <span class="n">layout_edit_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_layout_edit_id</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_layout_edit_id</span> <span class="o">=</span> <span class="n">layout_edit_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_layout_edit_in_process</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Build message</span>
+        <span class="c1"># -------------</span>
+        <span class="n">msg_data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;relayout_data&quot;</span><span class="p">:</span> <span class="n">layout_data</span><span class="p">,</span>
+            <span class="s2">&quot;layout_edit_id&quot;</span><span class="p">:</span> <span class="n">layout_edit_id</span><span class="p">,</span>
+            <span class="s2">&quot;source_view_id&quot;</span><span class="p">:</span> <span class="n">source_view_id</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Send message</span>
+        <span class="c1"># ------------</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_relayout</span> <span class="o">=</span> <span class="n">msg_data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_relayout</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_send_restyle_msg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">restyle_data</span><span class="p">,</span> <span class="n">trace_indexes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">source_view_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Send Plotly.restyle message to the frontend</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        restyle_data : dict</span>
+<span class="sd">            Plotly.restyle restyle data</span>
+<span class="sd">        trace_indexes : list[int]</span>
+<span class="sd">            List of trace indexes that the restyle operation</span>
+<span class="sd">            applies to</span>
+<span class="sd">        source_view_id : str</span>
+<span class="sd">            UID of view that triggered this restyle operation</span>
+<span class="sd">            (e.g. By the user clicking the legend to hide a trace).</span>
+<span class="sd">            None if the operation was not triggered by a frontend view</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Validate / normalize inputs</span>
+        <span class="c1"># ---------------------------</span>
+        <span class="n">trace_indexes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_normalize_trace_indexes</span><span class="p">(</span><span class="n">trace_indexes</span><span class="p">)</span>
+
+        <span class="c1"># Increment layout/trace edit message IDs</span>
+        <span class="c1"># ---------------------------------------</span>
+        <span class="n">layout_edit_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_layout_edit_id</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_layout_edit_id</span> <span class="o">=</span> <span class="n">layout_edit_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_layout_edit_in_process</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="n">trace_edit_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_trace_edit_id</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_trace_edit_id</span> <span class="o">=</span> <span class="n">trace_edit_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trace_edit_in_process</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Build message</span>
+        <span class="c1"># -------------</span>
+        <span class="n">restyle_msg</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;restyle_data&quot;</span><span class="p">:</span> <span class="n">restyle_data</span><span class="p">,</span>
+            <span class="s2">&quot;restyle_traces&quot;</span><span class="p">:</span> <span class="n">trace_indexes</span><span class="p">,</span>
+            <span class="s2">&quot;trace_edit_id&quot;</span><span class="p">:</span> <span class="n">trace_edit_id</span><span class="p">,</span>
+            <span class="s2">&quot;layout_edit_id&quot;</span><span class="p">:</span> <span class="n">layout_edit_id</span><span class="p">,</span>
+            <span class="s2">&quot;source_view_id&quot;</span><span class="p">:</span> <span class="n">source_view_id</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Send message</span>
+        <span class="c1"># ------------</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_restyle</span> <span class="o">=</span> <span class="n">restyle_msg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_restyle</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_send_addTraces_msg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_traces_data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Send Plotly.addTraces message to the frontend</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        new_traces_data : list[dict]</span>
+<span class="sd">            List of trace data for new traces as accepted by Plotly.addTraces</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Increment layout/trace edit message IDs</span>
+        <span class="c1"># ---------------------------------------</span>
+        <span class="n">layout_edit_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_layout_edit_id</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_layout_edit_id</span> <span class="o">=</span> <span class="n">layout_edit_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_layout_edit_in_process</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="n">trace_edit_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_trace_edit_id</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_trace_edit_id</span> <span class="o">=</span> <span class="n">trace_edit_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trace_edit_in_process</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Build message</span>
+        <span class="c1"># -------------</span>
+        <span class="n">add_traces_msg</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;trace_data&quot;</span><span class="p">:</span> <span class="n">new_traces_data</span><span class="p">,</span>
+            <span class="s2">&quot;trace_edit_id&quot;</span><span class="p">:</span> <span class="n">trace_edit_id</span><span class="p">,</span>
+            <span class="s2">&quot;layout_edit_id&quot;</span><span class="p">:</span> <span class="n">layout_edit_id</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Send message</span>
+        <span class="c1"># ------------</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_addTraces</span> <span class="o">=</span> <span class="n">add_traces_msg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_addTraces</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_send_moveTraces_msg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current_inds</span><span class="p">,</span> <span class="n">new_inds</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Send Plotly.moveTraces message to the frontend</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        current_inds : list[int]</span>
+<span class="sd">            List of current trace indexes</span>
+<span class="sd">        new_inds : list[int]</span>
+<span class="sd">            List of new trace indexes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Build message</span>
+        <span class="c1"># -------------</span>
+        <span class="n">move_msg</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;current_trace_inds&quot;</span><span class="p">:</span> <span class="n">current_inds</span><span class="p">,</span> <span class="s2">&quot;new_trace_inds&quot;</span><span class="p">:</span> <span class="n">new_inds</span><span class="p">}</span>
+
+        <span class="c1"># Send message</span>
+        <span class="c1"># ------------</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_moveTraces</span> <span class="o">=</span> <span class="n">move_msg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_moveTraces</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_send_update_msg</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">restyle_data</span><span class="p">,</span> <span class="n">relayout_data</span><span class="p">,</span> <span class="n">trace_indexes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">source_view_id</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Send Plotly.update message to the frontend</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        restyle_data : dict</span>
+<span class="sd">            Plotly.update restyle data</span>
+<span class="sd">        relayout_data : dict</span>
+<span class="sd">            Plotly.update relayout data</span>
+<span class="sd">        trace_indexes : list[int]</span>
+<span class="sd">            List of trace indexes that the update operation applies to</span>
+<span class="sd">        source_view_id : str</span>
+<span class="sd">            UID of view that triggered this update operation</span>
+<span class="sd">            (e.g. By the user clicking a button).</span>
+<span class="sd">            None if the operation was not triggered by a frontend view</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Validate / normalize inputs</span>
+        <span class="c1"># ---------------------------</span>
+        <span class="n">trace_indexes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_normalize_trace_indexes</span><span class="p">(</span><span class="n">trace_indexes</span><span class="p">)</span>
+
+        <span class="c1"># Increment layout/trace edit message IDs</span>
+        <span class="c1"># ---------------------------------------</span>
+        <span class="n">trace_edit_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_trace_edit_id</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_trace_edit_id</span> <span class="o">=</span> <span class="n">trace_edit_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trace_edit_in_process</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="n">layout_edit_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_layout_edit_id</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_layout_edit_id</span> <span class="o">=</span> <span class="n">layout_edit_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_layout_edit_in_process</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Build message</span>
+        <span class="c1"># -------------</span>
+        <span class="n">update_msg</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;style_data&quot;</span><span class="p">:</span> <span class="n">restyle_data</span><span class="p">,</span>
+            <span class="s2">&quot;layout_data&quot;</span><span class="p">:</span> <span class="n">relayout_data</span><span class="p">,</span>
+            <span class="s2">&quot;style_traces&quot;</span><span class="p">:</span> <span class="n">trace_indexes</span><span class="p">,</span>
+            <span class="s2">&quot;trace_edit_id&quot;</span><span class="p">:</span> <span class="n">trace_edit_id</span><span class="p">,</span>
+            <span class="s2">&quot;layout_edit_id&quot;</span><span class="p">:</span> <span class="n">layout_edit_id</span><span class="p">,</span>
+            <span class="s2">&quot;source_view_id&quot;</span><span class="p">:</span> <span class="n">source_view_id</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Send message</span>
+        <span class="c1"># ------------</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_update</span> <span class="o">=</span> <span class="n">update_msg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_update</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_send_animate_msg</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">styles_data</span><span class="p">,</span> <span class="n">relayout_data</span><span class="p">,</span> <span class="n">trace_indexes</span><span class="p">,</span> <span class="n">animation_opts</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Send Plotly.update message to the frontend</span>
+
+<span class="sd">        Note: there is no source_view_id parameter because animations</span>
+<span class="sd">        triggered by the fontend are not currently supported</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        styles_data : list[dict]</span>
+<span class="sd">            Plotly.animate styles data</span>
+<span class="sd">        relayout_data : dict</span>
+<span class="sd">            Plotly.animate relayout data</span>
+<span class="sd">        trace_indexes : list[int]</span>
+<span class="sd">            List of trace indexes that the animate operation applies to</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Validate / normalize inputs</span>
+        <span class="c1"># ---------------------------</span>
+        <span class="n">trace_indexes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_normalize_trace_indexes</span><span class="p">(</span><span class="n">trace_indexes</span><span class="p">)</span>
+
+        <span class="c1"># Increment layout/trace edit message IDs</span>
+        <span class="c1"># ---------------------------------------</span>
+        <span class="n">trace_edit_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_trace_edit_id</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_trace_edit_id</span> <span class="o">=</span> <span class="n">trace_edit_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trace_edit_in_process</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="n">layout_edit_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_layout_edit_id</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_layout_edit_id</span> <span class="o">=</span> <span class="n">layout_edit_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_layout_edit_in_process</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Build message</span>
+        <span class="c1"># -------------</span>
+        <span class="n">animate_msg</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;style_data&quot;</span><span class="p">:</span> <span class="n">styles_data</span><span class="p">,</span>
+            <span class="s2">&quot;layout_data&quot;</span><span class="p">:</span> <span class="n">relayout_data</span><span class="p">,</span>
+            <span class="s2">&quot;style_traces&quot;</span><span class="p">:</span> <span class="n">trace_indexes</span><span class="p">,</span>
+            <span class="s2">&quot;animation_opts&quot;</span><span class="p">:</span> <span class="n">animation_opts</span><span class="p">,</span>
+            <span class="s2">&quot;trace_edit_id&quot;</span><span class="p">:</span> <span class="n">trace_edit_id</span><span class="p">,</span>
+            <span class="s2">&quot;layout_edit_id&quot;</span><span class="p">:</span> <span class="n">layout_edit_id</span><span class="p">,</span>
+            <span class="s2">&quot;source_view_id&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Send message</span>
+        <span class="c1"># ------------</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_animate</span> <span class="o">=</span> <span class="n">animate_msg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_animate</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_send_deleteTraces_msg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delete_inds</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Send Plotly.deleteTraces message to the frontend</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        delete_inds : list[int]</span>
+<span class="sd">            List of trace indexes of traces to delete</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Increment layout/trace edit message IDs</span>
+        <span class="c1"># ---------------------------------------</span>
+        <span class="n">trace_edit_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_trace_edit_id</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_trace_edit_id</span> <span class="o">=</span> <span class="n">trace_edit_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trace_edit_in_process</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="n">layout_edit_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_layout_edit_id</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_layout_edit_id</span> <span class="o">=</span> <span class="n">layout_edit_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_layout_edit_in_process</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Build message</span>
+        <span class="c1"># -------------</span>
+        <span class="n">delete_msg</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;delete_inds&quot;</span><span class="p">:</span> <span class="n">delete_inds</span><span class="p">,</span>
+            <span class="s2">&quot;layout_edit_id&quot;</span><span class="p">:</span> <span class="n">layout_edit_id</span><span class="p">,</span>
+            <span class="s2">&quot;trace_edit_id&quot;</span><span class="p">:</span> <span class="n">trace_edit_id</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Send message</span>
+        <span class="c1"># ------------</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_deleteTraces</span> <span class="o">=</span> <span class="n">delete_msg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_deleteTraces</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># JavaScript -&gt; Python Messages</span>
+    <span class="c1"># -----------------------------</span>
+    <span class="nd">@observe</span><span class="p">(</span><span class="s2">&quot;_js2py_traceDeltas&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_handler_js2py_traceDeltas</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">change</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Process trace deltas message from the frontend</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Receive message</span>
+        <span class="c1"># ---------------</span>
+        <span class="n">msg_data</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">msg_data</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_js2py_traceDeltas</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">return</span>
+
+        <span class="n">trace_deltas</span> <span class="o">=</span> <span class="n">msg_data</span><span class="p">[</span><span class="s2">&quot;trace_deltas&quot;</span><span class="p">]</span>
+        <span class="n">trace_edit_id</span> <span class="o">=</span> <span class="n">msg_data</span><span class="p">[</span><span class="s2">&quot;trace_edit_id&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Apply deltas</span>
+        <span class="c1"># ------------</span>
+        <span class="c1"># We only apply the deltas if this message corresponds to the most</span>
+        <span class="c1"># recent trace edit operation</span>
+        <span class="k">if</span> <span class="n">trace_edit_id</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_trace_edit_id</span><span class="p">:</span>
+
+            <span class="c1"># ### Loop over deltas ###</span>
+            <span class="k">for</span> <span class="n">delta</span> <span class="ow">in</span> <span class="n">trace_deltas</span><span class="p">:</span>
+
+                <span class="c1"># #### Find existing trace for uid ###</span>
+                <span class="n">trace_uid</span> <span class="o">=</span> <span class="n">delta</span><span class="p">[</span><span class="s2">&quot;uid&quot;</span><span class="p">]</span>
+                <span class="n">trace_uids</span> <span class="o">=</span> <span class="p">[</span><span class="n">trace</span><span class="o">.</span><span class="n">uid</span> <span class="k">for</span> <span class="n">trace</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>
+                <span class="n">trace_index</span> <span class="o">=</span> <span class="n">trace_uids</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">trace_uid</span><span class="p">)</span>
+                <span class="n">uid_trace</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">trace_index</span><span class="p">]</span>
+
+                <span class="c1"># #### Transform defaults to delta ####</span>
+                <span class="n">delta_transform</span> <span class="o">=</span> <span class="n">BaseFigureWidget</span><span class="o">.</span><span class="n">_transform_data</span><span class="p">(</span>
+                    <span class="n">uid_trace</span><span class="o">.</span><span class="n">_prop_defaults</span><span class="p">,</span> <span class="n">delta</span>
+                <span class="p">)</span>
+
+                <span class="c1"># #### Remove overlapping properties ####</span>
+                <span class="c1"># If a property is present in both _props and _prop_defaults</span>
+                <span class="c1"># then we remove the copy from _props</span>
+                <span class="n">remove_props</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remove_overlapping_props</span><span class="p">(</span>
+                    <span class="n">uid_trace</span><span class="o">.</span><span class="n">_props</span><span class="p">,</span> <span class="n">uid_trace</span><span class="o">.</span><span class="n">_prop_defaults</span>
+                <span class="p">)</span>
+
+                <span class="c1"># #### Notify frontend model of property removal ####</span>
+                <span class="k">if</span> <span class="n">remove_props</span><span class="p">:</span>
+                    <span class="n">remove_trace_props_msg</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s2">&quot;remove_trace&quot;</span><span class="p">:</span> <span class="n">trace_index</span><span class="p">,</span>
+                        <span class="s2">&quot;remove_props&quot;</span><span class="p">:</span> <span class="n">remove_props</span><span class="p">,</span>
+                    <span class="p">}</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_removeTraceProps</span> <span class="o">=</span> <span class="n">remove_trace_props_msg</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_removeTraceProps</span> <span class="o">=</span> <span class="kc">None</span>
+
+                <span class="c1"># #### Dispatch change callbacks ####</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_dispatch_trace_change_callbacks</span><span class="p">(</span><span class="n">delta_transform</span><span class="p">,</span> <span class="p">[</span><span class="n">trace_index</span><span class="p">])</span>
+
+            <span class="c1"># ### Trace edits no longer in process ###</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_trace_edit_in_process</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="c1"># ### Call any waiting trace edit callbacks ###</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_layout_edit_in_process</span><span class="p">:</span>
+                <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_waiting_edit_callbacks</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_waiting_edit_callbacks</span><span class="o">.</span><span class="n">pop</span><span class="p">()()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_js2py_traceDeltas</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@observe</span><span class="p">(</span><span class="s2">&quot;_js2py_layoutDelta&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_handler_js2py_layoutDelta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">change</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Process layout delta message from the frontend</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Receive message</span>
+        <span class="c1"># ---------------</span>
+        <span class="n">msg_data</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">msg_data</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_js2py_layoutDelta</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">return</span>
+
+        <span class="n">layout_delta</span> <span class="o">=</span> <span class="n">msg_data</span><span class="p">[</span><span class="s2">&quot;layout_delta&quot;</span><span class="p">]</span>
+        <span class="n">layout_edit_id</span> <span class="o">=</span> <span class="n">msg_data</span><span class="p">[</span><span class="s2">&quot;layout_edit_id&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Apply delta</span>
+        <span class="c1"># -----------</span>
+        <span class="c1"># We only apply the delta if this message corresponds to the most</span>
+        <span class="c1"># recent layout edit operation</span>
+        <span class="k">if</span> <span class="n">layout_edit_id</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_layout_edit_id</span><span class="p">:</span>
+
+            <span class="c1"># ### Transform defaults to delta ###</span>
+            <span class="n">delta_transform</span> <span class="o">=</span> <span class="n">BaseFigureWidget</span><span class="o">.</span><span class="n">_transform_data</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_layout_defaults</span><span class="p">,</span> <span class="n">layout_delta</span>
+            <span class="p">)</span>
+
+            <span class="c1"># ### Remove overlapping properties ###</span>
+            <span class="c1"># If a property is present in both _layout and _layout_defaults</span>
+            <span class="c1"># then we remove the copy from _layout</span>
+            <span class="n">removed_props</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remove_overlapping_props</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_layout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_layout_defaults</span>
+            <span class="p">)</span>
+
+            <span class="c1"># ### Notify frontend model of property removal ###</span>
+            <span class="k">if</span> <span class="n">removed_props</span><span class="p">:</span>
+                <span class="n">remove_props_msg</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;remove_props&quot;</span><span class="p">:</span> <span class="n">removed_props</span><span class="p">}</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_removeLayoutProps</span> <span class="o">=</span> <span class="n">remove_props_msg</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_py2js_removeLayoutProps</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="c1"># ### Create axis objects ###</span>
+            <span class="c1"># For example, when a SPLOM trace is created the layout defaults</span>
+            <span class="c1"># may include axes that weren&#39;t explicitly defined by the user.</span>
+            <span class="k">for</span> <span class="n">proppath</span> <span class="ow">in</span> <span class="n">delta_transform</span><span class="p">:</span>
+                <span class="n">prop</span> <span class="o">=</span> <span class="n">proppath</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">_subplot_re_match</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">match</span> <span class="ow">and</span> <span class="n">prop</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">:</span>
+                    <span class="c1"># We need to create a subplotid object</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="n">prop</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+            <span class="c1"># ### Dispatch change callbacks ###</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dispatch_layout_change_callbacks</span><span class="p">(</span><span class="n">delta_transform</span><span class="p">)</span>
+
+            <span class="c1"># ### Layout edits no longer in process ###</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_layout_edit_in_process</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="c1"># ### Call any waiting layout edit callbacks ###</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trace_edit_in_process</span><span class="p">:</span>
+                <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_waiting_edit_callbacks</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_waiting_edit_callbacks</span><span class="o">.</span><span class="n">pop</span><span class="p">()()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_js2py_layoutDelta</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@observe</span><span class="p">(</span><span class="s2">&quot;_js2py_restyle&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_handler_js2py_restyle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">change</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Process Plotly.restyle message from the frontend</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Receive message</span>
+        <span class="c1"># ---------------</span>
+        <span class="n">restyle_msg</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">restyle_msg</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_js2py_restyle</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">return</span>
+
+        <span class="n">style_data</span> <span class="o">=</span> <span class="n">restyle_msg</span><span class="p">[</span><span class="s2">&quot;style_data&quot;</span><span class="p">]</span>
+        <span class="n">style_traces</span> <span class="o">=</span> <span class="n">restyle_msg</span><span class="p">[</span><span class="s2">&quot;style_traces&quot;</span><span class="p">]</span>
+        <span class="n">source_view_id</span> <span class="o">=</span> <span class="n">restyle_msg</span><span class="p">[</span><span class="s2">&quot;source_view_id&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Perform restyle</span>
+        <span class="c1"># ---------------</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotly_restyle</span><span class="p">(</span>
+            <span class="n">restyle_data</span><span class="o">=</span><span class="n">style_data</span><span class="p">,</span>
+            <span class="n">trace_indexes</span><span class="o">=</span><span class="n">style_traces</span><span class="p">,</span>
+            <span class="n">source_view_id</span><span class="o">=</span><span class="n">source_view_id</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_js2py_restyle</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@observe</span><span class="p">(</span><span class="s2">&quot;_js2py_update&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_handler_js2py_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">change</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Process Plotly.update message from the frontend</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Receive message</span>
+        <span class="c1"># ---------------</span>
+        <span class="n">update_msg</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">update_msg</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_js2py_update</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">return</span>
+
+        <span class="n">style</span> <span class="o">=</span> <span class="n">update_msg</span><span class="p">[</span><span class="s2">&quot;style_data&quot;</span><span class="p">]</span>
+        <span class="n">trace_indexes</span> <span class="o">=</span> <span class="n">update_msg</span><span class="p">[</span><span class="s2">&quot;style_traces&quot;</span><span class="p">]</span>
+        <span class="n">layout</span> <span class="o">=</span> <span class="n">update_msg</span><span class="p">[</span><span class="s2">&quot;layout_data&quot;</span><span class="p">]</span>
+        <span class="n">source_view_id</span> <span class="o">=</span> <span class="n">update_msg</span><span class="p">[</span><span class="s2">&quot;source_view_id&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Perform update</span>
+        <span class="c1"># --------------</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotly_update</span><span class="p">(</span>
+            <span class="n">restyle_data</span><span class="o">=</span><span class="n">style</span><span class="p">,</span>
+            <span class="n">relayout_data</span><span class="o">=</span><span class="n">layout</span><span class="p">,</span>
+            <span class="n">trace_indexes</span><span class="o">=</span><span class="n">trace_indexes</span><span class="p">,</span>
+            <span class="n">source_view_id</span><span class="o">=</span><span class="n">source_view_id</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_js2py_update</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@observe</span><span class="p">(</span><span class="s2">&quot;_js2py_relayout&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_handler_js2py_relayout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">change</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Process Plotly.relayout message from the frontend</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Receive message</span>
+        <span class="c1"># ---------------</span>
+        <span class="n">relayout_msg</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">relayout_msg</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_js2py_relayout</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">return</span>
+
+        <span class="n">relayout_data</span> <span class="o">=</span> <span class="n">relayout_msg</span><span class="p">[</span><span class="s2">&quot;relayout_data&quot;</span><span class="p">]</span>
+        <span class="n">source_view_id</span> <span class="o">=</span> <span class="n">relayout_msg</span><span class="p">[</span><span class="s2">&quot;source_view_id&quot;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="s2">&quot;lastInputTime&quot;</span> <span class="ow">in</span> <span class="n">relayout_data</span><span class="p">:</span>
+            <span class="c1"># Remove &#39;lastInputTime&#39;. Seems to be an internal plotly</span>
+            <span class="c1"># property that is introduced for some plot types, but it is not</span>
+            <span class="c1"># actually a property in the schema</span>
+            <span class="n">relayout_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;lastInputTime&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Perform relayout</span>
+        <span class="c1"># ----------------</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotly_relayout</span><span class="p">(</span><span class="n">relayout_data</span><span class="o">=</span><span class="n">relayout_data</span><span class="p">,</span> <span class="n">source_view_id</span><span class="o">=</span><span class="n">source_view_id</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_js2py_relayout</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@observe</span><span class="p">(</span><span class="s2">&quot;_js2py_pointsCallback&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_handler_js2py_pointsCallback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">change</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Process points callback message from the frontend</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Receive message</span>
+        <span class="c1"># ---------------</span>
+        <span class="n">callback_data</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">callback_data</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_js2py_pointsCallback</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Get event type</span>
+        <span class="c1"># --------------</span>
+        <span class="n">event_type</span> <span class="o">=</span> <span class="n">callback_data</span><span class="p">[</span><span class="s2">&quot;event_type&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Build Selector Object</span>
+        <span class="c1"># ---------------------</span>
+        <span class="k">if</span> <span class="n">callback_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;selector&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="n">selector_data</span> <span class="o">=</span> <span class="n">callback_data</span><span class="p">[</span><span class="s2">&quot;selector&quot;</span><span class="p">]</span>
+            <span class="n">selector_type</span> <span class="o">=</span> <span class="n">selector_data</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span>
+            <span class="n">selector_state</span> <span class="o">=</span> <span class="n">selector_data</span><span class="p">[</span><span class="s2">&quot;selector_state&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">selector_type</span> <span class="o">==</span> <span class="s2">&quot;box&quot;</span><span class="p">:</span>
+                <span class="n">selector</span> <span class="o">=</span> <span class="n">BoxSelector</span><span class="p">(</span><span class="o">**</span><span class="n">selector_state</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">selector_type</span> <span class="o">==</span> <span class="s2">&quot;lasso&quot;</span><span class="p">:</span>
+                <span class="n">selector</span> <span class="o">=</span> <span class="n">LassoSelector</span><span class="p">(</span><span class="o">**</span><span class="n">selector_state</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported selector type: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">selector_type</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">selector</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Build Input Device State Object</span>
+        <span class="c1"># -------------------------------</span>
+        <span class="k">if</span> <span class="n">callback_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;device_state&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="n">device_state_data</span> <span class="o">=</span> <span class="n">callback_data</span><span class="p">[</span><span class="s2">&quot;device_state&quot;</span><span class="p">]</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="n">InputDeviceState</span><span class="p">(</span><span class="o">**</span><span class="n">device_state_data</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Build Trace Points Dictionary</span>
+        <span class="c1"># -----------------------------</span>
+        <span class="n">points_data</span> <span class="o">=</span> <span class="n">callback_data</span><span class="p">[</span><span class="s2">&quot;points&quot;</span><span class="p">]</span>
+        <span class="n">trace_points</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">trace_ind</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;point_inds&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                <span class="s2">&quot;xs&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                <span class="s2">&quot;ys&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                <span class="s2">&quot;trace_name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_objs</span><span class="p">[</span><span class="n">trace_ind</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="s2">&quot;trace_index&quot;</span><span class="p">:</span> <span class="n">trace_ind</span><span class="p">,</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="n">trace_ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data_objs</span><span class="p">))</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">point_ind</span><span class="p">,</span> <span class="n">trace_ind</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+            <span class="n">points_data</span><span class="p">[</span><span class="s2">&quot;xs&quot;</span><span class="p">],</span>
+            <span class="n">points_data</span><span class="p">[</span><span class="s2">&quot;ys&quot;</span><span class="p">],</span>
+            <span class="n">points_data</span><span class="p">[</span><span class="s2">&quot;point_indexes&quot;</span><span class="p">],</span>
+            <span class="n">points_data</span><span class="p">[</span><span class="s2">&quot;trace_indexes&quot;</span><span class="p">],</span>
+        <span class="p">):</span>
+
+            <span class="n">trace_dict</span> <span class="o">=</span> <span class="n">trace_points</span><span class="p">[</span><span class="n">trace_ind</span><span class="p">]</span>
+            <span class="n">trace_dict</span><span class="p">[</span><span class="s2">&quot;xs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">trace_dict</span><span class="p">[</span><span class="s2">&quot;ys&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+            <span class="n">trace_dict</span><span class="p">[</span><span class="s2">&quot;point_inds&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point_ind</span><span class="p">)</span>
+
+        <span class="c1"># Dispatch callbacks</span>
+        <span class="c1"># ------------------</span>
+        <span class="k">for</span> <span class="n">trace_ind</span><span class="p">,</span> <span class="n">trace_points_data</span> <span class="ow">in</span> <span class="n">trace_points</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">points</span> <span class="o">=</span> <span class="n">Points</span><span class="p">(</span><span class="o">**</span><span class="n">trace_points_data</span><span class="p">)</span>
+            <span class="n">trace</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">trace_ind</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">event_type</span> <span class="o">==</span> <span class="s2">&quot;plotly_click&quot;</span><span class="p">:</span>
+                <span class="n">trace</span><span class="o">.</span><span class="n">_dispatch_on_click</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">event_type</span> <span class="o">==</span> <span class="s2">&quot;plotly_hover&quot;</span><span class="p">:</span>
+                <span class="n">trace</span><span class="o">.</span><span class="n">_dispatch_on_hover</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">event_type</span> <span class="o">==</span> <span class="s2">&quot;plotly_unhover&quot;</span><span class="p">:</span>
+                <span class="n">trace</span><span class="o">.</span><span class="n">_dispatch_on_unhover</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">event_type</span> <span class="o">==</span> <span class="s2">&quot;plotly_selected&quot;</span><span class="p">:</span>
+                <span class="n">trace</span><span class="o">.</span><span class="n">_dispatch_on_selection</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">selector</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">event_type</span> <span class="o">==</span> <span class="s2">&quot;plotly_deselect&quot;</span><span class="p">:</span>
+                <span class="n">trace</span><span class="o">.</span><span class="n">_dispatch_on_deselect</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_js2py_pointsCallback</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Display</span>
+    <span class="c1"># -------</span>
+    <span class="k">def</span> <span class="nf">_ipython_display_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Handle rich display of figures in ipython contexts</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Override BaseFigure&#39;s display to make sure we display the widget version</span>
+        <span class="n">widgets</span><span class="o">.</span><span class="n">DOMWidget</span><span class="o">.</span><span class="n">_ipython_display_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="c1"># Callbacks</span>
+    <span class="c1"># ---------</span>
+    <span class="k">def</span> <span class="nf">on_edits_completed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Register a function to be called after all pending trace and layout</span>
+<span class="sd">        edit operations have completed</span>
+
+<span class="sd">        If there are no pending edit operations then function is called</span>
+<span class="sd">        immediately</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        fn : callable</span>
+<span class="sd">            Function of zero arguments to be called when all pending edit</span>
+<span class="sd">            operations have completed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_layout_edit_in_process</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trace_edit_in_process</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_waiting_edit_callbacks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fn</span><span class="p">()</span>
+
+    <span class="c1"># Validate No Frames</span>
+    <span class="c1"># ------------------</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">frames</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Note: This property getter is identical to that of the superclass,</span>
+        <span class="c1"># but it must be included here because we&#39;re overriding the setter</span>
+        <span class="c1"># below.</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_frame_objs</span>
+
+    <span class="nd">@frames</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">frames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_frames</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">new_frames</span><span class="p">:</span>
+            <span class="n">BaseFigureWidget</span><span class="o">.</span><span class="n">_display_frames_error</span><span class="p">()</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_display_frames_error</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Display an informative error when user attempts to set frames on a</span>
+<span class="sd">        FigureWidget</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            always</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Frames are not supported by the plotly.graph_objs.FigureWidget class.</span>
+<span class="s2">Note: Frames are supported by the plotly.graph_objs.Figure class&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+    <span class="c1"># Static Helpers</span>
+    <span class="c1"># --------------</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_remove_overlapping_props</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">delta_data</span><span class="p">,</span> <span class="n">prop_path</span><span class="o">=</span><span class="p">()):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove properties in input_data that are also in delta_data, and do so</span>
+<span class="sd">        recursively.</span>
+
+<span class="sd">        Exception: Never remove &#39;uid&#39; from input_data, this property is used</span>
+<span class="sd">        to align traces</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        input_data : dict|list</span>
+<span class="sd">        delta_data : dict|list</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        list[tuple[str|int]]</span>
+<span class="sd">            List of removed property path tuples</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Initialize removed</span>
+        <span class="c1"># ------------------</span>
+        <span class="c1"># This is the list of path tuples to the properties that were</span>
+        <span class="c1"># removed from input_data</span>
+        <span class="n">removed</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># Handle dict</span>
+        <span class="c1"># -----------</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delta_data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">delta_val</span> <span class="ow">in</span> <span class="n">delta_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delta_val</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">or</span> <span class="n">BaseFigure</span><span class="o">.</span><span class="n">_is_dict_list</span><span class="p">(</span><span class="n">delta_val</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">input_data</span><span class="p">:</span>
+                        <span class="c1"># ### Recurse ###</span>
+                        <span class="n">input_val</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
+                        <span class="n">recur_prop_path</span> <span class="o">=</span> <span class="n">prop_path</span> <span class="o">+</span> <span class="p">(</span><span class="n">p</span><span class="p">,)</span>
+                        <span class="n">recur_removed</span> <span class="o">=</span> <span class="n">BaseFigureWidget</span><span class="o">.</span><span class="n">_remove_overlapping_props</span><span class="p">(</span>
+                            <span class="n">input_val</span><span class="p">,</span> <span class="n">delta_val</span><span class="p">,</span> <span class="n">recur_prop_path</span>
+                        <span class="p">)</span>
+                        <span class="n">removed</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">recur_removed</span><span class="p">)</span>
+
+                        <span class="c1"># Check whether the last property in input_val</span>
+                        <span class="c1"># has been removed. If so, remove it entirely</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="n">input_val</span><span class="p">:</span>
+                            <span class="n">input_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+                            <span class="n">removed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">recur_prop_path</span><span class="p">)</span>
+
+                <span class="k">elif</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">input_data</span> <span class="ow">and</span> <span class="n">p</span> <span class="o">!=</span> <span class="s2">&quot;uid&quot;</span><span class="p">:</span>
+                    <span class="c1"># ### Remove property ###</span>
+                    <span class="n">input_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+                    <span class="n">removed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prop_path</span> <span class="o">+</span> <span class="p">(</span><span class="n">p</span><span class="p">,))</span>
+
+        <span class="c1"># Handle list</span>
+        <span class="c1"># -----------</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delta_data</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">delta_val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">delta_data</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">input_data</span><span class="p">):</span>
+                    <span class="k">break</span>
+
+                <span class="n">input_val</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="k">if</span> <span class="p">(</span>
+                    <span class="n">input_val</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                    <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delta_val</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+                    <span class="ow">or</span> <span class="n">BaseFigure</span><span class="o">.</span><span class="n">_is_dict_list</span><span class="p">(</span><span class="n">delta_val</span><span class="p">)</span>
+                <span class="p">):</span>
+
+                    <span class="c1"># ### Recurse ###</span>
+                    <span class="n">recur_prop_path</span> <span class="o">=</span> <span class="n">prop_path</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span><span class="p">,)</span>
+                    <span class="n">recur_removed</span> <span class="o">=</span> <span class="n">BaseFigureWidget</span><span class="o">.</span><span class="n">_remove_overlapping_props</span><span class="p">(</span>
+                        <span class="n">input_val</span><span class="p">,</span> <span class="n">delta_val</span><span class="p">,</span> <span class="n">recur_prop_path</span>
+                    <span class="p">)</span>
+
+                    <span class="n">removed</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">recur_removed</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">removed</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_transform_data</span><span class="p">(</span><span class="n">to_data</span><span class="p">,</span> <span class="n">from_data</span><span class="p">,</span> <span class="n">should_remove</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">relayout_path</span><span class="o">=</span><span class="p">()):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Transform to_data into from_data and return relayout-style</span>
+<span class="sd">        description of the transformation</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        to_data : dict|list</span>
+<span class="sd">        from_data : dict|list</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict</span>
+<span class="sd">            relayout-style description of the transformation</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Initialize relayout data</span>
+        <span class="c1"># ------------------------</span>
+        <span class="n">relayout_data</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># Handle dict</span>
+        <span class="c1"># -----------</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">to_data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+
+            <span class="c1"># ### Validate from_data ###</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">from_data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;Mismatched data types: </span><span class="si">{to_dict}</span><span class="s2"> </span><span class="si">{from_data}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">to_dict</span><span class="o">=</span><span class="n">to_data</span><span class="p">,</span> <span class="n">from_data</span><span class="o">=</span><span class="n">from_data</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+
+            <span class="c1"># ### Add/modify properties ###</span>
+            <span class="c1"># Loop over props/vals</span>
+            <span class="k">for</span> <span class="n">from_prop</span><span class="p">,</span> <span class="n">from_val</span> <span class="ow">in</span> <span class="n">from_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+                <span class="c1"># #### Handle compound vals recursively ####</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">from_val</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">or</span> <span class="n">BaseFigure</span><span class="o">.</span><span class="n">_is_dict_list</span><span class="p">(</span><span class="n">from_val</span><span class="p">):</span>
+
+                    <span class="c1"># ##### Init property value if needed #####</span>
+                    <span class="k">if</span> <span class="n">from_prop</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">to_data</span><span class="p">:</span>
+                        <span class="n">to_data</span><span class="p">[</span><span class="n">from_prop</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">from_val</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="p">[]</span>
+
+                    <span class="c1"># ##### Transform property val recursively #####</span>
+                    <span class="n">input_val</span> <span class="o">=</span> <span class="n">to_data</span><span class="p">[</span><span class="n">from_prop</span><span class="p">]</span>
+                    <span class="n">relayout_data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                        <span class="n">BaseFigureWidget</span><span class="o">.</span><span class="n">_transform_data</span><span class="p">(</span>
+                            <span class="n">input_val</span><span class="p">,</span>
+                            <span class="n">from_val</span><span class="p">,</span>
+                            <span class="n">should_remove</span><span class="o">=</span><span class="n">should_remove</span><span class="p">,</span>
+                            <span class="n">relayout_path</span><span class="o">=</span><span class="n">relayout_path</span> <span class="o">+</span> <span class="p">(</span><span class="n">from_prop</span><span class="p">,),</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+
+                <span class="c1"># #### Handle simple vals directly ####</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">from_prop</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">to_data</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">BasePlotlyType</span><span class="o">.</span><span class="n">_vals_equal</span><span class="p">(</span>
+                        <span class="n">to_data</span><span class="p">[</span><span class="n">from_prop</span><span class="p">],</span> <span class="n">from_val</span>
+                    <span class="p">):</span>
+
+                        <span class="n">to_data</span><span class="p">[</span><span class="n">from_prop</span><span class="p">]</span> <span class="o">=</span> <span class="n">from_val</span>
+                        <span class="n">relayout_path_prop</span> <span class="o">=</span> <span class="n">relayout_path</span> <span class="o">+</span> <span class="p">(</span><span class="n">from_prop</span><span class="p">,)</span>
+                        <span class="n">relayout_data</span><span class="p">[</span><span class="n">relayout_path_prop</span><span class="p">]</span> <span class="o">=</span> <span class="n">from_val</span>
+
+            <span class="c1"># ### Remove properties ###</span>
+            <span class="k">if</span> <span class="n">should_remove</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">remove_prop</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">to_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span>
+                    <span class="nb">set</span><span class="p">(</span><span class="n">from_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+                <span class="p">):</span>
+                    <span class="n">to_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">remove_prop</span><span class="p">)</span>
+
+        <span class="c1"># Handle list</span>
+        <span class="c1"># -----------</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">to_data</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+
+            <span class="c1"># ### Validate from_data ###</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">from_data</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;Mismatched data types: to_data: </span><span class="si">{to_data}</span><span class="s2"> </span><span class="si">{from_data}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">to_data</span><span class="o">=</span><span class="n">to_data</span><span class="p">,</span> <span class="n">from_data</span><span class="o">=</span><span class="n">from_data</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+
+            <span class="c1"># ### Add/modify properties ###</span>
+            <span class="c1"># Loop over indexes / elements</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">from_val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">from_data</span><span class="p">):</span>
+
+                <span class="c1"># #### Initialize element if needed ####</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">to_data</span><span class="p">):</span>
+                    <span class="n">to_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+                <span class="n">input_val</span> <span class="o">=</span> <span class="n">to_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+                <span class="c1"># #### Handle compound element recursively ####</span>
+                <span class="k">if</span> <span class="n">input_val</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span>
+                    <span class="nb">isinstance</span><span class="p">(</span><span class="n">from_val</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">or</span> <span class="n">BaseFigure</span><span class="o">.</span><span class="n">_is_dict_list</span><span class="p">(</span><span class="n">from_val</span><span class="p">)</span>
+                <span class="p">):</span>
+
+                    <span class="n">relayout_data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                        <span class="n">BaseFigureWidget</span><span class="o">.</span><span class="n">_transform_data</span><span class="p">(</span>
+                            <span class="n">input_val</span><span class="p">,</span>
+                            <span class="n">from_val</span><span class="p">,</span>
+                            <span class="n">should_remove</span><span class="o">=</span><span class="n">should_remove</span><span class="p">,</span>
+                            <span class="n">relayout_path</span><span class="o">=</span><span class="n">relayout_path</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span><span class="p">,),</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+
+                <span class="c1"># #### Handle simple elements directly ####</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">BasePlotlyType</span><span class="o">.</span><span class="n">_vals_equal</span><span class="p">(</span><span class="n">to_data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">from_val</span><span class="p">):</span>
+                        <span class="n">to_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">from_val</span>
+                        <span class="n">relayout_data</span><span class="p">[</span><span class="n">relayout_path</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span><span class="p">,)]</span> <span class="o">=</span> <span class="n">from_val</span>
+
+        <span class="k">return</span> <span class="n">relayout_data</span>
+</pre></div>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, Kaleidoscope Team.<br/>
+        Last updated on 2020/08/10.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.1.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
