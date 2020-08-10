@@ -1,0 +1,8 @@
+
+
+bloch_multi_disc
+=========================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. autofunction:: bloch_multi_disc

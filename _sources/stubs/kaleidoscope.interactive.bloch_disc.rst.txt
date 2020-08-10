@@ -1,8 +1,0 @@
-
-
-bloch_disc
-===================================
-
-.. currentmodule:: kaleidoscope.interactive
-
-.. autofunction:: bloch_disc

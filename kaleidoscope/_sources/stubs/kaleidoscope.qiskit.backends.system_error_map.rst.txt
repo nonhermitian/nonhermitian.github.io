@@ -1,0 +1,8 @@
+
+
+system_error_map
+=============================================
+
+.. currentmodule:: kaleidoscope.qiskit.backends
+
+.. autofunction:: system_error_map

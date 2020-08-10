@@ -1,8 +1,0 @@
-
-
-system_gate_map
-============================================
-
-.. currentmodule:: kaleidoscope.qiskit.backends
-
-.. autofunction:: system_gate_map

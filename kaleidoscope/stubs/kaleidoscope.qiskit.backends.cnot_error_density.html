@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cnot_error_density &mdash; Kaleidoscope 0.0.8 0.0.8 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="system_gate_map" href="kaleidoscope.qiskit.backends.system_gate_map.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #e3e5e4" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Kaleidoscope 0.0.8
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../using_figures.html">Using interactive figures</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/interactive/index.html">Interactive figures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/backends/index.html">Backend figures</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API and Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../apidocs/interactive.html">Interactive figures</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidocs/backends.html">Qiskit functionality</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../apidocs/backends.html#system-visualizations">System visualizations</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="kaleidoscope.qiskit.backends.system_error_map.html">system_error_map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kaleidoscope.qiskit.backends.system_gate_map.html">system_gate_map</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">cnot_error_density</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Kaleidoscope 0.0.8</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../apidocs/backends.html">IBM Quantum Backend Routines (<code class="xref py py-mod docutils literal notranslate"><span class="pre">kaleidoscope.qiskit.backends</span></code>)</a> &raquo;</li>
+        
+      <li>cnot_error_density</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/stubs/kaleidoscope.qiskit.backends.cnot_error_density.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cnot-error-density">
+<h1>cnot_error_density<a class="headerlink" href="#cnot-error-density" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="kaleidoscope.qiskit.backends.cnot_error_density">
+<code class="sig-name descname">cnot_error_density</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">backends</span></em>, <em class="sig-param"><span class="n">figsize</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">colors</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">'log'</span></em>, <em class="sig-param"><span class="n">covariance_factor</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">xlim</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">text_xval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xticks</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kaleidoscope/qiskit/backends/mpl/cnot_err.html#cnot_error_density"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kaleidoscope.qiskit.backends.cnot_error_density" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot CNOT error distribution for one or more IBMQ backends.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>backends</strong> (<em>list</em><em> or </em><em>IBMQBackend</em><em> or </em><em>BackendProperties</em>) – A single or ist of IBMQBackend
+instances or properties.</p></li>
+<li><p><strong>figsize</strong> (<em>tuple</em>) – Optional figure size in inches.</p></li>
+<li><p><strong>colors</strong> (<em>list</em>) – A list of Matplotlib compatible colors to plot with.</p></li>
+<li><p><strong>offset</strong> (<em>float</em>) – Positive offset for spacing out the backends.</p></li>
+<li><p><strong>scale</strong> (<em>str</em>) – ‘linear’ or ‘log’ scaling of x-axis.</p></li>
+<li><p><strong>covariance_factor</strong> (<em>float</em>) – Sets the width of the gaussian for each point.</p></li>
+<li><p><strong>xlim</strong> (<em>list</em><em> or </em><em>tuple</em>) – Optional lower and upper limits of cnot error values.</p></li>
+<li><p><strong>text_xval</strong> (<em>float</em>) – Optional xaxis value at which to start the backend text.</p></li>
+<li><p><strong>xticks</strong> (<em>list</em>) – Optional list of xaxis ticks to plot.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A matplotlib Figure instance.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Figure</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>KaleidoscopeError</strong> – A backend with &lt; 2 qubits was passed.</p></li>
+<li><p><strong>KaleidoscopeError</strong> – Number of colors did not match number of backends.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">kaleidoscope.qiskit.backends</span> <span class="kn">import</span> <span class="n">cnot_error_density</span>
+<span class="n">provider</span> <span class="o">=</span> <span class="n">IBMQ</span><span class="o">.</span><span class="n">load_account</span><span class="p">()</span>
+
+<span class="n">backends</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_vigo</span><span class="p">)</span>
+<span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_ourense</span><span class="p">)</span>
+<span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_london</span><span class="p">)</span>
+<span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_burlington</span><span class="p">)</span>
+<span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_essex</span><span class="p">)</span>
+
+<span class="n">cnot_error_density</span><span class="p">(</span><span class="n">backends</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/kaleidoscope.qiskit.backends.cnot_error_density_0_0.png" src="../_images/kaleidoscope.qiskit.backends.cnot_error_density_0_0.png" />
+</div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="kaleidoscope.qiskit.backends.system_gate_map.html" class="btn btn-neutral float-left" title="system_gate_map" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Kaleidoscope Team
+      <span class="lastupdated">
+        Last updated on 2020/07/23.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

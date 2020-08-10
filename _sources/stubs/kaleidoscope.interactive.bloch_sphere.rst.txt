@@ -1,8 +1,0 @@
-
-
-bloch_sphere
-=====================================
-
-.. currentmodule:: kaleidoscope.interactive
-
-.. autofunction:: bloch_sphere
