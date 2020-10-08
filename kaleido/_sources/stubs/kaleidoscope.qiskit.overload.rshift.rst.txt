@@ -1,4 +1,4 @@
-kaleidoscope.qiskit.overload.rshift
+﻿kaleidoscope.qiskit.overload.rshift
 ===================================
 
 .. currentmodule:: kaleidoscope.qiskit.overload

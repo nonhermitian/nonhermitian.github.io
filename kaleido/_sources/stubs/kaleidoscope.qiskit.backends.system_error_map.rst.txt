@@ -1,4 +1,4 @@
-kaleidoscope.qiskit.backends.system\_error\_map
+﻿kaleidoscope.qiskit.backends.system\_error\_map
 ===============================================
 
 .. currentmodule:: kaleidoscope.qiskit.backends

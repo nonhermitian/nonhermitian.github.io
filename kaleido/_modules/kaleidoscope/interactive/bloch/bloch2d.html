@@ -1,18 +1,37 @@
 
-
 <!DOCTYPE html>
 
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kaleidoscope.interactive.bloch.bloch2d &#8212; Kaleidoscope 0.0.9.dev9+a5caee9 0.0.9.dev9+a5caee9 documentation</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../../../../_static/css/index.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kaleidoscope.interactive.bloch.bloch2d &#8212; Kaleidoscope 0.0.10 0.0.10 documentation</title>
+    
+  <link rel="stylesheet" href="../../../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
     <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.30270b6e4c972e43c488.js">
+
     <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
@@ -22,8 +41,8 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -155,16 +174,17 @@
 <span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">make_subplots</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.colors</span>
-<span class="kn">import</span> <span class="nn">colorcet</span> <span class="k">as</span> <span class="nn">cc</span>
 
 <span class="kn">from</span> <span class="nn">kaleidoscope.utils</span> <span class="kn">import</span> <span class="n">pi_check</span>
 <span class="kn">from</span> <span class="nn">kaleidoscope.interactive.plotly_wrapper</span> <span class="kn">import</span> <span class="n">PlotlyFigure</span><span class="p">,</span> <span class="n">PlotlyWidget</span>
 <span class="kn">from</span> <span class="nn">kaleidoscope.interactive.bloch.utils</span> <span class="kn">import</span> <span class="n">bloch_components</span>
 <span class="kn">from</span> <span class="nn">kaleidoscope.colors.utils</span> <span class="kn">import</span> <span class="n">hex_to_rgb</span>
-<span class="kn">from</span> <span class="nn">kaleidoscope.colors</span> <span class="kn">import</span> <span class="n">BMY_PLOTLY</span>
+<span class="kn">from</span> <span class="nn">kaleidoscope.colors</span> <span class="kn">import</span> <span class="n">BMW</span>
+<span class="kn">from</span> <span class="nn">kaleidoscope.colors.cmap</span> <span class="kn">import</span> <span class="n">cmap_to_plotly</span>
 
 <span class="n">NORM</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">CMAP</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">bmy</span>
+<span class="n">CMAP</span> <span class="o">=</span> <span class="n">BMW</span>
+<span class="n">PLOTLY_CMAP</span> <span class="o">=</span> <span class="n">cmap_to_plotly</span><span class="p">(</span><span class="n">CMAP</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">bloch_sunburst</span><span class="p">(</span><span class="n">vec</span><span class="p">):</span>
@@ -298,7 +318,7 @@
     <span class="n">ticktext</span> <span class="o">=</span> <span class="p">[</span><span class="n">ticktext</span><span class="p">[</span><span class="n">kk</span><span class="p">]</span> <span class="k">for</span> <span class="n">kk</span> <span class="ow">in</span> <span class="n">idx_sort</span><span class="p">]</span>
 
     <span class="n">fig</span><span class="o">.</span><span class="n">append_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">zrange</span><span class="p">,</span>
-                                <span class="n">colorscale</span><span class="o">=</span><span class="n">BMY_PLOTLY</span><span class="p">,</span>
+                                <span class="n">colorscale</span><span class="o">=</span><span class="n">PLOTLY_CMAP</span><span class="p">,</span>
                                 <span class="n">showscale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                                 <span class="n">hoverinfo</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
                                 <span class="p">),</span>
@@ -393,7 +413,7 @@
 
     <span class="n">zrange</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)]</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">append_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">zrange</span><span class="p">,</span>
-                                <span class="n">colorscale</span><span class="o">=</span><span class="n">BMY_PLOTLY</span><span class="p">,</span>
+                                <span class="n">colorscale</span><span class="o">=</span><span class="n">PLOTLY_CMAP</span><span class="p">,</span>
                                 <span class="n">showscale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                                 <span class="n">hoverinfo</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
                                 <span class="p">),</span>
@@ -435,13 +455,16 @@
       </div>
     </div>
 
-    <script src="../../../../_static/js/index.js"></script>
+    
+  <script src="../../../../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
     <footer class="footer mt-5 mt-md-0">
   <div class="container">
     <p>
           &copy; Copyright 2020, Kaleidoscope Team.<br/>
-        Last updated on 2020/08/10.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.1.2.<br/>
+        Last updated on 2020/10/08.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
     </p>
   </div>
 </footer>

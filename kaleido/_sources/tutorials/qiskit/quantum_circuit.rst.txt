@@ -8,7 +8,7 @@ QuantumCircuit addons
    from qiskit import QuantumCircuit
    import kaleidoscope.qiskit
    from kaleidoscope import probability_distribution
-   from kaleidoscope.qiskit.providers import Simulators
+   from kaleidoscope.qiskit.services import Simulators
 
 
 Adding a target backend to a circuit
@@ -42,7 +42,7 @@ Transpiling for different backend
 
 .. jupyter-execute::
 
-   new_sim = Simulators.aer_rome_simulator
+   new_sim = Simulators.aer_valencia_simulator
 
    new_qc = qc.transpile(backend=new_sim)
 

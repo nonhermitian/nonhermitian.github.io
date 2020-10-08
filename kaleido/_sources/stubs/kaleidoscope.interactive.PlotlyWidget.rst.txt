@@ -1,4 +1,4 @@
-kaleidoscope.interactive.PlotlyWidget
+﻿kaleidoscope.interactive.PlotlyWidget
 =====================================
 
 .. currentmodule:: kaleidoscope.interactive
@@ -89,6 +89,7 @@ kaleidoscope.interactive.PlotlyWidget
       ~PlotlyWidget.for_each_trace
       ~PlotlyWidget.for_each_xaxis
       ~PlotlyWidget.for_each_yaxis
+      ~PlotlyWidget.full_figure_for_development
       ~PlotlyWidget.get_manager_state
       ~PlotlyWidget.get_state
       ~PlotlyWidget.get_subplot

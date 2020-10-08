@@ -1,4 +1,4 @@
-kaleidoscope.qiskit.overload.unitary
+﻿kaleidoscope.qiskit.overload.unitary
 ====================================
 
 .. currentmodule:: kaleidoscope.qiskit.overload

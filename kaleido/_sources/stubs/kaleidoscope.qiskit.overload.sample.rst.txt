@@ -1,4 +1,4 @@
-kaleidoscope.qiskit.overload.sample
+﻿kaleidoscope.qiskit.overload.sample
 ===================================
 
 .. currentmodule:: kaleidoscope.qiskit.overload

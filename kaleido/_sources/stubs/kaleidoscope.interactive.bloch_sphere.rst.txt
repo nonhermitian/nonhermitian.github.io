@@ -1,4 +1,4 @@
-kaleidoscope.interactive.bloch\_sphere
+﻿kaleidoscope.interactive.bloch\_sphere
 ======================================
 
 .. currentmodule:: kaleidoscope.interactive

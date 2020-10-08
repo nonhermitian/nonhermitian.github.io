@@ -1,4 +1,4 @@
-kaleidoscope.qiskit.backends.system\_gate\_map
+﻿kaleidoscope.qiskit.backends.system\_gate\_map
 ==============================================
 
 .. currentmodule:: kaleidoscope.qiskit.backends

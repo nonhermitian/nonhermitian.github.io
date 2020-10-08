@@ -1,4 +1,4 @@
-kaleidoscope.interactive.probability\_distribution
+﻿kaleidoscope.interactive.probability\_distribution
 ==================================================
 
 .. currentmodule:: kaleidoscope.interactive

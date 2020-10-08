@@ -1,4 +1,4 @@
-kaleidoscope.qiskit.overload.bloch\_components
+﻿kaleidoscope.qiskit.overload.bloch\_components
 ==============================================
 
 .. currentmodule:: kaleidoscope.qiskit.overload

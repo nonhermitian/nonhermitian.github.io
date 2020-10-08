@@ -1,18 +1,37 @@
 
-
 <!DOCTYPE html>
 
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kaleidoscope.interactive.PlotlyWidget &#8212; Kaleidoscope 0.0.9.dev9+a5caee9 0.0.9.dev9+a5caee9 documentation</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../_static/css/index.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kaleidoscope.interactive.PlotlyWidget &#8212; Kaleidoscope 0.0.10 0.0.10 documentation</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -24,8 +43,8 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="IBM Quantum Backend Routines (kaleidoscope.qiskit.backends)" href="../apidocs/backends.html" />
     <link rel="prev" title="kaleidoscope.interactive.PlotlyFigure" href="kaleidoscope.interactive.PlotlyFigure.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -1361,7 +1380,7 @@ figure specification will result in a ValueError</p></li>
 </dd></dl>
 
 <p class="rubric">Methods</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1595,220 +1614,223 @@ figure specification will result in a ValueError</p></li>
 <tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.for_each_yaxis" title="kaleidoscope.interactive.PlotlyWidget.for_each_yaxis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">for_each_yaxis</span></code></a>(fn[, selector, row, col, …])</p></td>
 <td><p>Apply a function to all yaxis objects that satisfy the specified selection criteria</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.get_manager_state" title="kaleidoscope.interactive.PlotlyWidget.get_manager_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_manager_state</span></code></a>([drop_defaults, widgets])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.full_figure_for_development" title="kaleidoscope.interactive.PlotlyWidget.full_figure_for_development"><code class="xref py py-obj docutils literal notranslate"><span class="pre">full_figure_for_development</span></code></a>([warn, as_dict])</p></td>
+<td><p>Compute default values for all attributes not specified in the input figure and returns the output as a “full” figure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.get_manager_state" title="kaleidoscope.interactive.PlotlyWidget.get_manager_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_manager_state</span></code></a>([drop_defaults, widgets])</p></td>
 <td><p>Returns the full state for a widget manager for embedding</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.get_state" title="kaleidoscope.interactive.PlotlyWidget.get_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_state</span></code></a>([key, drop_defaults])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.get_state" title="kaleidoscope.interactive.PlotlyWidget.get_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_state</span></code></a>([key, drop_defaults])</p></td>
 <td><p>Gets the widget state, or a piece of it.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.get_subplot" title="kaleidoscope.interactive.PlotlyWidget.get_subplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_subplot</span></code></a>(row, col[, secondary_y])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.get_subplot" title="kaleidoscope.interactive.PlotlyWidget.get_subplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_subplot</span></code></a>(row, col[, secondary_y])</p></td>
 <td><p>Return an object representing the subplot at the specified row and column.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_view_spec</span></code>()</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_view_spec</span></code>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.handle_comm_opened" title="kaleidoscope.interactive.PlotlyWidget.handle_comm_opened"><code class="xref py py-obj docutils literal notranslate"><span class="pre">handle_comm_opened</span></code></a>(comm, msg)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.handle_comm_opened" title="kaleidoscope.interactive.PlotlyWidget.handle_comm_opened"><code class="xref py py-obj docutils literal notranslate"><span class="pre">handle_comm_opened</span></code></a>(comm, msg)</p></td>
 <td><p>Static method, called when a widget is constructed.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.has_trait" title="kaleidoscope.interactive.PlotlyWidget.has_trait"><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_trait</span></code></a>(name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.has_trait" title="kaleidoscope.interactive.PlotlyWidget.has_trait"><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_trait</span></code></a>(name)</p></td>
 <td><p>Returns True if the object has a trait with the specified name.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.hold_sync" title="kaleidoscope.interactive.PlotlyWidget.hold_sync"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hold_sync</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.hold_sync" title="kaleidoscope.interactive.PlotlyWidget.hold_sync"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hold_sync</span></code></a>()</p></td>
 <td><p>Hold syncing any state until the outermost context manager exits</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.hold_trait_notifications" title="kaleidoscope.interactive.PlotlyWidget.hold_trait_notifications"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hold_trait_notifications</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.hold_trait_notifications" title="kaleidoscope.interactive.PlotlyWidget.hold_trait_notifications"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hold_trait_notifications</span></code></a>()</p></td>
 <td><p>Context manager for bundling trait change notifications and cross validation.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.notify_change" title="kaleidoscope.interactive.PlotlyWidget.notify_change"><code class="xref py py-obj docutils literal notranslate"><span class="pre">notify_change</span></code></a>(change)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.notify_change" title="kaleidoscope.interactive.PlotlyWidget.notify_change"><code class="xref py py-obj docutils literal notranslate"><span class="pre">notify_change</span></code></a>(change)</p></td>
 <td><p>Called when a property has changed.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.observe" title="kaleidoscope.interactive.PlotlyWidget.observe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">observe</span></code></a>(handler[, names, type])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.observe" title="kaleidoscope.interactive.PlotlyWidget.observe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">observe</span></code></a>(handler[, names, type])</p></td>
 <td><p>Setup a handler to be called when a trait changes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.on_displayed" title="kaleidoscope.interactive.PlotlyWidget.on_displayed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_displayed</span></code></a>(callback[, remove])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.on_displayed" title="kaleidoscope.interactive.PlotlyWidget.on_displayed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_displayed</span></code></a>(callback[, remove])</p></td>
 <td><p>(Un)Register a widget displayed callback.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.on_edits_completed" title="kaleidoscope.interactive.PlotlyWidget.on_edits_completed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_edits_completed</span></code></a>(fn)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.on_edits_completed" title="kaleidoscope.interactive.PlotlyWidget.on_edits_completed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_edits_completed</span></code></a>(fn)</p></td>
 <td><p>Register a function to be called after all pending trace and layout edit operations have completed</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.on_msg" title="kaleidoscope.interactive.PlotlyWidget.on_msg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_msg</span></code></a>(callback[, remove])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.on_msg" title="kaleidoscope.interactive.PlotlyWidget.on_msg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_msg</span></code></a>(callback[, remove])</p></td>
 <td><p>(Un)Register a custom msg receive callback.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.on_trait_change" title="kaleidoscope.interactive.PlotlyWidget.on_trait_change"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_trait_change</span></code></a>([handler, name, remove])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.on_trait_change" title="kaleidoscope.interactive.PlotlyWidget.on_trait_change"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_trait_change</span></code></a>([handler, name, remove])</p></td>
 <td><p>DEPRECATED: Setup a handler to be called when a trait changes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.on_widget_constructed" title="kaleidoscope.interactive.PlotlyWidget.on_widget_constructed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_widget_constructed</span></code></a>(callback)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.on_widget_constructed" title="kaleidoscope.interactive.PlotlyWidget.on_widget_constructed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_widget_constructed</span></code></a>(callback)</p></td>
 <td><p>Registers a callback to be called when a widget is constructed.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.open" title="kaleidoscope.interactive.PlotlyWidget.open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.open" title="kaleidoscope.interactive.PlotlyWidget.open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code></a>()</p></td>
 <td><p>Open a comm to the frontend if one isn’t already open.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.plotly_relayout" title="kaleidoscope.interactive.PlotlyWidget.plotly_relayout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotly_relayout</span></code></a>(relayout_data, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.plotly_relayout" title="kaleidoscope.interactive.PlotlyWidget.plotly_relayout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotly_relayout</span></code></a>(relayout_data, **kwargs)</p></td>
 <td><p>Perform a Plotly relayout operation on the figure’s layout</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.plotly_restyle" title="kaleidoscope.interactive.PlotlyWidget.plotly_restyle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotly_restyle</span></code></a>(restyle_data[, trace_indexes])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.plotly_restyle" title="kaleidoscope.interactive.PlotlyWidget.plotly_restyle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotly_restyle</span></code></a>(restyle_data[, trace_indexes])</p></td>
 <td><p>Perform a Plotly restyle operation on the figure’s traces</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.plotly_update" title="kaleidoscope.interactive.PlotlyWidget.plotly_update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotly_update</span></code></a>([restyle_data, relayout_data, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.plotly_update" title="kaleidoscope.interactive.PlotlyWidget.plotly_update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotly_update</span></code></a>([restyle_data, relayout_data, …])</p></td>
 <td><p>Perform a Plotly update operation on the figure.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.pop" title="kaleidoscope.interactive.PlotlyWidget.pop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code></a>(key, *args)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.pop" title="kaleidoscope.interactive.PlotlyWidget.pop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code></a>(key, *args)</p></td>
 <td><p>Remove the value associated with the specified key and return it</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.print_grid" title="kaleidoscope.interactive.PlotlyWidget.print_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_grid</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.print_grid" title="kaleidoscope.interactive.PlotlyWidget.print_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_grid</span></code></a>()</p></td>
 <td><p>Print a visual layout of the figure’s axes arrangement.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.remove_class" title="kaleidoscope.interactive.PlotlyWidget.remove_class"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_class</span></code></a>(className)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.remove_class" title="kaleidoscope.interactive.PlotlyWidget.remove_class"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_class</span></code></a>(className)</p></td>
 <td><p>Removes a class from the top level element of the widget.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.savefig" title="kaleidoscope.interactive.PlotlyWidget.savefig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">savefig</span></code></a>(filename[, figsize, scale, transparent])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.savefig" title="kaleidoscope.interactive.PlotlyWidget.savefig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">savefig</span></code></a>(filename[, figsize, scale, transparent])</p></td>
 <td><p>Safe the figure as a static image.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_annotations" title="kaleidoscope.interactive.PlotlyWidget.select_annotations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_annotations</span></code></a>([selector, row, col, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_annotations" title="kaleidoscope.interactive.PlotlyWidget.select_annotations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_annotations</span></code></a>([selector, row, col, …])</p></td>
 <td><p>Select annotations from a particular subplot cell and/or annotations that satisfy custom selection criteria.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_coloraxes" title="kaleidoscope.interactive.PlotlyWidget.select_coloraxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_coloraxes</span></code></a>([selector, row, col])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_coloraxes" title="kaleidoscope.interactive.PlotlyWidget.select_coloraxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_coloraxes</span></code></a>([selector, row, col])</p></td>
 <td><p>Select coloraxis subplot objects from a particular subplot cell and/or coloraxis subplot objects that satisfy custom selection criteria.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_geos" title="kaleidoscope.interactive.PlotlyWidget.select_geos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_geos</span></code></a>([selector, row, col])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_geos" title="kaleidoscope.interactive.PlotlyWidget.select_geos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_geos</span></code></a>([selector, row, col])</p></td>
 <td><p>Select geo subplot objects from a particular subplot cell and/or geo subplot objects that satisfy custom selection criteria.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_layout_images" title="kaleidoscope.interactive.PlotlyWidget.select_layout_images"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_layout_images</span></code></a>([selector, row, col, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_layout_images" title="kaleidoscope.interactive.PlotlyWidget.select_layout_images"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_layout_images</span></code></a>([selector, row, col, …])</p></td>
 <td><p>Select images from a particular subplot cell and/or images that satisfy custom selection criteria.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_mapboxes" title="kaleidoscope.interactive.PlotlyWidget.select_mapboxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_mapboxes</span></code></a>([selector, row, col])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_mapboxes" title="kaleidoscope.interactive.PlotlyWidget.select_mapboxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_mapboxes</span></code></a>([selector, row, col])</p></td>
 <td><p>Select mapbox subplot objects from a particular subplot cell and/or mapbox subplot objects that satisfy custom selection criteria.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_polars" title="kaleidoscope.interactive.PlotlyWidget.select_polars"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_polars</span></code></a>([selector, row, col])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_polars" title="kaleidoscope.interactive.PlotlyWidget.select_polars"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_polars</span></code></a>([selector, row, col])</p></td>
 <td><p>Select polar subplot objects from a particular subplot cell and/or polar subplot objects that satisfy custom selection criteria.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_scenes" title="kaleidoscope.interactive.PlotlyWidget.select_scenes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_scenes</span></code></a>([selector, row, col])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_scenes" title="kaleidoscope.interactive.PlotlyWidget.select_scenes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_scenes</span></code></a>([selector, row, col])</p></td>
 <td><p>Select scene subplot objects from a particular subplot cell and/or scene subplot objects that satisfy custom selection criteria.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_shapes" title="kaleidoscope.interactive.PlotlyWidget.select_shapes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_shapes</span></code></a>([selector, row, col, secondary_y])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_shapes" title="kaleidoscope.interactive.PlotlyWidget.select_shapes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_shapes</span></code></a>([selector, row, col, secondary_y])</p></td>
 <td><p>Select shapes from a particular subplot cell and/or shapes that satisfy custom selection criteria.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_ternaries" title="kaleidoscope.interactive.PlotlyWidget.select_ternaries"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_ternaries</span></code></a>([selector, row, col])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_ternaries" title="kaleidoscope.interactive.PlotlyWidget.select_ternaries"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_ternaries</span></code></a>([selector, row, col])</p></td>
 <td><p>Select ternary subplot objects from a particular subplot cell and/or ternary subplot objects that satisfy custom selection criteria.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_traces" title="kaleidoscope.interactive.PlotlyWidget.select_traces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_traces</span></code></a>([selector, row, col, secondary_y])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_traces" title="kaleidoscope.interactive.PlotlyWidget.select_traces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_traces</span></code></a>([selector, row, col, secondary_y])</p></td>
 <td><p>Select traces from a particular subplot cell and/or traces that satisfy custom selection criteria.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_xaxes" title="kaleidoscope.interactive.PlotlyWidget.select_xaxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_xaxes</span></code></a>([selector, row, col])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_xaxes" title="kaleidoscope.interactive.PlotlyWidget.select_xaxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_xaxes</span></code></a>([selector, row, col])</p></td>
 <td><p>Select xaxis subplot objects from a particular subplot cell and/or xaxis subplot objects that satisfy custom selection criteria.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_yaxes" title="kaleidoscope.interactive.PlotlyWidget.select_yaxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_yaxes</span></code></a>([selector, row, col, secondary_y])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.select_yaxes" title="kaleidoscope.interactive.PlotlyWidget.select_yaxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_yaxes</span></code></a>([selector, row, col, secondary_y])</p></td>
 <td><p>Select yaxis subplot objects from a particular subplot cell and/or yaxis subplot objects that satisfy custom selection criteria.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.send" title="kaleidoscope.interactive.PlotlyWidget.send"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send</span></code></a>(content[, buffers])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.send" title="kaleidoscope.interactive.PlotlyWidget.send"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send</span></code></a>(content[, buffers])</p></td>
 <td><p>Sends a custom msg to the widget model in the front-end.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.send_state" title="kaleidoscope.interactive.PlotlyWidget.send_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_state</span></code></a>([key])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.send_state" title="kaleidoscope.interactive.PlotlyWidget.send_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_state</span></code></a>([key])</p></td>
 <td><p>Sends the widget state, or a piece of it, to the front-end, if it exists.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.set_state" title="kaleidoscope.interactive.PlotlyWidget.set_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_state</span></code></a>(sync_data)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.set_state" title="kaleidoscope.interactive.PlotlyWidget.set_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_state</span></code></a>(sync_data)</p></td>
 <td><p>Called when a state is received from the front-end.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.set_trait" title="kaleidoscope.interactive.PlotlyWidget.set_trait"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_trait</span></code></a>(name, value)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.set_trait" title="kaleidoscope.interactive.PlotlyWidget.set_trait"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_trait</span></code></a>(name, value)</p></td>
 <td><p>Forcibly sets trait attribute, including read-only attributes.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.setup_instance" title="kaleidoscope.interactive.PlotlyWidget.setup_instance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_instance</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.setup_instance" title="kaleidoscope.interactive.PlotlyWidget.setup_instance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_instance</span></code></a>(*args, **kwargs)</p></td>
 <td><p>This is called <strong>before</strong> self.__init__ is called.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.show" title="kaleidoscope.interactive.PlotlyWidget.show"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.show" title="kaleidoscope.interactive.PlotlyWidget.show"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Display the figure.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.to_dict" title="kaleidoscope.interactive.PlotlyWidget.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.to_dict" title="kaleidoscope.interactive.PlotlyWidget.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a>()</p></td>
 <td><p>Convert figure to a dictionary</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.to_html" title="kaleidoscope.interactive.PlotlyWidget.to_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.to_html" title="kaleidoscope.interactive.PlotlyWidget.to_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Convert a figure to an HTML string representation.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.to_image" title="kaleidoscope.interactive.PlotlyWidget.to_image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_image</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.to_image" title="kaleidoscope.interactive.PlotlyWidget.to_image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_image</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Convert a figure to a static image bytes string</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.to_json" title="kaleidoscope.interactive.PlotlyWidget.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.to_json" title="kaleidoscope.interactive.PlotlyWidget.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Convert a figure to a JSON string representation</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ordered_dict</span></code>([skip_uid])</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ordered_dict</span></code>([skip_uid])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.to_plotly_json" title="kaleidoscope.interactive.PlotlyWidget.to_plotly_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_plotly_json</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.to_plotly_json" title="kaleidoscope.interactive.PlotlyWidget.to_plotly_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_plotly_json</span></code></a>()</p></td>
 <td><p>Convert figure to a JSON representation as a Python dict</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.trait_events" title="kaleidoscope.interactive.PlotlyWidget.trait_events"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_events</span></code></a>([name])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.trait_events" title="kaleidoscope.interactive.PlotlyWidget.trait_events"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_events</span></code></a>([name])</p></td>
 <td><p>Get a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of all the event handlers of this class.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.trait_metadata" title="kaleidoscope.interactive.PlotlyWidget.trait_metadata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_metadata</span></code></a>(traitname, key[, default])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.trait_metadata" title="kaleidoscope.interactive.PlotlyWidget.trait_metadata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_metadata</span></code></a>(traitname, key[, default])</p></td>
 <td><p>Get metadata values for trait by key.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.trait_names" title="kaleidoscope.interactive.PlotlyWidget.trait_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_names</span></code></a>(**metadata)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.trait_names" title="kaleidoscope.interactive.PlotlyWidget.trait_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_names</span></code></a>(**metadata)</p></td>
 <td><p>Get a list of all the names of this class’ traits.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.traits" title="kaleidoscope.interactive.PlotlyWidget.traits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">traits</span></code></a>(**metadata)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.traits" title="kaleidoscope.interactive.PlotlyWidget.traits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">traits</span></code></a>(**metadata)</p></td>
 <td><p>Get a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of all the traits of this class.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.unobserve" title="kaleidoscope.interactive.PlotlyWidget.unobserve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unobserve</span></code></a>(handler[, names, type])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.unobserve" title="kaleidoscope.interactive.PlotlyWidget.unobserve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unobserve</span></code></a>(handler[, names, type])</p></td>
 <td><p>Remove a trait change handler.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.unobserve_all" title="kaleidoscope.interactive.PlotlyWidget.unobserve_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unobserve_all</span></code></a>([name])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.unobserve_all" title="kaleidoscope.interactive.PlotlyWidget.unobserve_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unobserve_all</span></code></a>([name])</p></td>
 <td><p>Remove trait change handlers of any type for the specified name.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update" title="kaleidoscope.interactive.PlotlyWidget.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>([dict1, overwrite])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update" title="kaleidoscope.interactive.PlotlyWidget.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>([dict1, overwrite])</p></td>
 <td><p>Update the properties of the figure with a dict and/or with keyword arguments.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_annotations" title="kaleidoscope.interactive.PlotlyWidget.update_annotations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_annotations</span></code></a>([patch, selector, row, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_annotations" title="kaleidoscope.interactive.PlotlyWidget.update_annotations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_annotations</span></code></a>([patch, selector, row, …])</p></td>
 <td><p>Perform a property update operation on all annotations that satisfy the specified selection criteria</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_coloraxes" title="kaleidoscope.interactive.PlotlyWidget.update_coloraxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_coloraxes</span></code></a>([patch, selector, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_coloraxes" title="kaleidoscope.interactive.PlotlyWidget.update_coloraxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_coloraxes</span></code></a>([patch, selector, …])</p></td>
 <td><p>Perform a property update operation on all coloraxis objects that satisfy the specified selection criteria</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_geos" title="kaleidoscope.interactive.PlotlyWidget.update_geos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_geos</span></code></a>([patch, selector, overwrite, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_geos" title="kaleidoscope.interactive.PlotlyWidget.update_geos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_geos</span></code></a>([patch, selector, overwrite, …])</p></td>
 <td><p>Perform a property update operation on all geo objects that satisfy the specified selection criteria</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_layout" title="kaleidoscope.interactive.PlotlyWidget.update_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_layout</span></code></a>([dict1, overwrite])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_layout" title="kaleidoscope.interactive.PlotlyWidget.update_layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_layout</span></code></a>([dict1, overwrite])</p></td>
 <td><p>Update the properties of the figure’s layout with a dict and/or with keyword arguments.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_layout_images" title="kaleidoscope.interactive.PlotlyWidget.update_layout_images"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_layout_images</span></code></a>([patch, selector, row, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_layout_images" title="kaleidoscope.interactive.PlotlyWidget.update_layout_images"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_layout_images</span></code></a>([patch, selector, row, …])</p></td>
 <td><p>Perform a property update operation on all images that satisfy the specified selection criteria</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_mapboxes" title="kaleidoscope.interactive.PlotlyWidget.update_mapboxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_mapboxes</span></code></a>([patch, selector, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_mapboxes" title="kaleidoscope.interactive.PlotlyWidget.update_mapboxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_mapboxes</span></code></a>([patch, selector, …])</p></td>
 <td><p>Perform a property update operation on all mapbox objects that satisfy the specified selection criteria</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_polars" title="kaleidoscope.interactive.PlotlyWidget.update_polars"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_polars</span></code></a>([patch, selector, overwrite, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_polars" title="kaleidoscope.interactive.PlotlyWidget.update_polars"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_polars</span></code></a>([patch, selector, overwrite, …])</p></td>
 <td><p>Perform a property update operation on all polar objects that satisfy the specified selection criteria</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_scenes" title="kaleidoscope.interactive.PlotlyWidget.update_scenes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_scenes</span></code></a>([patch, selector, overwrite, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_scenes" title="kaleidoscope.interactive.PlotlyWidget.update_scenes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_scenes</span></code></a>([patch, selector, overwrite, …])</p></td>
 <td><p>Perform a property update operation on all scene objects that satisfy the specified selection criteria</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_shapes" title="kaleidoscope.interactive.PlotlyWidget.update_shapes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_shapes</span></code></a>([patch, selector, row, col, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_shapes" title="kaleidoscope.interactive.PlotlyWidget.update_shapes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_shapes</span></code></a>([patch, selector, row, col, …])</p></td>
 <td><p>Perform a property update operation on all shapes that satisfy the specified selection criteria</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_ternaries" title="kaleidoscope.interactive.PlotlyWidget.update_ternaries"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_ternaries</span></code></a>([patch, selector, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_ternaries" title="kaleidoscope.interactive.PlotlyWidget.update_ternaries"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_ternaries</span></code></a>([patch, selector, …])</p></td>
 <td><p>Perform a property update operation on all ternary objects that satisfy the specified selection criteria</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_traces" title="kaleidoscope.interactive.PlotlyWidget.update_traces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_traces</span></code></a>([patch, selector, row, col, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_traces" title="kaleidoscope.interactive.PlotlyWidget.update_traces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_traces</span></code></a>([patch, selector, row, col, …])</p></td>
 <td><p>Perform a property update operation on all traces that satisfy the specified selection criteria</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_xaxes" title="kaleidoscope.interactive.PlotlyWidget.update_xaxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_xaxes</span></code></a>([patch, selector, overwrite, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_xaxes" title="kaleidoscope.interactive.PlotlyWidget.update_xaxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_xaxes</span></code></a>([patch, selector, overwrite, …])</p></td>
 <td><p>Perform a property update operation on all xaxis objects that satisfy the specified selection criteria</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_yaxes" title="kaleidoscope.interactive.PlotlyWidget.update_yaxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_yaxes</span></code></a>([patch, selector, overwrite, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.update_yaxes" title="kaleidoscope.interactive.PlotlyWidget.update_yaxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_yaxes</span></code></a>([patch, selector, overwrite, …])</p></td>
 <td><p>Perform a property update operation on all yaxis objects that satisfy the specified selection criteria</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.write_html" title="kaleidoscope.interactive.PlotlyWidget.write_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_html</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.write_html" title="kaleidoscope.interactive.PlotlyWidget.write_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_html</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Write a figure to an HTML file representation</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.write_image" title="kaleidoscope.interactive.PlotlyWidget.write_image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_image</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.write_image" title="kaleidoscope.interactive.PlotlyWidget.write_image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_image</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Convert a figure to a static image and write it to a file or writeable object</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.write_json" title="kaleidoscope.interactive.PlotlyWidget.write_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_json</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kaleidoscope.interactive.PlotlyWidget.write_json" title="kaleidoscope.interactive.PlotlyWidget.write_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_json</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Convert a figure to JSON and write it to a file or writeable object</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -2214,8 +2236,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -2335,8 +2356,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. Every attributes
 that can be specified per-point (the ones that are
 <cite>arrayOk: true</cite>) are available. variables <cite>value</cite> and
@@ -2469,8 +2489,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -2682,8 +2701,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -3313,8 +3331,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -3518,8 +3535,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -3734,8 +3750,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -3966,8 +3981,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -4405,8 +4419,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -4596,8 +4609,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -4713,8 +4725,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. Every attributes
 that can be specified per-point (the ones that are
 <cite>arrayOk: true</cite>) are available. variables
@@ -4840,8 +4851,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -4932,8 +4942,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. Every attributes
 that can be specified per-point (the ones that are
 <cite>arrayOk: true</cite>) are available. variables <cite>label</cite>,
@@ -5069,8 +5078,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -5237,7 +5245,7 @@ make_subplots. See the make_subplots docstring for more info.</p></li>
 
 <dl class="py method">
 <dt id="kaleidoscope.interactive.PlotlyWidget.add_heatmapgl">
-<code class="sig-name descname">add_heatmapgl</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">autocolorscale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">coloraxis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">colorbar</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">colorscale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">customdata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">customdatasrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dx</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hoverinfo</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hoverinfosrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hoverlabel</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ids</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">idssrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">meta</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">metasrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">opacity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reversescale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">showscale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stream</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">textsrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">transpose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">uid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">uirevision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">visible</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">x</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">x0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xaxis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xsrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xtype</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">y0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">yaxis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ysrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ytype</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zauto</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zmax</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zmid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zmin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zsrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">row</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">col</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">secondary_y</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaleidoscope.interactive.PlotlyWidget.add_heatmapgl" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_heatmapgl</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">autocolorscale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">coloraxis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">colorbar</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">colorscale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">customdata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">customdatasrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dx</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hoverinfo</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hoverinfosrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hoverlabel</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ids</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">idssrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">meta</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">metasrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">opacity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reversescale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">showscale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stream</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">textsrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">transpose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">uid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">uirevision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">visible</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">x</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">x0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xaxis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xsrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xtype</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">y0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">yaxis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ysrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ytype</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zauto</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zmax</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zmid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zmin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zsmooth</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zsrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">row</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">col</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">secondary_y</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaleidoscope.interactive.PlotlyWidget.add_heatmapgl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a new Heatmapgl trace</p>
 <p>WebGL version of the heatmap trace type.</p>
 <dl class="field-list simple">
@@ -5386,6 +5394,7 @@ effect when <cite>zauto</cite> is <cite>false</cite>.</p></li>
 <li><p><strong>zmin</strong> – Sets the lower bound of the color domain. Value should
 have the same units as in <cite>z</cite> and if set, <cite>zmax</cite> must
 be set as well.</p></li>
+<li><p><strong>zsmooth</strong> – Picks a smoothing algorithm use to smooth <cite>z</cite> data.</p></li>
 <li><p><strong>zsrc</strong> – Sets the source reference on Chart Studio Cloud for  z
 .</p></li>
 <li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default</em><em>)</em>) – Subplot row index (starting from 1) for the trace to be
@@ -5506,8 +5515,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -5761,8 +5769,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -6038,8 +6045,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -6216,7 +6222,7 @@ make_subplots. See the make_subplots docstring for more info.</p></li>
 
 <dl class="py method">
 <dt id="kaleidoscope.interactive.PlotlyWidget.add_image">
-<code class="sig-name descname">add_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colormodel</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">customdata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">customdatasrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dx</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hoverinfo</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hoverinfosrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hoverlabel</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hovertemplate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hovertemplatesrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hovertext</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hovertextsrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ids</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">idssrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">meta</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">metasrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">opacity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stream</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">textsrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">uid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">uirevision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">visible</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">x0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xaxis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">y0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">yaxis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zmax</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zmin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zsrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">row</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">col</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">secondary_y</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaleidoscope.interactive.PlotlyWidget.add_image" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colormodel</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">customdata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">customdatasrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dx</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hoverinfo</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hoverinfosrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hoverlabel</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hovertemplate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hovertemplatesrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hovertext</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hovertextsrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ids</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">idssrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">meta</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">metasrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">opacity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stream</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">textsrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">uid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">uirevision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">visible</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">x0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xaxis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">y0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">yaxis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zmax</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zmin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">zsrc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">row</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">col</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">secondary_y</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaleidoscope.interactive.PlotlyWidget.add_image" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a new Image trace</p>
 <p>Display an image, i.e. data on a 2D regular raster. By default,
 when an image is displayed in a subplot, its y axis will be
@@ -6228,7 +6234,9 @@ pixels to be rendered as squares.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>colormodel</strong> – Color model used to map the numerical color components
-described in <cite>z</cite> into colors.</p></li>
+described in <cite>z</cite> into colors. If <cite>source</cite> is specified,
+this attribute will be set to <cite>rgba256</cite> otherwise it
+defaults to <cite>rgb</cite>.</p></li>
 <li><p><strong>customdata</strong> – Assigns extra data each datum. This may be useful when
 listening to hover, click and selection events. Note
 that, “scatter” traces also appends customdata items in
@@ -6255,8 +6263,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -6295,6 +6302,9 @@ meta .</p></li>
 <li><p><strong>name</strong> – Sets the trace name. The trace name appear as the
 legend item and on hover.</p></li>
 <li><p><strong>opacity</strong> – Sets the opacity of the trace.</p></li>
+<li><p><strong>source</strong> – Specifies the data URI of the image to be visualized.
+The URI consists of “<a class="reference external" href="data:image">data:image</a>/[&lt;media
+subtype&gt;][;base64],&lt;data&gt;”</p></li>
 <li><p><strong>stream</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">plotly.graph_objects.image.Stream</span></code> instance or
 dict with compatible properties</p></li>
 <li><p><strong>text</strong> – Sets the text elements associated with each z value.</p></li>
@@ -6340,14 +6350,16 @@ of 3 or 4 numbers representing a color.</p></li>
 component. Note that the default value will depend on
 the colormodel. For the <cite>rgb</cite> colormodel, it is [255,
 255, 255]. For the <cite>rgba</cite> colormodel, it is [255, 255,
-255, 1]. For the <cite>hsl</cite> colormodel, it is [360, 100,
+255, 1]. For the <cite>rgba256</cite> colormodel, it is [255, 255,
+255, 255]. For the <cite>hsl</cite> colormodel, it is [360, 100,
 100]. For the <cite>hsla</cite> colormodel, it is [360, 100, 100,
 1].</p></li>
 <li><p><strong>zmin</strong> – Array defining the lower bound for each color
 component. Note that the default value will depend on
 the colormodel. For the <cite>rgb</cite> colormodel, it is [0, 0,
 0]. For the <cite>rgba</cite> colormodel, it is [0, 0, 0, 0]. For
-the <cite>hsl</cite> colormodel, it is [0, 0, 0]. For the <cite>hsla</cite>
+the <cite>rgba256</cite> colormodel, it is [0, 0, 0, 0]. For the
+<cite>hsl</cite> colormodel, it is [0, 0, 0]. For the <cite>hsla</cite>
 colormodel, it is [0, 0, 0, 0].</p></li>
 <li><p><strong>zsrc</strong> – Sets the source reference on Chart Studio Cloud for  z
 .</p></li>
@@ -6567,8 +6579,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -6883,8 +6894,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -7268,8 +7278,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -7495,8 +7504,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -7608,8 +7616,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. Every attributes
 that can be specified per-point (the ones that are
 <cite>arrayOk: true</cite>) are available. variables <cite>label</cite>,
@@ -8035,8 +8042,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -8164,8 +8170,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. Every attributes
 that can be specified per-point (the ones that are
 <cite>arrayOk: true</cite>) are available.</p></li>
@@ -8297,8 +8302,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -8394,8 +8398,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. Every attributes
 that can be specified per-point (the ones that are
 <cite>arrayOk: true</cite>) are available.</p></li>
@@ -8516,8 +8519,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -8608,8 +8610,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. Every attributes
 that can be specified per-point (the ones that are
 <cite>arrayOk: true</cite>) are available. variables <cite>a</cite>, <cite>b</cite> and
@@ -8741,8 +8742,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -8852,8 +8852,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. Every attributes
 that can be specified per-point (the ones that are
 <cite>arrayOk: true</cite>) are available. variables <cite>lat</cite>, <cite>lon</cite>,
@@ -8971,8 +8970,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -9059,8 +9057,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. Every attributes
 that can be specified per-point (the ones that are
 <cite>arrayOk: true</cite>) are available.</p></li>
@@ -9193,8 +9190,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -9294,8 +9290,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. Every attributes
 that can be specified per-point (the ones that are
 <cite>arrayOk: true</cite>) are available. variables <cite>lat</cite>, <cite>lon</cite>
@@ -9412,8 +9407,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -9515,8 +9509,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. Every attributes
 that can be specified per-point (the ones that are
 <cite>arrayOk: true</cite>) are available. variables <cite>r</cite>, <cite>theta</cite>
@@ -9642,8 +9635,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -9745,8 +9737,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. Every attributes
 that can be specified per-point (the ones that are
 <cite>arrayOk: true</cite>) are available. variables <cite>r</cite>, <cite>theta</cite>
@@ -9884,8 +9875,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -9987,8 +9977,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. Every attributes
 that can be specified per-point (the ones that are
 <cite>arrayOk: true</cite>) are available. variables <cite>a</cite>, <cite>b</cite>, <cite>c</cite>
@@ -10227,8 +10216,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -10430,8 +10418,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -10611,8 +10598,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -10717,8 +10703,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. Every attributes
 that can be specified per-point (the ones that are
 <cite>arrayOk: true</cite>) are available. variables
@@ -10859,8 +10844,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -11310,8 +11294,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -11408,8 +11391,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. Every attributes
 that can be specified per-point (the ones that are
 <cite>arrayOk: true</cite>) are available. variables
@@ -11517,8 +11499,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -11808,8 +11789,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -12006,8 +11986,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. The variables
 available in <cite>hovertemplate</cite> are the ones emitted as
 event data described at this link
@@ -12127,8 +12106,7 @@ reference/blob/master/Formatting.md#d3_format for
 details on the formatting syntax. Dates are formatted
 using d3-time-format’s syntax %{variable|d3-time-
 format}, for example “Day: %{2019-01-01|%A}”.
-https://github.com/d3/d3-3.x-api-
-reference/blob/master/Time-Formatting.md#format for
+https://github.com/d3/d3-time-format#locale_format for
 details on the date formatting syntax. Every attributes
 that can be specified per-point (the ones that are
 <cite>arrayOk: true</cite>) are available. variables <cite>initial</cite>,
@@ -12448,7 +12426,12 @@ Traces will be selected if they contain properties corresponding
 to all of the dictionary’s keys, with values that exactly match
 the supplied values. If None (the default), all annotations are
 selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of annotations to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of annotations to select.
+To select annotations by row and column, the Figure must have been
+created using plotly.subplots.make_subplots.  To select only those
+annotations that are in paper coordinates, set row and col to the
+string ‘paper’.  If None (the default), all annotations are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of annotations to select.
 To select annotations by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  To select only those
 annotations that are in paper coordinates, set row and col to the
@@ -12491,7 +12474,11 @@ coloraxis objects will be selected if they contain
 properties corresponding to all of the dictionary’s keys, with
 values that exactly match the supplied values. If None
 (the default), all coloraxis objects are selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of coloraxis objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of coloraxis objects to select.
+To select coloraxis objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all coloraxis objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of coloraxis objects to select.
 To select coloraxis objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all coloraxis objects are selected.</p></li>
@@ -12520,7 +12507,11 @@ geo objects will be selected if they contain
 properties corresponding to all of the dictionary’s keys, with
 values that exactly match the supplied values. If None
 (the default), all geo objects are selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of geo objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of geo objects to select.
+To select geo objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all geo objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of geo objects to select.
 To select geo objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all geo objects are selected.</p></li>
@@ -12549,7 +12540,12 @@ Traces will be selected if they contain properties corresponding
 to all of the dictionary’s keys, with values that exactly match
 the supplied values. If None (the default), all images are
 selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of images to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of images to select.
+To select images by row and column, the Figure must have been
+created using plotly.subplots.make_subplots.  To select only those
+images that are in paper coordinates, set row and col to the
+string ‘paper’.  If None (the default), all images are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of images to select.
 To select images by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  To select only those
 images that are in paper coordinates, set row and col to the
@@ -12592,7 +12588,11 @@ mapbox objects will be selected if they contain
 properties corresponding to all of the dictionary’s keys, with
 values that exactly match the supplied values. If None
 (the default), all mapbox objects are selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of mapbox objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of mapbox objects to select.
+To select mapbox objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all mapbox objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of mapbox objects to select.
 To select mapbox objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all mapbox objects are selected.</p></li>
@@ -12621,7 +12621,11 @@ polar objects will be selected if they contain
 properties corresponding to all of the dictionary’s keys, with
 values that exactly match the supplied values. If None
 (the default), all polar objects are selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of polar objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of polar objects to select.
+To select polar objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all polar objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of polar objects to select.
 To select polar objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all polar objects are selected.</p></li>
@@ -12650,7 +12654,11 @@ scene objects will be selected if they contain
 properties corresponding to all of the dictionary’s keys, with
 values that exactly match the supplied values. If None
 (the default), all scene objects are selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of scene objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of scene objects to select.
+To select scene objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all scene objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of scene objects to select.
 To select scene objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all scene objects are selected.</p></li>
@@ -12679,7 +12687,12 @@ Traces will be selected if they contain properties corresponding
 to all of the dictionary’s keys, with values that exactly match
 the supplied values. If None (the default), all shapes are
 selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of shapes to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of shapes to select.
+To select shapes by row and column, the Figure must have been
+created using plotly.subplots.make_subplots.  To select only those
+shapes that are in paper coordinates, set row and col to the
+string ‘paper’.  If None (the default), all shapes are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of shapes to select.
 To select shapes by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  To select only those
 shapes that are in paper coordinates, set row and col to the
@@ -12722,7 +12735,11 @@ ternary objects will be selected if they contain
 properties corresponding to all of the dictionary’s keys, with
 values that exactly match the supplied values. If None
 (the default), all ternary objects are selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of ternary objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of ternary objects to select.
+To select ternary objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all ternary objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of ternary objects to select.
 To select ternary objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all ternary objects are selected.</p></li>
@@ -12751,7 +12768,11 @@ Traces will be selected if they contain properties corresponding
 to all of the dictionary’s keys, with values that exactly match
 the supplied values. If None (the default), all traces are
 selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of traces to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
+To select traces by row and column, the Figure must have been
+created using plotly.subplots.make_subplots.  If None
+(the default), all traces are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
 To select traces by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  If None
 (the default), all traces are selected.</p></li>
@@ -12793,7 +12814,11 @@ xaxis objects will be selected if they contain
 properties corresponding to all of the dictionary’s keys, with
 values that exactly match the supplied values. If None
 (the default), all xaxis objects are selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of xaxis objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of xaxis objects to select.
+To select xaxis objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all xaxis objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of xaxis objects to select.
 To select xaxis objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all xaxis objects are selected.</p></li>
@@ -12822,7 +12847,11 @@ yaxis objects will be selected if they contain
 properties corresponding to all of the dictionary’s keys, with
 values that exactly match the supplied values. If None
 (the default), all yaxis objects are selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of yaxis objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of yaxis objects to select.
+To select yaxis objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all yaxis objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of yaxis objects to select.
 To select yaxis objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all yaxis objects are selected.</p></li>
@@ -12860,6 +12889,32 @@ info on creating subplots with secondary y-axes.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>tuple[plotly.graph_objs.Frame]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="kaleidoscope.interactive.PlotlyWidget.full_figure_for_development">
+<code class="sig-name descname">full_figure_for_development</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">warn</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">as_dict</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaleidoscope.interactive.PlotlyWidget.full_figure_for_development" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute default values for all attributes not specified in the input figure and
+returns the output as a “full” figure. This function calls Plotly.js via Kaleido
+to populate unspecified attributes. This function is intended for interactive use
+during development to learn more about how Plotly.js computes default values and is
+not generally necessary or recommended for production use.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fig</strong> – Figure object or dict representing a figure</p></li>
+<li><p><strong>warn</strong> (<em>bool</em>) – If False, suppress warnings about not using this in production.</p></li>
+<li><p><strong>as_dict</strong> (<em>bool</em>) – If True, output is a dict with some keys that go.Figure can’t parse.
+If False, output is a go.Figure with unparseable keys skipped.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The full figure</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>plotly.graph_objects.Figure or dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -13284,7 +13339,12 @@ Annotations will be selected if they contain properties corresponding
 to all of the dictionary’s keys, with values that exactly match
 the supplied values. If None (the default), all annotations are
 selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of annotations to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of annotations to select.
+To select annotations by row and column, the Figure must have been
+created using plotly.subplots.make_subplots.  To select only those
+annotation that are in paper coordinates, set row and col to the
+string ‘paper’.  If None (the default), all annotations are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of annotations to select.
 To select annotations by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  To select only those
 annotation that are in paper coordinates, set row and col to the
@@ -13328,7 +13388,11 @@ coloraxis objects will be selected if they contain
 properties corresponding to all of the dictionary’s keys, with
 values that exactly match the supplied values. If None
 (the default), all coloraxis objects are selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of coloraxis objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of coloraxis objects to select.
+To select coloraxis objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all coloraxis objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of coloraxis objects to select.
 To select coloraxis objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all coloraxis objects are selected.</p></li>
@@ -13358,7 +13422,11 @@ geo objects will be selected if they contain
 properties corresponding to all of the dictionary’s keys, with
 values that exactly match the supplied values. If None
 (the default), all geo objects are selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of geo objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of geo objects to select.
+To select geo objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all geo objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of geo objects to select.
 To select geo objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all geo objects are selected.</p></li>
@@ -13387,7 +13455,12 @@ Annotations will be selected if they contain properties corresponding
 to all of the dictionary’s keys, with values that exactly match
 the supplied values. If None (the default), all images are
 selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of images to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of images to select.
+To select images by row and column, the Figure must have been
+created using plotly.subplots.make_subplots.  To select only those
+image that are in paper coordinates, set row and col to the
+string ‘paper’.  If None (the default), all images are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of images to select.
 To select images by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  To select only those
 image that are in paper coordinates, set row and col to the
@@ -13431,7 +13504,11 @@ mapbox objects will be selected if they contain
 properties corresponding to all of the dictionary’s keys, with
 values that exactly match the supplied values. If None
 (the default), all mapbox objects are selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of mapbox objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of mapbox objects to select.
+To select mapbox objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all mapbox objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of mapbox objects to select.
 To select mapbox objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all mapbox objects are selected.</p></li>
@@ -13461,7 +13538,11 @@ polar objects will be selected if they contain
 properties corresponding to all of the dictionary’s keys, with
 values that exactly match the supplied values. If None
 (the default), all polar objects are selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of polar objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of polar objects to select.
+To select polar objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all polar objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of polar objects to select.
 To select polar objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all polar objects are selected.</p></li>
@@ -13491,7 +13572,11 @@ scene objects will be selected if they contain
 properties corresponding to all of the dictionary’s keys, with
 values that exactly match the supplied values. If None
 (the default), all scene objects are selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of scene objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of scene objects to select.
+To select scene objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all scene objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of scene objects to select.
 To select scene objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all scene objects are selected.</p></li>
@@ -13520,7 +13605,12 @@ Annotations will be selected if they contain properties corresponding
 to all of the dictionary’s keys, with values that exactly match
 the supplied values. If None (the default), all shapes are
 selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of shapes to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of shapes to select.
+To select shapes by row and column, the Figure must have been
+created using plotly.subplots.make_subplots.  To select only those
+shape that are in paper coordinates, set row and col to the
+string ‘paper’.  If None (the default), all shapes are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of shapes to select.
 To select shapes by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  To select only those
 shape that are in paper coordinates, set row and col to the
@@ -13564,7 +13654,11 @@ ternary objects will be selected if they contain
 properties corresponding to all of the dictionary’s keys, with
 values that exactly match the supplied values. If None
 (the default), all ternary objects are selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of ternary objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of ternary objects to select.
+To select ternary objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all ternary objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of ternary objects to select.
 To select ternary objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all ternary objects are selected.</p></li>
@@ -13593,7 +13687,11 @@ Traces will be selected if they contain properties corresponding
 to all of the dictionary’s keys, with values that exactly match
 the supplied values. If None (the default), all traces are
 selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of traces to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
+To select traces by row and column, the Figure must have been
+created using plotly.subplots.make_subplots.  If None
+(the default), all traces are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
 To select traces by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  If None
 (the default), all traces are selected.</p></li>
@@ -13636,7 +13734,11 @@ xaxis objects will be selected if they contain
 properties corresponding to all of the dictionary’s keys, with
 values that exactly match the supplied values. If None
 (the default), all xaxis objects are selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of xaxis objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of xaxis objects to select.
+To select xaxis objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all xaxis objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of xaxis objects to select.
 To select xaxis objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all xaxis objects are selected.</p></li>
@@ -13666,7 +13768,11 @@ yaxis objects will be selected if they contain
 properties corresponding to all of the dictionary’s keys, with
 values that exactly match the supplied values. If None
 (the default), all yaxis objects are selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of yaxis objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of yaxis objects to select.
+To select yaxis objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all yaxis objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of yaxis objects to select.
 To select yaxis objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all yaxis objects are selected.</p></li>
@@ -13823,7 +13929,11 @@ Plotly.animate in Plotly.js. See
 <a class="reference external" href="https://github.com/plotly/plotly.js/blob/master/src/plots/animation_attributes.js">https://github.com/plotly/plotly.js/blob/master/src/plots/animation_attributes.js</a>
 for available options. Has no effect if the figure does not contain
 frames, or auto_play is False.</p></li>
-<li><p><strong>default_height</strong> (<em>default_width</em><em>,</em>) – The default figure width/height to use if the provided figure does not
+<li><p><strong>default_width</strong> (<em>number</em><em> or </em><em>str</em><em> (</em><em>default '100%'</em><em>)</em>) – The default figure width/height to use if the provided figure does not
+specify its own layout.width/layout.height property.  May be
+specified in pixels as an integer (e.g. 500), or as a css width style
+string (e.g. ‘500px’, ‘100%’).</p></li>
+<li><p><strong>default_height</strong> (<em>number</em><em> or </em><em>str</em><em> (</em><em>default '100%'</em><em>)</em>) – The default figure width/height to use if the provided figure does not
 specify its own layout.width/layout.height property.  May be
 specified in pixels as an integer (e.g. 500), or as a css width style
 string (e.g. ‘500px’, ‘100%’).</p></li>
@@ -14073,7 +14183,12 @@ Traces will be selected if they contain properties corresponding
 to all of the dictionary’s keys, with values that exactly match
 the supplied values. If None (the default), all annotations are
 selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of annotations to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of annotations to select.
+To select annotations by row and column, the Figure must have been
+created using plotly.subplots.make_subplots.  To select only those
+annotation that are in paper coordinates, set row and col to the
+string ‘paper’.  If None (the default), all annotations are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of annotations to select.
 To select annotations by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  To select only those
 annotation that are in paper coordinates, set row and col to the
@@ -14123,7 +14238,11 @@ values that exactly match the supplied values. If None
 <li><p><strong>overwrite</strong> (<em>bool</em>) – If True, overwrite existing properties. If False, apply updates
 to existing properties recursively, preserving existing
 properties that are not specified in the update operation.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of coloraxis objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of coloraxis objects to select.
+To select coloraxis objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all coloraxis objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of coloraxis objects to select.
 To select coloraxis objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all coloraxis objects are selected.</p></li>
@@ -14160,7 +14279,11 @@ values that exactly match the supplied values. If None
 <li><p><strong>overwrite</strong> (<em>bool</em>) – If True, overwrite existing properties. If False, apply updates
 to existing properties recursively, preserving existing
 properties that are not specified in the update operation.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of geo objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of geo objects to select.
+To select geo objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all geo objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of geo objects to select.
 To select geo objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all geo objects are selected.</p></li>
@@ -14220,7 +14343,12 @@ Traces will be selected if they contain properties corresponding
 to all of the dictionary’s keys, with values that exactly match
 the supplied values. If None (the default), all images are
 selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of images to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of images to select.
+To select images by row and column, the Figure must have been
+created using plotly.subplots.make_subplots.  To select only those
+image that are in paper coordinates, set row and col to the
+string ‘paper’.  If None (the default), all images are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of images to select.
 To select images by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  To select only those
 image that are in paper coordinates, set row and col to the
@@ -14270,7 +14398,11 @@ values that exactly match the supplied values. If None
 <li><p><strong>overwrite</strong> (<em>bool</em>) – If True, overwrite existing properties. If False, apply updates
 to existing properties recursively, preserving existing
 properties that are not specified in the update operation.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of mapbox objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of mapbox objects to select.
+To select mapbox objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all mapbox objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of mapbox objects to select.
 To select mapbox objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all mapbox objects are selected.</p></li>
@@ -14307,7 +14439,11 @@ values that exactly match the supplied values. If None
 <li><p><strong>overwrite</strong> (<em>bool</em>) – If True, overwrite existing properties. If False, apply updates
 to existing properties recursively, preserving existing
 properties that are not specified in the update operation.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of polar objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of polar objects to select.
+To select polar objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all polar objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of polar objects to select.
 To select polar objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all polar objects are selected.</p></li>
@@ -14344,7 +14480,11 @@ values that exactly match the supplied values. If None
 <li><p><strong>overwrite</strong> (<em>bool</em>) – If True, overwrite existing properties. If False, apply updates
 to existing properties recursively, preserving existing
 properties that are not specified in the update operation.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of scene objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of scene objects to select.
+To select scene objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all scene objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of scene objects to select.
 To select scene objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all scene objects are selected.</p></li>
@@ -14378,7 +14518,12 @@ Traces will be selected if they contain properties corresponding
 to all of the dictionary’s keys, with values that exactly match
 the supplied values. If None (the default), all shapes are
 selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of shapes to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of shapes to select.
+To select shapes by row and column, the Figure must have been
+created using plotly.subplots.make_subplots.  To select only those
+shape that are in paper coordinates, set row and col to the
+string ‘paper’.  If None (the default), all shapes are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of shapes to select.
 To select shapes by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  To select only those
 shape that are in paper coordinates, set row and col to the
@@ -14428,7 +14573,11 @@ values that exactly match the supplied values. If None
 <li><p><strong>overwrite</strong> (<em>bool</em>) – If True, overwrite existing properties. If False, apply updates
 to existing properties recursively, preserving existing
 properties that are not specified in the update operation.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of ternary objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of ternary objects to select.
+To select ternary objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all ternary objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of ternary objects to select.
 To select ternary objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all ternary objects are selected.</p></li>
@@ -14462,7 +14611,11 @@ Traces will be selected if they contain properties corresponding
 to all of the dictionary’s keys, with values that exactly match
 the supplied values. If None (the default), all traces are
 selected.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of traces to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
+To select traces by row and column, the Figure must have been
+created using plotly.subplots.make_subplots.  If None
+(the default), all traces are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of traces to select.
 To select traces by row and column, the Figure must have been
 created using plotly.subplots.make_subplots.  If None
 (the default), all traces are selected.</p></li>
@@ -14514,7 +14667,11 @@ values that exactly match the supplied values. If None
 <li><p><strong>overwrite</strong> (<em>bool</em>) – If True, overwrite existing properties. If False, apply updates
 to existing properties recursively, preserving existing
 properties that are not specified in the update operation.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of xaxis objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of xaxis objects to select.
+To select xaxis objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all xaxis objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of xaxis objects to select.
 To select xaxis objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all xaxis objects are selected.</p></li>
@@ -14551,7 +14708,11 @@ values that exactly match the supplied values. If None
 <li><p><strong>overwrite</strong> (<em>bool</em>) – If True, overwrite existing properties. If False, apply updates
 to existing properties recursively, preserving existing
 properties that are not specified in the update operation.</p></li>
-<li><p><strong>col</strong> (<em>row</em><em>,</em>) – Subplot row and column index of yaxis objects to select.
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of yaxis objects to select.
+To select yaxis objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all yaxis objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of yaxis objects to select.
 To select yaxis objects by row and column, the Figure
 must have been created using plotly.subplots.make_subplots.
 If None (the default), all yaxis objects are selected.</p></li>
@@ -14661,7 +14822,11 @@ Plotly.animate in Plotly.js. See
 <a class="reference external" href="https://github.com/plotly/plotly.js/blob/master/src/plots/animation_attributes.js">https://github.com/plotly/plotly.js/blob/master/src/plots/animation_attributes.js</a>
 for available options. Has no effect if the figure does not contain
 frames, or auto_play is False.</p></li>
-<li><p><strong>default_height</strong> (<em>default_width</em><em>,</em>) – The default figure width/height to use if the provided figure does not
+<li><p><strong>default_width</strong> (<em>number</em><em> or </em><em>str</em><em> (</em><em>default '100%'</em><em>)</em>) – The default figure width/height to use if the provided figure does not
+specify its own layout.width/layout.height property.  May be
+specified in pixels as an integer (e.g. 500), or as a css width style
+string (e.g. ‘500px’, ‘100%’).</p></li>
+<li><p><strong>default_height</strong> (<em>number</em><em> or </em><em>str</em><em> (</em><em>default '100%'</em><em>)</em>) – The default figure width/height to use if the provided figure does not
 specify its own layout.width/layout.height property.  May be
 specified in pixels as an integer (e.g. 500), or as a css width style
 string (e.g. ‘500px’, ‘100%’).</p></li>
@@ -14788,13 +14953,16 @@ representation should be as compact as possible.</p></li>
       </div>
     </div>
 
-    <script src="../_static/js/index.js"></script>
+    
+  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
     <footer class="footer mt-5 mt-md-0">
   <div class="container">
     <p>
           &copy; Copyright 2020, Kaleidoscope Team.<br/>
-        Last updated on 2020/08/10.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.1.2.<br/>
+        Last updated on 2020/10/08.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
     </p>
   </div>
 </footer>

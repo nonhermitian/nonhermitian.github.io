@@ -1,4 +1,4 @@
-kaleidoscope.qiskit.backends.cnot\_error\_density
+﻿kaleidoscope.qiskit.backends.cnot\_error\_density
 =================================================
 
 .. currentmodule:: kaleidoscope.qiskit.backends
