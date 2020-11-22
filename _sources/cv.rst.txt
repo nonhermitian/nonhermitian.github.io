@@ -47,6 +47,14 @@ Experience
 Honors and Awards
 #################
 
+- 2020 - **Outstanding Research Accomplishment**, "IBM Quantum Cloud Applications and Services", IBM.
+
+- 2020 - **Outstanding Research Accomplishment**, "Quantum Education with Qiskit", IBM.
+
+- 2019 - **Outstanding Technical Achievement Award**, "Qiskit and IBM Q Experience Ecosystem", IBM.
+
+- 2019 - **Corporate Technical Award**, "IBM Q 20-qubit system development and deployment", IBM.
+
 - 2014 - **Outstanding Teaching Award**, (Computational Physics), Korea University.
 
 - 2012 - **Outstanding Teaching Award**, (Introductory Physics), Korea University.
