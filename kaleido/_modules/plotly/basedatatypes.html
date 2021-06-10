@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plotly.basedatatypes &#8212; Kaleidoscope 0.0.10 0.0.10 documentation</title>
+    <title>plotly.basedatatypes &#8212; Kaleidoscope 0.0.13.dev13+3c1f2c3 0.0.13.dev13+3c1f2c3 documentation</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,82 +20,104 @@
 
     
       
-  <link rel="stylesheet"
-    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/thebelab-helper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
-<div class="container-xl">
+    <div class="container-fluid" id="banner"></div>
 
     
-    <a class="navbar-brand" href="../../index.html">
-      <img src="../../_static/kal_logo.png" class="logo" alt="logo">
-    </a>
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
     
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    
 
-    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
-      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
-        
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../../install.html">Installation</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../../guide/index.html">Guide</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../../tutorials/index.html">Tutorials</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../../api.html">API reference</a>
-        </li>
-        
-        
-      </ul>
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/kal_logo.png" class="logo" alt="logo">
+</a>
 
 
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
       
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../install.html">
+  Installation
+ </a>
+</li>
 
-      <ul class="navbar-nav">
-        
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/nonhermitian/kaleidoscope" target="_blank" rel="noopener">
-              <span><i class="fab fa-github-square"></i></span>
-            </a>
-          </li>
-        
-        
-      </ul>
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../guide/index.html">
+  Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../api.html">
+  API reference
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
     </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/nonhermitian/kaleidoscope" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
 </div>
     </nav>
     
@@ -102,50 +125,29 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-
-<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form>
-
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-  
-
-  <ul class="nav bd-sidenav">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    </ul>
-
+    
+  </div>
 </nav>
-          </div>
+            </div>
+            
           
 
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
-              
-
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-    </ul>
-</nav>
-
-
-              
+            
           </div>
           
 
+          
+          
+            
           
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
@@ -162,14 +164,384 @@
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
 <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span><span class="p">,</span> <span class="n">copy</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
 
-<span class="kn">from</span> <span class="nn">_plotly_utils.utils</span> <span class="kn">import</span> <span class="n">_natural_sort_strings</span><span class="p">,</span> <span class="n">_get_int_type</span>
+<span class="kn">from</span> <span class="nn">_plotly_utils.utils</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">_natural_sort_strings</span><span class="p">,</span>
+    <span class="n">_get_int_type</span><span class="p">,</span>
+    <span class="n">split_multichar</span><span class="p">,</span>
+    <span class="n">split_string_positions</span><span class="p">,</span>
+    <span class="n">display_string_positions</span><span class="p">,</span>
+    <span class="n">chomp_empty_strings</span><span class="p">,</span>
+    <span class="n">find_closest_string</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">_plotly_utils.exceptions</span> <span class="kn">import</span> <span class="n">PlotlyKeyError</span>
 <span class="kn">from</span> <span class="nn">.optional_imports</span> <span class="kn">import</span> <span class="n">get_module</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">shapeannotation</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">subplots</span>
 
 <span class="c1"># Create Undefined sentinel value</span>
 <span class="c1">#   - Setting a property to None removes any existing value</span>
 <span class="c1">#   - Setting a property to Undefined leaves existing value unmodified</span>
 <span class="n">Undefined</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">_len_dict_item</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Because a parsed dict path is a tuple containings strings or integers, to</span>
+<span class="sd">    know the length of the resulting string when printing we might need to</span>
+<span class="sd">    convert to a string before calling len on it.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">item</span><span class="p">,))</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Cannot find string length of an item that is not string-like nor an integer.&quot;</span>
+            <span class="p">)</span>
+    <span class="k">return</span> <span class="n">l</span>
+
+
+<span class="k">def</span> <span class="nf">_str_to_dict_path_full</span><span class="p">(</span><span class="n">key_path_str</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert a key path string into a tuple of key path elements and also</span>
+<span class="sd">    return a tuple of indices marking the beginning of each element in the</span>
+<span class="sd">    string.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    key_path_str : str</span>
+<span class="sd">        Key path string, where nested keys are joined on &#39;.&#39; characters</span>
+<span class="sd">        and array indexes are specified using brackets</span>
+<span class="sd">        (e.g. &#39;foo.bar[1]&#39;)</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple[str | int]</span>
+<span class="sd">    tuple [int]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># skip all the parsing if the string is empty</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">key_path_str</span><span class="p">):</span>
+        <span class="c1"># split string on &quot;.[]&quot; and filter out empty strings</span>
+        <span class="n">key_path2</span> <span class="o">=</span> <span class="n">split_multichar</span><span class="p">([</span><span class="n">key_path_str</span><span class="p">],</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;.[]&quot;</span><span class="p">))</span>
+        <span class="c1"># Split out underscore</span>
+        <span class="c1"># e.g. [&#39;foo&#39;, &#39;bar_baz&#39;, &#39;1&#39;] -&gt; [&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;, &#39;1&#39;]</span>
+        <span class="n">key_path3</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">underscore_props</span> <span class="o">=</span> <span class="n">BaseFigure</span><span class="o">.</span><span class="n">_valid_underscore_properties</span>
+
+        <span class="k">def</span> <span class="nf">_make_hyphen_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s2">&quot;_&quot;</span> <span class="ow">in</span> <span class="n">key</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+                <span class="c1"># For valid properties that contain underscores (error_x)</span>
+                <span class="c1"># replace the underscores with hyphens to protect them</span>
+                <span class="c1"># from being split up</span>
+                <span class="k">for</span> <span class="n">under_prop</span><span class="p">,</span> <span class="n">hyphen_prop</span> <span class="ow">in</span> <span class="n">underscore_props</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">under_prop</span><span class="p">,</span> <span class="n">hyphen_prop</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">key</span>
+
+        <span class="k">def</span> <span class="nf">_make_underscore_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+
+        <span class="n">key_path2b</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">_make_hyphen_key</span><span class="p">,</span> <span class="n">key_path2</span><span class="p">))</span>
+        <span class="c1"># Here we want to split up each non-empty string in the list at</span>
+        <span class="c1"># underscores and recombine the strings using chomp_empty_strings so</span>
+        <span class="c1"># that leading, trailing and multiple _ will be preserved</span>
+        <span class="k">def</span> <span class="nf">_split_and_chomp</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">s</span>
+            <span class="n">s_split</span> <span class="o">=</span> <span class="n">split_multichar</span><span class="p">([</span><span class="n">s</span><span class="p">],</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">))</span>
+            <span class="c1"># handle key paths like &quot;a_path_&quot;, &quot;_another_path&quot;, or</span>
+            <span class="c1"># &quot;yet__another_path&quot; by joining extra &quot;_&quot; to the string to the right or</span>
+            <span class="c1"># the empty string if at the end</span>
+            <span class="n">s_chomped</span> <span class="o">=</span> <span class="n">chomp_empty_strings</span><span class="p">(</span><span class="n">s_split</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">s_chomped</span>
+
+        <span class="c1"># after running _split_and_chomp on key_path2b, it will be a list</span>
+        <span class="c1"># containing strings and lists of strings; concatenate the sublists with</span>
+        <span class="c1"># the list (&quot;lift&quot; the items out of the sublists)</span>
+        <span class="n">key_path2c</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+            <span class="n">reduce</span><span class="p">(</span>
+                <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="nb">list</span><span class="p">())</span> <span class="k">else</span> <span class="n">x</span> <span class="o">+</span> <span class="p">[</span><span class="n">y</span><span class="p">],</span>
+                <span class="nb">map</span><span class="p">(</span><span class="n">_split_and_chomp</span><span class="p">,</span> <span class="n">key_path2b</span><span class="p">),</span>
+                <span class="p">[],</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="n">key_path2d</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">_make_underscore_key</span><span class="p">,</span> <span class="n">key_path2c</span><span class="p">))</span>
+        <span class="n">all_elem_idcs</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">split_string_positions</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">key_path2d</span><span class="p">)))</span>
+        <span class="c1"># remove empty strings, and indices pointing to them</span>
+        <span class="n">key_elem_pairs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">key_path2d</span><span class="p">)))</span>
+        <span class="n">key_path3</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">key_elem_pairs</span><span class="p">]</span>
+        <span class="n">elem_idcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">all_elem_idcs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">key_elem_pairs</span><span class="p">]</span>
+
+        <span class="c1"># Convert elements to ints if possible.</span>
+        <span class="c1"># e.g. [&#39;foo&#39;, &#39;bar&#39;, &#39;0&#39;] -&gt; [&#39;foo&#39;, &#39;bar&#39;, 0]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">key_path3</span><span class="p">)):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">key_path3</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">key_path3</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">_</span><span class="p">:</span>
+                <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">key_path3</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">elem_idcs</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">key_path3</span><span class="p">),</span> <span class="n">elem_idcs</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_remake_path_from_tuple</span><span class="p">(</span><span class="n">props</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    try to remake a path using the properties in props</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">props</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_add_square_brackets_to_number</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="nb">int</span><span class="p">()):</span>
+            <span class="k">return</span> <span class="s2">&quot;[</span><span class="si">%d</span><span class="s2">]&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">n</span><span class="p">,)</span>
+        <span class="k">return</span> <span class="n">n</span>
+
+    <span class="k">def</span> <span class="nf">_prepend_dot_if_not_number</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">s</span>
+        <span class="k">return</span> <span class="n">s</span>
+
+    <span class="n">props_all_str</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">_add_square_brackets_to_number</span><span class="p">,</span> <span class="n">props</span><span class="p">))</span>
+    <span class="n">props_w_underscore</span> <span class="o">=</span> <span class="n">props_all_str</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span>
+        <span class="nb">map</span><span class="p">(</span><span class="n">_prepend_dot_if_not_number</span><span class="p">,</span> <span class="n">props_all_str</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">props_w_underscore</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_check_path_in_prop_tree</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">error_cast</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    obj:        the object in which the first property is looked up</span>
+<span class="sd">    path:       the path that will be split into properties to be looked up</span>
+<span class="sd">                path can also be a tuple. In this case, it is combined using .</span>
+<span class="sd">                and [] because it is impossible to reconstruct the string fully</span>
+<span class="sd">                in order to give a decent error message.</span>
+<span class="sd">    error_cast: this function walks down the property tree by looking up values</span>
+<span class="sd">                in objects. So this will throw exceptions that are thrown by</span>
+<span class="sd">                __getitem__, but in some cases we are checking the path for a</span>
+<span class="sd">                different reason and would prefer throwing a more relevant</span>
+<span class="sd">                exception (e.g., __getitem__ throws KeyError but __setitem__</span>
+<span class="sd">                throws ValueError for subclasses of BasePlotlyType and</span>
+<span class="sd">                BaseFigure). So the resulting error can be &quot;casted&quot; to the</span>
+<span class="sd">                passed in type, if not None.</span>
+<span class="sd">    returns</span>
+<span class="sd">          an Exception object or None. The caller can raise this</span>
+<span class="sd">          exception to see where the lookup error occurred.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">_remake_path_from_tuple</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">prop</span><span class="p">,</span> <span class="n">prop_idcs</span> <span class="o">=</span> <span class="n">_str_to_dict_path_full</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">prev_objs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">prop</span><span class="p">):</span>
+        <span class="n">arg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">prev_objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">obj</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">,</span> <span class="ne">IndexError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">arg</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+                <span class="c1"># If obj doesn&#39;t support subscripting, state that and show the</span>
+                <span class="c1"># (valid) property that gives the object that doesn&#39;t support</span>
+                <span class="c1"># subscripting.</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">validator</span> <span class="o">=</span> <span class="n">prev_objs</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">_get_validator</span><span class="p">(</span><span class="n">prop</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+                    <span class="n">arg</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">Invalid value received for the &#39;</span><span class="si">{plotly_name}</span><span class="s2">&#39; property of </span><span class="si">{parent_name}</span><span class="s2"></span>
+
+<span class="si">{description}</span><span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">parent_name</span><span class="o">=</span><span class="n">validator</span><span class="o">.</span><span class="n">parent_name</span><span class="p">,</span>
+                        <span class="n">plotly_name</span><span class="o">=</span><span class="n">validator</span><span class="o">.</span><span class="n">plotly_name</span><span class="p">,</span>
+                        <span class="n">description</span><span class="o">=</span><span class="n">validator</span><span class="o">.</span><span class="n">description</span><span class="p">(),</span>
+                    <span class="p">)</span>
+                <span class="c1"># In case i is 0, the best we can do is indicate the first</span>
+                <span class="c1"># property in the string as having caused the error</span>
+                <span class="n">disp_i</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">dict_item_len</span> <span class="o">=</span> <span class="n">_len_dict_item</span><span class="p">(</span><span class="n">prop</span><span class="p">[</span><span class="n">disp_i</span><span class="p">])</span>
+                <span class="c1"># if the path has trailing underscores, the prop string will start with &quot;_&quot;</span>
+                <span class="n">trailing_underscores</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                <span class="k">if</span> <span class="n">prop</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;_&quot;</span><span class="p">:</span>
+                    <span class="n">trailing_underscores</span> <span class="o">=</span> <span class="s2">&quot; and path has trailing underscores&quot;</span>
+                <span class="c1"># if the path has trailing underscores and the display index is</span>
+                <span class="c1"># one less than the prop index (see above), then we can also</span>
+                <span class="c1"># indicate the offending underscores</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">trailing_underscores</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">disp_i</span> <span class="o">!=</span> <span class="n">i</span><span class="p">):</span>
+                    <span class="n">dict_item_len</span> <span class="o">+=</span> <span class="n">_len_dict_item</span><span class="p">(</span><span class="n">prop</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="n">arg</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">Property does not support subscripting</span><span class="si">%s</span><span class="s2">:</span>
+<span class="si">%s</span><span class="s2"></span>
+<span class="si">%s</span><span class="s2">&quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="n">trailing_underscores</span><span class="p">,</span>
+                    <span class="n">path</span><span class="p">,</span>
+                    <span class="n">display_string_positions</span><span class="p">(</span>
+                        <span class="n">prop_idcs</span><span class="p">,</span> <span class="n">disp_i</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">dict_item_len</span><span class="p">,</span> <span class="n">char</span><span class="o">=</span><span class="s2">&quot;^&quot;</span>
+                    <span class="p">),</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># State that the property for which subscripting was attempted</span>
+                <span class="c1"># is bad and indicate the start of the bad property.</span>
+                <span class="n">arg</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Bad property path:</span>
+<span class="si">%s</span><span class="s2"></span>
+<span class="si">%s</span><span class="s2">&quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="n">path</span><span class="p">,</span>
+                    <span class="n">display_string_positions</span><span class="p">(</span>
+                        <span class="n">prop_idcs</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">_len_dict_item</span><span class="p">(</span><span class="n">prop</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">char</span><span class="o">=</span><span class="s2">&quot;^&quot;</span>
+                    <span class="p">),</span>
+                <span class="p">)</span>
+            <span class="c1"># Make KeyError more pretty by changing it to a PlotlyKeyError,</span>
+            <span class="c1"># because the Python interpreter has a special way of printing</span>
+            <span class="c1"># KeyError</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+                <span class="n">e</span> <span class="o">=</span> <span class="n">PlotlyKeyError</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">error_cast</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">e</span> <span class="o">=</span> <span class="n">error_cast</span><span class="p">()</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">arg</span><span class="p">,)</span>
+            <span class="k">return</span> <span class="n">e</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">_combine_dicts</span><span class="p">(</span><span class="n">dicts</span><span class="p">):</span>
+    <span class="n">all_args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dicts</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+            <span class="n">all_args</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">all_args</span>
+
+
+<span class="k">def</span> <span class="nf">_indexing_combinations</span><span class="p">(</span><span class="n">dims</span><span class="p">,</span> <span class="n">alls</span><span class="p">,</span> <span class="n">product</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Gives indexing tuples specified by the coordinates in dims.</span>
+<span class="sd">    If a member of dims is &#39;all&#39; then it is replaced by the corresponding member</span>
+<span class="sd">    in alls.</span>
+<span class="sd">    If product is True, then the cartesian product of all the indices is</span>
+<span class="sd">    returned, otherwise the zip (that means index lists of mis-matched length</span>
+<span class="sd">    will yield a list of tuples whose length is the length of the shortest</span>
+<span class="sd">    list).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dims</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># this is because list(itertools.product(*[])) returns [()] which has non-zero</span>
+        <span class="c1"># length!</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dims</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">alls</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;Must have corresponding values in alls for each value of dims. Got dims=</span><span class="si">%s</span><span class="s2"> and alls=</span><span class="si">%s</span><span class="s2">.&quot;</span>
+            <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">dims</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">alls</span><span class="p">))</span>
+        <span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">dims</span><span class="p">,</span> <span class="n">alls</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="p">]</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">product</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="o">*</span><span class="n">r</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">r</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_is_select_subplot_coordinates_arg</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Returns true if any args are lists or the string &#39;all&#39; &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">any</span><span class="p">((</span><span class="n">a</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_axis_spanning_shapes_docstr</span><span class="p">(</span><span class="n">shape_type</span><span class="p">):</span>
+    <span class="n">docstr</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">shape_type</span> <span class="o">==</span> <span class="s2">&quot;hline&quot;</span><span class="p">:</span>
+        <span class="n">docstr</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Add a horizontal line to a plot or subplot that extends infinitely in the</span>
+<span class="s2">x-dimension.</span>
+
+<span class="s2">Parameters</span>
+<span class="s2">----------</span>
+<span class="s2">y: float or int</span>
+<span class="s2">    A number representing the y coordinate of the horizontal line.&quot;&quot;&quot;</span>
+    <span class="k">elif</span> <span class="n">shape_type</span> <span class="o">==</span> <span class="s2">&quot;vline&quot;</span><span class="p">:</span>
+        <span class="n">docstr</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Add a vertical line to a plot or subplot that extends infinitely in the</span>
+<span class="s2">y-dimension.</span>
+
+<span class="s2">Parameters</span>
+<span class="s2">----------</span>
+<span class="s2">x: float or int</span>
+<span class="s2">    A number representing the x coordinate of the vertical line.&quot;&quot;&quot;</span>
+    <span class="k">elif</span> <span class="n">shape_type</span> <span class="o">==</span> <span class="s2">&quot;hrect&quot;</span><span class="p">:</span>
+        <span class="n">docstr</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Add a rectangle to a plot or subplot that extends infinitely in the</span>
+<span class="s2">x-dimension.</span>
+
+<span class="s2">Parameters</span>
+<span class="s2">----------</span>
+<span class="s2">y0: float or int</span>
+<span class="s2">    A number representing the y coordinate of one side of the rectangle.</span>
+<span class="s2">y1: float or int</span>
+<span class="s2">    A number representing the y coordinate of the other side of the rectangle.&quot;&quot;&quot;</span>
+    <span class="k">elif</span> <span class="n">shape_type</span> <span class="o">==</span> <span class="s2">&quot;vrect&quot;</span><span class="p">:</span>
+        <span class="n">docstr</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Add a rectangle to a plot or subplot that extends infinitely in the</span>
+<span class="s2">y-dimension.</span>
+
+<span class="s2">Parameters</span>
+<span class="s2">----------</span>
+<span class="s2">x0: float or int</span>
+<span class="s2">    A number representing the x coordinate of one side of the rectangle.</span>
+<span class="s2">x1: float or int</span>
+<span class="s2">    A number representing the x coordinate of the other side of the rectangle.&quot;&quot;&quot;</span>
+    <span class="n">docstr</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">exclude_empty_subplots: Boolean</span>
+<span class="s2">    If True (default) do not place the shape on subplots that have no data</span>
+<span class="s2">    plotted on them.</span>
+<span class="s2">row: None, int or &#39;all&#39;</span>
+<span class="s2">    Subplot row for shape indexed starting at 1. If &#39;all&#39;, addresses all rows in</span>
+<span class="s2">    the specified column(s). If both row and col are None, addresses the</span>
+<span class="s2">    first subplot if subplots exist, or the only plot. By default is &quot;all&quot;.</span>
+<span class="s2">col: None, int or &#39;all&#39;</span>
+<span class="s2">    Subplot column for shape indexed starting at 1. If &#39;all&#39;, addresses all rows in</span>
+<span class="s2">    the specified column(s). If both row and col are None, addresses the</span>
+<span class="s2">    first subplot if subplots exist, or the only plot. By default is &quot;all&quot;.</span>
+<span class="s2">annotation: dict or plotly.graph_objects.layout.Annotation. If dict(),</span>
+<span class="s2">    it is interpreted as describing an annotation. The annotation is</span>
+<span class="s2">    placed relative to the shape based on annotation_position (see</span>
+<span class="s2">    below) unless its x or y value has been specified for the annotation</span>
+<span class="s2">    passed here. xref and yref are always the same as for the added</span>
+<span class="s2">    shape and cannot be overridden.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">shape_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;hline&quot;</span><span class="p">,</span> <span class="s2">&quot;vline&quot;</span><span class="p">]:</span>
+        <span class="n">docstr</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">annotation_position: a string containing optionally [&quot;top&quot;, &quot;bottom&quot;]</span>
+<span class="s2">    and [&quot;left&quot;, &quot;right&quot;] specifying where the text should be anchored</span>
+<span class="s2">    to on the line. Example positions are &quot;bottom left&quot;, &quot;right top&quot;,</span>
+<span class="s2">    &quot;right&quot;, &quot;bottom&quot;. If an annotation is added but annotation_position is</span>
+<span class="s2">    not specified, this defaults to &quot;top right&quot;.&quot;&quot;&quot;</span>
+    <span class="k">elif</span> <span class="n">shape_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;hrect&quot;</span><span class="p">,</span> <span class="s2">&quot;vrect&quot;</span><span class="p">]:</span>
+        <span class="n">docstr</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">annotation_position: a string containing optionally [&quot;inside&quot;, &quot;outside&quot;], [&quot;top&quot;, &quot;bottom&quot;]</span>
+<span class="s2">    and [&quot;left&quot;, &quot;right&quot;] specifying where the text should be anchored</span>
+<span class="s2">    to on the rectangle. Example positions are &quot;outside top left&quot;, &quot;inside</span>
+<span class="s2">    bottom&quot;, &quot;right&quot;, &quot;inside left&quot;, &quot;inside&quot; (&quot;outside&quot; is not supported). If</span>
+<span class="s2">    an annotation is added but annotation_position is not specified this</span>
+<span class="s2">    defaults to &quot;inside top right&quot;.&quot;&quot;&quot;</span>
+    <span class="n">docstr</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">annotation_*: any parameters to go.layout.Annotation can be passed as</span>
+<span class="s2">    keywords by prefixing them with &quot;annotation_&quot;. For example, to specify the</span>
+<span class="s2">    annotation text &quot;example&quot; you can pass annotation_text=&quot;example&quot; as a</span>
+<span class="s2">    keyword argument.</span>
+<span class="s2">**kwargs:</span>
+<span class="s2">    Any named function parameters that can be passed to &#39;add_shape&#39;,</span>
+<span class="s2">    except for x0, x1, y0, y1 or type.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">docstr</span>
+
+
+<span class="k">def</span> <span class="nf">_generator</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; &quot;cast&quot; an iterator to a generator &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">i</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">x</span>
 
 
 <span class="k">class</span> <span class="nc">BaseFigure</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -419,10 +791,18 @@
         <span class="c1"># Process kwargs</span>
         <span class="c1"># --------------</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="n">err</span> <span class="o">=</span> <span class="n">_check_path_in_prop_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">err</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="bp">self</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
             <span class="k">elif</span> <span class="ow">not</span> <span class="n">skip_invalid</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;invalid Figure property: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+                <span class="n">type_err</span> <span class="o">=</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;invalid Figure property: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+                <span class="n">type_err</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">type_err</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="o">+</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="si">%s</span><span class="s2">&quot;&quot;&quot;</span>
+                    <span class="o">%</span> <span class="p">(</span><span class="n">err</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],),</span>
+                <span class="p">)</span>
+                <span class="k">raise</span> <span class="n">type_err</span>
 
     <span class="c1"># Magic Methods</span>
     <span class="c1"># -------------</span>
@@ -469,6 +849,9 @@
         <span class="c1"># ----------------------</span>
         <span class="c1"># e.g. (&#39;foo&#39;, 1)</span>
         <span class="k">else</span><span class="p">:</span>
+            <span class="n">err</span> <span class="o">=</span> <span class="n">_check_path_in_prop_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">orig_prop</span><span class="p">,</span> <span class="n">error_cast</span><span class="o">=</span><span class="ne">ValueError</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">err</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">err</span>
             <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span>
             <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">prop</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
                 <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
@@ -524,6 +907,9 @@
         <span class="c1"># ----------------------</span>
         <span class="c1"># e.g. (&#39;foo&#39;, 1)</span>
         <span class="k">else</span><span class="p">:</span>
+            <span class="n">err</span> <span class="o">=</span> <span class="n">_check_path_in_prop_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">orig_prop</span><span class="p">,</span> <span class="n">error_cast</span><span class="o">=</span><span class="n">PlotlyKeyError</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">err</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">err</span>
             <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span>
             <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">prop</span><span class="p">:</span>
                 <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
@@ -877,12 +1263,17 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">        selector: dict or None (default None)</span>
+<span class="sd">        selector: dict, function, int, str or None (default None)</span>
 <span class="sd">            Dict to use as selection criteria.</span>
 <span class="sd">            Traces will be selected if they contain properties corresponding</span>
 <span class="sd">            to all of the dictionary&#39;s keys, with values that exactly match</span>
 <span class="sd">            the supplied values. If None (the default), all traces are</span>
-<span class="sd">            selected.</span>
+<span class="sd">            selected. If a function, it must be a function accepting a single</span>
+<span class="sd">            argument and returning a boolean. The function will be called on</span>
+<span class="sd">            each trace and those for which the function returned True</span>
+<span class="sd">            will be in the selection. If an int N, the Nth trace matching row</span>
+<span class="sd">            and col will be selected (N can be negative). If a string S, the selector</span>
+<span class="sd">            is equivalent to dict(type=S).</span>
 <span class="sd">        row, col: int or None (default None)</span>
 <span class="sd">            Subplot row and column index of traces to select.</span>
 <span class="sd">            To select traces by row and column, the Figure must have been</span>
@@ -950,41 +1341,80 @@
     <span class="k">def</span> <span class="nf">_perform_select_traces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filter_by_subplot</span><span class="p">,</span> <span class="n">grid_subplot_refs</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">_get_subplot_ref_for_trace</span>
 
-        <span class="k">for</span> <span class="n">trace</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
-            <span class="c1"># Filter by subplot</span>
-            <span class="k">if</span> <span class="n">filter_by_subplot</span><span class="p">:</span>
-                <span class="n">trace_subplot_ref</span> <span class="o">=</span> <span class="n">_get_subplot_ref_for_trace</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">trace_subplot_ref</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">grid_subplot_refs</span><span class="p">:</span>
-                    <span class="k">continue</span>
+        <span class="c1"># functions for filtering</span>
+        <span class="k">def</span> <span class="nf">_filter_by_subplot_ref</span><span class="p">(</span><span class="n">trace</span><span class="p">):</span>
+            <span class="n">trace_subplot_ref</span> <span class="o">=</span> <span class="n">_get_subplot_ref_for_trace</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">trace_subplot_ref</span> <span class="ow">in</span> <span class="n">grid_subplot_refs</span>
 
-            <span class="c1"># Filter by selector</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selector_matches</span><span class="p">(</span><span class="n">trace</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
-                <span class="k">continue</span>
+        <span class="n">funcs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">filter_by_subplot</span><span class="p">:</span>
+            <span class="n">funcs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_filter_by_subplot_ref</span><span class="p">)</span>
 
-            <span class="k">yield</span> <span class="n">trace</span>
+        <span class="k">return</span> <span class="n">_generator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_filter_by_selector</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">funcs</span><span class="p">,</span> <span class="n">selector</span><span class="p">))</span>
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_selector_matches</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">selector</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">True</span>
+        <span class="c1"># If selector is a string then put it at the &#39;type&#39; key of a dictionary</span>
+        <span class="c1"># to select objects where &quot;type&quot;:selector</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">six</span><span class="o">.</span><span class="n">string_types</span><span class="p">):</span>
+            <span class="n">selector</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">selector</span><span class="p">)</span>
+        <span class="c1"># If selector is a dict, compare the fields</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">BasePlotlyType</span><span class="p">):</span>
+            <span class="c1"># This returns True if selector is an empty dict</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">selector</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="kc">False</span>
 
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">selector</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">:</span>
-                <span class="k">return</span> <span class="kc">False</span>
+                <span class="n">obj_val</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+                <span class="n">selector_val</span> <span class="o">=</span> <span class="n">selector</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
 
-            <span class="n">obj_val</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-            <span class="n">selector_val</span> <span class="o">=</span> <span class="n">selector</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj_val</span><span class="p">,</span> <span class="n">BasePlotlyType</span><span class="p">):</span>
+                    <span class="n">obj_val</span> <span class="o">=</span> <span class="n">obj_val</span><span class="o">.</span><span class="n">to_plotly_json</span><span class="p">()</span>
 
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj_val</span><span class="p">,</span> <span class="n">BasePlotlyType</span><span class="p">):</span>
-                <span class="n">obj_val</span> <span class="o">=</span> <span class="n">obj_val</span><span class="o">.</span><span class="n">to_plotly_json</span><span class="p">()</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">selector_val</span><span class="p">,</span> <span class="n">BasePlotlyType</span><span class="p">):</span>
+                    <span class="n">selector_val</span> <span class="o">=</span> <span class="n">selector_val</span><span class="o">.</span><span class="n">to_plotly_json</span><span class="p">()</span>
 
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">selector_val</span><span class="p">,</span> <span class="n">BasePlotlyType</span><span class="p">):</span>
-                <span class="n">selector_val</span> <span class="o">=</span> <span class="n">selector_val</span><span class="o">.</span><span class="n">to_plotly_json</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">obj_val</span> <span class="o">!=</span> <span class="n">selector_val</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="kc">False</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="c1"># If selector is a function, call it with the obj as the argument</span>
+        <span class="k">elif</span> <span class="n">six</span><span class="o">.</span><span class="n">callable</span><span class="p">(</span><span class="n">selector</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">selector</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="s2">&quot;selector must be dict or a function &quot;</span>
+                <span class="s2">&quot;accepting a graph object returning a boolean.&quot;</span>
+            <span class="p">)</span>
 
-            <span class="k">if</span> <span class="n">obj_val</span> <span class="o">!=</span> <span class="n">selector_val</span><span class="p">:</span>
-                <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">def</span> <span class="nf">_filter_by_selector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">objects</span><span class="p">,</span> <span class="n">funcs</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        objects is a sequence of objects, funcs a list of functions that</span>
+<span class="sd">        return True if the object should be included in the selection and False</span>
+<span class="sd">        otherwise and selector is an argument to the self._selector_matches</span>
+<span class="sd">        function.</span>
+<span class="sd">        If selector is an integer, the resulting sequence obtained after</span>
+<span class="sd">        sucessively filtering by each function in funcs is indexed by this</span>
+<span class="sd">        integer.</span>
+<span class="sd">        Otherwise selector is used as the selector argument to</span>
+<span class="sd">        self._selector_matches which is used to filter down the sequence.</span>
+<span class="sd">        The function returns the sequence (an iterator).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">return</span> <span class="kc">True</span>
+        <span class="c1"># if selector is not an int, we call it on each trace to test it for selection</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">funcs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="k">lambda</span> <span class="n">obj</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selector_matches</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">selector</span><span class="p">))</span>
+
+        <span class="k">def</span> <span class="nf">_filt</span><span class="p">(</span><span class="n">last</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">filter</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span>
+
+        <span class="n">filtered_objects</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">_filt</span><span class="p">,</span> <span class="n">funcs</span><span class="p">,</span> <span class="n">objects</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">iter</span><span class="p">([</span><span class="nb">list</span><span class="p">(</span><span class="n">filtered_objects</span><span class="p">)[</span><span class="n">selector</span><span class="p">]])</span>
+
+        <span class="k">return</span> <span class="n">filtered_objects</span>
 
     <span class="k">def</span> <span class="nf">for_each_trace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">secondary_y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -995,12 +1425,17 @@
 <span class="sd">        ----------</span>
 <span class="sd">        fn:</span>
 <span class="sd">            Function that inputs a single trace object.</span>
-<span class="sd">        selector: dict or None (default None)</span>
+<span class="sd">        selector: dict, function, int, str or None (default None)</span>
 <span class="sd">            Dict to use as selection criteria.</span>
 <span class="sd">            Traces will be selected if they contain properties corresponding</span>
 <span class="sd">            to all of the dictionary&#39;s keys, with values that exactly match</span>
 <span class="sd">            the supplied values. If None (the default), all traces are</span>
-<span class="sd">            selected.</span>
+<span class="sd">            selected. If a function, it must be a function accepting a single</span>
+<span class="sd">            argument and returning a boolean. The function will be called on</span>
+<span class="sd">            each trace and those for which the function returned True</span>
+<span class="sd">            will be in the selection. If an int N, the Nth trace matching row</span>
+<span class="sd">            and col will be selected (N can be negative). If a string S, the selector</span>
+<span class="sd">            is equivalent to dict(type=S).</span>
 <span class="sd">        row, col: int or None (default None)</span>
 <span class="sd">            Subplot row and column index of traces to select.</span>
 <span class="sd">            To select traces by row and column, the Figure must have been</span>
@@ -1049,12 +1484,17 @@
 <span class="sd">        patch: dict or None (default None)</span>
 <span class="sd">            Dictionary of property updates to be applied to all traces that</span>
 <span class="sd">            satisfy the selection criteria.</span>
-<span class="sd">        selector: dict or None (default None)</span>
+<span class="sd">        selector: dict, function, int, str or None (default None)</span>
 <span class="sd">            Dict to use as selection criteria.</span>
 <span class="sd">            Traces will be selected if they contain properties corresponding</span>
 <span class="sd">            to all of the dictionary&#39;s keys, with values that exactly match</span>
 <span class="sd">            the supplied values. If None (the default), all traces are</span>
-<span class="sd">            selected.</span>
+<span class="sd">            selected. If a function, it must be a function accepting a single</span>
+<span class="sd">            argument and returning a boolean. The function will be called on</span>
+<span class="sd">            each trace and those for which the function returned True</span>
+<span class="sd">            will be in the selection. If an int N, the Nth trace matching row</span>
+<span class="sd">            and col will be selected (N can be negative). If a string S, the selector</span>
+<span class="sd">            is equivalent to dict(type=S).</span>
 <span class="sd">        row, col: int or None (default None)</span>
 <span class="sd">            Subplot row and column index of traces to select.</span>
 <span class="sd">            To select traces by row and column, the Figure must have been</span>
@@ -1149,37 +1589,25 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">container_to_row_col</span> <span class="o">=</span> <span class="kc">None</span>
 
-        <span class="c1"># Natural sort keys so that xaxis20 is after xaxis3</span>
-        <span class="n">layout_keys</span> <span class="o">=</span> <span class="n">_natural_sort_strings</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">))</span>
-
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">layout_keys</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-                <span class="c1"># Filter by row/col</span>
-                <span class="k">if</span> <span class="p">(</span>
-                    <span class="n">row</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-                    <span class="ow">and</span> <span class="n">container_to_row_col</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">row</span>
-                <span class="p">):</span>
-                    <span class="c1"># row specified and this is not a match</span>
-                    <span class="k">continue</span>
-                <span class="k">elif</span> <span class="p">(</span>
-                    <span class="n">col</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-                    <span class="ow">and</span> <span class="n">container_to_row_col</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">))[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">col</span>
-                <span class="p">):</span>
-                    <span class="c1"># col specified and this is not a match</span>
-                    <span class="k">continue</span>
-                <span class="k">elif</span> <span class="p">(</span>
-                    <span class="n">secondary_y</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-                    <span class="ow">and</span> <span class="n">container_to_row_col</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">))[</span><span class="mi">2</span><span class="p">]</span>
-                    <span class="o">!=</span> <span class="n">secondary_y</span>
-                <span class="p">):</span>
-                    <span class="k">continue</span>
-
-                <span class="c1"># Filter by selector</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selector_matches</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">selector</span><span class="p">):</span>
-                    <span class="k">continue</span>
-
-                <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">layout_keys_filters</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">row</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="ow">or</span> <span class="n">container_to_row_col</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">row</span><span class="p">,</span>
+            <span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">col</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="ow">or</span> <span class="n">container_to_row_col</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">))[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">col</span><span class="p">,</span>
+            <span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="p">(</span>
+                <span class="n">secondary_y</span> <span class="ow">is</span> <span class="kc">None</span>
+                <span class="ow">or</span> <span class="n">container_to_row_col</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">))[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">secondary_y</span>
+            <span class="p">),</span>
+        <span class="p">]</span>
+        <span class="n">layout_keys</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">last</span><span class="p">,</span> <span class="n">f</span><span class="p">:</span> <span class="nb">filter</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">last</span><span class="p">),</span>
+            <span class="n">layout_keys_filters</span><span class="p">,</span>
+            <span class="c1"># Natural sort keys so that xaxis20 is after xaxis3</span>
+            <span class="n">_natural_sort_strings</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">)),</span>
+        <span class="p">)</span>
+        <span class="n">layout_objs</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">layout_keys</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">_generator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_filter_by_selector</span><span class="p">(</span><span class="n">layout_objs</span><span class="p">,</span> <span class="p">[],</span> <span class="n">selector</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">_select_annotations_like</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">secondary_y</span><span class="o">=</span><span class="kc">None</span>
@@ -1208,30 +1636,35 @@
                             <span class="n">yref_to_row</span><span class="p">[</span><span class="n">yref</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="mi">1</span>
                             <span class="n">yref_to_secondary_y</span><span class="p">[</span><span class="n">yref</span><span class="p">]</span> <span class="o">=</span> <span class="n">is_secondary_y</span>
 
-        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="n">prop</span><span class="p">]:</span>
-            <span class="c1"># Filter by row</span>
-            <span class="k">if</span> <span class="n">col</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">xref_to_col</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">xref</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">!=</span> <span class="n">col</span><span class="p">:</span>
-                <span class="k">continue</span>
+        <span class="c1"># filter down (select) which graph objects, by applying the filters</span>
+        <span class="c1"># successively</span>
+        <span class="k">def</span> <span class="nf">_filter_row</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot; Filter objects in rows by column &quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">col</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">xref_to_col</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">xref</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="n">col</span><span class="p">)</span>
 
-            <span class="c1"># Filter by col</span>
-            <span class="k">if</span> <span class="n">row</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">yref_to_row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">yref</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">!=</span> <span class="n">row</span><span class="p">:</span>
-                <span class="k">continue</span>
+        <span class="k">def</span> <span class="nf">_filter_col</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot; Filter objects in columns by row &quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">row</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">yref_to_row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">yref</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="n">row</span><span class="p">)</span>
 
-            <span class="c1"># Filter by secondary y</span>
-            <span class="k">if</span> <span class="p">(</span>
-                <span class="n">secondary_y</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-                <span class="ow">and</span> <span class="n">yref_to_secondary_y</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">yref</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">!=</span> <span class="n">secondary_y</span>
-            <span class="p">):</span>
-                <span class="k">continue</span>
+        <span class="k">def</span> <span class="nf">_filter_sec_y</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot; Filter objects on secondary y axes &quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">secondary_y</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+                <span class="n">yref_to_secondary_y</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">yref</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="n">secondary_y</span>
+            <span class="p">)</span>
 
-            <span class="c1"># Filter by selector</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selector_matches</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
-                <span class="k">continue</span>
+        <span class="n">funcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">_filter_row</span><span class="p">,</span> <span class="n">_filter_col</span><span class="p">,</span> <span class="n">_filter_sec_y</span><span class="p">]</span>
 
-            <span class="k">yield</span> <span class="n">obj</span>
+        <span class="k">return</span> <span class="n">_generator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_filter_by_selector</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="n">prop</span><span class="p">],</span> <span class="n">funcs</span><span class="p">,</span> <span class="n">selector</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">_add_annotation_like</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">prop_singular</span><span class="p">,</span> <span class="n">prop_plural</span><span class="p">,</span> <span class="n">new_obj</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">secondary_y</span><span class="o">=</span><span class="kc">None</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">prop_singular</span><span class="p">,</span>
+        <span class="n">prop_plural</span><span class="p">,</span>
+        <span class="n">new_obj</span><span class="p">,</span>
+        <span class="n">row</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">secondary_y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="c1"># Make sure we have both row and col or neither</span>
         <span class="k">if</span> <span class="n">row</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">col</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1245,11 +1678,37 @@
                 <span class="s2">&quot;row and col must be specified together&quot;</span>
             <span class="p">)</span>
 
+        <span class="c1"># Address multiple subplots</span>
+        <span class="k">if</span> <span class="n">row</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">_is_select_subplot_coordinates_arg</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+            <span class="c1"># TODO product argument could be added</span>
+            <span class="n">rows_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_select_subplot_coordinates</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">rows_cols</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_add_annotation_like</span><span class="p">(</span>
+                    <span class="n">prop_singular</span><span class="p">,</span>
+                    <span class="n">prop_plural</span><span class="p">,</span>
+                    <span class="n">new_obj</span><span class="p">,</span>
+                    <span class="n">row</span><span class="o">=</span><span class="n">r</span><span class="p">,</span>
+                    <span class="n">col</span><span class="o">=</span><span class="n">c</span><span class="p">,</span>
+                    <span class="n">secondary_y</span><span class="o">=</span><span class="n">secondary_y</span><span class="p">,</span>
+                    <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="n">exclude_empty_subplots</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span>
+
         <span class="c1"># Get grid_ref if specific row or column requested</span>
         <span class="k">if</span> <span class="n">row</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">grid_ref</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_get_grid_ref</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">row</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">grid_ref</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span>
+                    <span class="s2">&quot;row index </span><span class="si">%d</span><span class="s2"> out-of-bounds, row index must be between 1 and </span><span class="si">%d</span><span class="s2">, inclusive.&quot;</span>
+                    <span class="o">%</span> <span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">grid_ref</span><span class="p">))</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="n">col</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">grid_ref</span><span class="p">[</span><span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]):</span>
+                <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span>
+                    <span class="s2">&quot;column index </span><span class="si">%d</span><span class="s2"> out-of-bounds, &quot;</span>
+                    <span class="s2">&quot;column index must be between 1 and </span><span class="si">%d</span><span class="s2">, inclusive.&quot;</span>
+                    <span class="o">%</span> <span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">grid_ref</span><span class="p">[</span><span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]))</span>
+                <span class="p">)</span>
             <span class="n">refs</span> <span class="o">=</span> <span class="n">grid_ref</span><span class="p">[</span><span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">col</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-
             <span class="k">if</span> <span class="ow">not</span> <span class="n">refs</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                     <span class="s2">&quot;No subplot found at position (</span><span class="si">{r}</span><span class="s2">, </span><span class="si">{c}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">row</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">col</span><span class="p">)</span>
@@ -1277,6 +1736,24 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">xaxis</span><span class="p">,</span> <span class="n">yaxis</span> <span class="o">=</span> <span class="n">refs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">layout_keys</span>
             <span class="n">xref</span><span class="p">,</span> <span class="n">yref</span> <span class="o">=</span> <span class="n">xaxis</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;axis&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span> <span class="n">yaxis</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;axis&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="c1"># if exclude_empty_subplots is True, check to see if subplot is</span>
+            <span class="c1"># empty and return if it is</span>
+            <span class="k">if</span> <span class="n">exclude_empty_subplots</span> <span class="ow">and</span> <span class="p">(</span>
+                <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_subplot_not_empty</span><span class="p">(</span>
+                    <span class="n">xref</span><span class="p">,</span> <span class="n">yref</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">exclude_empty_subplots</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="p">):</span>
+                <span class="k">return</span> <span class="bp">self</span>
+            <span class="c1"># in case the user specified they wanted an axis to refer to the</span>
+            <span class="c1"># domain of that axis and not the data, append &#39; domain&#39; to the</span>
+            <span class="c1"># computed axis accordingly</span>
+            <span class="k">def</span> <span class="nf">_add_domain</span><span class="p">(</span><span class="n">ax_letter</span><span class="p">,</span> <span class="n">new_axref</span><span class="p">):</span>
+                <span class="n">axref</span> <span class="o">=</span> <span class="n">ax_letter</span> <span class="o">+</span> <span class="s2">&quot;ref&quot;</span>
+                <span class="k">if</span> <span class="n">axref</span> <span class="ow">in</span> <span class="n">new_obj</span><span class="o">.</span><span class="n">_props</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">and</span> <span class="s2">&quot;domain&quot;</span> <span class="ow">in</span> <span class="n">new_obj</span><span class="p">[</span><span class="n">axref</span><span class="p">]:</span>
+                    <span class="n">new_axref</span> <span class="o">+=</span> <span class="s2">&quot; domain&quot;</span>
+                <span class="k">return</span> <span class="n">new_axref</span>
+
+            <span class="n">xref</span><span class="p">,</span> <span class="n">yref</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">_add_domain</span><span class="p">(</span><span class="o">*</span><span class="n">t</span><span class="p">),</span> <span class="nb">zip</span><span class="p">([</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="p">[</span><span class="n">xref</span><span class="p">,</span> <span class="n">yref</span><span class="p">]))</span>
             <span class="n">new_obj</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">xref</span><span class="o">=</span><span class="n">xref</span><span class="p">,</span> <span class="n">yref</span><span class="o">=</span><span class="n">yref</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="n">prop_plural</span><span class="p">]</span> <span class="o">+=</span> <span class="p">(</span><span class="n">new_obj</span><span class="p">,)</span>
@@ -1491,7 +1968,7 @@
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_str_to_dict_path</span><span class="p">(</span><span class="n">key_path_str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert a key path string into a tuple of key path elements</span>
+<span class="sd">        Convert a key path string into a tuple of key path elements.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -1515,53 +1992,8 @@
             <span class="c1"># Nothing to do</span>
             <span class="k">return</span> <span class="n">key_path_str</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># Split string on periods.</span>
-            <span class="c1"># e.g. &#39;foo.bar_baz[1]&#39; -&gt; [&#39;foo&#39;, &#39;bar_baz[1]&#39;]</span>
-            <span class="n">key_path</span> <span class="o">=</span> <span class="n">key_path_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
-
-            <span class="c1"># Split out bracket indexes.</span>
-            <span class="c1"># e.g. [&#39;foo&#39;, &#39;bar_baz[1]&#39;] -&gt; [&#39;foo&#39;, &#39;bar_baz&#39;, &#39;1&#39;]</span>
-            <span class="n">key_path2</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">key_path</span><span class="p">:</span>
-                <span class="n">match</span> <span class="o">=</span> <span class="n">BaseFigure</span><span class="o">.</span><span class="n">_bracket_re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
-                    <span class="n">key_path2</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">key_path2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-
-            <span class="c1"># Split out underscore</span>
-            <span class="c1"># e.g. [&#39;foo&#39;, &#39;bar_baz&#39;, &#39;1&#39;] -&gt; [&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;, &#39;1&#39;]</span>
-            <span class="n">key_path3</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="n">underscore_props</span> <span class="o">=</span> <span class="n">BaseFigure</span><span class="o">.</span><span class="n">_valid_underscore_properties</span>
-            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">key_path2</span><span class="p">:</span>
-                <span class="k">if</span> <span class="s2">&quot;_&quot;</span> <span class="ow">in</span> <span class="n">key</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
-                    <span class="c1"># For valid properties that contain underscores (error_x)</span>
-                    <span class="c1"># replace the underscores with hyphens to protect them</span>
-                    <span class="c1"># from being split up</span>
-                    <span class="k">for</span> <span class="n">under_prop</span><span class="p">,</span> <span class="n">hyphen_prop</span> <span class="ow">in</span> <span class="n">underscore_props</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                        <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">under_prop</span><span class="p">,</span> <span class="n">hyphen_prop</span><span class="p">)</span>
-
-                    <span class="c1"># Split key on underscores</span>
-                    <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span>
-
-                    <span class="c1"># Replace hyphens with underscores to restore properties</span>
-                    <span class="c1"># that include underscores</span>
-                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)):</span>
-                        <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
-
-                    <span class="n">key_path3</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">key_path3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-
-            <span class="c1"># Convert elements to ints if possible.</span>
-            <span class="c1"># e.g. [&#39;foo&#39;, &#39;bar&#39;, &#39;0&#39;] -&gt; [&#39;foo&#39;, &#39;bar&#39;, 0]</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">key_path3</span><span class="p">)):</span>
-                <span class="k">try</span><span class="p">:</span>
-                    <span class="n">key_path3</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">key_path3</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-                <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">_</span><span class="p">:</span>
-                    <span class="k">pass</span>
-
-            <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">key_path3</span><span class="p">)</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="n">_str_to_dict_path_full</span><span class="p">(</span><span class="n">key_path_str</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">ret</span>
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_set_in</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key_path_str</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
@@ -1721,7 +2153,9 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">BaseFigure</span><span class="o">.</span><span class="n">_raise_invalid_rows_cols</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="n">vals</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">add_trace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trace</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">secondary_y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">add_trace</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">trace</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">secondary_y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a trace to the figure</span>
 
@@ -1739,14 +2173,16 @@
 <span class="sd">                  - All remaining properties are passed to the constructor</span>
 <span class="sd">                    of the specified trace type.</span>
 
-<span class="sd">        row : int or None (default None)</span>
-<span class="sd">            Subplot row index (starting from 1) for the trace to be added.</span>
-<span class="sd">            Only valid if figure was created using</span>
-<span class="sd">            `plotly.subplots.make_subplots`</span>
-<span class="sd">        col : int or None (default None)</span>
-<span class="sd">            Subplot col index (starting from 1) for the trace to be added.</span>
-<span class="sd">            Only valid if figure was created using</span>
-<span class="sd">            `plotly.subplots.make_subplots`</span>
+<span class="sd">        row : &#39;all&#39;, int or None (default)</span>
+<span class="sd">            Subplot row index (starting from 1) for the trace to be</span>
+<span class="sd">            added. Only valid if figure was created using</span>
+<span class="sd">            `plotly.tools.make_subplots`.</span>
+<span class="sd">            If &#39;all&#39;, addresses all rows in the specified column(s).</span>
+<span class="sd">        col : &#39;all&#39;, int or None (default)</span>
+<span class="sd">            Subplot col index (starting from 1) for the trace to be</span>
+<span class="sd">            added. Only valid if figure was created using</span>
+<span class="sd">            `plotly.tools.make_subplots`.</span>
+<span class="sd">            If &#39;all&#39;, addresses all columns in the specified row(s).</span>
 <span class="sd">        secondary_y: boolean or None (default None)</span>
 <span class="sd">            If True, associate this trace with the secondary y-axis of the</span>
 <span class="sd">            subplot at the specified row and col. Only valid if all of the</span>
@@ -1759,6 +2195,9 @@
 <span class="sd">                make_subplots. See the make_subplots docstring for more info.</span>
 <span class="sd">              * The trace argument is a 2D cartesian trace</span>
 <span class="sd">                (scatter, bar, etc.)</span>
+<span class="sd">        exclude_empty_subplots: boolean</span>
+<span class="sd">            If True, the trace will not be added to subplots that don&#39;t already</span>
+<span class="sd">            have traces.</span>
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        BaseFigure</span>
@@ -1799,14 +2238,36 @@
                 <span class="s2">&quot;row and col must be specified together&quot;</span>
             <span class="p">)</span>
 
+        <span class="c1"># Address multiple subplots</span>
+        <span class="k">if</span> <span class="n">row</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">_is_select_subplot_coordinates_arg</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+            <span class="c1"># TODO add product argument</span>
+            <span class="n">rows_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_select_subplot_coordinates</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">rows_cols</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span>
+                    <span class="n">trace</span><span class="p">,</span>
+                    <span class="n">row</span><span class="o">=</span><span class="n">r</span><span class="p">,</span>
+                    <span class="n">col</span><span class="o">=</span><span class="n">c</span><span class="p">,</span>
+                    <span class="n">secondary_y</span><span class="o">=</span><span class="n">secondary_y</span><span class="p">,</span>
+                    <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="n">exclude_empty_subplots</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span>
+
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_traces</span><span class="p">(</span>
             <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">trace</span><span class="p">],</span>
             <span class="n">rows</span><span class="o">=</span><span class="p">[</span><span class="n">row</span><span class="p">]</span> <span class="k">if</span> <span class="n">row</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">secondary_ys</span><span class="o">=</span><span class="p">[</span><span class="n">secondary_y</span><span class="p">]</span> <span class="k">if</span> <span class="n">secondary_y</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="n">exclude_empty_subplots</span><span class="p">,</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">add_traces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">secondary_ys</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">add_traces</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">,</span>
+        <span class="n">rows</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">cols</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">secondary_ys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add traces to the figure</span>
 
@@ -1842,6 +2303,10 @@
 <span class="sd">        secondary_ys: None or list[boolean] (default None)</span>
 <span class="sd">            List of secondary_y booleans for traces to be added. See the</span>
 <span class="sd">            docstring for `add_trace` for more info.</span>
+
+<span class="sd">        exclude_empty_subplots: boolean</span>
+<span class="sd">            If True, the trace will not be added to subplots that don&#39;t already</span>
+<span class="sd">            have traces.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1918,6 +2383,16 @@
         <span class="k">if</span> <span class="n">rows</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">trace</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">secondary_y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">secondary_ys</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_set_trace_grid_position</span><span class="p">(</span><span class="n">trace</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">secondary_y</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">exclude_empty_subplots</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+                <span class="nb">filter</span><span class="p">(</span>
+                    <span class="k">lambda</span> <span class="n">trace</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_subplot_not_empty</span><span class="p">(</span>
+                        <span class="n">trace</span><span class="p">[</span><span class="s2">&quot;xaxis&quot;</span><span class="p">],</span> <span class="n">trace</span><span class="p">[</span><span class="s2">&quot;yaxis&quot;</span><span class="p">],</span> <span class="nb">bool</span><span class="p">(</span><span class="n">exclude_empty_subplots</span><span class="p">)</span>
+                    <span class="p">),</span>
+                    <span class="n">data</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
 
         <span class="c1"># Make deep copy of trace data (Optimize later if needed)</span>
         <span class="n">new_traces_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">trace</span><span class="o">.</span><span class="n">_props</span><span class="p">)</span> <span class="k">for</span> <span class="n">trace</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
@@ -2016,6 +2491,47 @@
                 <span class="s2">&quot;to create the figure with a subplot grid.&quot;</span>
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">grid_ref</span>
+
+    <span class="k">def</span> <span class="nf">_get_subplot_rows_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a pair of lists, the first containing all the row indices and</span>
+<span class="sd">        the second all the column indices.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># currently, this just iterates over all the rows and columns (because</span>
+        <span class="c1"># self._grid_ref is currently always rectangular)</span>
+        <span class="n">grid_ref</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_get_grid_ref</span><span class="p">()</span>
+        <span class="n">nrows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">grid_ref</span><span class="p">)</span>
+        <span class="n">ncols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">grid_ref</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrows</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_get_subplot_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns an iterator over (row,col) pairs representing all the possible</span>
+<span class="sd">        subplot coordinates.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_subplot_rows_columns</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">_select_subplot_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">product</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Allows selecting all or a subset of the subplots.</span>
+<span class="sd">        If any of rows or columns is &#39;all&#39;, product is set to True. This is</span>
+<span class="sd">        probably the expected behaviour, so that rows=1,cols=&#39;all&#39; selects all</span>
+<span class="sd">        the columns in row 1 (otherwise it would just select the subplot in the</span>
+<span class="sd">        first row and first column).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">product</span> <span class="o">|=</span> <span class="nb">any</span><span class="p">([</span><span class="n">s</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">]])</span>
+        <span class="c1"># TODO: If grid_ref ever becomes non-rectangular, then t should be the</span>
+        <span class="c1"># set-intersection of the result of _indexing_combinations and</span>
+        <span class="c1"># _get_subplot_coordinates, because some coordinates given by</span>
+        <span class="c1"># the _indexing_combinations function might be invalid.</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">_indexing_combinations</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">],</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_subplot_rows_columns</span><span class="p">()),</span> <span class="n">product</span><span class="o">=</span><span class="n">product</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="c1"># remove rows and cols where the subplot is &quot;None&quot;</span>
+        <span class="n">grid_ref</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_get_grid_ref</span><span class="p">()</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">u</span><span class="p">:</span> <span class="n">grid_ref</span><span class="p">[</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">t</span>
 
     <span class="k">def</span> <span class="nf">get_subplot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">secondary_y</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -3016,6 +3532,18 @@
 <span class="sd">            True if the figure should be validated before being shown,</span>
 <span class="sd">            False otherwise.</span>
 
+<span class="sd">        width: int or float</span>
+<span class="sd">            An integer or float that determines the number of pixels wide the</span>
+<span class="sd">            plot is. The default is set in plotly.js.</span>
+
+<span class="sd">        height: int or float</span>
+<span class="sd">            An integer or float that determines the number of pixels wide the</span>
+<span class="sd">            plot is. The default is set in plotly.js.</span>
+
+<span class="sd">        config: dict</span>
+<span class="sd">            A dict of parameters to configure the figure. The defaults are set</span>
+<span class="sd">            in plotly.js.</span>
+
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        None</span>
@@ -3474,19 +4002,20 @@
             <span class="c1"># -------------------------------</span>
             <span class="c1"># This should be valid even if xaxis2 hasn&#39;t been initialized:</span>
             <span class="c1"># &gt;&gt;&gt; layout.update(xaxis2={&#39;title&#39;: &#39;xaxis 2&#39;})</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">plotly_obj</span><span class="p">,</span> <span class="n">BaseLayoutType</span><span class="p">):</span>
-                <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">update_obj</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plotly_obj</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">update_obj</span><span class="p">:</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="n">_check_path_in_prop_tree</span><span class="p">(</span><span class="n">plotly_obj</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">error_cast</span><span class="o">=</span><span class="ne">ValueError</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">err</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">plotly_obj</span><span class="p">,</span> <span class="n">BaseLayoutType</span><span class="p">):</span>
+                        <span class="c1"># try _subplot_re_match</span>
                         <span class="n">match</span> <span class="o">=</span> <span class="n">plotly_obj</span><span class="o">.</span><span class="n">_subplot_re_match</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
                         <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
                             <span class="c1"># We need to create a subplotid object</span>
                             <span class="n">plotly_obj</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-
-            <span class="c1"># Handle invalid properties</span>
-            <span class="c1"># -------------------------</span>
-            <span class="n">invalid_props</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">update_obj</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plotly_obj</span><span class="p">]</span>
-
-            <span class="n">plotly_obj</span><span class="o">.</span><span class="n">_raise_on_invalid_property_error</span><span class="p">(</span><span class="o">*</span><span class="n">invalid_props</span><span class="p">)</span>
+                            <span class="k">continue</span>
+                    <span class="c1"># If no match, raise the error, which should already</span>
+                    <span class="c1"># contain the _raise_on_invalid_property_error</span>
+                    <span class="c1"># generated message</span>
+                    <span class="k">raise</span> <span class="n">err</span>
 
             <span class="c1"># Convert update_obj to dict</span>
             <span class="c1"># --------------------------</span>
@@ -3564,6 +4093,255 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid value&quot;</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">index_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_make_axis_spanning_layout_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a shape drawn on a plot or a subplot into one whose yref or xref</span>
+<span class="sd">        ends with &quot; domain&quot; and has coordinates so that the shape will seem to</span>
+<span class="sd">        extend infinitely in that dimension. This is useful for drawing lines or</span>
+<span class="sd">        boxes on a plot where one dimension of the shape will not move out of</span>
+<span class="sd">        bounds when moving the plot&#39;s view.</span>
+<span class="sd">        Note that the shape already added to the (sub)plot must have the</span>
+<span class="sd">        corresponding axis reference referring to an actual axis (e.g., &#39;x&#39;,</span>
+<span class="sd">        &#39;y2&#39; etc. are accepted, but not &#39;paper&#39;). This will be the case if the</span>
+<span class="sd">        shape was added with &quot;add_shape&quot;.</span>
+<span class="sd">        Shape must have the x0, x1, y0, y1 fields already initialized.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="s2">&quot;vertical&quot;</span><span class="p">:</span>
+            <span class="c1"># fix y points to top and bottom of subplot</span>
+            <span class="n">ref</span> <span class="o">=</span> <span class="s2">&quot;yref&quot;</span>
+        <span class="k">elif</span> <span class="n">direction</span> <span class="o">==</span> <span class="s2">&quot;horizontal&quot;</span><span class="p">:</span>
+            <span class="c1"># fix x points to left and right of subplot</span>
+            <span class="n">ref</span> <span class="o">=</span> <span class="s2">&quot;xref&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Bad direction: </span><span class="si">%s</span><span class="s2">. Permissible values are &#39;vertical&#39; and &#39;horizontal&#39;.&quot;</span>
+                <span class="o">%</span> <span class="p">(</span><span class="n">direction</span><span class="p">,)</span>
+            <span class="p">)</span>
+        <span class="c1"># set the ref to &quot;&lt;axis_id&gt; domain&quot; so that its size is based on the</span>
+        <span class="c1"># axis&#39;s size</span>
+        <span class="n">shape</span><span class="p">[</span><span class="n">ref</span><span class="p">]</span> <span class="o">+=</span> <span class="s2">&quot; domain&quot;</span>
+        <span class="k">return</span> <span class="n">shape</span>
+
+    <span class="k">def</span> <span class="nf">_process_multiple_axis_spanning_shapes</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">shape_args</span><span class="p">,</span>
+        <span class="n">row</span><span class="p">,</span>
+        <span class="n">col</span><span class="p">,</span>
+        <span class="n">shape_type</span><span class="p">,</span>
+        <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a shape or multiple shapes and call _make_axis_spanning_layout_object on</span>
+<span class="sd">        all the new shapes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">shape_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;vline&quot;</span><span class="p">,</span> <span class="s2">&quot;vrect&quot;</span><span class="p">]:</span>
+            <span class="n">direction</span> <span class="o">=</span> <span class="s2">&quot;vertical&quot;</span>
+        <span class="k">elif</span> <span class="n">shape_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;hline&quot;</span><span class="p">,</span> <span class="s2">&quot;hrect&quot;</span><span class="p">]:</span>
+            <span class="n">direction</span> <span class="o">=</span> <span class="s2">&quot;horizontal&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Bad shape_type </span><span class="si">%s</span><span class="s2">, needs to be one of &#39;vline&#39;, &#39;hline&#39;, &#39;vrect&#39;, &#39;hrect&#39;&quot;</span>
+                <span class="o">%</span> <span class="p">(</span><span class="n">shape_type</span><span class="p">,)</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">row</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">col</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_subplots</span><span class="p">()):</span>
+            <span class="c1"># this has no subplots to address, so we force row and col to be None</span>
+            <span class="n">row</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">col</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">n_shapes_before</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="s2">&quot;shapes&quot;</span><span class="p">])</span>
+        <span class="n">n_annotations_before</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="s2">&quot;annotations&quot;</span><span class="p">])</span>
+        <span class="c1"># shapes are always added at the end of the tuple of shapes, so we see</span>
+        <span class="c1"># how long the tuple is before the call and after the call, and adjust</span>
+        <span class="c1"># the new shapes that were added at the end</span>
+        <span class="c1"># extract annotation prefixed kwargs</span>
+        <span class="c1"># annotation with extra parameters based on the annotation_position</span>
+        <span class="c1"># argument and other annotation_ prefixed kwargs</span>
+        <span class="n">shape_kwargs</span><span class="p">,</span> <span class="n">annotation_kwargs</span> <span class="o">=</span> <span class="n">shapeannotation</span><span class="o">.</span><span class="n">split_dict_by_key_prefix</span><span class="p">(</span>
+            <span class="n">kwargs</span><span class="p">,</span> <span class="s2">&quot;annotation_&quot;</span>
+        <span class="p">)</span>
+        <span class="n">augmented_annotation</span> <span class="o">=</span> <span class="n">shapeannotation</span><span class="o">.</span><span class="n">axis_spanning_shape_annotation</span><span class="p">(</span>
+            <span class="n">annotation</span><span class="p">,</span> <span class="n">shape_type</span><span class="p">,</span> <span class="n">shape_args</span><span class="p">,</span> <span class="n">annotation_kwargs</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span>
+            <span class="n">row</span><span class="o">=</span><span class="n">row</span><span class="p">,</span>
+            <span class="n">col</span><span class="o">=</span><span class="n">col</span><span class="p">,</span>
+            <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="n">exclude_empty_subplots</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">_combine_dicts</span><span class="p">([</span><span class="n">shape_args</span><span class="p">,</span> <span class="n">shape_kwargs</span><span class="p">])</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">augmented_annotation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_annotation</span><span class="p">(</span>
+                <span class="n">augmented_annotation</span><span class="p">,</span>
+                <span class="n">row</span><span class="o">=</span><span class="n">row</span><span class="p">,</span>
+                <span class="n">col</span><span class="o">=</span><span class="n">col</span><span class="p">,</span>
+                <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="n">exclude_empty_subplots</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="c1"># update xref and yref for the new shapes and annotations</span>
+        <span class="k">for</span> <span class="n">layout_obj</span><span class="p">,</span> <span class="n">n_layout_objs_before</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+            <span class="p">[</span><span class="s2">&quot;shapes&quot;</span><span class="p">,</span> <span class="s2">&quot;annotations&quot;</span><span class="p">],</span> <span class="p">[</span><span class="n">n_shapes_before</span><span class="p">,</span> <span class="n">n_annotations_before</span><span class="p">]</span>
+        <span class="p">):</span>
+            <span class="n">n_layout_objs_after</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="n">layout_obj</span><span class="p">])</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">n_layout_objs_after</span> <span class="o">&gt;</span> <span class="n">n_layout_objs_before</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span>
+                <span class="n">row</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">col</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="p">):</span>
+                <span class="c1"># this was called intending to add to a single plot (and</span>
+                <span class="c1"># self.add_{layout_obj} succeeded)</span>
+                <span class="c1"># however, in the case of a single plot, xref and yref are not</span>
+                <span class="c1"># specified, so we specify them here so the following routines can work</span>
+                <span class="c1"># (they need to append &quot; domain&quot; to xref or yref)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="n">layout_obj</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">xref</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">yref</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+            <span class="n">new_layout_objs</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+                <span class="nb">filter</span><span class="p">(</span>
+                    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="p">[</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_make_axis_spanning_layout_object</span><span class="p">(</span>
+                            <span class="n">direction</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="n">layout_obj</span><span class="p">][</span><span class="n">n</span><span class="p">],</span>
+                        <span class="p">)</span>
+                        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_layout_objs_before</span><span class="p">,</span> <span class="n">n_layout_objs_after</span><span class="p">)</span>
+                    <span class="p">],</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="n">layout_obj</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="n">layout_obj</span><span class="p">][:</span><span class="n">n_layout_objs_before</span><span class="p">]</span> <span class="o">+</span> <span class="n">new_layout_objs</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_vline</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">x</span><span class="p">,</span>
+        <span class="n">row</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span>
+        <span class="n">col</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span>
+        <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">annotation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_process_multiple_axis_spanning_shapes</span><span class="p">(</span>
+            <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">x1</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+            <span class="n">row</span><span class="p">,</span>
+            <span class="n">col</span><span class="p">,</span>
+            <span class="s2">&quot;vline&quot;</span><span class="p">,</span>
+            <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="n">exclude_empty_subplots</span><span class="p">,</span>
+            <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="n">add_vline</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">_axis_spanning_shapes_docstr</span><span class="p">(</span><span class="s2">&quot;vline&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_hline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_process_multiple_axis_spanning_shapes</span><span class="p">(</span>
+            <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y0</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="n">y</span><span class="p">,),</span>
+            <span class="n">row</span><span class="p">,</span>
+            <span class="n">col</span><span class="p">,</span>
+            <span class="s2">&quot;hline&quot;</span><span class="p">,</span>
+            <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="n">exclude_empty_subplots</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="n">add_hline</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">_axis_spanning_shapes_docstr</span><span class="p">(</span><span class="s2">&quot;hline&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_vrect</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_process_multiple_axis_spanning_shapes</span><span class="p">(</span>
+            <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;rect&quot;</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="o">=</span><span class="n">x1</span><span class="p">,</span> <span class="n">y0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+            <span class="n">row</span><span class="p">,</span>
+            <span class="n">col</span><span class="p">,</span>
+            <span class="s2">&quot;vrect&quot;</span><span class="p">,</span>
+            <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="n">exclude_empty_subplots</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="n">add_vrect</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">_axis_spanning_shapes_docstr</span><span class="p">(</span><span class="s2">&quot;vrect&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_hrect</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_process_multiple_axis_spanning_shapes</span><span class="p">(</span>
+            <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;rect&quot;</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y0</span><span class="o">=</span><span class="n">y0</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="n">y1</span><span class="p">),</span>
+            <span class="n">row</span><span class="p">,</span>
+            <span class="n">col</span><span class="p">,</span>
+            <span class="s2">&quot;hrect&quot;</span><span class="p">,</span>
+            <span class="n">exclude_empty_subplots</span><span class="o">=</span><span class="n">exclude_empty_subplots</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="n">add_hrect</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">_axis_spanning_shapes_docstr</span><span class="p">(</span><span class="s2">&quot;hrect&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_has_subplots</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Returns True if figure contains subplots, otherwise it contains a</span>
+<span class="sd">        single plot and so this returns False. &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_grid_ref</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_subplot_not_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xref</span><span class="p">,</span> <span class="n">yref</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        xref: string representing the axis. Objects in the plot will be checked</span>
+<span class="sd">              for this xref (for layout objects) or xaxis (for traces) to</span>
+<span class="sd">              determine if they lie in a certain subplot.</span>
+<span class="sd">        yref: string representing the axis. Objects in the plot will be checked</span>
+<span class="sd">              for this yref (for layout objects) or yaxis (for traces) to</span>
+<span class="sd">              determine if they lie in a certain subplot.</span>
+<span class="sd">        selector: can be &quot;all&quot; or an iterable containing some combination of</span>
+<span class="sd">                  &quot;traces&quot;, &quot;shapes&quot;, &quot;annotations&quot;, &quot;images&quot;. Only the presence</span>
+<span class="sd">                  of objects specified in selector will be checked. So if</span>
+<span class="sd">                  [&quot;traces&quot;,&quot;shapes&quot;] is passed then a plot we be considered</span>
+<span class="sd">                  non-empty if it contains traces or shapes. If</span>
+<span class="sd">                  bool(selector) returns False, no checking is performed and</span>
+<span class="sd">                  this function returns True. If selector is True, it is</span>
+<span class="sd">                  converted to &quot;all&quot;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">selector</span><span class="p">:</span>
+            <span class="c1"># If nothing to select was specified then a subplot is always deemed non-empty</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">selector</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">selector</span> <span class="o">=</span> <span class="s2">&quot;all&quot;</span>
+        <span class="k">if</span> <span class="n">selector</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
+            <span class="n">selector</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;traces&quot;</span><span class="p">,</span> <span class="s2">&quot;shapes&quot;</span><span class="p">,</span> <span class="s2">&quot;annotations&quot;</span><span class="p">,</span> <span class="s2">&quot;images&quot;</span><span class="p">]</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">selector</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="s2">&quot;traces&quot;</span><span class="p">:</span>
+                <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+                <span class="n">xaxiskw</span> <span class="o">=</span> <span class="s2">&quot;xaxis&quot;</span>
+                <span class="n">yaxiskw</span> <span class="o">=</span> <span class="s2">&quot;yaxis&quot;</span>
+            <span class="k">elif</span> <span class="n">s</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;shapes&quot;</span><span class="p">,</span> <span class="s2">&quot;annotations&quot;</span><span class="p">,</span> <span class="s2">&quot;images&quot;</span><span class="p">]:</span>
+                <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
+                <span class="n">xaxiskw</span> <span class="o">=</span> <span class="s2">&quot;xref&quot;</span>
+                <span class="n">yaxiskw</span> <span class="o">=</span> <span class="s2">&quot;yref&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">obj</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">obj</span><span class="p">:</span>
+                <span class="n">ret</span> <span class="o">|=</span> <span class="nb">any</span><span class="p">(</span>
+                    <span class="n">t</span> <span class="o">==</span> <span class="p">(</span><span class="n">xref</span><span class="p">,</span> <span class="n">yref</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="p">[</span>
+                        <span class="c1"># if a object exists but has no xaxis or yaxis keys, then it</span>
+                        <span class="c1"># is plotted with xaxis/xref &#39;x&#39; and yaxis/yref &#39;y&#39;</span>
+                        <span class="p">(</span>
+                            <span class="s2">&quot;x&quot;</span> <span class="k">if</span> <span class="n">d</span><span class="p">[</span><span class="n">xaxiskw</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">d</span><span class="p">[</span><span class="n">xaxiskw</span><span class="p">],</span>
+                            <span class="s2">&quot;y&quot;</span> <span class="k">if</span> <span class="n">d</span><span class="p">[</span><span class="n">yaxiskw</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">d</span><span class="p">[</span><span class="n">yaxiskw</span><span class="p">],</span>
+                        <span class="p">)</span>
+                        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">obj</span>
+                    <span class="p">]</span>
+                <span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span>
+
+    <span class="k">def</span> <span class="nf">set_subplots</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">make_subplots_args</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add subplots to this figure. If the figure already contains subplots,</span>
+<span class="sd">        then this throws an error. Accepts any keyword arguments that</span>
+<span class="sd">        plotly.subplots.make_subplots accepts.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># rows, cols provided so that this can be called like</span>
+        <span class="c1"># fig.set_subplots(2,3), say</span>
+        <span class="k">if</span> <span class="n">rows</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">make_subplots_args</span><span class="p">[</span><span class="s2">&quot;rows&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rows</span>
+        <span class="k">if</span> <span class="n">cols</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">make_subplots_args</span><span class="p">[</span><span class="s2">&quot;cols&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cols</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_subplots</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;This figure already has subplots.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">subplots</span><span class="o">.</span><span class="n">make_subplots</span><span class="p">(</span><span class="n">figure</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">make_subplots_args</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">BasePlotlyType</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -3688,19 +4466,21 @@
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Process any extra kwargs that are not predefined as constructor params</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">invalid_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="n">err</span> <span class="o">=</span> <span class="n">_check_path_in_prop_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">error_cast</span><span class="o">=</span><span class="ne">ValueError</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">err</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="c1"># e.g. underscore kwargs like marker_line_color</span>
                 <span class="bp">self</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
             <span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate</span><span class="p">:</span>
                 <span class="c1"># Set extra property as-is</span>
                 <span class="bp">self</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">invalid_kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
-
-        <span class="k">if</span> <span class="n">invalid_kwargs</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_skip_invalid</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_raise_on_invalid_property_error</span><span class="p">(</span><span class="o">*</span><span class="n">invalid_kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_skip_invalid</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">err</span>
+        <span class="c1"># No need to call _raise_on_invalid_property_error here,</span>
+        <span class="c1"># because we have it set up so that the singular case of calling</span>
+        <span class="c1"># __setitem__ will raise this. If _check_path_in_prop_tree</span>
+        <span class="c1"># raised that in its travels, it will already be in the error</span>
+        <span class="c1"># message.</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">plotly_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -4006,12 +4786,14 @@
         <span class="c1"># Normalize prop</span>
         <span class="c1"># --------------</span>
         <span class="c1"># Convert into a property tuple</span>
+        <span class="n">orig_prop</span> <span class="o">=</span> <span class="n">prop</span>
         <span class="n">prop</span> <span class="o">=</span> <span class="n">BaseFigure</span><span class="o">.</span><span class="n">_str_to_dict_path</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
 
         <span class="c1"># Handle remapping</span>
         <span class="c1"># ----------------</span>
         <span class="k">if</span> <span class="n">prop</span> <span class="ow">and</span> <span class="n">prop</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mapped_properties</span><span class="p">:</span>
             <span class="n">prop</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mapped_properties</span><span class="p">[</span><span class="n">prop</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="n">prop</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="n">orig_prop</span> <span class="o">=</span> <span class="n">_remake_path_from_tuple</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
 
         <span class="c1"># Handle scalar case</span>
         <span class="c1"># ------------------</span>
@@ -4020,7 +4802,9 @@
             <span class="c1"># Unwrap scalar tuple</span>
             <span class="n">prop</span> <span class="o">=</span> <span class="n">prop</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="k">if</span> <span class="n">prop</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valid_props</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_raise_on_invalid_property_error</span><span class="p">(</span><span class="n">_error_to_raise</span><span class="o">=</span><span class="n">PlotlyKeyError</span><span class="p">)(</span>
+                    <span class="n">prop</span>
+                <span class="p">)</span>
 
             <span class="n">validator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_validator</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
 
@@ -4058,6 +4842,9 @@
         <span class="c1"># ----------------------</span>
         <span class="c1"># e.g. (&#39;foo&#39;, 1), ()</span>
         <span class="k">else</span><span class="p">:</span>
+            <span class="n">err</span> <span class="o">=</span> <span class="n">_check_path_in_prop_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">orig_prop</span><span class="p">,</span> <span class="n">error_cast</span><span class="o">=</span><span class="n">PlotlyKeyError</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">err</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">err</span>
             <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span>
             <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">prop</span><span class="p">:</span>
                 <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
@@ -4155,7 +4942,7 @@
 
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">prop</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valid_props</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_raise_on_invalid_property_error</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_raise_on_invalid_property_error</span><span class="p">()(</span><span class="n">prop</span><span class="p">)</span>
 
                 <span class="c1"># ### Get validator for this property ###</span>
                 <span class="n">validator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_validator</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
@@ -4201,6 +4988,9 @@
         <span class="c1"># ----------------------</span>
         <span class="c1"># e.g. (&#39;foo&#39;, 1), ()</span>
         <span class="k">else</span><span class="p">:</span>
+            <span class="n">err</span> <span class="o">=</span> <span class="n">_check_path_in_prop_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">orig_prop</span><span class="p">,</span> <span class="n">error_cast</span><span class="o">=</span><span class="ne">ValueError</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">err</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">err</span>
             <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span>
             <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">prop</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
                 <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
@@ -4226,7 +5016,7 @@
             <span class="nb">super</span><span class="p">(</span><span class="n">BasePlotlyType</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># Raise error on unknown public properties</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_raise_on_invalid_property_error</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_raise_on_invalid_property_error</span><span class="p">()(</span><span class="n">prop</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -4335,10 +5125,11 @@
 
         <span class="k">return</span> <span class="n">repr_str</span>
 
-    <span class="k">def</span> <span class="nf">_raise_on_invalid_property_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_raise_on_invalid_property_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_error_to_raise</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Raise informative exception when invalid property names are</span>
-<span class="sd">        encountered</span>
+<span class="sd">        Returns a function that raises informative exception when invalid</span>
+<span class="sd">        property names are encountered. The _error_to_raise argument allows</span>
+<span class="sd">        specifying the exception to raise, which is ValueError if None.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -4348,37 +5139,59 @@
 
 <span class="sd">        Raises</span>
 <span class="sd">        ------</span>
-<span class="sd">        ValueError</span>
-<span class="sd">            Always</span>
+<span class="sd">        ValueError by default, or _error_to_raise if not None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">invalid_props</span> <span class="o">=</span> <span class="n">args</span>
-        <span class="k">if</span> <span class="n">invalid_props</span><span class="p">:</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">invalid_props</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">prop_str</span> <span class="o">=</span> <span class="s2">&quot;property&quot;</span>
-                <span class="n">invalid_str</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">invalid_props</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">prop_str</span> <span class="o">=</span> <span class="s2">&quot;properties&quot;</span>
-                <span class="n">invalid_str</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">invalid_props</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">_error_to_raise</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_error_to_raise</span> <span class="o">=</span> <span class="ne">ValueError</span>
 
-            <span class="n">module_root</span> <span class="o">=</span> <span class="s2">&quot;plotly.graph_objs.&quot;</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent_path_str</span><span class="p">:</span>
-                <span class="n">full_obj_name</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="n">module_root</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent_path_str</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
-                <span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">full_obj_name</span> <span class="o">=</span> <span class="n">module_root</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+        <span class="k">def</span> <span class="nf">_ret</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+            <span class="n">invalid_props</span> <span class="o">=</span> <span class="n">args</span>
+            <span class="k">if</span> <span class="n">invalid_props</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">invalid_props</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">prop_str</span> <span class="o">=</span> <span class="s2">&quot;property&quot;</span>
+                    <span class="n">invalid_str</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">invalid_props</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">prop_str</span> <span class="o">=</span> <span class="s2">&quot;properties&quot;</span>
+                    <span class="n">invalid_str</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">invalid_props</span><span class="p">)</span>
 
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="s2">&quot;Invalid </span><span class="si">{prop_str}</span><span class="s2"> specified for object of type &quot;</span>
-                <span class="s2">&quot;</span><span class="si">{full_obj_name}</span><span class="s2">: </span><span class="si">{invalid_str}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;    Valid properties:</span><span class="se">\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;</span><span class="si">{prop_descriptions}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                    <span class="n">prop_str</span><span class="o">=</span><span class="n">prop_str</span><span class="p">,</span>
-                    <span class="n">full_obj_name</span><span class="o">=</span><span class="n">full_obj_name</span><span class="p">,</span>
-                    <span class="n">invalid_str</span><span class="o">=</span><span class="n">invalid_str</span><span class="p">,</span>
-                    <span class="n">prop_descriptions</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop_descriptions</span><span class="p">,</span>
+                <span class="n">module_root</span> <span class="o">=</span> <span class="s2">&quot;plotly.graph_objs.&quot;</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent_path_str</span><span class="p">:</span>
+                    <span class="n">full_obj_name</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="n">module_root</span>
+                        <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent_path_str</span>
+                        <span class="o">+</span> <span class="s2">&quot;.&quot;</span>
+                        <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+                    <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">full_obj_name</span> <span class="o">=</span> <span class="n">module_root</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+
+                <span class="n">guessed_prop</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">invalid_props</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">guessed_prop</span> <span class="o">=</span> <span class="n">find_closest_string</span><span class="p">(</span>
+                            <span class="n">invalid_props</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_valid_props</span>
+                        <span class="p">)</span>
+                    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                        <span class="k">pass</span>
+                <span class="n">guessed_prop_suggestion</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                <span class="k">if</span> <span class="n">guessed_prop</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">guessed_prop_suggestion</span> <span class="o">=</span> <span class="s1">&#39;Did you mean &quot;</span><span class="si">%s</span><span class="s1">&quot;?&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">guessed_prop</span><span class="p">,)</span>
+                <span class="k">raise</span> <span class="n">_error_to_raise</span><span class="p">(</span>
+                    <span class="s2">&quot;Invalid </span><span class="si">{prop_str}</span><span class="s2"> specified for object of type &quot;</span>
+                    <span class="s2">&quot;</span><span class="si">{full_obj_name}</span><span class="s2">: </span><span class="si">{invalid_str}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                    <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{guessed_prop_suggestion}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    Valid properties:</span><span class="se">\n</span><span class="s2">&quot;</span>
+                    <span class="s2">&quot;</span><span class="si">{prop_descriptions}</span><span class="s2">&quot;</span>
+                    <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{guessed_prop_suggestion}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">prop_str</span><span class="o">=</span><span class="n">prop_str</span><span class="p">,</span>
+                        <span class="n">full_obj_name</span><span class="o">=</span><span class="n">full_obj_name</span><span class="p">,</span>
+                        <span class="n">invalid_str</span><span class="o">=</span><span class="n">invalid_str</span><span class="p">,</span>
+                        <span class="n">prop_descriptions</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_prop_descriptions</span><span class="p">,</span>
+                        <span class="n">guessed_prop_suggestion</span><span class="o">=</span><span class="n">guessed_prop_suggestion</span><span class="p">,</span>
+                    <span class="p">)</span>
                 <span class="p">)</span>
-            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">_ret</span>
 
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dict1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -5627,7 +6440,7 @@
         <span class="c1"># -------------------------------------</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">trace_index</span> <span class="o">=</span> <span class="n">BaseFigure</span><span class="o">.</span><span class="n">_index_is</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">child</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">_</span><span class="p">:</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
             <span class="n">trace_index</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="c1"># Child is a trace</span>
@@ -5662,18 +6475,24 @@
 
       </div>
     </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../../_static/js/index.30270b6e4c972e43c488.js"></script>
-
-
-    <footer class="footer mt-5 mt-md-0">
+  <footer class="footer mt-5 mt-md-0">
   <div class="container">
-    <p>
-          &copy; Copyright 2020, Kaleidoscope Team.<br/>
-        Last updated on 2020/10/08.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
-    </p>
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Kaleidoscope Team.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
+</p>
+    </div>
+    
   </div>
 </footer>
   </body>

@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_box
+=============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_box

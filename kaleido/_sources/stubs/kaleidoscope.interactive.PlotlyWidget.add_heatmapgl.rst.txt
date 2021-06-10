@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_heatmapgl
+===================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_heatmapgl

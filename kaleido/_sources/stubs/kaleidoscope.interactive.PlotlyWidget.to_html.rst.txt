@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.to_html
+=============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.to_html

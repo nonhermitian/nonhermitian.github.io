@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.on_msg
+============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.on_msg

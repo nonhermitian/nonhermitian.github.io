@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.set_subplots
+==================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.set_subplots

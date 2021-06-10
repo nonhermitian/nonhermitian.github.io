@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_waterfall
+===================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_waterfall

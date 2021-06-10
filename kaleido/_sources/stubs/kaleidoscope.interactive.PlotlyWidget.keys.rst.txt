@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.keys
+==========================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. autoattribute:: PlotlyWidget.keys

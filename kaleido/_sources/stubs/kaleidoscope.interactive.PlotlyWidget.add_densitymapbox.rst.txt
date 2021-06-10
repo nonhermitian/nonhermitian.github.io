@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_densitymapbox
+=======================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_densitymapbox

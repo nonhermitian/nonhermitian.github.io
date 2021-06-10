@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_table
+===============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_table

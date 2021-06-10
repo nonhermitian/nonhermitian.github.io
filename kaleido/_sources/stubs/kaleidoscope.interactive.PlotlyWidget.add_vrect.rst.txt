@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_vrect
+===============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_vrect

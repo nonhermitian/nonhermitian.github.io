@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.update_ternaries
+======================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.update_ternaries

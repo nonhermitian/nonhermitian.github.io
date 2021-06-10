@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_scatter3d
+===================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_scatter3d

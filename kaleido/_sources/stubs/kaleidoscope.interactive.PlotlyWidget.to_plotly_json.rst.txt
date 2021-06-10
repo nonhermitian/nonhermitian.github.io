@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.to_plotly_json
+====================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.to_plotly_json

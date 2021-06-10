@@ -1,0 +1,1311 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlotlyWidget.update_yaxes &#8212; Kaleidoscope 0.0.13.dev13+3c1f2c3 0.0.13.dev13+3c1f2c3 documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PlotlyWidget.write_html" href="kaleidoscope.interactive.PlotlyWidget.write_html.html" />
+    <link rel="prev" title="PlotlyWidget.update_xaxes" href="kaleidoscope.interactive.PlotlyWidget.update_xaxes.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/kal_logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../install.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../guide/index.html">
+  Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../api.html">
+  API reference
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/nonhermitian/kaleidoscope" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <p class="caption">
+ <span class="caption-text">
+  API reference
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../apidocs/interactive.html">
+   Interactive figures
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="kaleidoscope.interactive.probability_distribution.html">
+     probability_distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="kaleidoscope.interactive.bloch_sphere.html">
+     bloch_sphere
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="kaleidoscope.interactive.bloch_disc.html">
+     bloch_disc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="kaleidoscope.interactive.bloch_multi_disc.html">
+     bloch_multi_disc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="kaleidoscope.interactive.qsphere.html">
+     qsphere
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="kaleidoscope.interactive.PlotlyFigure.html">
+     PlotlyFigure
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyFigure.savefig.html">
+       PlotlyFigure.savefig
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyFigure.show.html">
+       PlotlyFigure.show
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.html">
+     PlotlyWidget
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.comm.html">
+       PlotlyWidget.comm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.cross_validation_lock.html">
+       PlotlyWidget.cross_validation_lock
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.data.html">
+       PlotlyWidget.data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.frames.html">
+       PlotlyWidget.frames
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.keys.html">
+       PlotlyWidget.keys
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.layout.html">
+       PlotlyWidget.layout
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.log.html">
+       PlotlyWidget.log
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.model_id.html">
+       PlotlyWidget.model_id
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.widget_types.html">
+       PlotlyWidget.widget_types
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.widgets.html">
+       PlotlyWidget.widgets
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.__getitem__.html">
+       PlotlyWidget.__getitem__
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_annotation.html">
+       PlotlyWidget.add_annotation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_area.html">
+       PlotlyWidget.add_area
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_bar.html">
+       PlotlyWidget.add_bar
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_barpolar.html">
+       PlotlyWidget.add_barpolar
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_box.html">
+       PlotlyWidget.add_box
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_candlestick.html">
+       PlotlyWidget.add_candlestick
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_carpet.html">
+       PlotlyWidget.add_carpet
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_choropleth.html">
+       PlotlyWidget.add_choropleth
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_choroplethmapbox.html">
+       PlotlyWidget.add_choroplethmapbox
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_class.html">
+       PlotlyWidget.add_class
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_cone.html">
+       PlotlyWidget.add_cone
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_contour.html">
+       PlotlyWidget.add_contour
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_contourcarpet.html">
+       PlotlyWidget.add_contourcarpet
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_densitymapbox.html">
+       PlotlyWidget.add_densitymapbox
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_funnel.html">
+       PlotlyWidget.add_funnel
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_funnelarea.html">
+       PlotlyWidget.add_funnelarea
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_heatmap.html">
+       PlotlyWidget.add_heatmap
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_heatmapgl.html">
+       PlotlyWidget.add_heatmapgl
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_histogram.html">
+       PlotlyWidget.add_histogram
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_histogram2d.html">
+       PlotlyWidget.add_histogram2d
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_histogram2dcontour.html">
+       PlotlyWidget.add_histogram2dcontour
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_hline.html">
+       PlotlyWidget.add_hline
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_hrect.html">
+       PlotlyWidget.add_hrect
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_image.html">
+       PlotlyWidget.add_image
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_indicator.html">
+       PlotlyWidget.add_indicator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_isosurface.html">
+       PlotlyWidget.add_isosurface
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_layout_image.html">
+       PlotlyWidget.add_layout_image
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_mesh3d.html">
+       PlotlyWidget.add_mesh3d
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_ohlc.html">
+       PlotlyWidget.add_ohlc
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_parcats.html">
+       PlotlyWidget.add_parcats
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_parcoords.html">
+       PlotlyWidget.add_parcoords
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_pie.html">
+       PlotlyWidget.add_pie
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_pointcloud.html">
+       PlotlyWidget.add_pointcloud
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_sankey.html">
+       PlotlyWidget.add_sankey
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_scatter.html">
+       PlotlyWidget.add_scatter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_scatter3d.html">
+       PlotlyWidget.add_scatter3d
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_scattercarpet.html">
+       PlotlyWidget.add_scattercarpet
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_scattergeo.html">
+       PlotlyWidget.add_scattergeo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_scattergl.html">
+       PlotlyWidget.add_scattergl
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_scattermapbox.html">
+       PlotlyWidget.add_scattermapbox
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_scatterpolar.html">
+       PlotlyWidget.add_scatterpolar
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_scatterpolargl.html">
+       PlotlyWidget.add_scatterpolargl
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_scatterternary.html">
+       PlotlyWidget.add_scatterternary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_shape.html">
+       PlotlyWidget.add_shape
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_splom.html">
+       PlotlyWidget.add_splom
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_streamtube.html">
+       PlotlyWidget.add_streamtube
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_sunburst.html">
+       PlotlyWidget.add_sunburst
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_surface.html">
+       PlotlyWidget.add_surface
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_table.html">
+       PlotlyWidget.add_table
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_trace.html">
+       PlotlyWidget.add_trace
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_traces.html">
+       PlotlyWidget.add_traces
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_traits.html">
+       PlotlyWidget.add_traits
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_treemap.html">
+       PlotlyWidget.add_treemap
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_violin.html">
+       PlotlyWidget.add_violin
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_vline.html">
+       PlotlyWidget.add_vline
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_volume.html">
+       PlotlyWidget.add_volume
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_vrect.html">
+       PlotlyWidget.add_vrect
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.add_waterfall.html">
+       PlotlyWidget.add_waterfall
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.append_trace.html">
+       PlotlyWidget.append_trace
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.batch_animate.html">
+       PlotlyWidget.batch_animate
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.batch_update.html">
+       PlotlyWidget.batch_update
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.class_own_trait_events.html">
+       PlotlyWidget.class_own_trait_events
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.class_own_traits.html">
+       PlotlyWidget.class_own_traits
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.class_trait_names.html">
+       PlotlyWidget.class_trait_names
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.class_traits.html">
+       PlotlyWidget.class_traits
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.close.html">
+       PlotlyWidget.close
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.close_all.html">
+       PlotlyWidget.close_all
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.for_each_annotation.html">
+       PlotlyWidget.for_each_annotation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.for_each_coloraxis.html">
+       PlotlyWidget.for_each_coloraxis
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.for_each_geo.html">
+       PlotlyWidget.for_each_geo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.for_each_layout_image.html">
+       PlotlyWidget.for_each_layout_image
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.for_each_mapbox.html">
+       PlotlyWidget.for_each_mapbox
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.for_each_polar.html">
+       PlotlyWidget.for_each_polar
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.for_each_scene.html">
+       PlotlyWidget.for_each_scene
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.for_each_shape.html">
+       PlotlyWidget.for_each_shape
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.for_each_ternary.html">
+       PlotlyWidget.for_each_ternary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.for_each_trace.html">
+       PlotlyWidget.for_each_trace
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.for_each_xaxis.html">
+       PlotlyWidget.for_each_xaxis
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.for_each_yaxis.html">
+       PlotlyWidget.for_each_yaxis
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.full_figure_for_development.html">
+       PlotlyWidget.full_figure_for_development
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.get_manager_state.html">
+       PlotlyWidget.get_manager_state
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.get_state.html">
+       PlotlyWidget.get_state
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.get_subplot.html">
+       PlotlyWidget.get_subplot
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.get_view_spec.html">
+       PlotlyWidget.get_view_spec
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.handle_comm_opened.html">
+       PlotlyWidget.handle_comm_opened
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.has_trait.html">
+       PlotlyWidget.has_trait
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.hold_sync.html">
+       PlotlyWidget.hold_sync
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.hold_trait_notifications.html">
+       PlotlyWidget.hold_trait_notifications
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.notify_change.html">
+       PlotlyWidget.notify_change
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.observe.html">
+       PlotlyWidget.observe
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.on_displayed.html">
+       PlotlyWidget.on_displayed
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.on_edits_completed.html">
+       PlotlyWidget.on_edits_completed
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.on_msg.html">
+       PlotlyWidget.on_msg
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.on_trait_change.html">
+       PlotlyWidget.on_trait_change
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.on_widget_constructed.html">
+       PlotlyWidget.on_widget_constructed
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.open.html">
+       PlotlyWidget.open
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.plotly_relayout.html">
+       PlotlyWidget.plotly_relayout
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.plotly_restyle.html">
+       PlotlyWidget.plotly_restyle
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.plotly_update.html">
+       PlotlyWidget.plotly_update
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.pop.html">
+       PlotlyWidget.pop
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.print_grid.html">
+       PlotlyWidget.print_grid
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.remove_class.html">
+       PlotlyWidget.remove_class
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.savefig.html">
+       PlotlyWidget.savefig
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.select_annotations.html">
+       PlotlyWidget.select_annotations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.select_coloraxes.html">
+       PlotlyWidget.select_coloraxes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.select_geos.html">
+       PlotlyWidget.select_geos
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.select_layout_images.html">
+       PlotlyWidget.select_layout_images
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.select_mapboxes.html">
+       PlotlyWidget.select_mapboxes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.select_polars.html">
+       PlotlyWidget.select_polars
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.select_scenes.html">
+       PlotlyWidget.select_scenes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.select_shapes.html">
+       PlotlyWidget.select_shapes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.select_ternaries.html">
+       PlotlyWidget.select_ternaries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.select_traces.html">
+       PlotlyWidget.select_traces
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.select_xaxes.html">
+       PlotlyWidget.select_xaxes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.select_yaxes.html">
+       PlotlyWidget.select_yaxes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.send.html">
+       PlotlyWidget.send
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.send_state.html">
+       PlotlyWidget.send_state
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.set_state.html">
+       PlotlyWidget.set_state
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.set_subplots.html">
+       PlotlyWidget.set_subplots
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.set_trait.html">
+       PlotlyWidget.set_trait
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.setup_instance.html">
+       PlotlyWidget.setup_instance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.show.html">
+       PlotlyWidget.show
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.to_dict.html">
+       PlotlyWidget.to_dict
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.to_html.html">
+       PlotlyWidget.to_html
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.to_image.html">
+       PlotlyWidget.to_image
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.to_json.html">
+       PlotlyWidget.to_json
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.to_ordered_dict.html">
+       PlotlyWidget.to_ordered_dict
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.to_plotly_json.html">
+       PlotlyWidget.to_plotly_json
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.trait_defaults.html">
+       PlotlyWidget.trait_defaults
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.trait_events.html">
+       PlotlyWidget.trait_events
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.trait_has_value.html">
+       PlotlyWidget.trait_has_value
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.trait_metadata.html">
+       PlotlyWidget.trait_metadata
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.trait_names.html">
+       PlotlyWidget.trait_names
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.trait_values.html">
+       PlotlyWidget.trait_values
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.traits.html">
+       PlotlyWidget.traits
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.unobserve.html">
+       PlotlyWidget.unobserve
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.unobserve_all.html">
+       PlotlyWidget.unobserve_all
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.update.html">
+       PlotlyWidget.update
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.update_annotations.html">
+       PlotlyWidget.update_annotations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.update_coloraxes.html">
+       PlotlyWidget.update_coloraxes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.update_geos.html">
+       PlotlyWidget.update_geos
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.update_layout.html">
+       PlotlyWidget.update_layout
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.update_layout_images.html">
+       PlotlyWidget.update_layout_images
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.update_mapboxes.html">
+       PlotlyWidget.update_mapboxes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.update_polars.html">
+       PlotlyWidget.update_polars
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.update_scenes.html">
+       PlotlyWidget.update_scenes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.update_shapes.html">
+       PlotlyWidget.update_shapes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.update_ternaries.html">
+       PlotlyWidget.update_ternaries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.update_traces.html">
+       PlotlyWidget.update_traces
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.update_xaxes.html">
+       PlotlyWidget.update_xaxes
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       PlotlyWidget.update_yaxes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.write_html.html">
+       PlotlyWidget.write_html
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.write_image.html">
+       PlotlyWidget.write_image
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.write_json.html">
+       PlotlyWidget.write_json
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.interactive.PlotlyWidget.__getitem__.html">
+       PlotlyWidget.__getitem__
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../apidocs/backends.html">
+   IBM Quantum system visualizations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="kaleidoscope.qiskit.backends.system_error_map.html">
+     system_error_map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="kaleidoscope.qiskit.backends.system_gate_map.html">
+     system_gate_map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="kaleidoscope.qiskit.backends.cnot_error_density.html">
+     cnot_error_density
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../apidocs/services.html">
+   Qiskit services
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="kaleidoscope.qiskit.services.Account.html">
+     Account
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="kaleidoscope.qiskit.services.KaleidoscopeSystemService.html">
+     KaleidoscopeSystemService
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.qiskit.services.KaleidoscopeSystemService.__call__.html">
+       KaleidoscopeSystemService.__call__
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="kaleidoscope.qiskit.services.KaleidoscopeSimulatorService.html">
+     KaleidoscopeSimulatorService
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.qiskit.services.KaleidoscopeSimulatorService.__call__.html">
+       KaleidoscopeSimulatorService.__call__
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kaleidoscope.qiskit.services.KaleidoscopeSimulatorService.refresh.html">
+       KaleidoscopeSimulatorService.refresh
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../apidocs/overload.html">
+   Qiskit addons
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="kaleidoscope.qiskit.overload.rshift.html">
+     rshift
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="kaleidoscope.qiskit.overload.transpile.html">
+     transpile
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="kaleidoscope.qiskit.overload.sample.html">
+     sample
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="kaleidoscope.qiskit.overload.statevector.html">
+     statevector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="kaleidoscope.qiskit.overload.unitary.html">
+     unitary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="kaleidoscope.qiskit.overload.bloch_components.html">
+     bloch_components
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/nonhermitian/kaleidoscope/edit/master/docs/stubs/kaleidoscope.interactive.PlotlyWidget.update_yaxes.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="plotlywidget-update-yaxes">
+<h1>PlotlyWidget.update_yaxes<a class="headerlink" href="#plotlywidget-update-yaxes" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt id="kaleidoscope.interactive.PlotlyWidget.update_yaxes">
+<code class="sig-prename descclassname">PlotlyWidget.</code><code class="sig-name descname">update_yaxes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">patch</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">selector</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">row</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">col</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">secondary_y</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kaleidoscope.interactive.PlotlyWidget.update_yaxes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform a property update operation on all yaxis objects
+that satisfy the specified selection criteria</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>patch</strong> (<em>dict</em>) – Dictionary of property updates to be applied to all
+yaxis objects that satisfy the selection criteria.</p></li>
+<li><p><strong>selector</strong> (<em>dict</em><em>, </em><em>function</em><em>, or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Dict to use as selection criteria.
+yaxis objects will be selected if they contain
+properties corresponding to all of the dictionary’s keys, with
+values that exactly match the supplied values. If None
+(the default), all yaxis objects are selected. If a
+function, it must be a function accepting a single argument and
+returning a boolean. The function will be called on each
+yaxis and those for which the function returned True will
+be in the selection.</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – If True, overwrite existing properties. If False, apply updates
+to existing properties recursively, preserving existing
+properties that are not specified in the update operation.</p></li>
+<li><p><strong>row</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of yaxis objects to select.
+To select yaxis objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all yaxis objects are selected.</p></li>
+<li><p><strong>col</strong> (<em>int</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – Subplot row and column index of yaxis objects to select.
+To select yaxis objects by row and column, the Figure
+must have been created using plotly.subplots.make_subplots.
+If None (the default), all yaxis objects are selected.</p></li>
+<li><p><strong>secondary_y</strong> (<em>boolean</em><em> or </em><em>None</em><em> (</em><em>default None</em><em>)</em>) – <ul>
+<li><p>If True, only select yaxis objects associated with the secondary
+y-axis of the subplot.</p></li>
+<li><p>If False, only select yaxis objects associated with the primary
+y-axis of the subplot.</p></li>
+<li><p>If None (the default), do not filter yaxis objects based on
+a secondary y-axis condition.</p></li>
+</ul>
+<p>To select yaxis objects by secondary y-axis, the Figure must
+have been created using plotly.subplots.make_subplots. See
+the docstring for the specs argument to make_subplots for more
+info on creating subplots with secondary y-axes.</p>
+</p></li>
+<li><p><strong>**kwargs</strong> – Additional property updates to apply to each selected
+yaxis object. If a property is specified in
+both patch and in <a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs then the one in <a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs
+takes precedence.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns the Figure object that the method was called on</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>self</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="kaleidoscope.interactive.PlotlyWidget.update_xaxes.html" title="previous page">PlotlyWidget.update_xaxes</a>
+    <a class='right-next' id="next-link" href="kaleidoscope.interactive.PlotlyWidget.write_html.html" title="next page">PlotlyWidget.write_html</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Kaleidoscope Team.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

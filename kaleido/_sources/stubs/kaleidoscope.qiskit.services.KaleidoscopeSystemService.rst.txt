@@ -1,0 +1,29 @@
+﻿
+
+KaleidoscopeSystemService
+======================================================
+
+.. currentmodule:: kaleidoscope.qiskit.services
+
+.. autoclass:: KaleidoscopeSystemService
+   :no-members:
+   :no-inherited-members:
+   :no-special-members:
+
+   
+   
+   
+
+   
+   
+
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree: ../stubs/
+   
+      KaleidoscopeSystemService.__call__
+   
+
+   
+   

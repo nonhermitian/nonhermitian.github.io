@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_streamtube
+====================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_streamtube

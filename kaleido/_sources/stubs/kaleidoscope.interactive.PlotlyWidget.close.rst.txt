@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.close
+===========================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.close

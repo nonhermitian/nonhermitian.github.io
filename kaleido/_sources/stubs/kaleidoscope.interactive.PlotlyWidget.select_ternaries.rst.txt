@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.select_ternaries
+======================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.select_ternaries

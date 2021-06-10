@@ -1,0 +1,8 @@
+
+
+KaleidoscopeSimulatorService.refresh
+=================================================================
+
+.. currentmodule:: kaleidoscope.qiskit.services
+
+.. automethod:: KaleidoscopeSimulatorService.refresh

@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.batch_animate
+===================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.batch_animate

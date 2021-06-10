@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.log
+=========================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. autoattribute:: PlotlyWidget.log

@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.select_coloraxes
+======================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.select_coloraxes

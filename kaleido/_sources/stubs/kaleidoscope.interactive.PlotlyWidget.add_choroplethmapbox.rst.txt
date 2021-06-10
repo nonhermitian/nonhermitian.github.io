@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_choroplethmapbox
+==========================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_choroplethmapbox

@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.plotly_restyle
+====================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.plotly_restyle

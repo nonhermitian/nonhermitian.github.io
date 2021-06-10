@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.select_yaxes
+==================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.select_yaxes

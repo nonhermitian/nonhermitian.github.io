@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.select_scenes
+===================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.select_scenes

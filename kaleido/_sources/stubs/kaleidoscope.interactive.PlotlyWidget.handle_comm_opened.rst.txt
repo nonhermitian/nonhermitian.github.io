@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.handle_comm_opened
+========================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.handle_comm_opened

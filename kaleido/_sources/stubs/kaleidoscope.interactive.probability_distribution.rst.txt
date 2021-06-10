@@ -1,5 +1,7 @@
-﻿kaleidoscope.interactive.probability\_distribution
-==================================================
+﻿
+
+probability_distribution
+=================================================
 
 .. currentmodule:: kaleidoscope.interactive
 

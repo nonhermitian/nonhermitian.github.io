@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.remove_class
+==================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.remove_class

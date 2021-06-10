@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_traces
+================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_traces

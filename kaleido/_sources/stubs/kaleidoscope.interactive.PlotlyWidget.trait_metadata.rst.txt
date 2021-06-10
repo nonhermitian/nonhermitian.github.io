@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.trait_metadata
+====================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.trait_metadata

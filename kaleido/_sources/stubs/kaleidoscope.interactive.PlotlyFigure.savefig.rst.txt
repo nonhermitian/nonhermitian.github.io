@@ -1,0 +1,8 @@
+
+
+PlotlyFigure.savefig
+=============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyFigure.savefig

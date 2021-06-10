@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.send_state
+================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.send_state

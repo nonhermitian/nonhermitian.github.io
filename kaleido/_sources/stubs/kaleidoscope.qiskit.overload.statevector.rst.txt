@@ -1,4 +1,6 @@
-﻿kaleidoscope.qiskit.overload.statevector
+﻿
+
+statevector
 ========================================
 
 .. currentmodule:: kaleidoscope.qiskit.overload

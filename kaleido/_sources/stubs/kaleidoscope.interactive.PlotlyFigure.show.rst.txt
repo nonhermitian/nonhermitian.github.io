@@ -1,0 +1,8 @@
+
+
+PlotlyFigure.show
+==========================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyFigure.show

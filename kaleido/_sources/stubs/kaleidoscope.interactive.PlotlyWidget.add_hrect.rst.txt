@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_hrect
+===============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_hrect

@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.trait_names
+=================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.trait_names

@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.on_widget_constructed
+===========================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.on_widget_constructed

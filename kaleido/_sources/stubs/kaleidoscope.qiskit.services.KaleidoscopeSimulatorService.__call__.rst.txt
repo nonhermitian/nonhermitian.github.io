@@ -1,0 +1,8 @@
+
+
+KaleidoscopeSimulatorService.__call__
+==================================================================
+
+.. currentmodule:: kaleidoscope.qiskit.services
+
+.. automethod:: KaleidoscopeSimulatorService.__call__

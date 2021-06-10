@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.unobserve_all
+===================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.unobserve_all

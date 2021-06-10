@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.select_shapes
+===================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.select_shapes

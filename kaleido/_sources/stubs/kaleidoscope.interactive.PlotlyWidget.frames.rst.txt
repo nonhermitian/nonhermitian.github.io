@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.frames
+============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. autoproperty:: PlotlyWidget.frames

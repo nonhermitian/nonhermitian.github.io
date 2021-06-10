@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.update_mapboxes
+=====================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.update_mapboxes

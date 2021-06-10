@@ -1,5 +1,7 @@
-﻿kaleidoscope.qiskit.backends.system\_gate\_map
-==============================================
+﻿
+
+system_gate_map
+============================================
 
 .. currentmodule:: kaleidoscope.qiskit.backends
 

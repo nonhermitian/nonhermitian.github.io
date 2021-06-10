@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.update_yaxes
+==================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.update_yaxes

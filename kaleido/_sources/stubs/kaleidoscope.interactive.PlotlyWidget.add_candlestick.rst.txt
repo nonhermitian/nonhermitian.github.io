@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_candlestick
+=====================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_candlestick

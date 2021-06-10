@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.hold_trait_notifications
+==============================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.hold_trait_notifications

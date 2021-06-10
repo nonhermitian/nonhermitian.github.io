@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.plotly_relayout
+=====================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.plotly_relayout

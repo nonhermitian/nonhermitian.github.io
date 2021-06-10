@@ -1,4 +1,6 @@
-﻿kaleidoscope.interactive.qsphere
+﻿
+
+qsphere
 ================================
 
 .. currentmodule:: kaleidoscope.interactive

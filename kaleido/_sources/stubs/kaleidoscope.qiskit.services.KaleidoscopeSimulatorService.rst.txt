@@ -1,0 +1,30 @@
+﻿
+
+KaleidoscopeSimulatorService
+=========================================================
+
+.. currentmodule:: kaleidoscope.qiskit.services
+
+.. autoclass:: KaleidoscopeSimulatorService
+   :no-members:
+   :no-inherited-members:
+   :no-special-members:
+
+   
+   
+   
+
+   
+   
+
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree: ../stubs/
+   
+      KaleidoscopeSimulatorService.__call__
+      KaleidoscopeSimulatorService.refresh
+   
+
+   
+   

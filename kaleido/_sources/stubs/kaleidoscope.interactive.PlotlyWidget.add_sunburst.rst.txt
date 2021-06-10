@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_sunburst
+==================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_sunburst

@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_choropleth
+====================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_choropleth

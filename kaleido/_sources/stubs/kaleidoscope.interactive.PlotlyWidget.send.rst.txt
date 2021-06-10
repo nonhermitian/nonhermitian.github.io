@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.send
+==========================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.send

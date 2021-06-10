@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.notify_change
+===================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.notify_change

@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.set_state
+===============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.set_state

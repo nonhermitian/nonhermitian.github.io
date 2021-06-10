@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.trait_events
+==================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.trait_events

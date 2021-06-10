@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_carpet
+================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_carpet

@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_parcats
+=================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_parcats

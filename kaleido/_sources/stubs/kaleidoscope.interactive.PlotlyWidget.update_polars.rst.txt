@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.update_polars
+===================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.update_polars

@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.update_shapes
+===================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.update_shapes

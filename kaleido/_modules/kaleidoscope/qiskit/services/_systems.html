@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kaleidoscope.qiskit.services._systems &#8212; Kaleidoscope 0.0.13.dev13+3c1f2c3 0.0.13.dev13+3c1f2c3 documentation</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/gallery.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <script src="../../../../_static/thebelab-helper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../../index.html">
+  <img src="../../../../_static/kal_logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../install.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../guide/index.html">
+  Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../api.html">
+  API reference
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/nonhermitian/kaleidoscope" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for kaleidoscope.qiskit.services._systems</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="c1"># This file is part of Kaleidoscope.</span>
+<span class="c1">#</span>
+<span class="c1"># (C) Copyright IBM 2020.</span>
+<span class="c1">#</span>
+<span class="c1"># This code is licensed under the Apache License, Version 2.0. You may</span>
+<span class="c1"># obtain a copy of this license in the LICENSE.txt file in the root directory</span>
+<span class="c1"># of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.</span>
+<span class="c1">#</span>
+<span class="c1"># Any modifications or derivative works of this code must retain this</span>
+<span class="c1"># copyright notice, and modified files need to carry a notice indicating</span>
+<span class="c1"># that they have been altered from the originals.</span>
+
+<span class="c1"># This code is part of Qiskit.</span>
+<span class="c1">#</span>
+<span class="c1"># (C) Copyright IBM 2017, 2019.</span>
+<span class="c1">#</span>
+<span class="c1"># This code is licensed under the Apache License, Version 2.0. You may</span>
+<span class="c1"># obtain a copy of this license in the LICENSE.txt file in the root directory</span>
+<span class="c1"># of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.</span>
+<span class="c1">#</span>
+<span class="c1"># Any modifications or derivative works of this code must retain this</span>
+<span class="c1"># copyright notice, and modified files need to carry a notice indicating</span>
+<span class="c1"># that they have been altered from the originals.</span>
+
+<span class="c1"># pylint: disable=unexpected-keyword-arg</span>
+
+<span class="sd">&quot;&quot;&quot;Module for easily getting IBMQ systems&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">kaleidoscope.errors</span> <span class="kn">import</span> <span class="n">KaleidoscopeError</span>
+<span class="kn">from</span> <span class="nn">._account</span> <span class="kn">import</span> <span class="n">Account</span>
+<span class="kn">from</span> <span class="nn">.filters.backend</span> <span class="kn">import</span> <span class="p">(</span><span class="n">BackendCollection</span><span class="p">,</span> <span class="n">NumQubits</span><span class="p">,</span> <span class="n">HasPulse</span><span class="p">,</span>
+                              <span class="n">QVCompare</span><span class="p">,</span> <span class="n">IsOperational</span><span class="p">,</span>
+                              <span class="n">MaxCircuits</span><span class="p">,</span> <span class="n">MaxShots</span><span class="p">,</span> <span class="n">Reservations</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="KaleidoscopeSystemService"><a class="viewcode-back" href="../../../../stubs/kaleidoscope.qiskit.services.KaleidoscopeSystemService.html#kaleidoscope.qiskit.services.KaleidoscopeSystemService">[docs]</a><span class="k">class</span> <span class="nc">KaleidoscopeSystemService</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;The service class for systems.</span>
+
+<span class="sd">    All attributes are dynamically attached to</span>
+<span class="sd">    this class.</span>
+
+<span class="sd">    This class is much simpler than the simulators</span>
+<span class="sd">    one because there is no processing that needs</span>
+<span class="sd">    to be done async.</span>
+
+<span class="sd">    Allows for filtering backends by the following:</span>
+
+<span class="sd">    - `num_qubits` : Filter against an integer number of qubits.</span>
+
+<span class="sd">    - `open_pulse` : Boolean filter for open_pulse capability.</span>
+
+<span class="sd">    - `quantum_volume` : Filter against an integer number for quantum volume.</span>
+
+<span class="sd">    - `operational` : Boolean filter for system operational status.</span>
+
+<span class="sd">    - `max_circuits` : Filter against integer number of max circuits.</span>
+
+<span class="sd">    - `max_shots` : Filter against integer number of max shots.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_all_added_attr</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_default_added_attr</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_default_added_backends</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_default_provider</span> <span class="o">=</span> <span class="n">Account</span><span class="o">.</span><span class="n">get_default_provider</span><span class="p">()</span>
+        <span class="n">_system_loader</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<div class="viewcode-block" id="KaleidoscopeSystemService.__call__"><a class="viewcode-back" href="../../../../stubs/kaleidoscope.qiskit.services.KaleidoscopeSystemService.__call__.html#kaleidoscope.qiskit.services.KaleidoscopeSystemService.__call__">[docs]</a>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return all backends that satisfy the given criteria.</span>
+
+<span class="sd">        If no criteria passed then returns all systems.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            name (str or list): System name(s).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            IBMQBackend: A single backend instance if only one.</span>
+<span class="sd">            BackendCollection: List of specified backends if more than one.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            KaleidoscopeError: No matching backends.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">out</span> <span class="o">=</span> <span class="p">[</span><span class="n">back</span> <span class="k">for</span> <span class="n">back</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_added_backends</span> <span class="k">if</span> <span class="n">back</span><span class="o">.</span><span class="n">name</span><span class="p">()</span> <span class="o">==</span> <span class="n">name</span><span class="p">]</span>
+                <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">out</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">raise</span> <span class="n">KaleidoscopeError</span><span class="p">(</span><span class="s1">&#39;No matching backend name.&#39;</span><span class="p">)</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">nm</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+                <span class="n">out</span> <span class="o">+=</span> <span class="p">[</span><span class="n">back</span> <span class="k">for</span> <span class="n">back</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_added_backends</span> <span class="k">if</span> <span class="n">back</span><span class="o">.</span><span class="n">name</span><span class="p">()</span> <span class="o">==</span> <span class="n">nm</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">out</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">BackendCollection</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">KaleidoscopeError</span><span class="p">(</span><span class="s1">&#39;No matching backend names.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">BackendCollection</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_default_added_backends</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;num_qubits&#39;</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">NumQubits</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_default_added_backends</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;open_pulse&#39;</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">HasPulse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_default_added_backends</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;quantum_volume&#39;</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">QVCompare</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_default_added_backends</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;operational&#39;</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">IsOperational</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_default_added_backends</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;max_circuits&#39;</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">MaxCircuits</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_default_added_backends</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;max_shots&#39;</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">MaxShots</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_default_added_backends</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;reservations&#39;</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">Reservations</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_default_added_backends</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;BackendCollection does not have attr &#39;</span><span class="si">{}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">out</span>
+
+    <span class="k">def</span> <span class="nf">_refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Refresh the service in place.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_added_attr</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+                <span class="k">pass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_all_added_attr</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_default_added_attr</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_default_added_backends</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_default_provider</span> <span class="o">=</span> <span class="n">Account</span><span class="o">.</span><span class="n">get_default_provider</span><span class="p">()</span>
+        <span class="nb">delattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;ALL&#39;</span><span class="p">)</span>
+        <span class="n">_system_loader</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+
+<span class="k">class</span> <span class="nc">KaleidoscopeSystemDispatcher</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Contains all the backend instances</span>
+<span class="sd">    corresponding to the providers for a given</span>
+<span class="sd">    system.</span>
+
+<span class="sd">    All attributes are dynamically attached to</span>
+<span class="sd">    this class.</span>
+
+<span class="sd">    Allows for filtering backends by the following:</span>
+
+<span class="sd">    - `num_qubits` : Filter against an integer number of qubits.</span>
+
+<span class="sd">    - `open_pulse` : Boolean filter for open_pulse capability.</span>
+
+<span class="sd">    - `quantum_volume` : Filter against an integer number for quantum volume.</span>
+
+<span class="sd">    - `operational` : Boolean filter for system operational status.</span>
+
+<span class="sd">    - `max_circuits` : Filter against integer number of max circuits.</span>
+
+<span class="sd">    - `max_shots` : Filter against integer number of max shots.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hub</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return all backends that satisfy the given criteria.</span>
+
+<span class="sd">        If no criteria passed then returns all systems.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            name (str or list): System name.</span>
+<span class="sd">            hub (str or list): Specified hub.</span>
+<span class="sd">            group (str or list): Specified group.</span>
+<span class="sd">            project (str or list): Specified project.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            BackendCollection: List of specified backends.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            KaleidoscopeError: No matching backends.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">filtered_backends</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_added_backends</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_temp</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">nm</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+                <span class="n">_temp</span> <span class="o">+=</span> <span class="p">[</span><span class="n">back</span> <span class="k">for</span> <span class="n">back</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_added_backends</span>
+                          <span class="k">if</span> <span class="n">back</span><span class="o">.</span><span class="n">name</span><span class="p">()</span> <span class="o">==</span> <span class="n">nm</span> <span class="ow">and</span> <span class="n">back</span> <span class="ow">in</span> <span class="n">filtered_backends</span><span class="p">]</span>
+            <span class="n">filtered_backends</span> <span class="o">=</span> <span class="n">_temp</span>
+
+        <span class="k">if</span> <span class="n">hub</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_temp</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hub</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">hub</span> <span class="o">=</span> <span class="p">[</span><span class="n">hub</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">hb</span> <span class="ow">in</span> <span class="n">hub</span><span class="p">:</span>
+                <span class="n">_temp</span> <span class="o">+=</span> <span class="p">[</span><span class="n">back</span> <span class="k">for</span> <span class="n">back</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_added_backends</span>
+                          <span class="k">if</span> <span class="n">back</span><span class="o">.</span><span class="n">hub</span> <span class="o">==</span> <span class="n">hb</span> <span class="ow">and</span> <span class="n">back</span> <span class="ow">in</span> <span class="n">filtered_backends</span><span class="p">]</span>
+            <span class="n">filtered_backends</span> <span class="o">=</span> <span class="n">_temp</span>
+
+        <span class="k">if</span> <span class="n">group</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_temp</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">group</span> <span class="o">=</span> <span class="p">[</span><span class="n">group</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">gp</span> <span class="ow">in</span> <span class="n">group</span><span class="p">:</span>
+                <span class="n">_temp</span> <span class="o">+=</span> <span class="p">[</span><span class="n">back</span> <span class="k">for</span> <span class="n">back</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_added_backends</span>
+                          <span class="k">if</span> <span class="n">back</span><span class="o">.</span><span class="n">group</span> <span class="o">==</span> <span class="n">gp</span> <span class="ow">and</span> <span class="n">back</span> <span class="ow">in</span> <span class="n">filtered_backends</span><span class="p">]</span>
+            <span class="n">filtered_backends</span> <span class="o">=</span> <span class="n">_temp</span>
+
+        <span class="k">if</span> <span class="n">project</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_temp</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">project</span> <span class="o">=</span> <span class="p">[</span><span class="n">project</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">project</span><span class="p">:</span>
+                <span class="n">_temp</span> <span class="o">+=</span> <span class="p">[</span><span class="n">back</span> <span class="k">for</span> <span class="n">back</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_added_backends</span>
+                          <span class="k">if</span> <span class="n">back</span><span class="o">.</span><span class="n">project</span> <span class="o">==</span> <span class="n">pt</span> <span class="ow">and</span> <span class="n">back</span> <span class="ow">in</span> <span class="n">filtered_backends</span><span class="p">]</span>
+            <span class="n">filtered_backends</span> <span class="o">=</span> <span class="n">_temp</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">filtered_backends</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">KaleidoscopeError</span><span class="p">(</span><span class="s1">&#39;No matching systems found.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">BackendCollection</span><span class="p">(</span><span class="n">filtered_backends</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;num_qubits&#39;</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">NumQubits</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_added_backends</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;open_pulse&#39;</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">HasPulse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_added_backends</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;quantum_volume&#39;</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">QVCompare</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_added_backends</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;operational&#39;</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">IsOperational</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_added_backends</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;max_circuits&#39;</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">MaxCircuits</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_added_backends</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;max_shots&#39;</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">MaxShots</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_added_backends</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;reservations&#39;</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">Reservations</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_added_backends</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;BackendCollection does not have attr &#39;</span><span class="si">{}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="k">def</span> <span class="nf">_system_loader</span><span class="p">(</span><span class="n">service</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Attaches system dispatchers to the service</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">Account</span><span class="o">.</span><span class="n">providers</span><span class="p">()):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">Account</span><span class="o">.</span><span class="n">load_account</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># pylint: disable=broad-except</span>
+            <span class="k">pass</span>
+    <span class="n">systems</span> <span class="o">=</span> <span class="n">_get_ibmq_systems</span><span class="p">()</span>
+    <span class="n">all_added_attr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">default_added_attr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">default_added_backends</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">default_provider</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">_default_provider</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;//&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">service</span><span class="o">.</span><span class="n">_default_provider</span> <span class="k">else</span> <span class="p">[]</span>
+
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">service</span><span class="p">,</span> <span class="s1">&#39;ALL&#39;</span><span class="p">,</span> <span class="n">KaleidoscopeSystemDispatcher</span><span class="p">())</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">service</span><span class="o">.</span><span class="n">ALL</span><span class="p">,</span> <span class="s1">&#39;_added_backends&#39;</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">back_list</span> <span class="ow">in</span> <span class="n">systems</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">reference</span> <span class="o">=</span> <span class="n">back_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">num_qubits</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">_configuration</span><span class="o">.</span><span class="n">num_qubits</span>
+            <span class="n">system_name</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">𖼯</span><span class="si">{}</span><span class="s2">Q𖼞&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">num_qubits</span><span class="p">)</span>
+            <span class="n">all_dispatcher</span> <span class="o">=</span> <span class="n">KaleidoscopeSystemDispatcher</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">backend</span> <span class="ow">in</span> <span class="n">back_list</span><span class="p">:</span>
+                <span class="n">hub</span> <span class="o">=</span> <span class="n">backend</span><span class="o">.</span><span class="n">hub</span>
+                <span class="n">group</span> <span class="o">=</span> <span class="n">backend</span><span class="o">.</span><span class="n">group</span>
+                <span class="n">project</span> <span class="o">=</span> <span class="n">backend</span><span class="o">.</span><span class="n">project</span>
+                <span class="n">pro_str</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_</span><span class="si">{}</span><span class="s2">_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hub</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">project</span><span class="p">)</span>
+                <span class="n">pro_str</span> <span class="o">=</span> <span class="n">pro_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;ー&#39;</span><span class="p">)</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="n">all_dispatcher</span><span class="p">,</span> <span class="n">pro_str</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
+                <span class="n">service</span><span class="o">.</span><span class="n">ALL</span><span class="o">.</span><span class="n">_added_backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
+                <span class="c1"># is backend in default provider</span>
+                <span class="k">if</span> <span class="p">[</span><span class="n">hub</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">project</span><span class="p">]</span> <span class="o">==</span> <span class="n">default_provider</span><span class="p">:</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="n">service</span><span class="p">,</span> <span class="n">system_name</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
+                    <span class="n">default_added_attr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">system_name</span><span class="p">)</span>
+                    <span class="n">default_added_backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
+
+            <span class="nb">setattr</span><span class="p">(</span><span class="n">service</span><span class="o">.</span><span class="n">ALL</span><span class="p">,</span> <span class="s1">&#39;get_&#39;</span><span class="o">+</span><span class="n">system_name</span><span class="p">,</span> <span class="n">all_dispatcher</span><span class="p">)</span>
+            <span class="n">all_added_attr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">system_name</span><span class="p">)</span>
+
+    <span class="n">service</span><span class="o">.</span><span class="n">_all_added_attr</span> <span class="o">=</span> <span class="n">all_added_attr</span>
+    <span class="n">service</span><span class="o">.</span><span class="n">_default_added_attr</span> <span class="o">=</span> <span class="n">default_added_attr</span>
+    <span class="n">service</span><span class="o">.</span><span class="n">_default_added_backends</span> <span class="o">=</span> <span class="n">default_added_backends</span>
+
+
+<span class="k">def</span> <span class="nf">_get_ibmq_systems</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Get instances for all IBMQ systems that the user has access to.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A dict of all IBMQ systems that a user has access to.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ibmq_backends</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">pro</span> <span class="ow">in</span> <span class="n">Account</span><span class="o">.</span><span class="n">providers</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">back</span> <span class="ow">in</span> <span class="n">pro</span><span class="o">.</span><span class="n">backends</span><span class="p">():</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">back</span><span class="o">.</span><span class="n">configuration</span><span class="p">()</span><span class="o">.</span><span class="n">simulator</span><span class="p">:</span>
+                <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;alt&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">back</span><span class="o">.</span><span class="n">name</span><span class="p">())</span> \
+                        <span class="ow">and</span> <span class="n">back</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;ibmq&#39;</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">back</span><span class="o">.</span><span class="n">name</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ibmq_backends</span><span class="p">:</span>
+                        <span class="n">ibmq_backends</span><span class="p">[</span><span class="n">back</span><span class="o">.</span><span class="n">name</span><span class="p">()]</span> <span class="o">=</span> <span class="p">[</span><span class="n">back</span><span class="p">]</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">ibmq_backends</span><span class="p">[</span><span class="n">back</span><span class="o">.</span><span class="n">name</span><span class="p">()]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">back</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ibmq_backends</span>
+</pre></div>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Kaleidoscope Team.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

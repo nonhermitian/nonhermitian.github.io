@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.write_image
+=================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.write_image

@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_surface
+=================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_surface

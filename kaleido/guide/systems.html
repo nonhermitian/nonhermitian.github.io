@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qiskit systems &#8212; Kaleidoscope 0.0.13.dev13+3c1f2c3 0.0.13.dev13+3c1f2c3 documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorials" href="../tutorials/index.html" />
+    <link rel="prev" title="Saving figures" href="saving.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/kal_logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../install.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../tutorials/index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api.html">
+  API reference
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/nonhermitian/kaleidoscope" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="saving.html">
+   Saving figures
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Qiskit systems
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filtering-systems">
+   Filtering systems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#all-systems">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ALL
+    </span>
+   </code>
+   systems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#changing-the-default-provider">
+   Changing the default provider
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/nonhermitian/kaleidoscope/edit/master/docs/guide/systems.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="qiskit-systems">
+<h1>Qiskit systems<a class="headerlink" href="#qiskit-systems" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Qiskit services module in kaleidoscope allows one to quickly and easily
+access the quantum systems from IBM Quantum.  Here we show how to use the
+<code class="docutils literal notranslate"><span class="pre">Systems</span></code> class.</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kaleidoscope.qiskit</span> <span class="kn">import</span> <span class="n">Systems</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Systems</span></code> class contains all the information about the devices you have access to.
+Qiskit allocates quantum systems via “providers”.  A provider is just a way of organizing
+who has access to what systems, and the feature sets of those systems, e.g. pulse access.
+The <code class="docutils literal notranslate"><span class="pre">Systems</span></code> class has the notion of a default provider, and if you have more than one,
+then <code class="docutils literal notranslate"><span class="pre">ALL</span></code> providers as well.  Since everyone has access to the open-access quantum systems,
+kaleidoscope starts with that as the default provider unless set otherwise.  To see all the
+systems in the default provider, simply call the <code class="docutils literal notranslate"><span class="pre">Systems</span></code> class:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Systems</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;IBMQBackend(&#39;ibmqx2&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_16_melbourne&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_armonk&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_athens&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_santiago&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_lima&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_belem&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_quito&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_manila&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_paris&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_bogota&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_rome&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_montreal&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_toronto&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_manhattan&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_casablanca&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_sydney&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_mumbai&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_guadalupe&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_jakarta&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>To grab a specific system by name simply do:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Systems</span><span class="p">(</span><span class="s1">&#39;ibmq_lima&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;IBMQBackend(&#39;ibmq_lima&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The systems can also be accessed via autocompletion:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Systems</span><span class="o">.</span><span class="n">ibmq_lima𖼯5Q𖼞</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;IBMQBackend(&#39;ibmq_lima&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>where the system identifier also includes the number of qubits.</p>
+</div>
+<div class="section" id="filtering-systems">
+<h2>Filtering systems<a class="headerlink" href="#filtering-systems" title="Permalink to this headline">¶</a></h2>
+<p>It is also possible to filter systems in a variety of ways that currently includes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">num_qubits</span></code> - The number of qubits</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">open_pulse</span></code> - Whether the system has pulse access (boolean).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">quantum_volume</span></code> - Filter based on the reported Quantum Volume.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operational</span></code> - Is the system currently operational (boolean).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_circuits</span></code> - The maximum number of circuits that can be submitted in one job.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_shots</span></code> - The maximum number of shots that can be performed on a circuit.</p></li>
+</ul>
+<p>For example, lets find all systems in the default provider with Quantum Volume 16 or greater:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Systems</span><span class="o">.</span><span class="n">quantum_volume</span> <span class="o">&gt;=</span> <span class="mi">16</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;IBMQBackend(&#39;ibmq_athens&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_santiago&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_belem&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_quito&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_manila&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_paris&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_bogota&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_rome&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_montreal&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_toronto&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_manhattan&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_casablanca&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_sydney&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_mumbai&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_guadalupe&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_jakarta&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or all pulse capable systems of more than 5 qubits:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Systems</span><span class="o">.</span><span class="n">open_pulse</span><span class="o">.</span><span class="n">num_qubits</span> <span class="o">&gt;</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;IBMQBackend(&#39;ibmq_paris&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_toronto&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_manhattan&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_casablanca&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_sydney&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_mumbai&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_guadalupe&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_jakarta&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how the boolean filter <code class="docutils literal notranslate"><span class="pre">open_pulse</span></code> can be immediately called upon by another filter.
+This could also be written as:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Systems</span><span class="o">.</span><span class="n">open_pulse</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">Systems</span><span class="o">.</span><span class="n">num_qubits</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;IBMQBackend(&#39;ibmq_paris&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_jakarta&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_manhattan&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_sydney&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_toronto&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_guadalupe&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_casablanca&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_mumbai&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="all-systems">
+<h2><code class="docutils literal notranslate"><span class="pre">ALL</span></code> systems<a class="headerlink" href="#all-systems" title="Permalink to this headline">¶</a></h2>
+<p>If the users has more than one provider available to them, then the <code class="docutils literal notranslate"><span class="pre">Systems</span></code> class has an
+<code class="docutils literal notranslate"><span class="pre">ALL</span></code> attribute that allows for searching over all providers.  For example, lets get the
+<cite>ibmq_vigo</cite> device from a different provider:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Systems</span><span class="o">.</span><span class="n">ALL</span><span class="o">.</span><span class="n">get_ibmq_lima𖼯5Q𖼞</span><span class="o">.</span><span class="n">ibmーq_open_main</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;IBMQBackend(&#39;ibmq_lima&#39;) from IBMQ(hub=&#39;ibm-q&#39;, group=&#39;open&#39;, project=&#39;main&#39;)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here the <code class="docutils literal notranslate"><span class="pre">get_ibmq_vigo𖼯5Q𖼞</span></code> class contains the system instance from all available providers.</p>
+<p>It is also possible t:o search <code class="docutils literal notranslate"><span class="pre">ALL</span></code> just like we did before.  All systems from every provider
+are obtained using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Systems</span><span class="o">.</span><span class="n">ALL</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Or a specific system from all providers is:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Systems</span><span class="o">.</span><span class="n">ALL</span><span class="p">(</span><span class="s1">&#39;ibmq_rome&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;IBMQBackend(&#39;ibmq_rome&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;dev-sys-software&#39;, project=&#39;internal-test&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_rome&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_rome&#39;) from IBMQ(hub=&#39;ibm-q-community&#39;, group=&#39;ibmquantumawards&#39;, project=&#39;open-science&#39;)&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also query for more than one system by name:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Systems</span><span class="o">.</span><span class="n">ALL</span><span class="p">([</span><span class="s1">&#39;ibmq_rome&#39;</span><span class="p">,</span> <span class="s1">&#39;ibmq_santiago&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;IBMQBackend(&#39;ibmq_rome&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;dev-sys-software&#39;, project=&#39;internal-test&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_rome&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_rome&#39;) from IBMQ(hub=&#39;ibm-q-community&#39;, group=&#39;ibmquantumawards&#39;, project=&#39;open-science&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_santiago&#39;) from IBMQ(hub=&#39;ibm-q&#39;, group=&#39;open&#39;, project=&#39;main&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_santiago&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;dev-sys-software&#39;, project=&#39;internal-test&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_santiago&#39;) from IBMQ(hub=&#39;ibm-q-internal&#39;, group=&#39;deployed&#39;, project=&#39;default&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_santiago&#39;) from IBMQ(hub=&#39;ibm-q-community&#39;, group=&#39;ibmquantumawards&#39;, project=&#39;open-science&#39;)&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is also possible to query by <code class="docutils literal notranslate"><span class="pre">hub</span></code>, <code class="docutils literal notranslate"><span class="pre">group</span></code>, and <code class="docutils literal notranslate"><span class="pre">project</span></code>, but these are more specific use cases.</p>
+</div>
+<div class="section" id="changing-the-default-provider">
+<h2>Changing the default provider<a class="headerlink" href="#changing-the-default-provider" title="Permalink to this headline">¶</a></h2>
+<p>To view and/or change the default provider you must use the <code class="docutils literal notranslate"><span class="pre">Account</span></code> object:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kaleidoscope.qiskit</span> <span class="kn">import</span> <span class="n">Account</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>To get the current default provider:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Account</span><span class="o">.</span><span class="n">get_default_provider</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;ibm-q-internal//deployed//default&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>To change the default provider we use <code class="docutils literal notranslate"><span class="pre">Account.set_default_provider</span></code>.  One can pass in the
+<code class="docutils literal notranslate"><span class="pre">hub</span></code>, <code class="docutils literal notranslate"><span class="pre">group</span></code>, and <code class="docutils literal notranslate"><span class="pre">project</span></code> as keyword arguments.  However, it is often easier to
+use a shortcut.  Consider the following,  I want to set the default provider to the open access
+provider.  To do this, I can simply grab a system from the open provider:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">open_vigo</span> <span class="o">=</span> <span class="n">Systems</span><span class="o">.</span><span class="n">ALL</span><span class="o">.</span><span class="n">get_ibmq_lima𖼯5Q𖼞</span><span class="o">.</span><span class="n">ibmーq_open_main</span>
+<span class="n">Account</span><span class="o">.</span><span class="n">set_default_provider</span><span class="p">(</span><span class="n">open_vigo</span><span class="o">.</span><span class="n">provider</span><span class="p">(),</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>I also need to set <code class="docutils literal notranslate"><span class="pre">overwrite=True</span></code> to overwrite the current default provider.</p>
+<p>Upon doing so, we see that the default systems in <code class="docutils literal notranslate"><span class="pre">Systems</span></code> are automatically updated:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Systems</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;IBMQBackend(&#39;ibmqx2&#39;) from IBMQ(hub=&#39;ibm-q&#39;, group=&#39;open&#39;, project=&#39;main&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_16_melbourne&#39;) from IBMQ(hub=&#39;ibm-q&#39;, group=&#39;open&#39;, project=&#39;main&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_armonk&#39;) from IBMQ(hub=&#39;ibm-q&#39;, group=&#39;open&#39;, project=&#39;main&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_athens&#39;) from IBMQ(hub=&#39;ibm-q&#39;, group=&#39;open&#39;, project=&#39;main&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_santiago&#39;) from IBMQ(hub=&#39;ibm-q&#39;, group=&#39;open&#39;, project=&#39;main&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_lima&#39;) from IBMQ(hub=&#39;ibm-q&#39;, group=&#39;open&#39;, project=&#39;main&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_belem&#39;) from IBMQ(hub=&#39;ibm-q&#39;, group=&#39;open&#39;, project=&#39;main&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_quito&#39;) from IBMQ(hub=&#39;ibm-q&#39;, group=&#39;open&#39;, project=&#39;main&#39;)&gt;,
+ &lt;IBMQBackend(&#39;ibmq_manila&#39;) from IBMQ(hub=&#39;ibm-q&#39;, group=&#39;open&#39;, project=&#39;main&#39;)&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally we set it back the old-fashion way:</p>
+<div class="jupyter_cell jupyter_container docutils container">
+<div class="cell_input code_cell docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Account</span><span class="o">.</span><span class="n">set_default_provider</span><span class="p">(</span><span class="n">hub</span><span class="o">=</span><span class="s1">&#39;ibm-q-internal&#39;</span><span class="p">,</span>
+                             <span class="n">group</span><span class="o">=</span><span class="s1">&#39;deployed&#39;</span><span class="p">,</span>
+                             <span class="n">project</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="saving.html" title="previous page">Saving figures</a>
+    <a class='right-next' id="next-link" href="../tutorials/index.html" title="next page">Tutorials</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Kaleidoscope Team.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

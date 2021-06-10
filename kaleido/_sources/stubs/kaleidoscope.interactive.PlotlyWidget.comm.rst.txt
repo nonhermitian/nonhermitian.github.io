@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.comm
+==========================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. autoattribute:: PlotlyWidget.comm

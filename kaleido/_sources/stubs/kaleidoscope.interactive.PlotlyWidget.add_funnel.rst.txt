@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_funnel
+================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_funnel

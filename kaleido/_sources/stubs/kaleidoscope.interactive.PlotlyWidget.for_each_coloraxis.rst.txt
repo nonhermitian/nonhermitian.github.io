@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.for_each_coloraxis
+========================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.for_each_coloraxis

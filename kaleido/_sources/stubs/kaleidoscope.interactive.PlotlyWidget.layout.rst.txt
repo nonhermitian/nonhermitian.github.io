@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.layout
+============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. autoproperty:: PlotlyWidget.layout

@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.full_figure_for_development
+=================================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.full_figure_for_development

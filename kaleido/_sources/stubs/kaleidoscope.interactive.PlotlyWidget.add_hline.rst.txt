@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_hline
+===============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_hline

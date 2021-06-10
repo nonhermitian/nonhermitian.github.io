@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.model_id
+==============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. autoproperty:: PlotlyWidget.model_id

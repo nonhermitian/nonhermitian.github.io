@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CNOT error density &#8212; Kaleidoscope 0.0.10 0.0.10 documentation</title>
+    <title>CNOT error density &#8212; Kaleidoscope 0.0.13.dev13+3c1f2c3 0.0.13.dev13+3c1f2c3 documentation</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,82 +20,104 @@
 
     
       
-  <link rel="stylesheet"
-    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/thebelab-helper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
-<div class="container-xl">
+    <div class="container-fluid" id="banner"></div>
 
     
-    <a class="navbar-brand" href="../../index.html">
-      <img src="../../_static/kal_logo.png" class="logo" alt="logo">
-    </a>
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
     
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    
 
-    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
-      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
-        
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../../install.html">Installation</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../../guide/index.html">Guide</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../index.html">Tutorials</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../../api.html">API reference</a>
-        </li>
-        
-        
-      </ul>
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/kal_logo.png" class="logo" alt="logo">
+</a>
 
 
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
       
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../install.html">
+  Installation
+ </a>
+</li>
 
-      <ul class="navbar-nav">
-        
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/nonhermitian/kaleidoscope" target="_blank" rel="noopener">
-              <span><i class="fab fa-github-square"></i></span>
-            </a>
-          </li>
-        
-        
-      </ul>
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../guide/index.html">
+  Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../api.html">
+  API reference
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
     </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/nonhermitian/kaleidoscope" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
 </div>
     </nav>
     
@@ -102,77 +125,74 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-
-<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form>
-
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-  
-
-  <ul class="nav bd-sidenav">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    </ul>
-
+    
+  </div>
 </nav>
-          </div>
+            </div>
+            
           
 
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
               
+              <div class="toc-item">
+                
 <div class="tocsection onthispage pt-5 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
 <nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#simple-multi-system-comparison" class="nav-link">Simple multi-system comparison</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#linear-error-scaling" class="nav-link">Linear error scaling</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#historical-data-with-custom-colors" class="nav-link">Historical data with custom colors</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#shift-position-of-backend-labels" class="nav-link">Shift position of backend labels</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#change-offset-between-distributions" class="nav-link">Change offset between distributions</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#change-gaussian-widths" class="nav-link">Change gaussian widths</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#custom-x-limits" class="nav-link">Custom x-limits</a>
-        </li>
-    
-    </ul>
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-multi-system-comparison">
+   Simple multi-system comparison
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-error-scaling">
+   Linear error scaling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#historical-data-with-custom-colors">
+   Historical data with custom colors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shift-position-of-backend-labels">
+   Shift position of backend labels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#change-offset-between-distributions">
+   Change offset between distributions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#change-gaussian-widths">
+   Change gaussian widths
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#custom-x-limits">
+   Custom x-limits
+  </a>
+ </li>
+</ul>
+
 </nav>
-
-
+              </div>
+              
+              <div class="toc-item">
+                
 
 <div class="tocsection editthispage">
     <a href="https://github.com/nonhermitian/kaleidoscope/edit/master/docs/tutorials/backends/cnot_density.rst">
@@ -180,10 +200,15 @@
     </a>
 </div>
 
+              </div>
               
+            
           </div>
           
 
+          
+          
+            
           
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
@@ -210,10 +235,10 @@
 <span class="n">provider</span> <span class="o">=</span> <span class="n">IBMQ</span><span class="o">.</span><span class="n">get_provider</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="s1">&#39;open&#39;</span><span class="p">)</span>
 
 <span class="n">backends</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_vigo</span><span class="p">)</span>
-<span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_ourense</span><span class="p">)</span>
-<span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_valencia</span><span class="p">)</span>
+<span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_lima</span><span class="p">)</span>
 <span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_santiago</span><span class="p">)</span>
+<span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_belem</span><span class="p">)</span>
+<span class="n">backends</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_quito</span><span class="p">)</span>
 
 <span class="n">cnot_error_density</span><span class="p">(</span><span class="n">backends</span><span class="p">)</span>
 </pre></div>
@@ -241,7 +266,7 @@
 <h2>Historical data with custom colors<a class="headerlink" href="#historical-data-with-custom-colors" title="Permalink to this headline">¶</a></h2>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">backend</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_vigo</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">backend</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">ibmq_lima</span>
 <span class="n">props</span> <span class="o">=</span> <span class="p">[</span><span class="n">backend</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">datetime</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="n">kk</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">kk</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
 <span class="n">cnot_error_density</span><span class="p">(</span><span class="n">props</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
                    <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;#d6d6d6&#39;</span><span class="p">,</span> <span class="s1">&#39;#bebebe&#39;</span><span class="p">,</span> <span class="s1">&#39;#a6a6a6&#39;</span><span class="p">,</span> <span class="s1">&#39;#8e8e8e&#39;</span><span class="p">,</span> <span class="s1">&#39;#ff007f&#39;</span><span class="p">])</span>
@@ -249,8 +274,41 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/cnot_density_3_0.png" src="../../_images/cnot_density_3_0.png" />
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback [1;36m(most recent call last)[0m:
+  File [0;32m&quot;&lt;ipython-input-4-8f954a623980&gt;&quot;[0m, line [0;32m3[0m, in [0;35m&lt;module&gt;[0m
+    cnot_error_density(props, offset=200,
+[1;36m  File [1;32m&quot;/opt/miniconda3/envs/qiskit/lib/python3.9/site-packages/kaleidoscope/qiskit/backends/mpl/cnot_err.py&quot;[1;36m, line [1;32m82[1;36m, in [1;35mcnot_error_density[1;36m[0m
+[1;33m    if back.configuration().n_qubits &lt; 2:[0m
+[1;31mAttributeError[0m[1;31m:[0m &#39;NoneType&#39; object has no attribute &#39;configuration&#39;
+
+Use %tb to get the full traceback.
+</pre></div>
 </div>
+<div class="output text_html">
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+.iqx-button {
+  background-color: #0f62fe; 
+  color: white; 
+}
+.iqx-button:hover {
+  background-color: #0043ce;
+  color: white;
+}
+</style>
+<a href="https://stackoverflow.com/search?q=AttributeError: 'NoneType' object has no attribute 'configuration'" target='_blank'><button class='button iqx-button'>Search for solution online</button></a>
+</div></div>
 </div>
 </div>
 <div class="section" id="shift-position-of-backend-labels">
@@ -321,18 +379,24 @@
 
       </div>
     </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../../_static/js/index.30270b6e4c972e43c488.js"></script>
-
-
-    <footer class="footer mt-5 mt-md-0">
+  <footer class="footer mt-5 mt-md-0">
   <div class="container">
-    <p>
-          &copy; Copyright 2020, Kaleidoscope Team.<br/>
-        Last updated on 2020/10/08.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
-    </p>
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Kaleidoscope Team.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
+</p>
+    </div>
+    
   </div>
 </footer>
   </body>

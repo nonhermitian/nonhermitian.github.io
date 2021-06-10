@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.get_manager_state
+=======================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.get_manager_state

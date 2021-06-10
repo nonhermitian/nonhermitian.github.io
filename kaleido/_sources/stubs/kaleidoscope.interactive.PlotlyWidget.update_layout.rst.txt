@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.update_layout
+===================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.update_layout

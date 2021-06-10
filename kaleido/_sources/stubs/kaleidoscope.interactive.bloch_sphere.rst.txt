@@ -1,5 +1,7 @@
-﻿kaleidoscope.interactive.bloch\_sphere
-======================================
+﻿
+
+bloch_sphere
+=====================================
 
 .. currentmodule:: kaleidoscope.interactive
 

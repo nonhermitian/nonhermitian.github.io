@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.print_grid
+================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.print_grid

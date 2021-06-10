@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.batch_update
+==================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.batch_update

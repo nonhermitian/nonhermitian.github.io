@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_class
+===============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_class

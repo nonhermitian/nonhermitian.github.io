@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.on_edits_completed
+========================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.on_edits_completed

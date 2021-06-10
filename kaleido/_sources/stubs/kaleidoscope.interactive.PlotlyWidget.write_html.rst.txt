@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.write_html
+================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.write_html

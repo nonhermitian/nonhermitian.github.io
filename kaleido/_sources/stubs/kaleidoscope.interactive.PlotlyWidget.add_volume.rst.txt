@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_volume
+================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_volume

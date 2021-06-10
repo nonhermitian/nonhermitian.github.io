@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_scatterternary
+========================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_scatterternary

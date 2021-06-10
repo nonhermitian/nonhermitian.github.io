@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_mesh3d
+================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_mesh3d

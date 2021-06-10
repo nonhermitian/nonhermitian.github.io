@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.setup_instance
+====================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.setup_instance

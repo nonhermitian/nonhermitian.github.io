@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.cross_validation_lock
+===========================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. autoproperty:: PlotlyWidget.cross_validation_lock

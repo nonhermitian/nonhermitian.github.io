@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.hold_sync
+===============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.hold_sync

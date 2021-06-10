@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_histogram2d
+=====================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_histogram2d

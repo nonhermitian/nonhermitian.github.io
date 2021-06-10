@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_contour
+=================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_contour

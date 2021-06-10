@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_scatterpolar
+======================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_scatterpolar

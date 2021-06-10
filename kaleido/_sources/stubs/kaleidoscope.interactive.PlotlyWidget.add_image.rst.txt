@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_image
+===============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_image

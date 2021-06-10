@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_pointcloud
+====================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_pointcloud

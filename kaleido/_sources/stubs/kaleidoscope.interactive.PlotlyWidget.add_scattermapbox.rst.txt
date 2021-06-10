@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_scattermapbox
+=======================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_scattermapbox

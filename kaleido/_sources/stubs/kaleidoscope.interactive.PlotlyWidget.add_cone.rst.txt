@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_cone
+==============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_cone

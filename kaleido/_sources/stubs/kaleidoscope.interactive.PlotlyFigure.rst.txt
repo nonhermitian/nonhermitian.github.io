@@ -1,24 +1,30 @@
-﻿kaleidoscope.interactive.PlotlyFigure
+﻿
+
+PlotlyFigure
 =====================================
 
 .. currentmodule:: kaleidoscope.interactive
 
 .. autoclass:: PlotlyFigure
+   :no-members:
+   :no-inherited-members:
+   :no-special-members:
 
    
-   .. automethod:: __init__
+   
+   
 
    
+   
+
    .. rubric:: Methods
 
    .. autosummary::
+      :toctree: ../stubs/
    
-      ~PlotlyFigure.__init__
-      ~PlotlyFigure.savefig
-      ~PlotlyFigure.show
-   
+      PlotlyFigure.savefig
+      PlotlyFigure.show
    
 
-   
    
    

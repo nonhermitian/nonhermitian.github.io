@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.data
+==========================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. autoproperty:: PlotlyWidget.data

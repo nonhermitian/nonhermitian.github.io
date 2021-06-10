@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.on_displayed
+==================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.on_displayed

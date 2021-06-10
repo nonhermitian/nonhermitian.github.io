@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_barpolar
+==================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_barpolar

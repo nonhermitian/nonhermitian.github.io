@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.update_geos
+=================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.update_geos

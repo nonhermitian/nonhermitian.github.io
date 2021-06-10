@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.__getitem__
+=================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.__getitem__

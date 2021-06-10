@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_annotation
+====================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_annotation

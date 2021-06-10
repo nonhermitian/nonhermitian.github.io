@@ -1,5 +1,7 @@
-﻿kaleidoscope.interactive.bloch\_disc
-====================================
+﻿
+
+bloch_disc
+===================================
 
 .. currentmodule:: kaleidoscope.interactive
 

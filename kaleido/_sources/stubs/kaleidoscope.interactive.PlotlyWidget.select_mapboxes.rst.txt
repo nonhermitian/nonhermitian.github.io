@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.select_mapboxes
+=====================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.select_mapboxes

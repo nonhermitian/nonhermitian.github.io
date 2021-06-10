@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.select_traces
+===================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.select_traces

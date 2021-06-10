@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.for_each_scene
+====================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.for_each_scene

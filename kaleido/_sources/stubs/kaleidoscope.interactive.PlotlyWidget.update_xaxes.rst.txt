@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.update_xaxes
+==================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.update_xaxes

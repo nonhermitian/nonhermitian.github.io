@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_treemap
+=================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_treemap

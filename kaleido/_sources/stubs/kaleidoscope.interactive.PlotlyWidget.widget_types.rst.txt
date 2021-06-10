@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.widget_types
+==================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. autoattribute:: PlotlyWidget.widget_types

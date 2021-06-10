@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.set_trait
+===============================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.set_trait

@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.select_layout_images
+==========================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.select_layout_images

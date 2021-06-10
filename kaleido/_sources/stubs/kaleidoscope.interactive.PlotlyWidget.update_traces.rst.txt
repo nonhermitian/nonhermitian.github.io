@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.update_traces
+===================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.update_traces

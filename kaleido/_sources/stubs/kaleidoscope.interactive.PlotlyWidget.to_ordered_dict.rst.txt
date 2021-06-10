@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.to_ordered_dict
+=====================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.to_ordered_dict

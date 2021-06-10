@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.add_violin
+================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.add_violin

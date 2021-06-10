@@ -1,0 +1,8 @@
+
+
+PlotlyWidget.update_coloraxes
+======================================================
+
+.. currentmodule:: kaleidoscope.interactive
+
+.. automethod:: PlotlyWidget.update_coloraxes
