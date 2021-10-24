@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>nonhermitian.org</id>
+  <title>Paul Nation's Blog</title>
+  <updated>2021-10-24T11:18:05.151389+00:00</updated>
+  <link href="nonhermitian.org"/>
+  <link href="nonhermitian.org/blog/atom.xml" rel="self"/>
+  <generator uri="https://ablog.readthedocs.org/" version="0.10.19">ABlog</generator>
+  <entry>
+    <id>nonhermitian.org/posts/2021/2021-10-07-vqe_program.html</id>
+    <title>Custom VQE Program for Qiskit Runtime</title>
+    <updated>2021-10-07T00:00:00-04:00</updated>
+    <content type="html">&lt;p&gt;Here we will demonstrate how to create, upload, and use a custom Program for Qiskit Runtime.  As the utility of the Runtime execution engine lies in its ability to execute many quantum circuits with low latencies, this tutorial will show how to create your own Variational Quantum Eigensolver (VQE) program from scratch.&lt;/p&gt;
+&lt;p&gt;You must have Qiskit 0.30+ installed.&lt;/p&gt;
+</content>
+    <link href="nonhermitian.org/posts/2021/2021-10-07-vqe_program.html" rel="alternate"/>
+    <summary>Here we will demonstrate how to create, upload, and use a custom Program for Qiskit Runtime.  As the utility of the Runtime execution engine lies in its ability to execute many quantum circuits with low latencies, this tutorial will show how to create your own Variational Quantum Eigensolver (VQE) program from scratch.You must have Qiskit 0.30+ installed.</summary>
+    <category term="Custom" label="Custom"/>
+    <published>2021-10-07T00:00:00-04:00</published>
+  </entry>
+  <entry>
+    <id>nonhermitian.org/posts/2021/2021-10-13-expval_program.html</id>
+    <title>Custom Expectation Value Program for the Qiskit Runtime</title>
+    <updated>2021-10-13T00:00:00-04:00</updated>
+    <content type="html">&lt;p&gt;Here we will show how to make a program that takes a circuit, or list of circuits, and computes the expectation values of one or more diagonal operators.&lt;/p&gt;
+&lt;p&gt;You must have Qiskit 0.30+ installed.&lt;/p&gt;
+</content>
+    <link href="nonhermitian.org/posts/2021/2021-10-13-expval_program.html" rel="alternate"/>
+    <summary>Here we will show how to make a program that takes a circuit, or list of circuits, and computes the expectation values of one or more diagonal operators.You must have Qiskit 0.30+ installed.</summary>
+    <category term="Custom" label="Custom"/>
+    <published>2021-10-13T00:00:00-04:00</published>
+  </entry>
+</feed>
