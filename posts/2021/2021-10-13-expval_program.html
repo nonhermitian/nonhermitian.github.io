@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Custom Expectation Value Program for the Qiskit Runtime &#8212; Nonhermitian - Homepage  documentation</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -23,14 +24,14 @@
 
     
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -44,8 +45,21 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-     
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-16824831-8', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+ 
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -205,6 +219,12 @@
 <ul>
    
   <li>
+    <a href="2021-10-27-dynamic_BV.html"
+      >27 October - Dynamic Bernstein-Vazirani using mid-circuit reset and measurement</a
+    >
+  </li>
+  
+  <li>
     <a href="2021-10-07-vqe_program.html"
       >07 October - Custom VQE Program for Qiskit Runtime</a
     >
@@ -218,7 +238,7 @@
 <ul>
    
   <li>
-    <a href="../../blog/2021.html">2021 (2)</a>
+    <a href="../../blog/2021.html">2021 (3)</a>
   </li>
    
 </ul>
@@ -325,7 +345,7 @@
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
-                 <div class="tex2jax_ignore mathjax_ignore section" id="custom-expectation-value-program-for-the-qiskit-runtime">
+                 <section class="tex2jax_ignore mathjax_ignore" id="custom-expectation-value-program-for-the-qiskit-runtime">
 <h1>Custom Expectation Value Program for the Qiskit Runtime<a class="headerlink" href="#custom-expectation-value-program-for-the-qiskit-runtime" title="Permalink to this headline">¶</a></h1>
 <p>
 <font size="4" color="#0f62fe">Paul Nation</font>
@@ -334,17 +354,17 @@
 <font size="3" color="#0f62fe">IBM Quantum Partners Technical Enablement Team</font>
 </p>
 <p>Here we will show how to make a program that takes a circuit, or list of circuits, and computes the expectation values of one or more diagonal operators.</p>
-<div class="section" id="prerequisites">
+<section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>You must have Qiskit 0.30+ installed.</p></li>
 <li><p>You must have an IBM Quantum Experience account with the ability to upload a Runtime program.  <strong>Currently there is no way to know if you have Runtime upload ability outside of an email from IBM</strong>.</p></li>
 </ul>
-</div>
-<div class="section" id="background">
+</section>
+<section id="background">
 <h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
 <p>The primary method by which information is obtained from quantum computers is via expectation values.  Indeed, the samples that come from executing a quantum circuit multiple times, once converted to probabilities, can be viewed as just a finite sample approximation to the expectation value for the projection operators corresponding to each bitstring.  More practically, many quantum algorithms require computing expectation values over Pauli operators, e.g. Variational Quantum Eigensolvers, and thus having a runtime program that computes these quantities is of fundamental importance.  Here we look at one such example, where an user passes one or more circuits and expectation operators and gets back the computed expectation values, and possibly error bounds.</p>
-<div class="section" id="expectation-value-of-a-diagonal-operator">
+<section id="expectation-value-of-a-diagonal-operator">
 <h3>Expectation value of a diagonal operator<a class="headerlink" href="#expectation-value-of-a-diagonal-operator" title="Permalink to this headline">¶</a></h3>
 <p>Consider a generic observable given by the tensor product of diagonal operators over <span class="math notranslate nohighlight">\(N\)</span> qubits  <span class="math notranslate nohighlight">\(O = O_{N-1}\dots O_{0}\)</span> where the subscript indicates the qubit on which the operator acts.  Then for a set of observed <span class="math notranslate nohighlight">\(M\)</span> bitstrings <span class="math notranslate nohighlight">\(\{b_{0}, \dots b_{M-1}\}\)</span>, where <span class="math notranslate nohighlight">\(M \leq 2^N \)</span>, with corresponding approximate probabilites <span class="math notranslate nohighlight">\(p_{m}\)</span> the expectation value is given by</p>
 <div class="math notranslate nohighlight">
@@ -353,9 +373,9 @@
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(O_{n}[b_{m}[N-n-1], b_{m}[N-n-1]]\)</span> is the diagonal element of <span class="math notranslate nohighlight">\(O_{n}\)</span> specified by the <span class="math notranslate nohighlight">\(N-n-1\)</span>th bit in bitstring <span class="math notranslate nohighlight">\(b_{m}\)</span>.  The reason for the complicated indexing in <code class="docutils literal notranslate"><span class="pre">b_{m}</span></code> is because Qiskit uses least-sginificant bit indexing where the zeroth element of the bit-strings is given by the right-most bit.</p>
 <p>Here we will use built-in routines to compute these expectation values.  However, it is not hard to do yourself, with plenty of examples to be found.</p>
-</div>
-</div>
-<div class="section" id="main-program">
+</section>
+</section>
+<section id="main-program">
 <h2>Main program<a class="headerlink" href="#main-program" title="Permalink to this headline">¶</a></h2>
 <p>Here we define our main function for the expectation value runtime program.  As always, our program must start with the <code class="docutils literal notranslate"><span class="pre">backend</span></code>, and <code class="docutils literal notranslate"><span class="pre">user_messenger</span></code> arguements, followed by the actual inputs we pass to the program.  Here our options are quite simple:</p>
 <ul class="simple">
@@ -472,8 +492,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="local-testing">
+</section>
+<section id="local-testing">
 <h2>Local testing<a class="headerlink" href="#local-testing" title="Permalink to this headline">¶</a></h2>
 <p>Here we test with a local “Fake” backend that mimics the noise properties of a real system and a 4-qubit GHZ state.</p>
 <div class="cell docutils container">
@@ -521,8 +541,8 @@
 </div>
 </div>
 <p>If we have done our job correctly, the above should print out two expectation values close to one and a final expectation value close to zero.</p>
-</div>
-<div class="section" id="program-metadata">
+</section>
+<section id="program-metadata">
 <h2>Program metadata<a class="headerlink" href="#program-metadata" title="Permalink to this headline">¶</a></h2>
 <div class="alert alert-block alert-warning">
 <b>Important:</b> At this time all program names must be unique amongst all users.  Thus you need to change the metadata `name` value to soemthing other than `sample-expval` if you want to upload.
@@ -562,8 +582,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="upload-the-program">
+</section>
+<section id="upload-the-program">
 <h2>Upload the program<a class="headerlink" href="#upload-the-program" title="Permalink to this headline">¶</a></h2>
 <p>We are now in a position to upload the program.  To do so we first uncomment and excute the line <code class="docutils literal notranslate"><span class="pre">%%writefile</span> <span class="pre">sample_expval.py</span></code> giving use the <code class="docutils literal notranslate"><span class="pre">sample_expval.py</span></code> file we need to upload.</p>
 <div class="cell docutils container">
@@ -594,7 +614,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="delete-program-if-needed">
+<section id="delete-program-if-needed">
 <h3>Delete program if needed<a class="headerlink" href="#delete-program-if-needed" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -603,9 +623,9 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="making-the-program-public">
+</section>
+</section>
+<section id="making-the-program-public">
 <h2>Making the program public<a class="headerlink" href="#making-the-program-public" title="Permalink to this headline">¶</a></h2>
 <p>If you want to make your program(s) public for the whole world to see you can do so by calling</p>
 <div class="cell docutils container">
@@ -615,8 +635,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="wrapping-the-runtime-program">
+</section>
+<section id="wrapping-the-runtime-program">
 <h2>Wrapping the runtime program<a class="headerlink" href="#wrapping-the-runtime-program" title="Permalink to this headline">¶</a></h2>
 <p>As always, it is best to wrap the call to the runtime program with a function (or possibly a class) that makes input easier and does some validation.</p>
 <div class="cell docutils container">
@@ -677,7 +697,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="trying-it-out">
+<section id="trying-it-out">
 <h3>Trying it out<a class="headerlink" href="#trying-it-out" title="Permalink to this headline">¶</a></h3>
 <p>Because we made our program public anyone can try it out.  Lets do so here with our previously made GHZ state and running on the simulator.</p>
 <div class="cell docutils container">
@@ -736,9 +756,9 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="quantum-volume-as-an-expectation-value">
+</section>
+</section>
+<section id="quantum-volume-as-an-expectation-value">
 <h2>Quantum Volume as an expectation value<a class="headerlink" href="#quantum-volume-as-an-expectation-value" title="Permalink to this headline">¶</a></h2>
 <p>Here we formulate QV as an expectation value of a projector onto the heavy-output elements on a distribution.  We can then use our expectation value routine to compute whether a given circuit has passed the QV metric.</p>
 <p>QV is defined in terms of heavy-ouputs of a distribution. Heavy-outputs are those bit-strings that are those that have probabilities above the median value of the distribution. Below we define the projection operator onto the set of bit-strings that are heavy-outputs for a given distribution.</p>
@@ -848,8 +868,8 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 <div class="section">
      
@@ -863,6 +883,13 @@
   </span>
   <span>&nbsp;</span>
   <span style="float: right">
+     
+    <a href="2021-10-27-dynamic_BV.html">
+      Dynamic Bernstein-Vazirani using mid-circuit reset and measurement <i
+        class="fa fa-arrow-circle-right"
+      ></i
+      >
+    </a>
     
   </span>
 </div>
@@ -872,10 +899,9 @@
               </div>
               
               
-              <div class='prev-next-bottom'>
-                
-
-              </div>
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
               
           </main>
           
@@ -883,30 +909,19 @@
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-16824831-8', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 <footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
       <p class="copyright">
-    &copy; Copyright 2021, Paul Nation.<br/>
+    &copy; Copyright 2021, Paul Nation.<br>
 </p>
     </div>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
 </p>
     </div>
     

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>nonhermitian.org</id>
   <title>Paul Nation's Blog</title>
-  <updated>2021-10-24T11:18:05.151389+00:00</updated>
+  <updated>2021-10-27T11:06:47.205771+00:00</updated>
   <link href="nonhermitian.org"/>
   <link href="nonhermitian.org/blog/atom.xml" rel="self"/>
-  <generator uri="https://ablog.readthedocs.org/" version="0.10.19">ABlog</generator>
+  <generator uri="https://ablog.readthedocs.org/" version="0.10.20">ABlog</generator>
   <entry>
     <id>nonhermitian.org/posts/2021/2021-10-07-vqe_program.html</id>
     <title>Custom VQE Program for Qiskit Runtime</title>
@@ -29,5 +29,17 @@
     <summary>Here we will show how to make a program that takes a circuit, or list of circuits, and computes the expectation values of one or more diagonal operators.You must have Qiskit 0.30+ installed.</summary>
     <category term="Custom" label="Custom"/>
     <published>2021-10-13T00:00:00-04:00</published>
+  </entry>
+  <entry>
+    <id>nonhermitian.org/posts/2021/2021-10-27-dynamic_BV.html</id>
+    <title>Dynamic Bernstein-Vazirani using mid-circuit reset and measurement</title>
+    <updated>2021-10-27T00:00:00-04:00</updated>
+    <content type="html">&lt;p&gt;The ability to do mid-circuit reset and measurement unlocks a variety of tools for executing quantum circuits.  A brief discussion is given in this &lt;a class="reference external" href="https://www.ibm.com/blogs/research/2021/02/quantum-mid-circuit-measurement/"&gt;IBM Research blog post&lt;/a&gt;.  On particular possibility is the ability to reuse qubits, and in doing so reduce the hardware requirements of some algorithms.  The Bernstein-Vazirani (BV) algorithm is one such example.  In particular, when using phase-kickback, BV usually requires a high degree of qubit connectivity to impliment.  This has been used by trapped-ion hardware vendors to show that their hardware gives better fidelity on these problems, e.g. see (&lt;a class="reference external" href="https://arxiv.org/abs/2102.00371"&gt;https://arxiv.org/abs/2102.00371&lt;/a&gt; and &lt;a class="reference external" href="https://www.nature.com/articles/s41467-019-13534-2"&gt;https://www.nature.com/articles/s41467-019-13534-2&lt;/a&gt;).  However, with reset and measurement, BV requires only two qubits, making connectivity differences mute.  We showed this in a reply Tweet: &lt;a class="reference external" href="https://twitter.com/nonhermitian/status/1362348935440986113"&gt;https://twitter.com/nonhermitian/status/1362348935440986113&lt;/a&gt;, but did not explain how we got that figure.  So here is how I did it.&lt;/p&gt;
+&lt;p&gt;Here we select the backend and extract its two-qubit gate coupling map.  This is not the same backend used in the original figure as, at the time or writing, that one is offline.  It is however the same processor family and revision.&lt;/p&gt;
+</content>
+    <link href="nonhermitian.org/posts/2021/2021-10-27-dynamic_BV.html" rel="alternate"/>
+    <summary>The ability to do mid-circuit reset and measurement unlocks a variety of tools for executing quantum circuits.  A brief discussion is given in this IBM Research blog post.  On particular possibility is the ability to reuse qubits, and in doing so reduce the hardware requirements of some algorithms.  The Bernstein-Vazirani (BV) algorithm is one such example.  In particular, when using phase-kickback, BV usually requires a high degree of qubit connectivity to impliment.  This has been used by trapped-ion hardware vendors to show that their hardware gives better fidelity on these problems, e.g. see (https://arxiv.org/abs/2102.00371 and https://www.nature.com/articles/s41467-019-13534-2).  However, with reset and measurement, BV requires only two qubits, making connectivity differences mute.  We showed this in a reply Tweet: https://twitter.com/nonhermitian/status/1362348935440986113, but did not explain how we got that figure.  So here is how I did it.Here we select the backend and extract its two-qubit gate coupling map.  This is not the same backend used in the original figure as, at the time or writing, that one is offline.  It is however the same processor family and revision.</summary>
+    <category term="Dynamic" label="Dynamic"/>
+    <published>2021-10-27T00:00:00-04:00</published>
   </entry>
 </feed>

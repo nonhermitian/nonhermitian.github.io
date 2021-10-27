@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Paul Nation &#8212; Nonhermitian - Homepage  documentation</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -23,14 +24,14 @@
 
     
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -43,8 +44,21 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Publications" href="publications.html" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-     
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-16824831-8', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+ 
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -219,15 +233,19 @@
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
-                 <div class="tex2jax_ignore mathjax_ignore section" id="paul-nation">
+                 <section class="tex2jax_ignore mathjax_ignore" id="paul-nation">
 <h1>Paul Nation<a class="headerlink" href="#paul-nation" title="Permalink to this headline">¶</a></h1>
 <p>I am currently a Research Staff Member in the <a class="reference external" href="https://www.ibm.com/quantum-computing/">IBM Quantum</a> team at the T. J. Watson research lab in Yorktown Heights New York.  I am the Director of Partner Technical Enablement, which is a fancy way of saying that I help members of the
 <a class="reference external" href="https://www.ibm.com/quantum-computing/ibm-q-network">IBM Quantum Network</a> get the most out of IBM Quantum systems and services.  I also work in the area of software development, with a focus on numerical methods and scientific visualization techniques.  I also occasionally explore hardware benchmarking and verification, looking at generational system improvement metrics.</p>
 <p>I have been working in the area of numerical quantum optics for over a decade, starting with the creation of <a class="reference external" href="https://qutip.org">QuTiP : Quantum Toolbox in Python</a> in 2010 up to the present with the IBM <a class="reference external" href="https://qiskit.org">Qiskit SDK</a>.  I received my PhD in 2010 from the <a class="reference external" href="https://physics.dartmouth.edu/">Dartmouth College Department of Physics and Astronomy</a> under <a class="reference external" href="https://physics.dartmouth.edu/people/miles-p-blencowe">Miles Blencowe</a>.  In addition to numerical methods in quantum optics I have also explored quantum nanomechanical systems, optomechanical system in the quantum regime, analogue gravitational physics, and transport models for Hawking radiation.  Prior to joining IBM, I was a Staff Physicist at Northrop Grumman, an Assistant Professor in <a class="reference external" href="http://physics.korea.ac.kr/">Korea University Department of Physics</a>, and a postdoctoral researcher in the group of <a class="reference external" href="https://dml.riken.jp/">Franco Nori</a> at RIKEN just outside of Tokyo.</p>
-<div class="section" id="recent-posts">
+<section id="recent-posts">
 <h2>Recent posts<a class="headerlink" href="#recent-posts" title="Permalink to this headline">¶</a></h2>
 <p>See the <a class="reference internal" href="blog.html"><span class="doc std std-doc">blog archives</span></a> for a more complete list.</p>
 <ul class="postlist-style-none postlist">
+<li><p>2021-10-27 - <a class="reference internal" href="posts/2021/2021-10-27-dynamic_BV.html">Dynamic Bernstein-Vazirani using mid-circuit reset and measurement</a></p>
+<p>The ability to do mid-circuit reset and measurement unlocks a variety of tools for executing quantum circuits.  A brief discussion is given in this <a class="reference external" href="https://www.ibm.com/blogs/research/2021/02/quantum-mid-circuit-measurement/">IBM Research blog post</a>.  On particular possibility is the ability to reuse qubits, and in doing so reduce the hardware requirements of some algorithms.  The Bernstein-Vazirani (BV) algorithm is one such example.  In particular, when using phase-kickback, BV usually requires a high degree of qubit connectivity to impliment.  This has been used by trapped-ion hardware vendors to show that their hardware gives better fidelity on these problems, e.g. see (<a class="reference external" href="https://arxiv.org/abs/2102.00371">https://arxiv.org/abs/2102.00371</a> and <a class="reference external" href="https://www.nature.com/articles/s41467-019-13534-2">https://www.nature.com/articles/s41467-019-13534-2</a>).  However, with reset and measurement, BV requires only two qubits, making connectivity differences mute.  We showed this in a reply Tweet: <a class="reference external" href="https://twitter.com/nonhermitian/status/1362348935440986113">https://twitter.com/nonhermitian/status/1362348935440986113</a>, but did not explain how we got that figure.  So here is how I did it.</p>
+<p>Here we select the backend and extract its two-qubit gate coupling map.  This is not the same backend used in the original figure as, at the time or writing, that one is offline.  It is however the same processor family and revision.</p>
+</li>
 <li><p>2021-10-13 - <a class="reference internal" href="posts/2021/2021-10-13-expval_program.html">Custom Expectation Value Program for the Qiskit Runtime</a></p>
 <p>Here we will show how to make a program that takes a circuit, or list of circuits, and computes the expectation values of one or more diagonal operators.</p>
 <p>You must have Qiskit 0.30+ installed.</p>
@@ -239,8 +257,8 @@
 </ul>
 <div class="toctree-wrapper compound">
 </div>
-</div>
-</div>
+</section>
+</section>
 
 <div class="section">
    
@@ -249,11 +267,16 @@
               </div>
               
               
-              <div class='prev-next-bottom'>
-                
-    <a class='right-next' id="next-link" href="publications.html" title="next page">Publications</a>
-
-              </div>
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="publications.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Publications</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
               
           </main>
           
@@ -261,30 +284,19 @@
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-16824831-8', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 <footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
       <p class="copyright">
-    &copy; Copyright 2021, Paul Nation.<br/>
+    &copy; Copyright 2021, Paul Nation.<br>
 </p>
     </div>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
 </p>
     </div>
     
