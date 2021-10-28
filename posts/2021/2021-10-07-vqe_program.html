@@ -4,12 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Custom VQE Program for Qiskit Runtime &#8212; Nonhermitian - Homepage  documentation</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -24,14 +23,14 @@
 
     
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -45,21 +44,8 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-16824831-8', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
- 
+    <meta name="docsearch:language" content="en" />
+     
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -125,6 +111,12 @@
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../publications.html">
   Publications
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../projects.html">
+  Projects
  </a>
 </li>
 
@@ -402,17 +394,17 @@
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
-                 <section class="tex2jax_ignore mathjax_ignore" id="custom-vqe-program-for-qiskit-runtime">
+                 <div class="tex2jax_ignore mathjax_ignore section" id="custom-vqe-program-for-qiskit-runtime">
 <h1>Custom VQE Program for Qiskit Runtime<a class="headerlink" href="#custom-vqe-program-for-qiskit-runtime" title="Permalink to this headline">¶</a></h1>
 <p>Here we will demonstrate how to create, upload, and use a custom Program for Qiskit Runtime.  As the utility of the Runtime execution engine lies in its ability to execute many quantum circuits with low latencies, this tutorial will show how to create your own Variational Quantum Eigensolver (VQE) program from scratch.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>You must have Qiskit 0.30+ installed.</p></li>
 <li><p>You must have an IBM Quantum account with the ability to upload a runtime program.  You have this ability if you belong to more than one provider.</p></li>
 </ul>
-</section>
-<section id="current-limitations">
+</div>
+<div class="section" id="current-limitations">
 <h2>Current limitations<a class="headerlink" href="#current-limitations" title="Permalink to this headline">¶</a></h2>
 <p>The runtime execution engine currently has the following limitations that must be kept in mind:</p>
 <ul class="simple">
@@ -421,8 +413,8 @@
 <li><p>Your runtime program name must not contain an underscore<code class="docutils literal notranslate"><span class="pre">_</span></code>, otherwise it will cause an error when you try to execute it.</p></li>
 </ul>
 <p>As Qiskit Runtime matures, these limitations will be removed.</p>
-</section>
-<section id="simple-vqe">
+</div>
+<div class="section" id="simple-vqe">
 <h2>Simple VQE<a class="headerlink" href="#simple-vqe" title="Permalink to this headline">¶</a></h2>
 <p>VQE is an hybrid quantum-classical optimization procedure that finds the lowest eigenstate and eigenenergy of a linear system defined by a given Hamiltonian of Pauli operators.  For example, consider the following two-qubit Hamiltonian:</p>
 <div class="math notranslate nohighlight">
@@ -443,8 +435,8 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 <li><p>Ability to select which classical optimizer is used, and set configuraton values, if any.</p></li>
 <li><p>Ability to turn on and off measurement mitigation.</p></li>
 </ol>
-</section>
-<section id="specifying-the-form-of-the-input-values">
+</div>
+<div class="section" id="specifying-the-form-of-the-input-values">
 <h2>Specifying the form of the input values<a class="headerlink" href="#specifying-the-form-of-the-input-values" title="Permalink to this headline">¶</a></h2>
 <p>All inputs to runtime programs must be serializable objects.  That is to say, whatever you pass into a runtime program must be able to be converted to JSON format.  It is thus beneficial to keep inputs limited to basic data types and structures unless you have experience with custom object serialization, or they are common Qiskit types such as <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> etc that the built-in <code class="docutils literal notranslate"><span class="pre">RuntimeEncoder</span></code> can handle.  Fortunately, the VQE program described above can be made out of simple Python components.</p>
 <p>First, it is possible to represent any Hamiltonian using a list of values with each containing the numerical coefficeint for each term and the string representation for the Pauli operators.  For the above example, the ground state energy with <span class="math notranslate nohighlight">\(A=1\)</span> is <span class="math notranslate nohighlight">\(-3\)</span> and we can write it as:</p>
@@ -467,7 +459,7 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </div>
 <p>For the ansatz configuration, we will pass a simple <code class="docutils literal notranslate"><span class="pre">dict</span></code> of values.</p>
-<section id="optionals">
+<div class="section" id="optionals">
 <h3>Optionals<a class="headerlink" href="#optionals" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>If we want to add the ability to pass an initial state, then we will need to add the ability to pass a 1D list/ NumPy array.  Because the number of parameters depends on the ansatz and its configuration, the user would have to know what ansatz they are doing ahead of time.</p></li>
@@ -477,20 +469,20 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 <ul class="simple">
 <li><p>Finally, for measurement error mitigation we can simply pass a boolean (True/False) value.</p></li>
 </ul>
-</section>
-</section>
-<section id="main-program">
+</div>
+</div>
+<div class="section" id="main-program">
 <h2>Main program<a class="headerlink" href="#main-program" title="Permalink to this headline">¶</a></h2>
 <p>We are now in a position to start building our main program.  However, before doing so we point out that it makes the code cleaner to make a separate fuction that takes strings of Pauli operators that define our Hamiltonian and convert them to a list of circuits with single-qubit gates that change the measurement basis for each qubit, if needed. This function is given in <a class="reference external" href="#Appendix-B">Appendix B</a>.</p>
-<section id="required-signature">
+<div class="section" id="required-signature">
 <h3>Required signature<a class="headerlink" href="#required-signature" title="Permalink to this headline">¶</a></h3>
 <p>Every runtime program is defined via the <code class="docutils literal notranslate"><span class="pre">main</span></code> function, and must have the following input signature:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="n">user_message</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">backend</span></code> is the backend that the program is to be executed on, and <code class="docutils literal notranslate"><span class="pre">user_message</span></code> is the class by which interim (and possibly final) results are communicated back to the user.  After these two items, we add our program-specific arguments and keyword arguments.</p>
-</section>
-<section id="the-main-vqe-program">
+</div>
+<div class="section" id="the-main-vqe-program">
 <h3>The main VQE program<a class="headerlink" href="#the-main-vqe-program" title="Permalink to this headline">¶</a></h3>
 <p>Here is the main program for our sample VQE.  What each element of the function does is written in the comments before the element appears.</p>
 <div class="cell docutils container">
@@ -663,9 +655,9 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="local-testing">
+</div>
+</div>
+<div class="section" id="local-testing">
 <h2>Local testing<a class="headerlink" href="#local-testing" title="Permalink to this headline">¶</a></h2>
 <div class="alert alert-block alert-info">
 <b>Important:</b> You need to execute the code blocks in Appendices A and B before continuing.
@@ -717,8 +709,8 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </div>
 <p>Having executed the above, we see that there are 5 parameter arrays returned, one for each callback, along with the final optimization result.  The parameter arrays are the interim results, and the <code class="docutils literal notranslate"><span class="pre">UserMessenger</span></code> object prints these values to the cell output.  The output itself is the answer we obtained, expressed as a SciPy <code class="docutils literal notranslate"><span class="pre">OptimizerResult</span></code> object.</p>
-</section>
-<section id="program-metadata">
+</div>
+<div class="section" id="program-metadata">
 <h2>Program metadata<a class="headerlink" href="#program-metadata" title="Permalink to this headline">¶</a></h2>
 <p>Program metadata is essentially the docstring for a runtime program.  It describes overall program information such as the program <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>, <code class="docutils literal notranslate"><span class="pre">version</span></code>, and the <code class="docutils literal notranslate"><span class="pre">max_execution_time</span></code> the program is allowed to run, as well as details the inputs and the outputs the program expects.  At a bare minimum the values described above are required</p>
 <div class="alert alert-block alert-warning">
@@ -775,8 +767,8 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </div>
 </div>
-</section>
-<section id="uploading-the-program">
+</div>
+<div class="section" id="uploading-the-program">
 <h2>Uploading the program<a class="headerlink" href="#uploading-the-program" title="Permalink to this headline">¶</a></h2>
 <p>We now have all the ingredients needed to upload our program.  To do so we need to collect all of our code in one file, here called <code class="docutils literal notranslate"><span class="pre">sample_vqe.py</span></code> for uploading.  This limitation will be removed in later versions of Qiskit Runtime.  Alternatively, if the entire code is contained within a single Jupyter notebook cell, this can be done using the magic function</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">my_program</span><span class="o">.</span><span class="n">py</span>
@@ -803,7 +795,7 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </div>
 </div>
-<section id="program-upload">
+<div class="section" id="program-upload">
 <h3>Program upload<a class="headerlink" href="#program-upload" title="Permalink to this headline">¶</a></h3>
 <p>The call to <code class="docutils literal notranslate"><span class="pre">program_upload</span></code> takes the target Python file as <code class="docutils literal notranslate"><span class="pre">data</span></code> and the metadata as inputs. <strong>If you have already uploaded the program this will raise an error and you must delete it first to continue</strong>.</p>
 <div class="cell docutils container">
@@ -820,8 +812,8 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </div>
 <p>Here the returned <code class="docutils literal notranslate"><span class="pre">program_id</span></code> is the same as the program <code class="docutils literal notranslate"><span class="pre">name</span></code> given in the metadata.  You cannot have more than one program with the same <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">program_id</span></code>.  The <code class="docutils literal notranslate"><span class="pre">program_id</span></code> is how you should reference your program.</p>
-</section>
-<section id="program-information">
+</div>
+<div class="section" id="program-information">
 <h3>Program information<a class="headerlink" href="#program-information" title="Permalink to this headline">¶</a></h3>
 <p>We can query the program for information and see that our metadata is correctly being attached:</p>
 <div class="cell docutils container">
@@ -883,8 +875,8 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </div>
 </div>
-</section>
-<section id="deleting-a-program">
+</div>
+<div class="section" id="deleting-a-program">
 <h3>Deleting a program<a class="headerlink" href="#deleting-a-program" title="Permalink to this headline">¶</a></h3>
 <p>If you make a mistake and need to delete and/or re-upload the program, you can run the following, passing the <code class="docutils literal notranslate"><span class="pre">program_id</span></code>:</p>
 <div class="cell docutils container">
@@ -894,11 +886,11 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="running-the-program">
+</div>
+</div>
+<div class="section" id="running-the-program">
 <h2>Running the program<a class="headerlink" href="#running-the-program" title="Permalink to this headline">¶</a></h2>
-<section id="specify-parameters">
+<div class="section" id="specify-parameters">
 <h3>Specify parameters<a class="headerlink" href="#specify-parameters" title="Permalink to this headline">¶</a></h3>
 <p>To run the program we need to specify the <code class="docutils literal notranslate"><span class="pre">options</span></code> that are used in the runtime environment (not the program variables).  At present, only the <code class="docutils literal notranslate"><span class="pre">backend_name</span></code> is required.</p>
 <div class="cell docutils container">
@@ -919,8 +911,8 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </div>
 </div>
-</section>
-<section id="execute-the-program">
+</div>
+<div class="section" id="execute-the-program">
 <h3>Execute the program<a class="headerlink" href="#execute-the-program" title="Permalink to this headline">¶</a></h3>
 <p>We now can execute the program and grab the result.</p>
 <div class="cell docutils container">
@@ -951,8 +943,8 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </div>
 <p>A few things need to be pointed out. First, we did not get back any interim results, and second, the return object is a plain dictionary.  This is because we did not listen for the return results, and we did not tell the job how to format the return result.</p>
-</section>
-<section id="listening-for-interim-results">
+</div>
+<div class="section" id="listening-for-interim-results">
 <h3>Listening for interim results<a class="headerlink" href="#listening-for-interim-results" title="Permalink to this headline">¶</a></h3>
 <p>To listen for interm results we need to pass a callback function to <code class="docutils literal notranslate"><span class="pre">provider.runtime.run</span></code> that stores the results.  The callback takes two arguments <code class="docutils literal notranslate"><span class="pre">job_id</span></code> and the returned data:</p>
 <div class="cell docutils container">
@@ -1004,8 +996,8 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </div>
 </div>
-</section>
-<section id="formatting-the-returned-results">
+</div>
+<div class="section" id="formatting-the-returned-results">
 <h3>Formatting the returned results<a class="headerlink" href="#formatting-the-returned-results" title="Permalink to this headline">¶</a></h3>
 <p>In order to format the return results into the desired format, we need to specify a decoder.  This decoder must have a <code class="docutils literal notranslate"><span class="pre">decode</span></code> method that gets called to do the actual conversion.  In our case <code class="docutils literal notranslate"><span class="pre">OptimizeResult</span></code> is a simple sub-class of <code class="docutils literal notranslate"><span class="pre">dict</span></code> so the formatting is simple.</p>
 <div class="cell docutils container">
@@ -1044,9 +1036,9 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="simplifying-program-execution-with-wrapping-functions">
+</div>
+</div>
+<div class="section" id="simplifying-program-execution-with-wrapping-functions">
 <h2>Simplifying program execution with wrapping functions<a class="headerlink" href="#simplifying-program-execution-with-wrapping-functions" title="Permalink to this headline">¶</a></h2>
 <p>While runtime programs are powerful and flexible, they are not the most friendly things to interact with.  Therefore, if your program is intended to be used by others, it is best to make wrapper functions and/or classes that simplify the user experience.  Moreover, such wrappers allow for validation of user inputs on the client side, which can quickly find errors that would otherwise be raised later during the execution process - something that might have taken hours waiting in queue to get to.</p>
 <p>Here we will make two helper routines.  First, a job wrapper that allows us to attach and retrieve the interim results directly from the job object itself, as well as decodes for us so that the end user need not worry about formatting the results themselves.</p>
@@ -1206,12 +1198,12 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </div>
 </div>
-</section>
-<section id="conclusion">
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
 <p>We have demonstrated how to create, upload, and use a custom Qiskit Runtime by creating our own VQE solver from scratch.  This tutorial was meant to touch upon every aspect of the process for a real-world example.  Within the current limitations of the runtime environment, this example should enable readers to develop their own single-file runtime program.  This program is also a good starting point for exploring additional flavors of VQE runtime.  For example, it is straightforward to vary the number of shots per iteration, increasing shots as the number of iterations increases.  Those looking to go deeper can consider implimenting an <a class="reference external" href="https://doi.org/10.1038/s41467-019-10988-2">adaptive VQE</a>, where the ansatz is not fixed at initialization.</p>
-</section>
-<section id="appendix-a">
+</div>
+<div class="section" id="appendix-a">
 <h2>Appendix A<a class="headerlink" href="#appendix-a" title="Permalink to this headline">¶</a></h2>
 <p>Here we code a simple simultaneous perturbation stochastic approximation (SPSA) optimizer for use on noisy quantum systems.  Most optimizers do not handle fluctuating cost functions well, so this is a needed addition for executing on real quantum hardware.</p>
 <div class="cell docutils container">
@@ -1281,8 +1273,8 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </div>
 </div>
-</section>
-<section id="appendix-b">
+</div>
+<div class="section" id="appendix-b">
 <h2>Appendix B<a class="headerlink" href="#appendix-b" title="Permalink to this headline">¶</a></h2>
 <p>This is a helper function that converts the Pauli operators in the strings that define the Hamiltonian operators into the appropriate measurements at the end of the circuits.  For <span class="math notranslate nohighlight">\(X\)</span> operators this involves adding an <span class="math notranslate nohighlight">\(H\)</span> gate to the qubits to be measured, whereas a <span class="math notranslate nohighlight">\(Y\)</span> operator needs <span class="math notranslate nohighlight">\(S^{+}\)</span> followed by a <span class="math notranslate nohighlight">\(H\)</span>.  Other choices of Pauli operators require no additional gates prior to measurement.</p>
 <div class="cell docutils container">
@@ -1322,8 +1314,8 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 <div class="cell_output docutils container">
 <div class="output text_html"><div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 <div class="section">
      
@@ -1349,9 +1341,10 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
               </div>
               
               
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-</div>
+              <div class='prev-next-bottom'>
+                
+
+              </div>
               
           </main>
           
@@ -1359,19 +1352,30 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-16824831-8', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
 <footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
       <p class="copyright">
-    &copy; Copyright 2021, Paul Nation.<br>
+    &copy; Copyright 2021, Paul Nation.<br/>
 </p>
     </div>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br/>
 </p>
     </div>
     

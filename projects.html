@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Paul Nation &#8212; Nonhermitian - Homepage  documentation</title>
+    <title>Projects &#8212; Nonhermitian - Homepage  documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -41,7 +41,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Projects" href="projects.html" /> 
+    <link rel="next" title="Publications" href="publications.html" />
+    <link rel="prev" title="Paul Nation" href="index.html" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
      
@@ -89,7 +90,7 @@
     
     
 
-<a class="navbar-brand" href="#">
+<a class="navbar-brand" href="index.html">
   <img src="_static/logo.png" class="logo" alt="logo">
 </a>
 
@@ -107,8 +108,8 @@
       
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="projects.html">
+    <li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
   Projects
  </a>
 </li>
@@ -201,8 +202,13 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recent-posts">
-   Recent posts
+  <a class="reference internal nav-link" href="#current-projects">
+   Current projects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#past-projects">
+   Past projects
   </a>
  </li>
 </ul>
@@ -225,29 +231,94 @@
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
-                 <div class="tex2jax_ignore mathjax_ignore section" id="paul-nation">
-<h1>Paul Nation<a class="headerlink" href="#paul-nation" title="Permalink to this headline">¶</a></h1>
-<p>I am currently a Research Staff Member in the <a class="reference external" href="https://www.ibm.com/quantum-computing/">IBM Quantum</a> team at the T. J. Watson research lab in Yorktown Heights New York.  I am the Director of Partner Technical Enablement, which is a fancy way of saying that I help members of the
-<a class="reference external" href="https://www.ibm.com/quantum-computing/ibm-q-network">IBM Quantum Network</a> get the most out of IBM Quantum systems and services.  I also work in the area of software development, with a focus on numerical methods and scientific visualization techniques.  I also occasionally explore hardware benchmarking and verification, looking at generational system improvement metrics.</p>
-<p>I have been working in the area of numerical quantum optics for over a decade, starting with the creation of <a class="reference external" href="https://qutip.org">QuTiP : Quantum Toolbox in Python</a> in 2010 up to the present with the IBM <a class="reference external" href="https://qiskit.org">Qiskit SDK</a>.  I received my PhD in 2010 from the <a class="reference external" href="https://physics.dartmouth.edu/">Dartmouth College Department of Physics and Astronomy</a> under <a class="reference external" href="https://physics.dartmouth.edu/people/miles-p-blencowe">Miles Blencowe</a>.  In addition to numerical methods in quantum optics I have also explored quantum nanomechanical systems, optomechanical system in the quantum regime, analogue gravitational physics, and transport models for Hawking radiation.  Prior to joining IBM, I was a Staff Physicist at Northrop Grumman, an Assistant Professor in <a class="reference external" href="http://physics.korea.ac.kr/">Korea University Department of Physics</a>, and a postdoctoral researcher in the group of <a class="reference external" href="https://dml.riken.jp/">Franco Nori</a> at RIKEN just outside of Tokyo.</p>
-<div class="section" id="recent-posts">
-<h2>Recent posts<a class="headerlink" href="#recent-posts" title="Permalink to this headline">¶</a></h2>
-<p>See the <a class="reference internal" href="blog.html"><span class="doc std std-doc">blog archives</span></a> for a more complete list.</p>
-<ul class="postlist-style-none postlist">
-<li><p>2021-10-27 - <a class="reference internal" href="posts/2021/2021-10-27-dynamic_BV.html">Dynamic Bernstein-Vazirani using mid-circuit reset and measurement</a></p>
-<p>The ability to do mid-circuit reset and measurement unlocks a variety of tools for executing quantum circuits.  A brief discussion is given in this <a class="reference external" href="https://www.ibm.com/blogs/research/2021/02/quantum-mid-circuit-measurement/">IBM Research blog post</a>.  On particular possibility is the ability to reuse qubits, and in doing so reduce the hardware requirements of some algorithms.  The Bernstein-Vazirani (BV) algorithm is one such example.  In particular, when using phase-kickback, BV usually requires a high degree of qubit connectivity to impliment.  This has been used by trapped-ion hardware vendors to show that their hardware gives better fidelity on these problems, e.g. see (<a class="reference external" href="https://arxiv.org/abs/2102.00371">https://arxiv.org/abs/2102.00371</a> and <a class="reference external" href="https://www.nature.com/articles/s41467-019-13534-2">https://www.nature.com/articles/s41467-019-13534-2</a>).  However, with reset and measurement, BV requires only two qubits, making connectivity differences mute.  We showed this in a reply Tweet: <a class="reference external" href="https://twitter.com/nonhermitian/status/1362348935440986113">https://twitter.com/nonhermitian/status/1362348935440986113</a>, but did not explain how we got that figure.  So here is how I did it.</p>
-<p>Here we select the backend and extract its two-qubit gate coupling map.  This is not the same backend used in the original figure as, at the time or writing, that one is offline.  It is however the same processor family and revision.</p>
-</li>
-<li><p>2021-10-13 - <a class="reference internal" href="posts/2021/2021-10-13-expval_program.html">Custom Expectation Value Program for the Qiskit Runtime</a></p>
-<p>Here we will show how to make a program that takes a circuit, or list of circuits, and computes the expectation values of one or more diagonal operators.</p>
-<p>You must have Qiskit 0.30+ installed.</p>
-</li>
-<li><p>2021-10-07 - <a class="reference internal" href="posts/2021/2021-10-07-vqe_program.html">Custom VQE Program for Qiskit Runtime</a></p>
-<p>Here we will demonstrate how to create, upload, and use a custom Program for Qiskit Runtime.  As the utility of the Runtime execution engine lies in its ability to execute many quantum circuits with low latencies, this tutorial will show how to create your own Variational Quantum Eigensolver (VQE) program from scratch.</p>
-<p>You must have Qiskit 0.30+ installed.</p>
-</li>
-</ul>
-<div class="toctree-wrapper compound">
+                 <div class="tex2jax_ignore mathjax_ignore section" id="projects">
+<h1>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h1>
+<p>A few projects that I have been a part of:</p>
+<div class="section" id="current-projects">
+<h2>Current projects<a class="headerlink" href="#current-projects" title="Permalink to this headline">¶</a></h2>
+<div class="sphinx-bs pl-0 docutils">
+<div class="row docutils">
+<div class="d-flex col-3 docutils">
+<div class="card w-100 border-0 pl-0 docutils">
+<div class="card-body pl-0 docutils">
+<a class="reference external image-reference" href="https://qiskit.org"><img alt="Qiskit logo" src="https://qiskit.org/documentation/_static/images/logo_wordmark.svg" width="100%" /></a>
+</div>
+</div>
+</div>
+<div class="d-flex col-9 docutils">
+<div class="card w-100 border-0 pl-0 docutils">
+<div class="card-body pl-0 docutils">
+<p class="card-text">I have worked on Qiskit since 2018, although my activity has reduced as of late given that
+I am no longer primarily tasked with development.  Currently Qiskit is the most widely used quantum computing software framework out there.</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-3 docutils">
+<div class="card w-100 border-0 pl-0 docutils">
+<div class="card-body pl-0 docutils">
+<a class="reference external image-reference" href="https://qiskit.org/documentation/partners/mthree/"><img alt="M3 logo" src="https://qiskit.org/documentation/partners/mthree/_images/truncation.png" style="width: 100%;" /></a>
+</div>
+</div>
+</div>
+<div class="d-flex col-9 docutils">
+<div class="card w-100 border-0 pl-0 docutils">
+<div class="card-body pl-0 docutils">
+<p class="card-text">M3 (Matrix-free Measurement Mitigation) is a package designed for scalable mitigation of measurement errors in Qiskit.  It works via a dimensional reduction step, followed by either direct LU factorization, or even better, via preconditioned matrix-free iterative methods.  It is fast, efficient, and easy to use.  It is also fun to work on.</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-3 docutils">
+<div class="card w-100 border-0 pl-0 docutils">
+<div class="card-body pl-0 docutils">
+<a class="reference external image-reference" href="https://nonhermitian.org/kaleido/"><img alt="Kaleidoscope logo" src="https://nonhermitian.org/kaleido/_static/kal_logo.png" style="width: 100%;" /></a>
+</div>
+</div>
+</div>
+<div class="d-flex col-9 docutils">
+<div class="card w-100 border-0 pl-0 docutils">
+<div class="card-body pl-0 docutils">
+<p class="card-text">Kaleidoscope is a visualization package for quantum computation that focuses on interactivity. In addition, there is a range of functionality for the Qiskit quantum computing framework for visualizing quantum systems and their associated properties.  This is very much a side project until I get asked to make pretty plots for work, at which point it becomes super useful for visualizating IBM Quantum systems and their associated properties.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="past-projects">
+<h2>Past projects<a class="headerlink" href="#past-projects" title="Permalink to this headline">¶</a></h2>
+<div class="sphinx-bs pl-0 docutils">
+<div class="row docutils">
+<div class="d-flex col-3 docutils">
+<div class="card w-100 border-0 pl-0 docutils">
+<div class="card-body pl-0 docutils">
+<a class="reference external image-reference" href="https://qutip.org"><img alt="QuTiP logo" src="https://qutip.org/docs/latest/images/logo.png" style="width: 100%;" /></a>
+</div>
+</div>
+</div>
+<div class="d-flex col-9 docutils">
+<div class="card w-100 border-0 pl-0 docutils">
+<div class="card-body pl-0 docutils">
+<p class="card-text">QuTiP is the original open-source library for quantum computation. QuTiP aims to provide user-friendly and efficient numerical simulations of a wide variety of Hamiltonians, including those with arbitrary time-dependence, commonly found in a wide range of physics applications such as quantum optics, trapped ions, superconducting circuits, and quantum nanomechanical resonators.  It has been cited a couple thousand of times, and used across academia, research, and industrial
+institutions alike.</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-3 docutils">
+<div class="card w-100 border-0 pl-0 docutils">
+<div class="card-body pl-0 docutils">
+<a class="reference external image-reference" href="https://www.scipy.org/"><img alt="SciPy logo" src="https://www.scipy.org/_static/logo.png" style="width: 100%;" /></a>
+</div>
+</div>
+</div>
+<div class="d-flex col-9 docutils">
+<div class="card w-100 border-0 pl-0 docutils">
+<div class="card-body pl-0 docutils">
+<p class="card-text">I have contributed a small amount to SciPy by adding a couple of sparse matrix
+routines to the <code class="docutils literal notranslate"><span class="pre">scipy.sparse.csgraph</span></code> module.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -261,7 +332,8 @@
               
               <div class='prev-next-bottom'>
                 
-    <a class='right-next' id="next-link" href="projects.html" title="next page">Projects</a>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Paul Nation</a>
+    <a class='right-next' id="next-link" href="publications.html" title="next page">Publications</a>
 
               </div>
               

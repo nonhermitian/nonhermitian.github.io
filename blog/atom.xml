@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>nonhermitian.org</id>
   <title>Paul Nation's Blog</title>
-  <updated>2021-10-27T11:06:47.205771+00:00</updated>
+  <updated>2021-10-28T09:17:08.433443+00:00</updated>
   <link href="nonhermitian.org"/>
   <link href="nonhermitian.org/blog/atom.xml" rel="self"/>
-  <generator uri="https://ablog.readthedocs.org/" version="0.10.20">ABlog</generator>
+  <generator uri="https://ablog.readthedocs.org/" version="0.10.19">ABlog</generator>
   <entry>
     <id>nonhermitian.org/posts/2021/2021-10-07-vqe_program.html</id>
     <title>Custom VQE Program for Qiskit Runtime</title>
