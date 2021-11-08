@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Dynamic Bernstein-Vazirani using mid-circuit reset and measurement &#8212; Nonhermitian - Homepage  documentation</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -23,14 +24,14 @@
 
     
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -42,8 +43,21 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-     
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-16824831-8', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+ 
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -215,6 +229,12 @@
 <ul>
    
   <li>
+    <a href="2021-11-07-rep_delay.html"
+      >07 November - Improving state prep errors on IBM Quantum systems</a
+    >
+  </li>
+  
+  <li>
     <a href="2021-10-31-best_swap_mapper_qiskit.html"
       >31 October - Choosing the best Qiskit swap mapper</a
     >
@@ -240,7 +260,7 @@
 <ul>
    
   <li>
-    <a href="../../blog/2021.html">2021 (4)</a>
+    <a href="../../blog/2021.html">2021 (5)</a>
   </li>
    
 </ul>
@@ -315,10 +335,10 @@
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
-                 <div class="tex2jax_ignore mathjax_ignore section" id="dynamic-bernstein-vazirani-using-mid-circuit-reset-and-measurement">
+                 <section class="tex2jax_ignore mathjax_ignore" id="dynamic-bernstein-vazirani-using-mid-circuit-reset-and-measurement">
 <h1>Dynamic Bernstein-Vazirani using mid-circuit reset and measurement<a class="headerlink" href="#dynamic-bernstein-vazirani-using-mid-circuit-reset-and-measurement" title="Permalink to this headline">¶</a></h1>
 <p>The ability to do mid-circuit reset and measurement unlocks a variety of tools for executing quantum circuits.  A brief discussion is given in this <a class="reference external" href="https://www.ibm.com/blogs/research/2021/02/quantum-mid-circuit-measurement/">IBM Research blog post</a>.  On particular possibility is the ability to reuse qubits, and in doing so reduce the hardware requirements of some algorithms.  The Bernstein-Vazirani (BV) algorithm is one such example.  In particular, when using phase-kickback, BV usually requires a high degree of qubit connectivity to impliment.  This has been used by trapped-ion hardware vendors to show that their hardware gives better fidelity on these problems, e.g. see (<a class="reference external" href="https://arxiv.org/abs/2102.00371">https://arxiv.org/abs/2102.00371</a> and <a class="reference external" href="https://www.nature.com/articles/s41467-019-13534-2">https://www.nature.com/articles/s41467-019-13534-2</a>).  However, with reset and measurement, BV requires only two qubits, making connectivity differences mute.  We showed this in a reply Tweet: <a class="reference external" href="https://twitter.com/nonhermitian/status/1362348935440986113">https://twitter.com/nonhermitian/status/1362348935440986113</a>, but did not explain how we got that figure.  So here is how I did it.</p>
-<div class="section" id="frontmatter">
+<section id="frontmatter">
 <h2>Frontmatter<a class="headerlink" href="#frontmatter" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -345,7 +365,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="select-the-target-backend">
+<section id="select-the-target-backend">
 <h3>Select the target backend<a class="headerlink" href="#select-the-target-backend" title="Permalink to this headline">¶</a></h3>
 <p>Here we select the backend and extract its two-qubit gate coupling map.  This is not the same backend used in the original figure as, at the time or writing, that one is offline.  It is however the same processor family and revision.</p>
 <div class="cell docutils container">
@@ -363,9 +383,9 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="create-circuits">
+</section>
+</section>
+<section id="create-circuits">
 <h2>Create circuits<a class="headerlink" href="#create-circuits" title="Permalink to this headline">¶</a></h2>
 <p>In BV each qubit corresponding to a ‘1’ bit interacts with only the target qubit.  Moreover, since the state of the target qubit is an eigenstate of the <code class="docutils literal notranslate"><span class="pre">x</span></code> operator, the qubits remain unentangled, and the whole algorithm can be written using only two qubits provided that those qubits can be measured and reset mid-circuit.  The function below will create the circuit that does this for a given input bitstring:</p>
 <div class="cell docutils container">
@@ -400,8 +420,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="finding-the-best-two-qubits-to-use">
+</section>
+<section id="finding-the-best-two-qubits-to-use">
 <h2>Finding the best two-qubits to use<a class="headerlink" href="#finding-the-best-two-qubits-to-use" title="Permalink to this headline">¶</a></h2>
 <p>Let us look at an example circuit for a length 10 bitstring of all ones:</p>
 <div class="cell docutils container">
@@ -519,8 +539,8 @@
 </div>
 </div>
 <p>We can see from above that there is a very wide range of fidelities that come out.  This just goes to show that, when doing this on today’s hardware, the choice of qubits matters quite a bit.  Having found the optimal edge on which to run, we now use that to do extended BV circuit runs.</p>
-</div>
-<div class="section" id="run-actual-experiment">
+</section>
+<section id="run-actual-experiment">
 <h2>Run actual experiment<a class="headerlink" href="#run-actual-experiment" title="Permalink to this headline">¶</a></h2>
 <p>Here we choose a set of bitstring lengths to run and then execute this on the target backend edge that we identified earlier as the best candidate.  For fun, we will also run on the worst edge to see the difference.</p>
 <div class="cell docutils container">
@@ -561,7 +581,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="plot-results">
+<section id="plot-results">
 <h3>Plot results<a class="headerlink" href="#plot-results" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -585,9 +605,9 @@
 <img alt="../../_images/2021-10-27-dynamic_BV_26_0.png" src="../../_images/2021-10-27-dynamic_BV_26_0.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 <div class="section">
      
@@ -617,10 +637,9 @@
               </div>
               
               
-              <div class='prev-next-bottom'>
-                
-
-              </div>
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
               
           </main>
           
@@ -628,30 +647,19 @@
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-16824831-8', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 <footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
       <p class="copyright">
-    &copy; Copyright 2021, Paul Nation.<br/>
+    &copy; Copyright 2021, Paul Nation.<br>
 </p>
     </div>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
 </p>
     </div>
     
