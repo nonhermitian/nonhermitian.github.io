@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>nonhermitian.org</id>
   <title>Paul Nation's Blog</title>
-  <updated>2021-11-28T11:25:22.573002+00:00</updated>
+  <updated>2021-11-28T14:19:05.583146+00:00</updated>
   <link href="nonhermitian.org"/>
   <link href="nonhermitian.org/blog/atom.xml" rel="self"/>
   <generator uri="https://ablog.readthedocs.org/" version="0.10.20">ABlog</generator>
@@ -58,11 +58,11 @@
     <id>nonhermitian.org/posts/2021/2021-11-28-falcon_r5.html</id>
     <title>Comparison of Falcon R5 processors verse R4</title>
     <updated>2021-11-28T00:00:00-05:00</updated>
-    <content type="html">&lt;p&gt;Recently IBM Quantum announced the move to revision 5 (R5) of its Falcon processors &lt;a class="reference external" href="https://twitter.com/jaygambetta/status/1460697559773634570"&gt;see this tweet from Jay Gambetta&lt;/a&gt;.  In particular it was highlighted that there is a 8x reduction in meausrement time on these systems.  Lets see if this, or any other enhancements, are visible from the system calibration data.&lt;/p&gt;
+    <content type="html">&lt;p&gt;Recently IBM Quantum announced the move to revision 5 (R5) of its Falcon processors &lt;a class="reference external" href="https://twitter.com/jaygambetta/status/1460697559773634570"&gt;see this tweet from Jay Gambetta&lt;/a&gt;.  In particular it was highlighted that there is a 8x reduction in measurement time on these systems.  Lets see if this, or any other enhancements, are visible from the system calibration data.&lt;/p&gt;
 &lt;p&gt;The highlight of the recently released Falcon R5 “core” systems is their much improved measurement times (7x) and error rates (2x).  On these systems a measurement is roughly twice as long as a CNOT gate, compared to 13x on the old R4 systems, and allows for implimenting high-fidelity dynamic circuits with resets, mid-circuit measurements, and eventually classically-conditioned gates.  For other tasks, the modest improvements in the CNOT gate errors and &lt;span class="math notranslate nohighlight"&gt;\(T_{1}\)&lt;/span&gt; times are also welcomed.&lt;/p&gt;
 </content>
     <link href="nonhermitian.org/posts/2021/2021-11-28-falcon_r5.html" rel="alternate"/>
-    <summary>Recently IBM Quantum announced the move to revision 5 (R5) of its Falcon processors see this tweet from Jay Gambetta.  In particular it was highlighted that there is a 8x reduction in meausrement time on these systems.  Lets see if this, or any other enhancements, are visible from the system calibration data.The highlight of the recently released Falcon R5 “core” systems is their much improved measurement times (7x) and error rates (2x).  On these systems a measurement is roughly twice as long as a CNOT gate, compared to 13x on the old R4 systems, and allows for implimenting high-fidelity dynamic circuits with resets, mid-circuit measurements, and eventually classically-conditioned gates.  For other tasks, the modest improvements in the CNOT gate errors and T_{1} times are also welcomed.</summary>
+    <summary>Recently IBM Quantum announced the move to revision 5 (R5) of its Falcon processors see this tweet from Jay Gambetta.  In particular it was highlighted that there is a 8x reduction in measurement time on these systems.  Lets see if this, or any other enhancements, are visible from the system calibration data.The highlight of the recently released Falcon R5 “core” systems is their much improved measurement times (7x) and error rates (2x).  On these systems a measurement is roughly twice as long as a CNOT gate, compared to 13x on the old R4 systems, and allows for implimenting high-fidelity dynamic circuits with resets, mid-circuit measurements, and eventually classically-conditioned gates.  For other tasks, the modest improvements in the CNOT gate errors and T_{1} times are also welcomed.</summary>
     <category term="Falcon" label="Falcon"/>
     <published>2021-11-28T00:00:00-05:00</published>
   </entry>
