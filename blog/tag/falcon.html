@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Posts in Runtime &#8212; Nonhermitian - Homepage  documentation</title>
+    <title>Posts tagged Falcon &#8212; Nonhermitian - Homepage  documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -61,7 +61,7 @@
   rel="alternate"
   type="application/atom+xml"
   href="../../blog/atom.xml"
-  title="Posts in Runtime"
+  title="Posts tagged Falcon"
 />
  
 <style type="text/css">
@@ -262,20 +262,20 @@
                 
 <div class="section">
   <h1>
-     Posts in  Runtime 
+     Posts tagged  Falcon 
   </h1>
    
 
   <div class="section">
     <h2>
-      <a href="../../posts/2021/2021-10-13-expval_program.html"
-        >Custom Expectation Value Program for the Qiskit Runtime</a
+      <a href="../../posts/2021/2021-11-28-falcon_r5.html"
+        >Comparison of Falcon R5 processors verse R4</a
       >
     </h2>
 
     <ul class="ablog-archive">
       <li>
-         <i class="fa fa-calendar"></i> 13 October 2021 
+         <i class="fa fa-calendar"></i> 28 November 2021 
       </li>
           
 <li id="category">
@@ -283,7 +283,7 @@
     ><i class="fa-fw fa fa-folder-open"></i></span
   >
    
-  <a href="#">Runtime</a>  
+  <a href="../category/hardware.html">Hardware</a>  
 </li>
  
 <li id="tags">
@@ -294,54 +294,14 @@
     ></span
   >
    
-  <a href="../tag/custom.html">Custom</a>  
+  <a href="#">Falcon</a>  
 </li>
  
     </ul>
-    <p>Here we will show how to make a program that takes a circuit, or list of circuits, and computes the expectation values of one or more diagonal operators.</p>
-<p>You must have Qiskit 0.30+ installed.</p>
+    <p>Recently IBM Quantum announced the move to revision 5 (R5) of its Falcon processors <a class="reference external" href="https://twitter.com/jaygambetta/status/1460697559773634570">see this tweet from Jay Gambetta</a>.  In particular it was highlighted that there is a 8x reduction in meausrement time on these systems.  Lets see if this, or any other enhancements, are visible from the system calibration data.</p>
+<p>The highlight of the recently released Falcon R5 “core” systems is their much improved measurement times (7x) and error rates (2x).  On these systems a measurement is roughly twice as long as a CNOT gate, compared to 13x on the old R4 systems, and allows for implimenting high-fidelity dynamic circuits with resets, mid-circuit measurements, and eventually classically-conditioned gates.  For other tasks, the modest improvements in the CNOT gate errors and <span class="math notranslate nohighlight">\(T_{1}\)</span> times are also welcomed.</p>
 
-    <p><a href="../../posts/2021/2021-10-13-expval_program.html">Read more ...</a></p>
-    <hr />
-  </div>
-  
-
-  <div class="section">
-    <h2>
-      <a href="../../posts/2021/2021-10-07-vqe_program.html"
-        >Custom VQE Program for Qiskit Runtime</a
-      >
-    </h2>
-
-    <ul class="ablog-archive">
-      <li>
-         <i class="fa fa-calendar"></i> 07 October 2021 
-      </li>
-          
-<li id="category">
-  <span
-    ><i class="fa-fw fa fa-folder-open"></i></span
-  >
-   
-  <a href="#">Runtime</a>  
-</li>
- 
-<li id="tags">
-  <span
-    ><i
-      class="fa-fw fa fa-tag"
-    ></i
-    ></span
-  >
-   
-  <a href="../tag/custom.html">Custom</a>  
-</li>
- 
-    </ul>
-    <p>Here we will demonstrate how to create, upload, and use a custom Program for Qiskit Runtime.  As the utility of the Runtime execution engine lies in its ability to execute many quantum circuits with low latencies, this tutorial will show how to create your own Variational Quantum Eigensolver (VQE) program from scratch.</p>
-<p>You must have Qiskit 0.30+ installed.</p>
-
-    <p><a href="../../posts/2021/2021-10-07-vqe_program.html">Read more ...</a></p>
+    <p><a href="../../posts/2021/2021-11-28-falcon_r5.html">Read more ...</a></p>
     <hr />
   </div>
    
