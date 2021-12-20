@@ -197,6 +197,10 @@
   </li>
     
   <li>
+    <a href="blog/category/misc.html">Misc (1)</a>
+  </li>
+    
+  <li>
     <a href="blog/category/qiskit.html">Qiskit (1)</a>
   </li>
     
@@ -264,7 +268,7 @@
 <ul>
    
   <li>
-    <a href="blog/2021.html">2021 (6)</a>
+    <a href="blog/2021.html">2021 (7)</a>
   </li>
    
 </ul>
@@ -292,6 +296,36 @@
      All  Posts 
   </h1>
    
+
+  <div class="section">
+    <h2>
+      <a href="posts/2021/2021-12-20-qrng.html"
+        >Pitfalls in generating random numbers on quantum computers</a
+      >
+    </h2>
+
+    <ul class="ablog-archive">
+      <li>
+         <i class="fa fa-calendar"></i> 20 December 2021 
+      </li>
+          
+<li id="category">
+  <span
+    ><i class="fa-fw fa fa-folder-open"></i></span
+  >
+   
+  <a href="blog/category/misc.html">Misc</a>  
+</li>
+  
+    </ul>
+    <p>One of the first things many beginning quantum practitioners do is try to exploit the random nature of quantum measurements to build a basic random number generator.  Typically they do this via one or more Hadamard gates, and then quickly post an issue saying they do not observe the expected 50/50 outcome of 0’s and 1’s.  Taking this a step further, many companies are looking to commercializing quantum random number generation (QRNG) as a service. These services usually are marketed with words like “true randomness” or “quantum certified”.  Recently news spread of a new QRNG service from
+Cambridge Quantum Computing (CQC) called <a class="reference external" href="https://cambridgequantum.com/our-technology/origin/">Quantum Origin</a>. CQC is now part of <a class="reference external" href="https://www.quantinuum.com">Quantinuum</a>, a joint venture with Honeywell Quantum Solutions.  This service even has a <a class="reference external" href="https://cambridgequantum.com/our-technology/origin/origin-partners/">collection of Partners</a> attributed to it.</p>
+<p>The materials available from CQC suggest that this is essentially the same service as that <a class="reference external" href="https://www.hpcwire.com/2020/09/21/ibm-cqc-intro-cloud-based-quantum-random-number-generation/">introduced by CQC and IBM over a year ago</a>.  This service has been a part of Qiskit since the announcement has the <a class="reference external" href="https://github.com/qiskit-community/qiskit_rng">qiskit-rng</a> module.  Given that this is open source software, we can play around with the code to see why the underlying QRNG method can never be truly “certified” as being quantum in origin.</p>
+
+    <p><a href="posts/2021/2021-12-20-qrng.html">Read more ...</a></p>
+    <hr />
+  </div>
+  
 
   <div class="section">
     <h2>
@@ -354,7 +388,7 @@
 </li>
  
     </ul>
-    <p>Recently IBM Quantum announced the move to revision 5 (R5) of its Falcon processors <a class="reference external" href="https://twitter.com/jaygambetta/status/1460697559773634570">see this tweet from Jay Gambetta</a>.  In particular it was highlighted that there is a 8x reduction in measurement time on these systems.  Lets see if this, or any other enhancements, are visible from the system calibration data.</p>
+    <p>Recently IBM Quantum announced the move to revision 5 (R5) of its Falcon processors <a class="reference external" href="https://twitter.com/jaygambetta/status/1460697559773634570">see this tweet from Jay Gambetta</a>.  In particular it was highlighted that there is a 8x reduction in meausrement time on these systems.  Lets see if this, or any other enhancements, are visible from the system calibration data.</p>
 <p>The highlight of the recently released Falcon R5 “core” systems is their much improved measurement times (7x) and error rates (2x).  On these systems a measurement is roughly twice as long as a CNOT gate, compared to 13x on the old R4 systems, and allows for implimenting high-fidelity dynamic circuits with resets, mid-circuit measurements, and eventually classically-conditioned gates.  For other tasks, the modest improvements in the CNOT gate errors and <span class="math notranslate nohighlight">\(T_{1}\)</span> times are also welcomed.</p>
 
     <p><a href="posts/2021/2021-11-28-falcon_r5.html">Read more ...</a></p>
