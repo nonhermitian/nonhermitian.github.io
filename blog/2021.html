@@ -200,6 +200,12 @@
 <ul>
    
   <li>
+    <a href="../posts/2021/2021-12-20-esp_readout.html"
+      >20 December - Excited State Promotion (ESP) Readout</a
+    >
+  </li>
+  
+  <li>
     <a href="../posts/2021/2021-11-28-falcon_r5.html"
       >28 November - Comparison of Falcon R5 processors verse R4</a
     >
@@ -223,12 +229,6 @@
     >
   </li>
   
-  <li>
-    <a href="../posts/2021/2021-10-07-vqe_program.html"
-      >07 October - Custom VQE Program for Qiskit Runtime</a
-    >
-  </li>
-  
 </ul>
 
 <h3>
@@ -237,7 +237,7 @@
 <ul>
    
   <li>
-    <a href="#">2021 (5)</a>
+    <a href="#">2021 (6)</a>
   </li>
    
 </ul>
@@ -265,6 +265,35 @@
      Posted in  2021 
   </h1>
    
+
+  <div class="section">
+    <h2>
+      <a href="../posts/2021/2021-12-20-esp_readout.html"
+        >Excited State Promotion (ESP) Readout</a
+      >
+    </h2>
+
+    <ul class="ablog-archive">
+      <li>
+         <i class="fa fa-calendar"></i> 20 December 2021 
+      </li>
+          
+<li id="category">
+  <span
+    ><i class="fa-fw fa fa-folder-open"></i></span
+  >
+   
+  <a href="category/hardware.html">Hardware</a>  
+</li>
+  
+    </ul>
+    <p>Excited State Promotion (ESP) readout is method for decreasing measurement errors in quantum computing systems where decay from the excited <span class="math notranslate nohighlight">\(|1\rangle\)</span> state to <span class="math notranslate nohighlight">\(|0\rangle\)</span> is non-negligible over the measurement timescales.  Although it was originally an useful technique on the previous generation Falcon R4 systems, today it is only available on a few Falcon R5 systems where the nearly order of magnitude improvement in measurement times leaves little value in using this functionality.  In testing, it looks to even be a bit worse performing than the standard readout method.  ESP readout is on by default for those systems that support it.  To disable it run:</p>
+<p>On many quantum computing platforms one of the two computational basis states, the <span class="math notranslate nohighlight">\(|1\rangle\)</span> state by convention, is an excited state of the system with respect to the ground state <span class="math notranslate nohighlight">\(|0\rangle\)</span>.  The difference in energy between these two states defines the frequency of the qubit through the relation <span class="math notranslate nohighlight">\(E=hf\)</span>.  Because the <span class="math notranslate nohighlight">\(|1\rangle\)</span> state is an excited state, there is a non-zero probability that the state will decay to <span class="math notranslate nohighlight">\(|0\rangle\)</span> via interaction with the environment.  The characteristic timescale for this is the <span class="math notranslate nohighlight">\(T_{1}\)</span> time of the qubit.  When performing gate operations, or non-reversible instructions like measurements on qubits, if the time it takes to perform these operations is a non-negligible fraction of <span class="math notranslate nohighlight">\(T_{1}\)</span>, then there is a possibility that this decay has occurred.</p>
+
+    <p><a href="../posts/2021/2021-12-20-esp_readout.html">Read more ...</a></p>
+    <hr />
+  </div>
+  
 
   <div class="section">
     <h2>
