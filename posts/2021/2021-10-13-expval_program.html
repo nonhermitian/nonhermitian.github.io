@@ -1,382 +1,477 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Custom Expectation Value Program for the Qiskit Runtime &#8212; Nonhermitian - Homepage  documentation</title>
-    
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=86c6ca11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'posts/2021/2021-10-13-expval_program';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-16824831-8', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
- 
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" /> 
 <link
   rel="alternate"
   type="application/atom+xml"
   href="../../blog/atom.xml"
   title="Paul Nation's Blog"
 />
- 
-<style type="text/css">
-  ul.ablog-archive {
-    list-style: none;
-    overflow: auto;
-    margin-left: 0px;
-  }
-  ul.ablog-archive li {
-    float: left;
-    margin-right: 5px;
-    font-size: 80%;
-  }
-  ul.postlist a {
-    font-style: italic;
-  }
-  ul.postlist-style-disc {
-    list-style-type: disc;
-  }
-  ul.postlist-style-none {
-    list-style-type: none;
-  }
-  ul.postlist-style-circle {
-    list-style-type: circle;
-  }
-</style>
-
+  
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
-
-  <div id="navbar-start">
-    
-    
-
-<a class="navbar-brand" href="../../index.html">
-  <img src="../../_static/logo.png" class="logo" alt="logo">
-</a>
-
-
-    
-  </div>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
   
-  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
-    <div id="navbar-center" class="mr-auto">
-      
-      <div class="navbar-center-item">
-        <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../projects.html">
-  Projects
- </a>
-</li>
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../publications.html">
-  Publications
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../cv.html">
-  CV
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../blog.html">
-  Blog
- </a>
-</li>
-
+  
+  <dialog id="pst-search-dialog">
     
-</ul>
-      </div>
-      
-    </div>
-
-    <div id="navbar-end">
-      
-      <div class="navbar-end-item">
-        <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Find what your looking for..." aria-label="Find what your looking for..." autocomplete="off" >
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search ..."
+         aria-label="Search ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form>
-      </div>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
       
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/nonhermitian" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/nonhermitian" rel="noopener" target="_blank" title="Twitter">
-            <span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label>
-          </a>
-        </li>
-      </ul>
-      </div>
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Nonhermitian - Homepage  documentation - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Nonhermitian - Homepage  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../cv.html">
+    CV
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../blog.html">
+    Blog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
       
     </div>
-  </div>
-</div>
-    </nav>
     
-
-    <div class="container-xl">
-      <div class="row">
-          
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">  
-<h2>
-   <i class="fa fa-calendar"></i>
-  13 October 2021 
-</h2>
-
-<ul>
+    
+    <div class="navbar-header-items__end">
       
-<li id="category">
-  <span
-    ><i class="fa-fw fa fa-folder-open"></i></span
-  >
-   
-  <a href="../../blog/category/runtime.html">Runtime</a>  
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search ..."
+         aria-label="Search ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/nonhermitian" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../cv.html">
+    CV
+  </a>
 </li>
- 
-<li id="tags">
-  <span
-    ><i
-      class="fa-fw fa fa-tag"
-    ></i
-    ></span
-  >
-   
-  <a href="../../blog/tag/custom.html">Custom</a>  
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../blog.html">
+    Blog
+  </a>
 </li>
- 
-</ul>
-<div class="dropdown-buttons">
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search ..."
+         aria-label="Search ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/nonhermitian" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<div class="ablog-sidebar-item ablog__postcard">
+   
+  <h2>
+     
+    <i class="fa fa-calendar"></i>
+    
+    <span>13 October 2021</span>
+    
+  </h2>
+  <ul>
+    <div class="ablog-sidebar-item ablog__postcard2">
+      
+  <li id="ablog-sidebar-item category ablog__category">
+    <span>
+      
+      <i class="fa-fw fa fa-folder-open"></i>
+      
+    </span>
+     
+    <a href="../../blog/category/runtime.html">Runtime</a>
+      
+  </li>
+   
+  <li id="ablog-sidebar-item tags ablog__tags">
+    <span>
+       
+      <i class="fa-fw fa fa-tag"></i>
+      
+    </span>
+     
+    <a href="../../blog/tag/custom.html">Custom</a>
+      
+  </li>
+   
+</div>
+  </ul>
+</div>
+</div>
+        <div class="sidebar-primary-item"><div class="dropdown-buttons">
     <!-- ipynb file if we had a myst markdown file -->
     
     <!-- Download raw file -->
     <a class="dropdown-buttons" href="../../_sources/posts/2021/2021-10-13-expval_program.ipynb.txt"><button type="button"
             class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
             data-placement="left">.ipynb</button></a>
+</div></div>
+        <div class="sidebar-primary-item">
+<div class="ablog-sidebar-item ablog__recentposts">
+  <h3>
+    <a href="../../blog.html">Recent Posts</a>
+  </h3>
+  <ul>
+     
+    <li>
+      <a href="2021-12-20-qrng.html">
+        20 December - Pitfalls in generating random numbers on quantum computers
+      </a>
+    </li>
+    
+    <li>
+      <a href="2021-12-20-esp_readout.html">
+        20 December - Excited State Promotion (ESP) Readout
+      </a>
+    </li>
+    
+    <li>
+      <a href="2021-11-28-falcon_r5.html">
+        28 November - Comparison of Falcon R5 processors verse R4
+      </a>
+    </li>
+    
+    <li>
+      <a href="2021-10-31-best_swap_mapper_qiskit.html">
+        31 October - Choosing the best Qiskit swap mapper
+      </a>
+    </li>
+    
+    <li>
+      <a href="2021-10-27-dynamic_BV.html">
+        27 October - Dynamic Bernstein-Vazirani using mid-circuit reset and measurement
+      </a>
+    </li>
+    
+  </ul>
 </div>
-<h3>
-  <a href="../../blog.html">Recent Posts</a>
-</h3>
-<ul>
-   
-  <li>
-    <a href="2021-12-20-qrng.html"
-      >20 December - Pitfalls in generating random numbers on quantum computers</a
-    >
-  </li>
+</div>
+        <div class="sidebar-primary-item">
+<div class="ablog-sidebar-item ablog__archives">
+  <h3>
+    <a href="../../blog/archive.html">Archives</a>
+  </h3>
+  <ul>
+     
+    <li>
+      <a href="../../blog/2021.html">2021 (7)</a>
+    </li>
+     
+  </ul>
+</div>
+</div>
+    </div>
   
-  <li>
-    <a href="2021-12-20-esp_readout.html"
-      >20 December - Excited State Promotion (ESP) Readout</a
-    >
-  </li>
   
-  <li>
-    <a href="2021-11-28-falcon_r5.html"
-      >28 November - Comparison of Falcon R5 processors verse R4</a
-    >
-  </li>
-  
-  <li>
-    <a href="2021-10-31-best_swap_mapper_qiskit.html"
-      >31 October - Choosing the best Qiskit swap mapper</a
-    >
-  </li>
-  
-  <li>
-    <a href="2021-10-27-dynamic_BV.html"
-      >27 October - Dynamic Bernstein-Vazirani using mid-circuit reset and measurement</a
-    >
-  </li>
-  
-</ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
 
-<h3>
-  <a href="../../blog/archive.html">Archives</a>
-</h3>
-<ul>
-   
-  <li>
-    <a href="../../blog/2021.html">2021 (7)</a>
-  </li>
-   
-</ul>
 
-            </div>
-            
-          
-
-          
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
               
-              <div class="toc-item">
-                
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
 
-<nav id="bd-toc-nav">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#background">
-   Background
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expectation-value-of-a-diagonal-operator">
-     Expectation value of a diagonal operator
-    </a>
-   </li>
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Custom Expectation Value Program for the Qiskit Runtime</span></li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#main-program">
-   Main program
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#local-testing">
-   Local testing
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#program-metadata">
-   Program metadata
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#upload-the-program">
-   Upload the program
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#delete-program-if-needed">
-     Delete program if needed
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#making-the-program-public">
-   Making the program public
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#wrapping-the-runtime-program">
-   Wrapping the runtime program
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#trying-it-out">
-     Trying it out
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quantum-volume-as-an-expectation-value">
-   Quantum Volume as an expectation value
-  </a>
- </li>
-</ul>
-
 </nav>
-              </div>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
               
-              <div class="toc-item">
+              
+              
                 
-              </div>
-              
-            
-          </div>
-          
-
-          
-          
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
-              
-              <div>
-                 <section class="tex2jax_ignore mathjax_ignore" id="custom-expectation-value-program-for-the-qiskit-runtime">
-<h1>Custom Expectation Value Program for the Qiskit Runtime<a class="headerlink" href="#custom-expectation-value-program-for-the-qiskit-runtime" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                   <section class="tex2jax_ignore mathjax_ignore" id="custom-expectation-value-program-for-the-qiskit-runtime">
+<h1>Custom Expectation Value Program for the Qiskit Runtime<a class="headerlink" href="#custom-expectation-value-program-for-the-qiskit-runtime" title="Link to this heading">#</a></h1>
 <p>
 <font size="4" color="#0f62fe">Paul Nation</font>
 </p>
@@ -385,17 +480,17 @@
 </p>
 <p>Here we will show how to make a program that takes a circuit, or list of circuits, and computes the expectation values of one or more diagonal operators.</p>
 <section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>You must have Qiskit 0.30+ installed.</p></li>
 <li><p>You must have an IBM Quantum Experience account with the ability to upload a Runtime program.  <strong>Currently there is no way to know if you have Runtime upload ability outside of an email from IBM</strong>.</p></li>
 </ul>
 </section>
 <section id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
 <p>The primary method by which information is obtained from quantum computers is via expectation values.  Indeed, the samples that come from executing a quantum circuit multiple times, once converted to probabilities, can be viewed as just a finite sample approximation to the expectation value for the projection operators corresponding to each bitstring.  More practically, many quantum algorithms require computing expectation values over Pauli operators, e.g. Variational Quantum Eigensolvers, and thus having a runtime program that computes these quantities is of fundamental importance.  Here we look at one such example, where an user passes one or more circuits and expectation operators and gets back the computed expectation values, and possibly error bounds.</p>
 <section id="expectation-value-of-a-diagonal-operator">
-<h3>Expectation value of a diagonal operator<a class="headerlink" href="#expectation-value-of-a-diagonal-operator" title="Permalink to this headline">¶</a></h3>
+<h3>Expectation value of a diagonal operator<a class="headerlink" href="#expectation-value-of-a-diagonal-operator" title="Link to this heading">#</a></h3>
 <p>Consider a generic observable given by the tensor product of diagonal operators over <span class="math notranslate nohighlight">\(N\)</span> qubits  <span class="math notranslate nohighlight">\(O = O_{N-1}\dots O_{0}\)</span> where the subscript indicates the qubit on which the operator acts.  Then for a set of observed <span class="math notranslate nohighlight">\(M\)</span> bitstrings <span class="math notranslate nohighlight">\(\{b_{0}, \dots b_{M-1}\}\)</span>, where <span class="math notranslate nohighlight">\(M \leq 2^N \)</span>, with corresponding approximate probabilites <span class="math notranslate nohighlight">\(p_{m}\)</span> the expectation value is given by</p>
 <div class="math notranslate nohighlight">
 \[
@@ -406,7 +501,7 @@
 </section>
 </section>
 <section id="main-program">
-<h2>Main program<a class="headerlink" href="#main-program" title="Permalink to this headline">¶</a></h2>
+<h2>Main program<a class="headerlink" href="#main-program" title="Link to this heading">#</a></h2>
 <p>Here we define our main function for the expectation value runtime program.  As always, our program must start with the <code class="docutils literal notranslate"><span class="pre">backend</span></code>, and <code class="docutils literal notranslate"><span class="pre">user_messenger</span></code> arguements, followed by the actual inputs we pass to the program.  Here our options are quite simple:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">circuits</span></code>: A single QuantumCircuit or list of QuantumCircuits to be executed on the target backend.</p></li>
@@ -422,11 +517,11 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%%writefile sample_expval.py</span>
-<span class="kn">import</span> <span class="nn">mthree</span>
-<span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">transpile</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mthree</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">transpile</span>
 
 <span class="c1"># The entrypoint for our Runtime Program</span>
-<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="n">user_messenger</span><span class="p">,</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="n">user_messenger</span><span class="p">,</span>
          <span class="n">circuits</span><span class="p">,</span>
          <span class="n">expectation_operators</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
          <span class="n">shots</span> <span class="o">=</span> <span class="mi">8192</span><span class="p">,</span>
@@ -436,8 +531,8 @@
          <span class="n">return_stddev</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
          <span class="n">use_measurement_mitigation</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="p">):</span>
-    
-    <span class="sd">&quot;&quot;&quot;Compute expectation </span>
+<span class="w">    </span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute expectation </span>
 <span class="sd">    values for a list of operators after</span>
 <span class="sd">    executing a list of circuits on the target backend.</span>
 <span class="sd">    </span>
@@ -524,13 +619,13 @@
 </div>
 </section>
 <section id="local-testing">
-<h2>Local testing<a class="headerlink" href="#local-testing" title="Permalink to this headline">¶</a></h2>
+<h2>Local testing<a class="headerlink" href="#local-testing" title="Link to this heading">#</a></h2>
 <p>Here we test with a local “Fake” backend that mimics the noise properties of a real system and a 4-qubit GHZ state.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span>
-<span class="kn">from</span> <span class="nn">qiskit.test.mock</span> <span class="kn">import</span> <span class="n">FakeSantiago</span>
-<span class="kn">from</span> <span class="nn">qiskit.providers.ibmq.runtime</span> <span class="kn">import</span> <span class="n">UserMessenger</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumCircuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.test.mock</span><span class="w"> </span><span class="kn">import</span> <span class="n">FakeSantiago</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.providers.ibmq.runtime</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserMessenger</span>
 <span class="n">msg</span> <span class="o">=</span> <span class="n">UserMessenger</span><span class="p">()</span>
 <span class="n">backend</span> <span class="o">=</span> <span class="n">FakeSantiago</span><span class="p">()</span>
 </pre></div>
@@ -573,7 +668,7 @@
 <p>If we have done our job correctly, the above should print out two expectation values close to one and a final expectation value close to zero.</p>
 </section>
 <section id="program-metadata">
-<h2>Program metadata<a class="headerlink" href="#program-metadata" title="Permalink to this headline">¶</a></h2>
+<h2>Program metadata<a class="headerlink" href="#program-metadata" title="Link to this heading">#</a></h2>
 <div class="alert alert-block alert-warning">
 <b>Important:</b> At this time all program names must be unique amongst all users.  Thus you need to change the metadata `name` value to soemthing other than `sample-expval` if you want to upload.
 </div>
@@ -614,11 +709,11 @@
 </div>
 </section>
 <section id="upload-the-program">
-<h2>Upload the program<a class="headerlink" href="#upload-the-program" title="Permalink to this headline">¶</a></h2>
+<h2>Upload the program<a class="headerlink" href="#upload-the-program" title="Link to this heading">#</a></h2>
 <p>We are now in a position to upload the program.  To do so we first uncomment and excute the line <code class="docutils literal notranslate"><span class="pre">%%writefile</span> <span class="pre">sample_expval.py</span></code> giving use the <code class="docutils literal notranslate"><span class="pre">sample_expval.py</span></code> file we need to upload.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">IBMQ</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">IBMQ</span>
 <span class="n">IBMQ</span><span class="o">.</span><span class="n">load_account</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -645,7 +740,7 @@
 </div>
 </div>
 <section id="delete-program-if-needed">
-<h3>Delete program if needed<a class="headerlink" href="#delete-program-if-needed" title="Permalink to this headline">¶</a></h3>
+<h3>Delete program if needed<a class="headerlink" href="#delete-program-if-needed" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#provider.runtime.delete_program(program_id)</span>
@@ -656,7 +751,7 @@
 </section>
 </section>
 <section id="making-the-program-public">
-<h2>Making the program public<a class="headerlink" href="#making-the-program-public" title="Permalink to this headline">¶</a></h2>
+<h2>Making the program public<a class="headerlink" href="#making-the-program-public" title="Link to this heading">#</a></h2>
 <p>If you want to make your program(s) public for the whole world to see you can do so by calling</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -667,11 +762,11 @@
 </div>
 </section>
 <section id="wrapping-the-runtime-program">
-<h2>Wrapping the runtime program<a class="headerlink" href="#wrapping-the-runtime-program" title="Permalink to this headline">¶</a></h2>
+<h2>Wrapping the runtime program<a class="headerlink" href="#wrapping-the-runtime-program" title="Link to this heading">#</a></h2>
 <p>As always, it is best to wrap the call to the runtime program with a function (or possibly a class) that makes input easier and does some validation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">expectation_value_runner</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">expectation_value_runner</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span>
          <span class="n">circuits</span><span class="p">,</span>
          <span class="n">expectation_operators</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
          <span class="n">shots</span> <span class="o">=</span> <span class="mi">8192</span><span class="p">,</span>
@@ -680,8 +775,8 @@
          <span class="n">skip_transpilation</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
          <span class="n">return_stddev</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
          <span class="n">use_measurement_mitigation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    
-    <span class="sd">&quot;&quot;&quot;Compute expectation values for a list of operators after</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute expectation values for a list of operators after</span>
 <span class="sd">    executing a list of circuits on the target backend.</span>
 <span class="sd">    </span>
 <span class="sd">    Parameters:</span>
@@ -728,7 +823,7 @@
 </div>
 </div>
 <section id="trying-it-out">
-<h3>Trying it out<a class="headerlink" href="#trying-it-out" title="Permalink to this headline">¶</a></h3>
+<h3>Trying it out<a class="headerlink" href="#trying-it-out" title="Link to this heading">#</a></h3>
 <p>Because we made our program public anyone can try it out.  Lets do so here with our previously made GHZ state and running on the simulator.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -789,13 +884,13 @@
 </section>
 </section>
 <section id="quantum-volume-as-an-expectation-value">
-<h2>Quantum Volume as an expectation value<a class="headerlink" href="#quantum-volume-as-an-expectation-value" title="Permalink to this headline">¶</a></h2>
+<h2>Quantum Volume as an expectation value<a class="headerlink" href="#quantum-volume-as-an-expectation-value" title="Link to this heading">#</a></h2>
 <p>Here we formulate QV as an expectation value of a projector onto the heavy-output elements on a distribution.  We can then use our expectation value routine to compute whether a given circuit has passed the QV metric.</p>
 <p>QV is defined in terms of heavy-ouputs of a distribution. Heavy-outputs are those bit-strings that are those that have probabilities above the median value of the distribution. Below we define the projection operator onto the set of bit-strings that are heavy-outputs for a given distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">heavy_projector</span><span class="p">(</span><span class="n">qv_probs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Forms the projection operator onto the heavy-outputs of a given probability distribution.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">heavy_projector</span><span class="p">(</span><span class="n">qv_probs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Forms the projection operator onto the heavy-outputs of a given probability distribution.</span>
 
 <span class="sd">    Parameters:</span>
 <span class="sd">        qv_probs (dict): A dictionary of bitstrings and associated probabilities.</span>
@@ -816,9 +911,9 @@
 <p>Now we generate 10 QV circuits as our dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">qiskit.quantum_info</span> <span class="kn">import</span> <span class="n">Statevector</span>
-<span class="kn">from</span> <span class="nn">qiskit.circuit.library</span> <span class="kn">import</span> <span class="n">QuantumVolume</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.quantum_info</span><span class="w"> </span><span class="kn">import</span> <span class="n">Statevector</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.circuit.library</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumVolume</span>
 <span class="c1"># Generate QV circuits</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">qv_circs</span> <span class="o">=</span> <span class="p">[</span><span class="n">QuantumVolume</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
@@ -890,7 +985,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit.tools.jupyter</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.tools.jupyter</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="o">%</span><span class="k">qiskit_copyright</span>
 </pre></div>
 </div>
@@ -901,24 +996,27 @@
 </section>
 </section>
 
-<div class="section">
+<div class="section ablog__blog_comments">
      
-<div class="section">
-  <span style="float: left">
+<div class="section ablog__prev-next">
+  <span class="ablog__prev">
      
     <a href="2021-10-07-vqe_program.html">
-      <i class="fa fa-arrow-circle-left"></i> Custom VQE Program for Qiskit Runtime
+      
+      <i class="fa fa-arrow-circle-left"></i>
+      
+      <span>Custom VQE Program for Qiskit Runtime</span>
     </a>
     
   </span>
-  <span>&nbsp;</span>
-  <span style="float: right">
+  <span class="ablog__spacer">&nbsp;</span>
+  <span class="ablog__next">
      
     <a href="2021-10-27-dynamic_BV.html">
-      Dynamic Bernstein-Vazirani using mid-circuit reset and measurement <i
-        class="fa fa-arrow-circle-right"
-      ></i
-      >
+      <span>Dynamic Bernstein-Vazirani using mid-circuit reset and measurement</span>
+      
+      <i class="fa fa-arrow-circle-right"></i>
+      
     </a>
     
   </span>
@@ -926,36 +1024,119 @@
   
 </div>
 
-              </div>
+                </article>
               
               
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
 </div>
+                </footer>
               
-          </main>
-          
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-      </div>
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value-of-a-diagonal-operator">Expectation value of a diagonal operator</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-program">Main program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-testing">Local testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#program-metadata">Program metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-the-program">Upload the program</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-program-if-needed">Delete program if needed</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-the-program-public">Making the program public</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-the-runtime-program">Wrapping the runtime program</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trying-it-out">Trying it out</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-volume-as-an-expectation-value">Quantum Volume as an expectation value</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/posts/2021/2021-10-13-expval_program.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2021, Paul Nation.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
-    &copy; Copyright 2021, Paul Nation.<br>
-</p>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
     </div>
-    
-    <div class="footer-item">
-      <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
-</p>
-    </div>
-    
-  </div>
-</footer>
+  
+</div>
+
+  </footer>
   </body>
 </html>

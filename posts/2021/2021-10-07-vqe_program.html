@@ -1,449 +1,487 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Custom VQE Program for Qiskit Runtime &#8212; Nonhermitian - Homepage  documentation</title>
-    
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=86c6ca11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css?v=2a6c4383" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css?v=d290406d" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'posts/2021/2021-10-07-vqe_program';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-16824831-8', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
- 
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" /> 
 <link
   rel="alternate"
   type="application/atom+xml"
   href="../../blog/atom.xml"
   title="Paul Nation's Blog"
 />
- 
-<style type="text/css">
-  ul.ablog-archive {
-    list-style: none;
-    overflow: auto;
-    margin-left: 0px;
-  }
-  ul.ablog-archive li {
-    float: left;
-    margin-right: 5px;
-    font-size: 80%;
-  }
-  ul.postlist a {
-    font-style: italic;
-  }
-  ul.postlist-style-disc {
-    list-style-type: disc;
-  }
-  ul.postlist-style-none {
-    list-style-type: none;
-  }
-  ul.postlist-style-circle {
-    list-style-type: circle;
-  }
-</style>
-
+  
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
-
-  <div id="navbar-start">
-    
-    
-
-<a class="navbar-brand" href="../../index.html">
-  <img src="../../_static/logo.png" class="logo" alt="logo">
-</a>
-
-
-    
-  </div>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
   
-  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
-    <div id="navbar-center" class="mr-auto">
-      
-      <div class="navbar-center-item">
-        <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../projects.html">
-  Projects
- </a>
-</li>
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../publications.html">
-  Publications
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../cv.html">
-  CV
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../blog.html">
-  Blog
- </a>
-</li>
-
+  
+  <dialog id="pst-search-dialog">
     
-</ul>
-      </div>
-      
-    </div>
-
-    <div id="navbar-end">
-      
-      <div class="navbar-end-item">
-        <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Find what your looking for..." aria-label="Find what your looking for..." autocomplete="off" >
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search ..."
+         aria-label="Search ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form>
-      </div>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
       
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/nonhermitian" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/nonhermitian" rel="noopener" target="_blank" title="Twitter">
-            <span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label>
-          </a>
-        </li>
-      </ul>
-      </div>
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Nonhermitian - Homepage  documentation - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Nonhermitian - Homepage  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../cv.html">
+    CV
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../blog.html">
+    Blog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
       
     </div>
-  </div>
-</div>
-    </nav>
     
-
-    <div class="container-xl">
-      <div class="row">
-          
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">  
-<h2>
-   <i class="fa fa-calendar"></i>
-  07 October 2021 
-</h2>
-
-<ul>
+    
+    <div class="navbar-header-items__end">
       
-<li id="category">
-  <span
-    ><i class="fa-fw fa fa-folder-open"></i></span
-  >
-   
-  <a href="../../blog/category/runtime.html">Runtime</a>  
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search ..."
+         aria-label="Search ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/nonhermitian" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../cv.html">
+    CV
+  </a>
 </li>
- 
-<li id="tags">
-  <span
-    ><i
-      class="fa-fw fa fa-tag"
-    ></i
-    ></span
-  >
-   
-  <a href="../../blog/tag/custom.html">Custom</a>  
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../blog.html">
+    Blog
+  </a>
 </li>
- 
-</ul>
-<div class="dropdown-buttons">
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search ..."
+         aria-label="Search ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/nonhermitian" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<div class="ablog-sidebar-item ablog__postcard">
+   
+  <h2>
+     
+    <i class="fa fa-calendar"></i>
+    
+    <span>07 October 2021</span>
+    
+  </h2>
+  <ul>
+    <div class="ablog-sidebar-item ablog__postcard2">
+      
+  <li id="ablog-sidebar-item category ablog__category">
+    <span>
+      
+      <i class="fa-fw fa fa-folder-open"></i>
+      
+    </span>
+     
+    <a href="../../blog/category/runtime.html">Runtime</a>
+      
+  </li>
+   
+  <li id="ablog-sidebar-item tags ablog__tags">
+    <span>
+       
+      <i class="fa-fw fa fa-tag"></i>
+      
+    </span>
+     
+    <a href="../../blog/tag/custom.html">Custom</a>
+      
+  </li>
+   
+</div>
+  </ul>
+</div>
+</div>
+        <div class="sidebar-primary-item"><div class="dropdown-buttons">
     <!-- ipynb file if we had a myst markdown file -->
     
     <!-- Download raw file -->
     <a class="dropdown-buttons" href="../../_sources/posts/2021/2021-10-07-vqe_program.ipynb.txt"><button type="button"
             class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
             data-placement="left">.ipynb</button></a>
+</div></div>
+        <div class="sidebar-primary-item">
+<div class="ablog-sidebar-item ablog__recentposts">
+  <h3>
+    <a href="../../blog.html">Recent Posts</a>
+  </h3>
+  <ul>
+     
+    <li>
+      <a href="2021-12-20-qrng.html">
+        20 December - Pitfalls in generating random numbers on quantum computers
+      </a>
+    </li>
+    
+    <li>
+      <a href="2021-12-20-esp_readout.html">
+        20 December - Excited State Promotion (ESP) Readout
+      </a>
+    </li>
+    
+    <li>
+      <a href="2021-11-28-falcon_r5.html">
+        28 November - Comparison of Falcon R5 processors verse R4
+      </a>
+    </li>
+    
+    <li>
+      <a href="2021-10-31-best_swap_mapper_qiskit.html">
+        31 October - Choosing the best Qiskit swap mapper
+      </a>
+    </li>
+    
+    <li>
+      <a href="2021-10-27-dynamic_BV.html">
+        27 October - Dynamic Bernstein-Vazirani using mid-circuit reset and measurement
+      </a>
+    </li>
+    
+  </ul>
 </div>
-<h3>
-  <a href="../../blog.html">Recent Posts</a>
-</h3>
-<ul>
-   
-  <li>
-    <a href="2021-12-20-qrng.html"
-      >20 December - Pitfalls in generating random numbers on quantum computers</a
-    >
-  </li>
+</div>
+        <div class="sidebar-primary-item">
+<div class="ablog-sidebar-item ablog__archives">
+  <h3>
+    <a href="../../blog/archive.html">Archives</a>
+  </h3>
+  <ul>
+     
+    <li>
+      <a href="../../blog/2021.html">2021 (7)</a>
+    </li>
+     
+  </ul>
+</div>
+</div>
+    </div>
   
-  <li>
-    <a href="2021-12-20-esp_readout.html"
-      >20 December - Excited State Promotion (ESP) Readout</a
-    >
-  </li>
   
-  <li>
-    <a href="2021-11-28-falcon_r5.html"
-      >28 November - Comparison of Falcon R5 processors verse R4</a
-    >
-  </li>
-  
-  <li>
-    <a href="2021-10-31-best_swap_mapper_qiskit.html"
-      >31 October - Choosing the best Qiskit swap mapper</a
-    >
-  </li>
-  
-  <li>
-    <a href="2021-10-27-dynamic_BV.html"
-      >27 October - Dynamic Bernstein-Vazirani using mid-circuit reset and measurement</a
-    >
-  </li>
-  
-</ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
 
-<h3>
-  <a href="../../blog/archive.html">Archives</a>
-</h3>
-<ul>
-   
-  <li>
-    <a href="../../blog/2021.html">2021 (7)</a>
-  </li>
-   
-</ul>
 
-            </div>
-            
-          
-
-          
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
               
-              <div class="toc-item">
-                
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
 
-<nav id="bd-toc-nav">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#current-limitations">
-   Current limitations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simple-vqe">
-   Simple VQE
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#specifying-the-form-of-the-input-values">
-   Specifying the form of the input values
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#optionals">
-     Optionals
-    </a>
-   </li>
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Custom VQE Program for Qiskit Runtime</span></li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#main-program">
-   Main program
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#required-signature">
-     Required signature
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-main-vqe-program">
-     The main VQE program
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#local-testing">
-   Local testing
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#program-metadata">
-   Program metadata
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uploading-the-program">
-   Uploading the program
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#program-upload">
-     Program upload
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#program-information">
-     Program information
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deleting-a-program">
-     Deleting a program
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-the-program">
-   Running the program
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#specify-parameters">
-     Specify parameters
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#execute-the-program">
-     Execute the program
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#listening-for-interim-results">
-     Listening for interim results
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#formatting-the-returned-results">
-     Formatting the returned results
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simplifying-program-execution-with-wrapping-functions">
-   Simplifying program execution with wrapping functions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conclusion">
-   Conclusion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#appendix-a">
-   Appendix A
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#appendix-b">
-   Appendix B
-  </a>
- </li>
-</ul>
-
 </nav>
-              </div>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
               
-              <div class="toc-item">
+              
+              
                 
-              </div>
-              
-            
-          </div>
-          
-
-          
-          
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
-              
-              <div>
-                 <section class="tex2jax_ignore mathjax_ignore" id="custom-vqe-program-for-qiskit-runtime">
-<h1>Custom VQE Program for Qiskit Runtime<a class="headerlink" href="#custom-vqe-program-for-qiskit-runtime" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                   <section class="tex2jax_ignore mathjax_ignore" id="custom-vqe-program-for-qiskit-runtime">
+<h1>Custom VQE Program for Qiskit Runtime<a class="headerlink" href="#custom-vqe-program-for-qiskit-runtime" title="Link to this heading">#</a></h1>
 <p>Here we will demonstrate how to create, upload, and use a custom Program for Qiskit Runtime.  As the utility of the Runtime execution engine lies in its ability to execute many quantum circuits with low latencies, this tutorial will show how to create your own Variational Quantum Eigensolver (VQE) program from scratch.</p>
 <section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>You must have Qiskit 0.30+ installed.</p></li>
 <li><p>You must have an IBM Quantum account with the ability to upload a runtime program.  You have this ability if you belong to more than one provider.</p></li>
 </ul>
 </section>
 <section id="current-limitations">
-<h2>Current limitations<a class="headerlink" href="#current-limitations" title="Permalink to this headline">¶</a></h2>
+<h2>Current limitations<a class="headerlink" href="#current-limitations" title="Link to this heading">#</a></h2>
 <p>The runtime execution engine currently has the following limitations that must be kept in mind:</p>
 <ul class="simple">
 <li><p>The Docker images used by the runtime include only Qiskit and its dependencies, with few exceptions.  One exception is the inclusion of the <code class="docutils literal notranslate"><span class="pre">mthree</span></code> measurement mitigation package.</p></li>
@@ -453,7 +491,7 @@
 <p>As Qiskit Runtime matures, these limitations will be removed.</p>
 </section>
 <section id="simple-vqe">
-<h2>Simple VQE<a class="headerlink" href="#simple-vqe" title="Permalink to this headline">¶</a></h2>
+<h2>Simple VQE<a class="headerlink" href="#simple-vqe" title="Link to this heading">#</a></h2>
 <p>VQE is an hybrid quantum-classical optimization procedure that finds the lowest eigenstate and eigenenergy of a linear system defined by a given Hamiltonian of Pauli operators.  For example, consider the following two-qubit Hamiltonian:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -462,12 +500,12 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 <p>where <span class="math notranslate nohighlight">\(A\)</span> is numerical coefficient and the subscripts label the qubits on which the operators act.  The zero index being farthest right is the ordering used in Qiskit.  The Pauli operators tell us which measurement basis to to use when measuring each of the qubits.</p>
 <p>We want to find the ground state (lowest energy state) of this Hamiltonian, and the associated eigenvector.  To do this we must start at a given initial state and iteratively vary the parameters that define this state using a classical optimizer, such that the computed energies of subsequent steps are nominally lower than those previously.  The parameterized state of the system is defined by an ansatz quantum circuit that should have non-zero support in the direction of the ground state.  Because in general we do not know the solution, the choice of ansatz circuit can be highly problem-specific with a form dictated by additional information. For further information about variational algorithms, we point the reader to <a class="reference external" href="https://doi.org/10.1038/s42254-021-00348-9">Nature Reviews Physics volume 3, 625 (2021)</a>.</p>
 <p>Thus we need at least the following inputs to create our VQE quantum program:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>A representation of the Hamiltonian that specifies the problem.</p></li>
 <li><p>A choice of parameterized ansatz circuit, and the ability to pass configuration options, if any.</p></li>
 </ol>
 <p>However, the following are also beneficial inputs that users might want to have:</p>
-<ol class="simple">
+<ol class="arabic simple" start="3">
 <li><p>Add the ability to pass an initial state.</p></li>
 <li><p>Vary the number of shots that are taken.</p></li>
 <li><p>Ability to select which classical optimizer is used, and set configuraton values, if any.</p></li>
@@ -475,7 +513,7 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </ol>
 </section>
 <section id="specifying-the-form-of-the-input-values">
-<h2>Specifying the form of the input values<a class="headerlink" href="#specifying-the-form-of-the-input-values" title="Permalink to this headline">¶</a></h2>
+<h2>Specifying the form of the input values<a class="headerlink" href="#specifying-the-form-of-the-input-values" title="Link to this heading">#</a></h2>
 <p>All inputs to runtime programs must be serializable objects.  That is to say, whatever you pass into a runtime program must be able to be converted to JSON format.  It is thus beneficial to keep inputs limited to basic data types and structures unless you have experience with custom object serialization, or they are common Qiskit types such as <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> etc that the built-in <code class="docutils literal notranslate"><span class="pre">RuntimeEncoder</span></code> can handle.  Fortunately, the VQE program described above can be made out of simple Python components.</p>
 <p>First, it is possible to represent any Hamiltonian using a list of values with each containing the numerical coefficeint for each term and the string representation for the Pauli operators.  For the above example, the ground state energy with <span class="math notranslate nohighlight">\(A=1\)</span> is <span class="math notranslate nohighlight">\(-3\)</span> and we can write it as:</p>
 <div class="cell docutils container">
@@ -489,7 +527,7 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 <p>We would like the user to be able to select between ansatz options such as: <code class="docutils literal notranslate"><span class="pre">NLocal</span></code>, <code class="docutils literal notranslate"><span class="pre">TwoLocal</span></code>, and <code class="docutils literal notranslate"><span class="pre">EfficientSU2</span></code>.  We could have the user pass the whole ansatz circuit to the program; however, in order to reduce the size of the upload we will pass the ansatz by name.  In the runtime program, we can take this name and get the class that it corresponds to from the library using, for example,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qiskit.circuit.library.n_local</span> <span class="k">as</span> <span class="nn">lib_local</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">qiskit.circuit.library.n_local</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">lib_local</span>
 
 <span class="n">ansatz</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">lib_local</span><span class="p">,</span> <span class="s1">&#39;EfficientSU2&#39;</span><span class="p">)</span>
 </pre></div>
@@ -498,11 +536,11 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 <p>For the ansatz configuration, we will pass a simple <code class="docutils literal notranslate"><span class="pre">dict</span></code> of values.</p>
 <section id="optionals">
-<h3>Optionals<a class="headerlink" href="#optionals" title="Permalink to this headline">¶</a></h3>
+<h3>Optionals<a class="headerlink" href="#optionals" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>If we want to add the ability to pass an initial state, then we will need to add the ability to pass a 1D list/ NumPy array.  Because the number of parameters depends on the ansatz and its configuration, the user would have to know what ansatz they are doing ahead of time.</p></li>
 <li><p>Selecting a number of shots requires simply passing an integer value.</p></li>
-<li><p>Here we will allow selecting a classical optimizer by name from those in SciPy, and a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of configuration parameters.  Note that for execution on an actual system, the noise inherent in today’s quantum systems makes having a stochastic optimizer crucial to success.  SciPy does not have such a choice, and the one built into Qiskit is wrapped in such a manner as to make it difficult to use elsewhere.  As such, here we will use an SPSA optimizer written to match the style of those in SciPy.  This function is given in <a class="reference external" href="#Appendix-A">Appendix A</a>.</p></li>
+<li><p>Here we will allow selecting a classical optimizer by name from those in SciPy, and a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of configuration parameters.  Note that for execution on an actual system, the noise inherent in today’s quantum systems makes having a stochastic optimizer crucial to success.  SciPy does not have such a choice, and the one built into Qiskit is wrapped in such a manner as to make it difficult to use elsewhere.  As such, here we will use an SPSA optimizer written to match the style of those in SciPy.  This function is given in <a class="reference internal" href="#Appendix-A"><span class="xref myst">Appendix A</span></a>.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Finally, for measurement error mitigation we can simply pass a boolean (True/False) value.</p></li>
@@ -510,10 +548,10 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </section>
 </section>
 <section id="main-program">
-<h2>Main program<a class="headerlink" href="#main-program" title="Permalink to this headline">¶</a></h2>
-<p>We are now in a position to start building our main program.  However, before doing so we point out that it makes the code cleaner to make a separate fuction that takes strings of Pauli operators that define our Hamiltonian and convert them to a list of circuits with single-qubit gates that change the measurement basis for each qubit, if needed. This function is given in <a class="reference external" href="#Appendix-B">Appendix B</a>.</p>
+<h2>Main program<a class="headerlink" href="#main-program" title="Link to this heading">#</a></h2>
+<p>We are now in a position to start building our main program.  However, before doing so we point out that it makes the code cleaner to make a separate fuction that takes strings of Pauli operators that define our Hamiltonian and convert them to a list of circuits with single-qubit gates that change the measurement basis for each qubit, if needed. This function is given in <a class="reference internal" href="#Appendix-B"><span class="xref myst">Appendix B</span></a>.</p>
 <section id="required-signature">
-<h3>Required signature<a class="headerlink" href="#required-signature" title="Permalink to this headline">¶</a></h3>
+<h3>Required signature<a class="headerlink" href="#required-signature" title="Link to this heading">#</a></h3>
 <p>Every runtime program is defined via the <code class="docutils literal notranslate"><span class="pre">main</span></code> function, and must have the following input signature:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="n">user_message</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
@@ -521,22 +559,22 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 <p>where <code class="docutils literal notranslate"><span class="pre">backend</span></code> is the backend that the program is to be executed on, and <code class="docutils literal notranslate"><span class="pre">user_message</span></code> is the class by which interim (and possibly final) results are communicated back to the user.  After these two items, we add our program-specific arguments and keyword arguments.</p>
 </section>
 <section id="the-main-vqe-program">
-<h3>The main VQE program<a class="headerlink" href="#the-main-vqe-program" title="Permalink to this headline">¶</a></h3>
+<h3>The main VQE program<a class="headerlink" href="#the-main-vqe-program" title="Link to this heading">#</a></h3>
 <p>Here is the main program for our sample VQE.  What each element of the function does is written in the comments before the element appears.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grab functions and modules from dependencies</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">opt</span>
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">OptimizeResult</span>
-<span class="kn">import</span> <span class="nn">mthree</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">opt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">OptimizeResult</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mthree</span>
 
 <span class="c1"># Grab functions and modules from Qiskit needed</span>
-<span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">transpile</span>
-<span class="kn">import</span> <span class="nn">qiskit.circuit.library.n_local</span> <span class="k">as</span> <span class="nn">lib_local</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">transpile</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">qiskit.circuit.library.n_local</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">lib_local</span>
 
 <span class="c1"># The entrypoint for our Runtime Program</span>
-<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="n">user_messenger</span><span class="p">,</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="n">user_messenger</span><span class="p">,</span>
          <span class="n">hamiltonian</span><span class="p">,</span>
          <span class="n">ansatz</span><span class="o">=</span><span class="s1">&#39;EfficientSU2&#39;</span><span class="p">,</span>
          <span class="n">ansatz_config</span><span class="o">=</span><span class="p">{},</span>
@@ -546,8 +584,8 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
          <span class="n">shots</span> <span class="o">=</span> <span class="mi">8192</span><span class="p">,</span>
          <span class="n">use_measurement_mitigation</span><span class="o">=</span><span class="kc">False</span>
         <span class="p">):</span>
-    
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The main sample VQE program.</span>
 <span class="sd">    </span>
 <span class="sd">    Parameters:</span>
@@ -636,13 +674,13 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
     <span class="c1"># back to the user after each iteration.  This uses the `user_messenger` object.</span>
     <span class="c1"># Here we convert to a list so that the return is user readable locally, but</span>
     <span class="c1"># this is not required.</span>
-    <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">xk</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">callback</span><span class="p">(</span><span class="n">xk</span><span class="p">):</span>
         <span class="n">user_messenger</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">xk</span><span class="p">))</span>
     
     <span class="c1"># This is the primary VQE function executed by the optimizer. This function takes the </span>
     <span class="c1"># parameter vector as input and returns the energy evaluated using an ansatz circuit</span>
     <span class="c1"># bound with those parameters.</span>
-    <span class="k">def</span> <span class="nf">vqe_func</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">vqe_func</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
         <span class="c1"># Attach (bind) parameters in params vector to the transpiled circuits.</span>
         <span class="n">bound_circs</span> <span class="o">=</span> <span class="p">[</span><span class="n">circ</span><span class="o">.</span><span class="n">bind_parameters</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="k">for</span> <span class="n">circ</span> <span class="ow">in</span> <span class="n">trans_circs</span><span class="p">]</span>
         
@@ -696,14 +734,14 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </section>
 </section>
 <section id="local-testing">
-<h2>Local testing<a class="headerlink" href="#local-testing" title="Permalink to this headline">¶</a></h2>
+<h2>Local testing<a class="headerlink" href="#local-testing" title="Link to this heading">#</a></h2>
 <div class="alert alert-block alert-info">
 <b>Important:</b> You need to execute the code blocks in Appendices A and B before continuing.
 </div>
 <p>We can test whether our routine works by simply calling the <code class="docutils literal notranslate"><span class="pre">main</span></code> function with a backend instance, a <code class="docutils literal notranslate"><span class="pre">UserMessenger</span></code>, and sample arguments.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit.providers.ibmq.runtime</span> <span class="kn">import</span> <span class="n">UserMessenger</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.providers.ibmq.runtime</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserMessenger</span>
 <span class="n">msg</span> <span class="o">=</span> <span class="n">UserMessenger</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -712,7 +750,7 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the local Aer simulator</span>
-<span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">Aer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Aer</span>
 <span class="n">backend</span> <span class="o">=</span> <span class="n">Aer</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="s1">&#39;qasm_simulator&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -749,13 +787,13 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 <p>Having executed the above, we see that there are 5 parameter arrays returned, one for each callback, along with the final optimization result.  The parameter arrays are the interim results, and the <code class="docutils literal notranslate"><span class="pre">UserMessenger</span></code> object prints these values to the cell output.  The output itself is the answer we obtained, expressed as a SciPy <code class="docutils literal notranslate"><span class="pre">OptimizerResult</span></code> object.</p>
 </section>
 <section id="program-metadata">
-<h2>Program metadata<a class="headerlink" href="#program-metadata" title="Permalink to this headline">¶</a></h2>
+<h2>Program metadata<a class="headerlink" href="#program-metadata" title="Link to this heading">#</a></h2>
 <p>Program metadata is essentially the docstring for a runtime program.  It describes overall program information such as the program <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>, <code class="docutils literal notranslate"><span class="pre">version</span></code>, and the <code class="docutils literal notranslate"><span class="pre">max_execution_time</span></code> the program is allowed to run, as well as details the inputs and the outputs the program expects.  At a bare minimum the values described above are required</p>
 <div class="alert alert-block alert-warning">
 <b>Important:</b> As of the time of writing, runtime names must be unique amongst all users. Because of this, we will add a unique ID (UUID) to the program name.  This limitation will be removed in a future release.
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">uuid</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
 
 <span class="n">meta</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;sample-vqe-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()),</span>
@@ -807,7 +845,7 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </section>
 <section id="uploading-the-program">
-<h2>Uploading the program<a class="headerlink" href="#uploading-the-program" title="Permalink to this headline">¶</a></h2>
+<h2>Uploading the program<a class="headerlink" href="#uploading-the-program" title="Link to this heading">#</a></h2>
 <p>We now have all the ingredients needed to upload our program.  To do so we need to collect all of our code in one file, here called <code class="docutils literal notranslate"><span class="pre">sample_vqe.py</span></code> for uploading.  This limitation will be removed in later versions of Qiskit Runtime.  Alternatively, if the entire code is contained within a single Jupyter notebook cell, this can be done using the magic function</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">my_program</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
@@ -815,7 +853,7 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 <p>To actually upload the program we need to get a Provider from our IBM Quantum account:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">IBMQ</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">qiskit</span><span class="w"> </span><span class="kn">import</span> <span class="n">IBMQ</span>
 <span class="n">IBMQ</span><span class="o">.</span><span class="n">load_account</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -834,7 +872,7 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </div>
 <section id="program-upload">
-<h3>Program upload<a class="headerlink" href="#program-upload" title="Permalink to this headline">¶</a></h3>
+<h3>Program upload<a class="headerlink" href="#program-upload" title="Link to this heading">#</a></h3>
 <p>The call to <code class="docutils literal notranslate"><span class="pre">program_upload</span></code> takes the target Python file as <code class="docutils literal notranslate"><span class="pre">data</span></code> and the metadata as inputs. <strong>If you have already uploaded the program this will raise an error and you must delete it first to continue</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -852,7 +890,7 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 <p>Here the returned <code class="docutils literal notranslate"><span class="pre">program_id</span></code> is the same as the program <code class="docutils literal notranslate"><span class="pre">name</span></code> given in the metadata.  You cannot have more than one program with the same <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">program_id</span></code>.  The <code class="docutils literal notranslate"><span class="pre">program_id</span></code> is how you should reference your program.</p>
 </section>
 <section id="program-information">
-<h3>Program information<a class="headerlink" href="#program-information" title="Permalink to this headline">¶</a></h3>
+<h3>Program information<a class="headerlink" href="#program-information" title="Link to this heading">#</a></h3>
 <p>We can query the program for information and see that our metadata is correctly being attached:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -915,7 +953,7 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </section>
 <section id="deleting-a-program">
-<h3>Deleting a program<a class="headerlink" href="#deleting-a-program" title="Permalink to this headline">¶</a></h3>
+<h3>Deleting a program<a class="headerlink" href="#deleting-a-program" title="Link to this heading">#</a></h3>
 <p>If you make a mistake and need to delete and/or re-upload the program, you can run the following, passing the <code class="docutils literal notranslate"><span class="pre">program_id</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -927,9 +965,9 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </section>
 </section>
 <section id="running-the-program">
-<h2>Running the program<a class="headerlink" href="#running-the-program" title="Permalink to this headline">¶</a></h2>
+<h2>Running the program<a class="headerlink" href="#running-the-program" title="Link to this heading">#</a></h2>
 <section id="specify-parameters">
-<h3>Specify parameters<a class="headerlink" href="#specify-parameters" title="Permalink to this headline">¶</a></h3>
+<h3>Specify parameters<a class="headerlink" href="#specify-parameters" title="Link to this heading">#</a></h3>
 <p>To run the program we need to specify the <code class="docutils literal notranslate"><span class="pre">options</span></code> that are used in the runtime environment (not the program variables).  At present, only the <code class="docutils literal notranslate"><span class="pre">backend_name</span></code> is required.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -951,7 +989,7 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </section>
 <section id="execute-the-program">
-<h3>Execute the program<a class="headerlink" href="#execute-the-program" title="Permalink to this headline">¶</a></h3>
+<h3>Execute the program<a class="headerlink" href="#execute-the-program" title="Link to this heading">#</a></h3>
 <p>We now can execute the program and grab the result.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -983,12 +1021,12 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 <p>A few things need to be pointed out. First, we did not get back any interim results, and second, the return object is a plain dictionary.  This is because we did not listen for the return results, and we did not tell the job how to format the return result.</p>
 </section>
 <section id="listening-for-interim-results">
-<h3>Listening for interim results<a class="headerlink" href="#listening-for-interim-results" title="Permalink to this headline">¶</a></h3>
+<h3>Listening for interim results<a class="headerlink" href="#listening-for-interim-results" title="Link to this heading">#</a></h3>
 <p>To listen for interm results we need to pass a callback function to <code class="docutils literal notranslate"><span class="pre">provider.runtime.run</span></code> that stores the results.  The callback takes two arguments <code class="docutils literal notranslate"><span class="pre">job_id</span></code> and the returned data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interm_results</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">def</span> <span class="nf">vqe_callback</span><span class="p">(</span><span class="n">job_id</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">vqe_callback</span><span class="p">(</span><span class="n">job_id</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="n">interm_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1036,16 +1074,16 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </section>
 <section id="formatting-the-returned-results">
-<h3>Formatting the returned results<a class="headerlink" href="#formatting-the-returned-results" title="Permalink to this headline">¶</a></h3>
+<h3>Formatting the returned results<a class="headerlink" href="#formatting-the-returned-results" title="Link to this heading">#</a></h3>
 <p>In order to format the return results into the desired format, we need to specify a decoder.  This decoder must have a <code class="docutils literal notranslate"><span class="pre">decode</span></code> method that gets called to do the actual conversion.  In our case <code class="docutils literal notranslate"><span class="pre">OptimizeResult</span></code> is a simple sub-class of <code class="docutils literal notranslate"><span class="pre">dict</span></code> so the formatting is simple.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit.providers.ibmq.runtime</span> <span class="kn">import</span> <span class="n">ResultDecoder</span>
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">OptimizeResult</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.providers.ibmq.runtime</span><span class="w"> </span><span class="kn">import</span> <span class="n">ResultDecoder</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">OptimizeResult</span>
 
-<span class="k">class</span> <span class="nc">VQEResultDecoder</span><span class="p">(</span><span class="n">ResultDecoder</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">VQEResultDecoder</span><span class="p">(</span><span class="n">ResultDecoder</span><span class="p">):</span>
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">decode</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="n">data</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># This is required to preformat the data returned.</span>
         <span class="k">return</span> <span class="n">OptimizeResult</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
@@ -1077,22 +1115,22 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </section>
 </section>
 <section id="simplifying-program-execution-with-wrapping-functions">
-<h2>Simplifying program execution with wrapping functions<a class="headerlink" href="#simplifying-program-execution-with-wrapping-functions" title="Permalink to this headline">¶</a></h2>
+<h2>Simplifying program execution with wrapping functions<a class="headerlink" href="#simplifying-program-execution-with-wrapping-functions" title="Link to this heading">#</a></h2>
 <p>While runtime programs are powerful and flexible, they are not the most friendly things to interact with.  Therefore, if your program is intended to be used by others, it is best to make wrapper functions and/or classes that simplify the user experience.  Moreover, such wrappers allow for validation of user inputs on the client side, which can quickly find errors that would otherwise be raised later during the execution process - something that might have taken hours waiting in queue to get to.</p>
 <p>Here we will make two helper routines.  First, a job wrapper that allows us to attach and retrieve the interim results directly from the job object itself, as well as decodes for us so that the end user need not worry about formatting the results themselves.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RuntimeJobWrapper</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;A simple Job wrapper that attaches interm results directly to the job object itself</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">RuntimeJobWrapper</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A simple Job wrapper that attaches interm results directly to the job object itself</span>
 <span class="sd">    in the `interm_results attribute` via the `_callback` function.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_job</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_decoder</span> <span class="o">=</span> <span class="n">VQEResultDecoder</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">interm_results</span> <span class="o">=</span> <span class="p">[]</span>
         
-    <span class="k">def</span> <span class="nf">_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_id</span><span class="p">,</span> <span class="n">xk</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;The callback function that attaches interm results:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_id</span><span class="p">,</span> <span class="n">xk</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The callback function that attaches interm results:</span>
 <span class="sd">        </span>
 <span class="sd">        Parameters:</span>
 <span class="sd">            job_id (str): The job ID.</span>
@@ -1100,7 +1138,7 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">interm_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xk</span><span class="p">)</span>
         
-    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">attr</span> <span class="o">==</span> <span class="s1">&#39;result&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
         <span class="k">else</span><span class="p">:</span>
@@ -1108,8 +1146,8 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
                 <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_job</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
             <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Class does not have </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attr</span><span class="p">))</span>
         
-    <span class="k">def</span> <span class="nf">result</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get the result of the job as a SciPy OptimizerResult object.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">result</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the result of the job as a SciPy OptimizerResult object.</span>
 <span class="sd">        </span>
 <span class="sd">        This blocks until job is done, cancelled, or errors.</span>
 <span class="sd">        </span>
@@ -1124,16 +1162,16 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 <p>Next, we create the actual function we want users to call to execute our program.  To this function we will add a series of simple validation checks (not all checks will be done for simplicity), as well as use the job wrapper defined above to simply the output.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qiskit.circuit.library.n_local</span> <span class="k">as</span> <span class="nn">lib_local</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">qiskit.circuit.library.n_local</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">lib_local</span>
 
-<span class="k">def</span> <span class="nf">vqe_runner</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="n">hamiltonian</span><span class="p">,</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">vqe_runner</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="n">hamiltonian</span><span class="p">,</span>
                <span class="n">ansatz</span><span class="o">=</span><span class="s1">&#39;EfficientSU2&#39;</span><span class="p">,</span> <span class="n">ansatz_config</span><span class="o">=</span><span class="p">{},</span>
                <span class="n">x0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;SPSA&#39;</span><span class="p">,</span>
                <span class="n">optimizer_config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;maxiter&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
                <span class="n">shots</span> <span class="o">=</span> <span class="mi">8192</span><span class="p">,</span>
                <span class="n">use_measurement_mitigation</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    
-    <span class="sd">&quot;&quot;&quot;Routine that executes a given VQE problem via the sample-vqe program on the target backend.</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Routine that executes a given VQE problem via the sample-vqe program on the target backend.</span>
 <span class="sd">    </span>
 <span class="sd">    Parameters:</span>
 <span class="sd">        backend (ProgramBackend): Qiskit backend instance.</span>
@@ -1238,21 +1276,21 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
 <p>We have demonstrated how to create, upload, and use a custom Qiskit Runtime by creating our own VQE solver from scratch.  This tutorial was meant to touch upon every aspect of the process for a real-world example.  Within the current limitations of the runtime environment, this example should enable readers to develop their own single-file runtime program.  This program is also a good starting point for exploring additional flavors of VQE runtime.  For example, it is straightforward to vary the number of shots per iteration, increasing shots as the number of iterations increases.  Those looking to go deeper can consider implimenting an <a class="reference external" href="https://doi.org/10.1038/s41467-019-10988-2">adaptive VQE</a>, where the ansatz is not fixed at initialization.</p>
 </section>
 <section id="appendix-a">
-<h2>Appendix A<a class="headerlink" href="#appendix-a" title="Permalink to this headline">¶</a></h2>
+<h2>Appendix A<a class="headerlink" href="#appendix-a" title="Link to this heading">#</a></h2>
 <p>Here we code a simple simultaneous perturbation stochastic approximation (SPSA) optimizer for use on noisy quantum systems.  Most optimizers do not handle fluctuating cost functions well, so this is a needed addition for executing on real quantum hardware.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">OptimizeResult</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">OptimizeResult</span>
 
-<span class="k">def</span> <span class="nf">fmin_spsa</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(),</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fmin_spsa</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(),</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
               <span class="n">a</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.602</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.101</span><span class="p">,</span>
               <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Minimization of scalar function of one or more variables using simultaneous</span>
 <span class="sd">    perturbation stochastic approximation (SPSA).</span>
 
@@ -1313,12 +1351,12 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 </section>
 <section id="appendix-b">
-<h2>Appendix B<a class="headerlink" href="#appendix-b" title="Permalink to this headline">¶</a></h2>
+<h2>Appendix B<a class="headerlink" href="#appendix-b" title="Link to this heading">#</a></h2>
 <p>This is a helper function that converts the Pauli operators in the strings that define the Hamiltonian operators into the appropriate measurements at the end of the circuits.  For <span class="math notranslate nohighlight">\(X\)</span> operators this involves adding an <span class="math notranslate nohighlight">\(H\)</span> gate to the qubits to be measured, whereas a <span class="math notranslate nohighlight">\(Y\)</span> operator needs <span class="math notranslate nohighlight">\(S^{+}\)</span> followed by a <span class="math notranslate nohighlight">\(H\)</span>.  Other choices of Pauli operators require no additional gates prior to measurement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">opstr_to_meas_circ</span><span class="p">(</span><span class="n">op_str</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Takes a list of operator strings and makes circuit with the correct post-rotations for measurements.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">opstr_to_meas_circ</span><span class="p">(</span><span class="n">op_str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Takes a list of operator strings and makes circuit with the correct post-rotations for measurements.</span>
 
 <span class="sd">    Parameters:</span>
 <span class="sd">        op_str (list): List of strings representing the operators needed for measurements.</span>
@@ -1344,7 +1382,7 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit.tools.jupyter</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">qiskit.tools.jupyter</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="o">%</span><span class="k">qiskit_copyright</span>
 </pre></div>
 </div>
@@ -1355,20 +1393,20 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
 </section>
 </section>
 
-<div class="section">
+<div class="section ablog__blog_comments">
      
-<div class="section">
-  <span style="float: left">
+<div class="section ablog__prev-next">
+  <span class="ablog__prev">
     
   </span>
-  <span>&nbsp;</span>
-  <span style="float: right">
+  <span class="ablog__spacer">&nbsp;</span>
+  <span class="ablog__next">
      
     <a href="2021-10-13-expval_program.html">
-      Custom Expectation Value Program for the Qiskit Runtime <i
-        class="fa fa-arrow-circle-right"
-      ></i
-      >
+      <span>Custom Expectation Value Program for the Qiskit Runtime</span>
+      
+      <i class="fa fa-arrow-circle-right"></i>
+      
     </a>
     
   </span>
@@ -1376,36 +1414,132 @@ H = A X_{1}\otimes X_{0} + A Y_{1}\otimes Y_{0} + A Z_{1}\otimes Z_{0},
   
 </div>
 
-              </div>
+                </article>
               
               
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
 </div>
+                </footer>
               
-          </main>
-          
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-      </div>
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-limitations">Current limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-vqe">Simple VQE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-the-form-of-the-input-values">Specifying the form of the input values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optionals">Optionals</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-program">Main program</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-signature">Required signature</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-main-vqe-program">The main VQE program</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-testing">Local testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#program-metadata">Program metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-the-program">Uploading the program</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-upload">Program upload</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-information">Program information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-a-program">Deleting a program</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-program">Running the program</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-parameters">Specify parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#execute-the-program">Execute the program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listening-for-interim-results">Listening for interim results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-the-returned-results">Formatting the returned results</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplifying-program-execution-with-wrapping-functions">Simplifying program execution with wrapping functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-a">Appendix A</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-b">Appendix B</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/posts/2021/2021-10-07-vqe_program.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2021, Paul Nation.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
-    &copy; Copyright 2021, Paul Nation.<br>
-</p>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
     </div>
-    
-    <div class="footer-item">
-      <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
-</p>
-    </div>
-    
-  </div>
-</footer>
+  
+</div>
+
+  </footer>
   </body>
 </html>
