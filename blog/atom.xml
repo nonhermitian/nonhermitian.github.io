@@ -2,10 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <id>nonhermitian.org</id>
   <title>Paul Nation's Blog</title>
-  <updated>2025-05-25T16:44:03.535228+00:00</updated>
+  <updated>2025-05-28T01:51:34.066786+00:00</updated>
   <link href="nonhermitian.org"/>
   <link href="nonhermitian.org/blog/atom.xml" rel="self"/>
   <generator uri="https://ablog.readthedocs.io/" version="0.11.12">ABlog</generator>
+  <entry>
+    <id>nonhermitian.org/posts/2025/2025-05-25-pricing-comparison.html</id>
+    <title>Simple pricing comparison between quantum hardware vendors</title>
+    <updated>2025-05-25T00:00:00-04:00</updated>
+    <content type="html">&lt;p class="ablog-post-excerpt"&gt;&lt;p&gt;Computing the cost of executing circuits between different quantum hardware modalities is quite challenging.  Namely, the pricing structures are markedly different, there are lots of special conditions that can apply, and the same hardware can be priced differently depending on the cloud provider one goes through.&lt;/p&gt;
+&lt;p&gt;Here I do a very simple yet effective price comparison between IBM, IonQ, and Quantinuum over a range of single- and two-qubit gate values.  The stark differences in pricing are readily apparent in this example.&lt;/p&gt;
+&lt;img alt="_images/ad85f88fec324379e55a0021c9353a60bec929610fa24f62d80b33426b683486.png" src="_images/ad85f88fec324379e55a0021c9353a60bec929610fa24f62d80b33426b683486.png" style="width: 1047px; height: 387px;" /&gt;&lt;/p&gt;
+</content>
+    <link href="nonhermitian.org/posts/2025/2025-05-25-pricing-comparison.html"/>
+    <summary>Computing the cost of executing circuits between different quantum hardware modalities is quite challenging.  Namely, the pricing structures are markedly different, there are lots of special conditions that can apply, and the same hardware can be priced differently depending on the cloud provider one goes through.Here I do a very simple yet effective price comparison between IBM, IonQ, and Quantinuum over a range of single- and two-qubit gate values.  The stark differences in pricing are readily apparent in this example.</summary>
+    <published>2025-05-25T00:00:00-04:00</published>
+  </entry>
   <entry>
     <id>nonhermitian.org/posts/2021/2021-12-20-qrng.html</id>
     <title>Pitfalls in generating random numbers on quantum computers</title>
