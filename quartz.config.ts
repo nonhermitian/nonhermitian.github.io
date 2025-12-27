@@ -23,9 +23,9 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Roboto",
-        body: "Roboto",
-        code: "Roboto Mono",
+        header: "Geist",
+        body: "Geist",
+        code: "Geist Mono",
       },
       colors: {
         lightMode: {
