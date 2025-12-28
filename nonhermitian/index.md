@@ -1,8 +1,11 @@
 ---
-graph_name: Homepage
-obs.html.tags:
-- dont_add_embedded_title
+{"publish":true,
+"title":"nonhermitian",
+"description":"Personal website",
+"cssclasses":"index-page home-page hide-title"
+}
 ---
+
 # Paul D. Nation
 
 - [[Curriculum Vitae | 🧠 Curriculum Vitae]]
