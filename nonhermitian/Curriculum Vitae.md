@@ -8,22 +8,22 @@ Computational quantum physics, quantum computing,  quantum optics, optomechanica
 - 2005 - 2010,  **Ph.D. Physics**, *Dartmouth College*, Hanover, NH USA
     - Advisor: Miles P. Blencowe
 
-- 2002 - 2005,  **B.S. Physics**, Utah State University, Logan, UT USA
+- 2002 - 2005,  **B.S. Physics**, *Utah State University*, Logan, UT USA
     - Minor: Mathematics
 
 ## Experience
 
-- 2021 - Present,  **Principal Research Scientist**, IBM Quantum, Yorktown Heights, NY USA
--  2021 - 2023, **Partners Technical Enablement Program Director**, IBM Quantum, Yorktown Heights, NY USA
-- 2018 - 2021, **Research Staff Member**, IBM Quantum, Yorktown Heights, NY USA
-- 2015 - 2017, **Staff Physicist IV**, Northrop Grumman Corp., Aurora, CO USA
-- 2012 - 2015, **Assistant Professor**, Korea University Department of Physics, Seoul, South Korea
-- 2011 - 2012, **JSPS Foreign Postdoctoral Fellow**, RIKEN Advanced Science Institute, Wakoshi, Saitama Japan
-- 2010 - 2012, **Postdoctoral Research Associate**, University of Michigan, Ann-Arbor, MI USA (based at RIKEN)
-- 2010 - 2011, **Visiting Researcher**, RIKEN Advanced Science Institute, Wakoshi, Saitama Japan
-- 2005 - 2010, **Graduate Student**, Dartmouth College Department of Physics, Hanover, NH USA
-- 2009, **Visiting Researcher**, NTT Basic Research Laboratories, Atsugi, Kanagawa Japan
-- 2004 - 2005, **Science Specialist**, U.S. Army, Dugway Proving Grounds, UT USA
+- 2021 - Present,  **Principal Research Scientist**, *IBM Quantum*, Yorktown Heights, NY USA
+-  2021 - 2023, **Partners Technical Enablement Program Director**, *IBM Quantum*, Yorktown Heights, NY USA
+- 2018 - 2021, **Research Staff Member**, *IBM Quantum*, Yorktown Heights, NY USA
+- 2015 - 2017, **Staff Physicist IV**, *Northrop Grumman Corp.*, Aurora, CO USA
+- 2012 - 2015, **Assistant Professor**, *Korea University Department of Physics*, Seoul, South Korea
+- 2011 - 2012, **JSPS Foreign Postdoctoral Fellow**, *RIKEN Advanced Science Institute*, Wakoshi, Saitama Japan
+- 2010 - 2012, **Postdoctoral Research Associate**, *University of Michigan*, Ann-Arbor, MI USA (based at RIKEN)
+- 2010 - 2011, **Visiting Researcher**, *RIKEN Advanced Science Institute*, Wakoshi, Saitama Japan
+- 2005 - 2010, **Graduate Student**, *Dartmouth College Department of Physics*, Hanover, NH USA
+- 2009, **Visiting Researcher**, *NTT Basic Research Laboratories*, Atsugi, Kanagawa Japan
+- 2004 - 2005, **Science Specialist**, *U.S. Army*, Dugway Proving Grounds, UT USA
 
 ## Publications
 
