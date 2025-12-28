@@ -114,7 +114,7 @@ Computational quantum physics, quantum computing,  quantum optics, optomechanica
  - 2024 - Present, **Benchpress**
 	- Benchmarking quantum computing software for quantum circuit creation, manipulation
 	- [github.com/Qiskit/benchpress](https://github.com/Qiskit/benchpress)
--  2022 - 2023, **Mapomatic **
+-  2022 - 2023, **Mapomatic**
 	- Automatic mapping of compiled quantum circuits to low-noise sub-graphs
 	- Largely integrated into Qiskit
 - 2021 - Present, **Matrix-free Measurement Mitigation (M3)
