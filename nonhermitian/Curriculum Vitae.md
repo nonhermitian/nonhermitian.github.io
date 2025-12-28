@@ -109,4 +109,27 @@ Computational quantum physics, quantum computing,  quantum optics, optomechanica
 - 2012, "Photon production from the quantum vacuum", 6th Winter School on Quantum Information Science, Huisun Taiwan
 - 2010, "Hawking radiation as a 1D quantum channel", RIKEN Quantum Science of Strongly Correlated Systems ($QS^{2}C$) Theory Forum, Wakoshi Japan
 
+## Computational Programs
+
+ - 2024 - Present, **Benchpress**
+	- Benchmarking quantum computing software for quantum circuit creation, manipulation
+	- [github.com/Qiskit/benchpress](https://github.com/Qiskit/benchpress)
+-  2022 - 2023, **Mapomatic **
+	- Automatic mapping of compiled quantum circuits to low-noise sub-graphs
+	- Largely integrated into Qiskit
+- 2021 - Present, **Matrix-free Measurement Mitigation (M3)
+	- Scalable measurement mitigation on quantum computing platforms
+	- [github.com/Qiskit/qiskit-addon-mthree](https://github.com/Qiskit/qiskit-addon-mthree)
+- 2018 - Present, **Qiskit**
+	- Open-source framework for leveraging quantum computers in research, education, and business
+	- [github.com/Qiskit/qiskit](https://github.com/Qiskit/qiskit)
+- 2009 - 2017, **QuTiP: Quantum Toolbox in Python**
+	- Open-source framework for solving the dynamics of open quantum systems. In collaboration with Dr. Robert J. Johansson.
+	- [qutip.org](https://qutip.org/)
+- 2014-2015, **SciPy**
+	- Author of Reverse Cuthill-McKee, Maximum Bipartite Matching, and Structural Rank sparse matrix algorithms in the `scipy.sparse.csgraph` module
+	- [scipy.org](https://scipy.org/)
+
+
+
 
