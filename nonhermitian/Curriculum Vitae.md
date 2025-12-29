@@ -117,7 +117,7 @@ Computational quantum physics, quantum computing,  quantum optics, optomechanica
 -  2022 - 2023, **Mapomatic**
 	- Automatic mapping of compiled quantum circuits to low-noise sub-graphs
 	- Largely integrated into Qiskit
-- 2021 - Present, **Matrix-free Measurement Mitigation (M3)
+- 2021 - Present, **Matrix-free Measurement Mitigation (M3)**
 	- Scalable measurement mitigation on quantum computing platforms
 	- [github.com/Qiskit/qiskit-addon-mthree](https://github.com/Qiskit/qiskit-addon-mthree)
 - 2018 - Present, **Qiskit**
