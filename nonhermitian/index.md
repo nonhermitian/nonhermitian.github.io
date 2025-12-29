@@ -13,7 +13,7 @@
 > quantum systems. I have created and/or helped develop some of the most popular
 > quantum software packages in use today. 
 
-## About me
+## Sections
 
 - [[Curriculum Vitae | 🧠 Curriculum Vitae]]
 
