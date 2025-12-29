@@ -6,7 +6,7 @@ Computational quantum physics, quantum computing,  quantum optics, optomechanica
 ## Education
 
 - 2005 - 2010,  **Ph.D. Physics**, *Dartmouth College*, Hanover, NH USA
-    - Advisor: Miles P. Blencowe
+    - Advisor: [Miles P. Blencowe](https://physics.dartmouth.edu/people/miles-p-blencowe)
 
 - 2002 - 2005,  **B.S. Physics**, *Utah State University*, Logan, UT USA
     - Minor: Mathematics

@@ -40,7 +40,7 @@ const defaultOptions: Options = {
       })
     }
 
-    if (!a.isFolder && b.isFolder) {
+    if (a.isFolder && !b.isFolder) {
       return 1
     } else {
       return -1

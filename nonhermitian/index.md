@@ -16,4 +16,7 @@
 ## Sections
 
 - [[Curriculum Vitae | 🧠 Curriculum Vitae]]
+- [[Projects | 🧰 Projects]]
+    - [[Benchpress]] - Benchmarking quantum circuit software
+
 
