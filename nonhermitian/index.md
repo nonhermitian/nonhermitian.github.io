@@ -17,6 +17,5 @@
 
 - [[Curriculum Vitae | 🧠 Curriculum Vitae]]
 - [[Projects | 🧰 Projects]]
-    - [[Benchpress]] - Benchmarking quantum circuit software
-
-
+	- [[Benchpress]] - Benchmarking quantum circuit software
+	- [[Mapomatic]] - Mapping quantum circuits to low-noise sub-graphs

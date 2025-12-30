@@ -1,7 +1,6 @@
 
 ---
 topic: 
-date: "{{date}}"
 tags:
   - projects
 ---
@@ -17,8 +16,8 @@ tags:
 ## Motivation
 
 
-## Extensions
+## Possible Extensions
 
 
-## Related Topics
+## Related Links
 
