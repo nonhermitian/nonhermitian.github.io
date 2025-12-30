@@ -33,4 +33,4 @@ While the core components of this tool are now written in Rust and incorporated 
 
 - Source code: [github.com/qiskit-community/mapomatic](https://github.com/qiskit-community/mapomatic)
 - Paper: [PRX Quantum **4**, 010327 (2023)](https://doi.org/10.1103/PRXQuantum.4.010327)
-- ArXiv: [arXiv:2209.15512](https://doi.org/10.48550/arXiv.2209.15512)
+- arXiv: [arXiv:2209.15512](https://doi.org/10.48550/arXiv.2209.15512)

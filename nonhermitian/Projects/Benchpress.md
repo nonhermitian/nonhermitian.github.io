@@ -32,4 +32,4 @@ Currently, Benchpress does not test SDKs that use functions to represent quantum
 
 - Source code: [github.com/Qiskit/benchpress](https://github.com/Qiskit/benchpress)
 - Paper: [Nat. Comput. Sci., **5**, 427 (2025)](https://doi.org/10.1038/s43588-025-00792-y)
-- ArXiv: [arXiv:2409.08844](https://doi.org/10.48550/arXiv.2409.08844)
+- arXiv: [arXiv:2409.08844](https://doi.org/10.48550/arXiv.2409.08844)

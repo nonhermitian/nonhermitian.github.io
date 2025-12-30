@@ -1,11 +1,13 @@
 
 ---
-topic: 
+topic:
+date:
 tags:
   - projects
 ---
 
 # {{title}}
+
 
 ## Collaborators
 
