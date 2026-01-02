@@ -21,7 +21,7 @@ I should also give a call out to [Franco Nori](https://www.riken.jp/en/research/
 
 At its most fundamental level, QuTiP is a library for building models of open and closed quantum systems, and numerically evaluating their time dynamics.  The scope has since been expanded to include domains such as optimal control and pulse-based quantum circuit simulation.
 
-QuTiP is now the defacto standard for simulating quantum optical systems, and is standard that others use to compare against.  Portions of QuTiP functionality, both big and small, have made its way into a multitude of other software projects, including those from major corporations such as IBM and Nvidia.
+QuTiP is now the defacto standard for simulating quantum optical systems, and is the tool that others use to compare against.  Portions of QuTiP functionality, both big and small, have made its way into a multitude of other software projects, including those from major corporations such as IBM and Nvidia.
 
 ## Motivation
 
