@@ -24,7 +24,7 @@ Qiskit's primary focus is on quantum circuit creation, manipulation, optimizatio
 
 ## Motivation
 
-The first publicly accessible cloud computer was put online on May 4th 2016 by IBM.  At that time, the way to program it was via a simple web interface.  The first device was only five qubits, so doing everything by hand was fine.  However for larger devices, the circuits quickly become too complex to tackle by hand.  The same is true at the quality of devices improves and the complexity of circuits increases.  Tools that automated much of the circuit construction, manipulation, and optimization / transpilation workflows we needed.  To this end, work on Qiskit started in 2017. 
+The first publicly accessible cloud computer was put online on May 4th 2016 by IBM.  At that time, the way to program it was via a simple web interface.  The first device was only five qubits, so doing everything by hand was fine.  However for larger devices, the circuits quickly become too complex to tackle by hand.  The same is true as the quality of devices improves and the complexity of circuits increases.  Tools that automated much of the circuit construction, manipulation, and optimization / transpilation workflows were needed.  To this end, work on Qiskit started in 2017. 
 
 ## Possible Extensions
 
