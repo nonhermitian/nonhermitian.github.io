@@ -25,7 +25,7 @@ QuTiP is now the defacto standard for simulating quantum optical systems, and is
 
 ## Motivation
 
-I had been using the quantum optics toolbox (`qotoolbox`) for Matlab for my PhD work, and decided that I wanted something uncoupled from paid software.  In addition, I needed an excuse to sharpen my poor programming skills.  At the same time I met Robert while visiting NTT Basic Research Labs over the summer, and he had a host of tools written in C that did much of what the `qotoolbox` did.  Also, unlike myself, is is actually a good programmer.  When I joined Franco's group in 2010, we started working on QuTiP, first as a side project and then later full time.
+I had been using the quantum optics toolbox (`qotoolbox`) for Matlab for my PhD work, and decided that I wanted something uncoupled from paid software.  In addition, I needed an excuse to sharpen my poor programming skills.  At the same time I met Robert while visiting NTT Basic Research Labs over the summer, and he had a host of tools written in C that did much of what the `qotoolbox` did.  Also, unlike myself, he is actually a good programmer.  When I joined Franco's group in 2010, we started working on QuTiP, first as a side project and then later full time.
 
 ## Possible Extensions
 
