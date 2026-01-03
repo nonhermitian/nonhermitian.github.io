@@ -1,3 +1,12 @@
+---
+topic:  software
+title: PETSc installation
+tags:
+  - notes
+  - software
+---
+
+# PETSc installation with real and complex support
 
 ## In root dir (here /opt/petsc)
 
