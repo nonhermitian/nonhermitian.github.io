@@ -12,6 +12,7 @@
 > - I am a physicist working 15+ years in the field of quantum optics and numerical methods for
 > quantum systems. I have created and/or helped develop some of the most popular
 > quantum software packages in use today. 
+> - I enjoy working on applied physics problems and creating tools that accelerate research
 > - Find me on [LinkedIn](https://www.linkedin.com/in/paul-nation-3189ba63)
 > - Contact me at `first.last[at]proton.me`
 
