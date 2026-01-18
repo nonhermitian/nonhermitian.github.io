@@ -13,7 +13,7 @@
 > quantum systems. I have created and/or helped develop some of the most popular
 > quantum software packages in use today. 
 > - I enjoy working on applied physics problems and creating tools that accelerate research.
-> - Find me on [arXiv](https://arxiv.org/a/nation_p_1), [Google Scholar](https://scholar.google.com/citations?user=jh5qRs0AAAAJ&hl=en), and [LinkedIn](https://www.linkedin.com/in/paul-nation-3189ba63)
+> - Find me on [arXiv](https://arxiv.org/a/nation_p_1), [Google Scholar](https://scholar.google.com/citations?user=jh5qRs0AAAAJ&hl=en), and [LinkedIn](https://www.linkedin.com/in/paul-nation-3189ba63).
 > - Contact me at `first.last[at]proton.me`
 
 ## Sections
@@ -22,6 +22,7 @@
 - [[Notes| 📓 Notes]]
 - [[Projects | 🧰 Projects]]
 	- [[Benchpress]] - Benchmarking quantum circuit software
+	- [[Fulqrum]] - Quantum subspace diagonalization (coming soon)
 	- [[Mapomatic]] - Mapping quantum circuits to low-noise sub-graphs
 	- [[Matrix-free Measurement Mitigation (M3)]] - Scalable readout error mitigation
 	- [[Qiskit]] - Programming quantum computers at the level of quantum circuits
