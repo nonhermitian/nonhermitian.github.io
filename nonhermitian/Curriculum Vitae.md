@@ -79,6 +79,10 @@ Computational quantum physics, quantum computing,  quantum optics, optomechanica
 
 ## Patents
 
+
+- Filled 2026, **Paul D. Nation**, Hwajung Kang, Abdullah Ash Saki, and Jay M. Gambetta, "Performant Quantum Subspace Eigensolving with Quantum Subspace Refinement"
+- Filled 2026, **Paul D. Nation**, Abdullah Ash Saki, Hwajung Kang, "Performant Quantum Subspace Eigensolving with Hamiltonian Element Location Checking"
+- Filled 2026, **Paul D. Nation**, Abdullah Ash Saki, Hwajung Kang, "Performant Quantum Subspace Eigensolving with Hamiltonian Element Bitmasking"
 - Filled 2025, **Paul D. Nation**, Hwajung Kang, "Evaluating the action of a Hamiltonian on a subspace in a matrix-free manner"
 - Filled 2025, **Paul D. Nation**, Jay M. Gambetta, and Antonio Corcoles-Gonzalez, "Deﬁning staged quantum applications composed of graph-based workﬂows"
 - Filled 2025, **Paul D. Nation**, and Hwajung Kang, "Assessment of quantum device quality using many-body localization"
