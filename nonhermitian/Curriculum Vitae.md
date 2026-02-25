@@ -60,7 +60,7 @@ Computational quantum physics, quantum computing,  quantum optics, optomechanica
 
 ## Honors and Awards
 
-- 2025, **Research Accomplishment Award**, Transforming Qiskit into a high-performance quantum SDK, IBM
+- 2025, **Outstanding Technical Achievement Award**, Transforming Qiskit into a high-performance quantum SDK, IBM
 - 2024, **Research Accomplishment Award**, Development of Qiskit Runtime Primitives to optimize quantum algorithm workﬂows, IBM
 - 2023, **Research Accomplishment Award**, Mapomatic, IBM
 - 2022, **Research Accomplishment Award**, Matrix-free Measurement Mitigation (M3), IBM
