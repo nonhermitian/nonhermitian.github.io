@@ -13,7 +13,7 @@ tags:
 
 ## Collaborators
 
-Hwajung Kang, [Neereja Sundaresan](https://www.linkedin.com/in/neereja-sundaresan-9a4aa21b0/), and [Jay M. Gambetta](https://www.linkedin.com/in/jay-gambetta-a274753a/)
+[Hwajung Kang](https://www.linkedin.com/in/hwajung-kang-ph-d-b564733b0/), [Neereja Sundaresan](https://www.linkedin.com/in/neereja-sundaresan-9a4aa21b0/), and [Jay M. Gambetta](https://www.linkedin.com/in/jay-gambetta-a274753a/)
 
 ## Summary
 
