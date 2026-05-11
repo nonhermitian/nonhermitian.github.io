@@ -22,7 +22,7 @@
 - [[Notes| 📓 Notes]]
 - [[Projects | 🧰 Projects]]
 	- [[Benchpress]] - Benchmarking quantum circuit software
-	- [[Fulqrum]] - Quantum subspace diagonalization (coming soon)
+	- [[Fulqrum]] - Quantum subspace diagonalization
 	- [[Mapomatic]] - Mapping quantum circuits to low-noise sub-graphs
 	- [[Matrix-free Measurement Mitigation (M3)]] - Scalable readout error mitigation
 	- [[Qiskit]] - Programming quantum computers at the level of quantum circuits
