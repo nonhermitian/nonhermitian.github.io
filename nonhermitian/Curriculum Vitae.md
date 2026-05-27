@@ -27,6 +27,7 @@ Computational quantum physics, quantum computing,  quantum optics, optomechanica
 
 ## Publications
 
+-  **Paul D. Nation**, Abdullah Ash Saki, and Hwajung Kang, “A generalized framework for quantum subspace diagonalization", [arXiv.2603.18731](https://doi.org/10.48550/arXiv.2603.18731)
 - Neill Lambert, Eric Giguère, Paul Menczel, Boxi Li, Patrick Hopf, Gerardo Suárez, Marc Gali, Jake Lishman, Rushiraj Gadhvi, Rochisha Agarwal, Asier Galicia, Nathan Shammah, **Paul Nation**, J. R. Johansson, Shahnawaz Ahmed, Simon Cross, Alexander Pitchford, Franco, Nori, “QuTiP 5: The Quantum Toolbox in Python", [Physics Reports 1153, 1 (2025)](https://doi.org/10.1016/j.physrep.2025.10.001)
 -  **Paul D. Nation**, Abdullah Ash Saki, Sebastian Brandhofer, Luciano Bello, Shelly Garion, Matthew Treinish, and Ali Javadi-Abhari, “Benchmarking the performance of quantum computing software for quantum circuit creation, manipulation and compilation", [Nat. Comput. Sci. 5, 427 (2025)](https://doi.org/10.1038/s43588-025-00792-y)
 -  Ali Javadi-Abhari, Matthew Treinish, Kevin Krsulich, Christopher J. Wood, Jake Lishman, Julien Gacon, Simon Martiel, **Paul D. Nation**, Lev S. Bishop, Andrew W. Cross, Blake R. Johnson, and Jay M. Gambetta, “Quantum computing with Qiskit", [arXiv:2405.08810](https://doi.org/10.48550/arXiv.2405.08810)
